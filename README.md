@@ -1,4 +1,4 @@
-# Dizer Jekyll
+# modelware.io
 
 Dizer Jekyll Creative Portfolio Template ported from [Dizer HTML Template](https://themefisher.com/products/dizer/)
 
