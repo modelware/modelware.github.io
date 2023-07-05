@@ -1,12 +1,12 @@
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.modelware.io" # the base hostname & protocol for your site
-title: "Modelware -  Model Based Systems Engineering Technologies"
+title: "Modelware -  Model Based Systems Engineering Solutions"
 email: "info@modelwaresolutions.com"
 phone: "+1 818 331 5774"
 address: "La Canada Flintridge, CA 91011, USA"
 author: melaasar
 description: >- # this means to ignore newlines
-  Modelware - R&D Lab for Model Based Systems Engineering Technologies.
+  Modelware - Model Based Systems Engineering Solutions
 logo: "/assets/images/logo.png"
 logo_icon: "/assets/images/logo-b.png"
 # contact form action
