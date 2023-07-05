@@ -1,8 +1,0 @@
-# Caption should not exceed 40 character
-# If you include special characters (- and :) surround by ""
-- caption: OML Specification 0.7 is now available
-  carouselImageName: banner_1.png
-  floatingImageName: oml.png
-  readMoreUrl: https://opencaesar.github.io/oml
-  buttonLable: "Read More"
-  slideId: 0

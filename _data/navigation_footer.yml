@@ -1,9 +1,0 @@
-# Name should not exceed 20 character
-- name: Documentation
-  link: /documentation
-- name: Papers
-  link: /papers
-- name: Blog
-  link: /blog
-- name: Team
-  link: /team
