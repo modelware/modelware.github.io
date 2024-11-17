@@ -1,9 +1,9 @@
 ---
 layout: portfolio
-title: "openCAESAR Workshop"
-categories: ["Training"]
-thumbnail: "/assets/images/bae.png"
-description: "BAE Systems is a British multinational arms, security, and aerospace company"
+title: "Leonardo"
+categories: ["Consulting"]
+thumbnail: "https://www.airport-suppliers.com/wp-content/uploads/2016/09/Leonardo-Finmeccanica-logo.jpg"
+description: "Leonardo is an Italian multinational company specialising in aerospace, defence and security"
 ---
 <div class="col-lg-8 text-center">
 <h3 class="mb-3 mt">{{page.title}}</h3>
@@ -12,7 +12,7 @@ description: "BAE Systems is a British multinational arms, security, and aerospa
 	<div class="carousel slide" id="single-slide">
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img src="https://img.oemoffhighway.com/files/base/acbm/ooh/image/2013/04/bae-systems-logo-jpg-940x274-c_10915640.png?auto=format%2Ccompress&fit=max&q=70&w=1200" alt="" class="img-fluid">
+				<img src="https://theaviationist.com/wp-content/uploads/2020/12/Leonardo-top.jpg" alt="" class="img-fluid">
 			</div>
 			<div class="carousel-item">
 				<img src="/assets/images/blog/blog-single.jpg" alt="" class="img-fluid">
@@ -35,7 +35,7 @@ description: "BAE Systems is a British multinational arms, security, and aerospa
 <p>{{page.description}}</p>
 
 <div class="col-lg-12 text-left mt-5">
-	<p>We delivered a 2-day workshop on the openCAESAR project to BAE Systems. We presented the history of the project and how it is adopted at JPL. We also overviewed the different components, features, and workflows of the platform.</p>
+	<p>We advised a UK-based Leonardo team in in developing their Integrated Knowledge Centric Engineering approach to systems engineering.</p>
 </div>
 
 <div class="post-single-share py-4 mt-4 mb+5">

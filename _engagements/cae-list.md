@@ -1,7 +1,7 @@
 ---
 layout: portfolio
-title: "Papyrus OML Adapter"
-categories: ["Consulting"]
+title: "CEA LIST"
+categories: ["R&D"]
 thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/LOGO_CEA_ORIGINAL.svg/1200px-LOGO_CEA_ORIGINAL.svg.png"
 description: "CEA-List is a research institute of the French Alternative Energies and Atomic Energy Commission."
 ---
@@ -35,7 +35,7 @@ description: "CEA-List is a research institute of the French Alternative Energie
 <p>{{page.description}}</p>
 
 <div class="col-lg-12 text-left mt-5">
-	<p>We developed a prototype for an OML adapter for the Papyrus UML tool developed by CAE List. The adapter is able to convert an OML vocabulary to UML profile
+	<p>We developed a prototype for an <a href="https://www.opencaesar.io/oml/">OML</a> adapter for the <a href="https://eclipse.dev/papyrus/">Papyrus UML</a> tool developed by CAE List. The adapter is able to convert an OML vocabulary to UML profile
 	that can be used when modeling in Papyrus. The models can then be converted to OML descriptions that can be analyzed ontologically.</p>
 </div>
 

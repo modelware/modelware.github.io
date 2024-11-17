@@ -12,15 +12,15 @@ layout: default_2
 </section>
 
 
-<section class="section related-project">
+<section class="section related-engagement">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
-				<h3 class="mb-5">Related Projects</h3>
+				<h3 class="mb-5">Related Engagements</h3>
 			</div>
 		</div>
 		<div class="row">
-            {% for portfolio in site.projects limit:"3" %}
+            {% for portfolio in site.engagements limit:"3" %}
 			<div class="col-lg-4">
 				<div class="portfolio-block text-center border-0 ">
 				    <img src="{{portfolio.thumbnail | relative_url}}" class="img-fluid" alt="{{portfolio.title}}"/>

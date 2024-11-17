@@ -39,7 +39,7 @@
               <span class="h5 text-color text-uppercase">
                 our works
               </span>
-              <h3 class="mb-5 mt-2">A collection of some recently completed projects, covering a wide <span
+              <h3 class="mb-5 mt-2">A collection of some recently completed engagements, covering a wide <span
                   class="text-color">range of engineering disciplines</span></h3>
             </div>
           </div>
@@ -48,9 +48,9 @@
             <div class="col-10">
               <div class="btn-group btn-group-toggle " data-toggle="buttons">
                 <label class="btn border-0 active">
-                  <input type="radio" name="shuffle-filter" value="all" checked="checked" />All Projects
+                  <input type="radio" name="shuffle-filter" value="all" checked="checked" />All Engagements
                 </label>
-                {% assign categories = site.projects| map: 'categories' | join: ',' | split: ',' | uniq %}
+                {% assign categories = site.engagements| map: 'categories' | join: ',' | split: ',' | uniq %}
                 {% for category in categories %}
                 <label class="btn border-0">
                   <input type="radio" name="shuffle-filter" value="{{ category | downcase | slugify }}" />{{ category }}

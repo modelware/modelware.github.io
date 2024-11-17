@@ -1,6 +1,6 @@
 ---
 layout: default_2
-title: "Our Projects"
+title: "Our Engagements"
 ---
 
 {% include header_2.html %}
@@ -10,7 +10,7 @@ title: "Our Projects"
 		<div class="row justify-content-center">
 			<div class="col-lg-10 text-center">
 				<span class="h5 text-color text-uppercase">
-					our projects
+					our engagements
 				</span>
 				<h3 class="mb-5 mt-2">That we are Proud Of</h3>
 			</div>
@@ -20,9 +20,9 @@ title: "Our Projects"
       	<div class="col-12 text-center">
 	        <div class="btn-group btn-group-toggle " data-toggle="buttons">
 	          <label class="btn border-0 active">
-	            <input type="radio" name="shuffle-filter" value="all" checked="checked" />All Projects
+	            <input type="radio" name="shuffle-filter" value="all" checked="checked" />All Engagements
 	          </label>
-						{% assign categories = site.projects| map: 'categories' | join: ',' | split: ',' | uniq %}
+						{% assign categories = site.engagements| map: 'categories' | join: ',' | split: ',' | uniq %}
 						{% for category in categories %}
 						<label class="btn border-0">
 							<input type="radio" name="shuffle-filter" value="{{ category | downcase | slugify }}" />{{ category }}

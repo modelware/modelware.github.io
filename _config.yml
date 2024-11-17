@@ -60,7 +60,7 @@ sass:
 
 #collections
 collections:
-  projects:
+  engagements:
     output: true
 
 ########################################################

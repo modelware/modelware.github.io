@@ -1,9 +1,9 @@
 ---
 layout: portfolio
-title: "OML Alexandria"
-categories: ["R&D"]
-thumbnail: "/assets/images/opencaesar2.png"
-description: "OML is an Ontological Modeling Language that is developed by the Jet Propulsion Laboratory"
+title: "BAE Systems"
+categories: ["Training"]
+thumbnail: "/assets/images/bae.png"
+description: "BAE Systems is a British multinational arms, security, and aerospace company"
 ---
 <div class="col-lg-8 text-center">
 <h3 class="mb-3 mt">{{page.title}}</h3>
@@ -12,7 +12,7 @@ description: "OML is an Ontological Modeling Language that is developed by the J
 	<div class="carousel slide" id="single-slide">
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img src="https://www.opencaesar.io/assets/img/oml.png" alt="" class="img-fluid">
+				<img src="https://img.oemoffhighway.com/files/base/acbm/ooh/image/2013/04/bae-systems-logo-jpg-940x274-c_10915640.png?auto=format%2Ccompress&fit=max&q=70&w=1200" alt="" class="img-fluid">
 			</div>
 			<div class="carousel-item">
 				<img src="/assets/images/blog/blog-single.jpg" alt="" class="img-fluid">
@@ -35,7 +35,7 @@ description: "OML is an Ontological Modeling Language that is developed by the J
 <p>{{page.description}}</p>
 
 <div class="col-lg-12 text-left mt-5">
-	<p>We developed OML Alexandria, a new VS Code extension providing support for the OML language via a Language Server Protocol implementation developed using the Typescript-based Langium framework. OML Alexandia is much lighter weight than OML Luxor, the VS Code extension provided by the openCAESAR project and developed using the Java-based Xtext framework.</p>
+	<p>We delivered a 2-day workshop on the openCAESAR engagement to BAE Systems. We presented the history of the engagement and how it is adopted at JPL. We also overviewed the different components, features, and workflows of the platform.</p>
 </div>
 
 <div class="post-single-share py-4 mt-4 mb+5">
