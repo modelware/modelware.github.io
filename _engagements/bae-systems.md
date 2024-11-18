@@ -2,7 +2,7 @@
 layout: portfolio
 title: "BAE Systems"
 categories: ["Training"]
-thumbnail: "/assets/images/bae.png"
+thumbnail: "/assets/images/engagements/bae.png"
 description: "BAE Systems is a British multinational arms, security, and aerospace company"
 ---
 <div class="col-lg-8 text-center">

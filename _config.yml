@@ -62,6 +62,8 @@ sass:
 collections:
   engagements:
     output: true
+  programs:
+    output: true
 
 ########################################################
 # Site configuration for the Jekyll 3 Pagination Gem

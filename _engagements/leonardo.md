@@ -35,7 +35,7 @@ description: "Leonardo is an Italian multinational company specialising in aeros
 <p>{{page.description}}</p>
 
 <div class="col-lg-12 text-left mt-5">
-	<p>We advised a UK-based Leonardo team in in developing their Integrated Knowledge Centric Engineering approach to systems engineering.</p>
+	<p>We advised a UK-based Leonardo team in developing their Integrated Knowledge Centric Engineering approach to systems engineering.</p>
 </div>
 
 <div class="post-single-share py-4 mt-4 mb+5">

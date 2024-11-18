@@ -31,6 +31,8 @@ main:
 #        url: /engagements.html
 #      - name: 404
 #        url: /404
+  - name: Academy
+    url: /academy.html
   - name: Contact
     url: /contact.html
 
@@ -44,6 +46,8 @@ footer:
     url: /blog-1.html
   - name: Services
     url: /services.html
+  - name: Academy
+    url: /academy.html
   - name: Contact
     url: /contact.html
 
