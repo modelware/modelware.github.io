@@ -174,7 +174,6 @@
   .navbar-collapse {
     text-align: center;
     padding: 20px;
-    background: $secondary-color;
   }
 
   #main-nav .navbar-nav .nav-link {
@@ -186,7 +185,6 @@
   .navbar-collapse {
     text-align: center;
     padding: 20px;
-    background: $secondary-color;
   }
 
   #main-nav .navbar-nav .nav-link {
@@ -198,11 +196,16 @@
   }
 }
 
+@include desktop {
+  .navbar-collapse {
+    background: $secondary-color;
+  }
+}
+
 @include tablet {
   .navbar-collapse {
     text-align: center;
     padding: 20px;
-    background: $secondary-color;
   }
 
   #main-nav .navbar-nav .nav-link {
