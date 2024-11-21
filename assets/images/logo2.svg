@@ -1,5 +1,5 @@
 <svg width="900px" height="100px" viewBox="0 0 900 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-<text x="50%" y ="50%" dominant-baseline="middle" text-anchor="middle" font-size="90" fill="#f57479" style="font-family:'Arial'">
+<text x="50%" y ="50%" dominant-baseline="auto" text-anchor="middle" font-size="90" fill="#f57479" style="font-family:'Arial'">
     <tspan>modelware</tspan>
 </text>
 
