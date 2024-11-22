@@ -33,9 +33,9 @@ social:
     icon: "ti-linkedin"
     link: "https://www.linkedin.com/company/modelware-solutions"
 
-#  - name: facebook
-#    icon: "ti-facebook"
-#    link: "#"
+  - name: facebook
+    icon: "ti-facebook"
+    link: "https://www.facebook.com/profile.php?id=61569117333933"
 
 #  - name: twitter
 #    icon: "ti-twitter-alt"
