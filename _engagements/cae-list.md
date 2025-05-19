@@ -2,7 +2,7 @@
 layout: portfolio
 title: "CEA LIST"
 categories: ["R&D"]
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/LOGO_CEA_ORIGINAL.svg/1200px-LOGO_CEA_ORIGINAL.svg.png"
+thumbnail: "https://kalisteo.cea.fr/wp-content/uploads/2020/11/cea-list-logo.jpg"
 description: "CEA-List is a research institute of the French Alternative Energies and Atomic Energy Commission."
 ---
 <div class="col-lg-8 text-center">
