@@ -33,6 +33,8 @@ main:
 #        url: /404
   - name: Academy
     url: /academy.html
+  - name: R&D
+    url: /r_and_d.html
   - name: Contact
     url: /contact.html
 
@@ -48,6 +50,8 @@ footer:
     url: /services.html
   - name: Academy
     url: /academy.html
+  - name: R&D
+    url: /r_and_d.html
   - name: Contact
     url: /contact.html
 

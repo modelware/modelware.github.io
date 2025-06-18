@@ -1,8 +1,8 @@
 ---
 layout: default
-header_image: "/assets/images/bg/bg-portfolio.jpg"
-title: "Modelware Academy"
-description: "Center of Excellence in Software and Systems Engineering"
+header_image: "/assets/images/bg/about-bg-3.jpg"
+title: "Research & Development"
+description: "Model Based Systems Engineering R&D Portfolio"
 ---
 
 {% include page_header.html %}
@@ -13,50 +13,60 @@ description: "Center of Excellence in Software and Systems Engineering"
 		<div class="row justify-content-center">
 			<div class="col-lg-8 text-center">
 				<span class="h5 text-color text-uppercase">
-					Programs
+					Portfolio
 				</span>
-				<h3 class="mb-5 mt-2">Register for our next offering</h3>
+				<h3 class="mb-5 mt-2">Browse our R&D Portfolio</h3>
 			</div>
 		</div>
 
 		<div class="row justify-content-center">
 			<div class="d-flex flex-wrap align-items-center justify-content-between mb-5">
 				<div class="btn-group btn-group-toggle " data-toggle="buttons">
-		  
 				  <label class="btn border-0 active">
-					<input type="radio" name="shuffle-filter" value="all" checked="checked" />All Programs
+					<input type="radio" name="shuffle-filter" value="all" checked="checked" />All
 				  </label>
-				  {% assign categories = site.programs| map: 'categories' | join: ',' | split: ',' | uniq %}
-				  {% for category in categories %}
 				  <label class="btn border-0">
-					<input type="radio" name="shuffle-filter"
-					  value="{{ category | downcase | slugify }}" />{{ category }}
+					<input type="radio" name="shuffle-filter" value="research" />Research
 				  </label>
-				  {% endfor %}
+				  <label class="btn border-0">
+					<input type="radio" name="shuffle-filter" value="development" />Development
+				  </label>
 				</div>
 			</div>
 		</div>
 
 		<div class="row shuffle-wrapper portfolio-gallery">
-			{% for portfolio in site.programs %}
-			<div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[{% for category in portfolio.categories %} &quot;{{ category | downcase | slugify }}&quot; {% unless forloop.last %}, {% endunless %} {% endfor %}]">
+			<div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[&quot;development&quot;]">
 			  <div class="position-relative inner-box">
 				<div class="image position-relative ">
-				  <img src="{{portfolio.thumbnail | relative_url }}" alt="portfolio-image" class="img-fluid w-100 d-block" />
+				  <img src="/assets/images/opencaesar.png" alt="portfolio-image" class="img-fluid w-100 d-block" />
 				  <div class="overlay-box">
 					<div class="overlay-inner">
-					  <a class="overlay-content text-center" href="{{portfolio.url | relative_url }}">
-						<h5 class="mb-0 text-white">{{portfolio.title}}</h5>
-						<p>{{portfolio.location}}</p>
+					  <a class="overlay-content text-center" href="https://www.opencaesar.io/">
+						<h5 class="mb-0 text-white">openCAESAR</h5>
+						<p>MBSE Open Source Project</p>
 					  </a>
 					</div>
 				  </div>
 				</div>
 			  </div>
 			</div>
-			{% endfor %}
-		</div>
-	
+			<div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[&quot;research&quot;]">
+			  <div class="position-relative inner-box">
+				<div class="image position-relative ">
+				  <img src="/assets/images/raise.png" alt="portfolio-image" class="img-fluid w-100 d-block" />
+				  <div class="overlay-box">
+					<div class="overlay-inner">
+					  <a class="overlay-content text-center" href="https://www.opencaesar.io/raise">
+						<h5 class="mb-0 text-white">RAISE</h5>
+						<p>MBSE R&D Laboratory</p>
+					  </a>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		</div>	
 	</div>
 </section>
 <!-- Service End -->

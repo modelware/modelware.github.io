@@ -1,8 +1,8 @@
 ######################### Hero Area ##############################
 hero_area:
   background_image : "/assets/images/bg/banner-2.png"
-  subtitle: "We are experts in"
-  title : "Model-Based Systems Engineering Solutions"
+  subtitle: "Center of Excellence in"
+  title : "Model-Based Systems Engineering"
   content : "We help organizations make their systems engineering practices more rigorous, agile, and automated"
   image : "/assets/images/banner/banner-img-5.png"
   button:
