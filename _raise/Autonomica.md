@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: raise
 title: "Autonomica"
 categories: ["Done"]
 feature: "/assets/images/projects/autonomica.png"

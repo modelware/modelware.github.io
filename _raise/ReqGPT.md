@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: raise
 title: "ReqGPT"
 categories: ["Done"]
 feature: "/assets/images/projects/reqgpt.png"

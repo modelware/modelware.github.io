@@ -1,0 +1,93 @@
+---
+layout: default_2
+---
+
+{% include header_2.html %}
+
+<section class="portfolio-single">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-8">
+				<h1 class="mb-3 mt text-center">{{page.title}}</h1>
+
+				<div class="col-lg-12 mt text-center">
+					<div class="carousel-item active">
+						<img src="{{page.feature}}" alt="" class="img-fluid">
+					</div>
+				</div>
+				<p></p>
+				{{page.content}}
+
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section post-single-share py-4">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<h3 class="text-white text-center">Share Project On</h3>
+				<ul class="list-inline socials-links">
+					<li class="list-inline-item">
+						<a href="#" class="active"><i class="ti-linkedin"></i></a>
+					</li>
+					<li class="list-inline-item">
+						<a href="#"><i class="ti-facebook"></i></a>
+					</li>
+					<li class="list-inline-item">
+						<a href="#"><i class="ti-twitter"></i></a>
+					</li>
+					<li class="list-inline-item">
+						<a href="#"><i class="ti-vimeo"></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section related-engagement py-4">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h3 class="mb-5">Other Projects</h3>
+			</div>
+
+			<!-- Hidden list of all raise items -->
+			<div id="all-raise-items" style="display: none;">
+				{% for portfolio in site.raise %}
+				<div class="col-lg-4 raise-item">
+					<div class="portfolio-block text-center border-0">
+						<img src="{{ portfolio.feature | relative_url }}" class="img-fluid" alt="{{ portfolio.title }}" />
+						<a class="card-img-overlay" href="{{ portfolio.url }}">
+							<h5 class="card-title text-white mb-0">{{ portfolio.title }}</h5>
+							<p class="card-text text-white text-uppercase text-sm">{{ portfolio.category }}</p>
+						</a>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+
+			<!-- Output container for 3 random items -->
+			<div id="random-raise-output" class="row"></div>
+		</div>
+	</div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const allItems = Array.from(document.querySelectorAll("#all-raise-items .raise-item"));
+    const outputContainer = document.getElementById("random-raise-output");
+
+    // Shuffle function
+    function getRandomItems(arr, count) {
+      const shuffled = arr.sort(() => 0.5 - Math.random());
+      return shuffled.slice(0, count);
+    }
+
+    // Pick 3 random items
+    const selectedItems = getRandomItems(allItems, 3);
+    selectedItems.forEach(item => outputContainer.appendChild(item));
+  });
+</script>

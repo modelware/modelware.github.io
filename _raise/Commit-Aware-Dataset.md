@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: raise
 title: "Commit-Aware Dataset"
 categories: ["Done"]
 feature: "/assets/images/projects/commit-aware-dataset.png"

@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: raise
 title: "Excel to Dataset"
 categories: ["Done"]
 feature: "/assets/images/projects/excel-to-dataset.png"

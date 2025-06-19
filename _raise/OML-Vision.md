@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: raise
 title: "OML Vision"
 categories: ["Active"]
 feature: "/assets/images/projects/oml-vision.png"

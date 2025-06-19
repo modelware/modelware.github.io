@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: raise
 title: "Document Analyzer"
 categories: ["Done"]
 feature: "/assets/images/projects/document-analyzer.png"

@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: raise
 title: "Electronic Data Sheets"
 categories: ["Done"]
 feature: "/assets/images/projects/electronic-data-sheets.png"

@@ -32,7 +32,7 @@ description: "Rigorous, Agile, and Intelligent Systems Engineering Laboratory"
 				  <label class="btn border-0 active">
 					<input type="radio" name="shuffle-filter" value="all" checked="checked" />All
 				  </label>
-				  {% assign categories = site.projects| map: 'categories' | join: ',' | split: ',' | uniq %}
+				  {% assign categories = site.raise| map: 'categories' | join: ',' | split: ',' | uniq %}
 				  {% for category in categories %}
 				  <label class="btn border-0">
 					<input type="radio" name="shuffle-filter"
@@ -44,7 +44,7 @@ description: "Rigorous, Agile, and Intelligent Systems Engineering Laboratory"
 		</div>
 
 		<div class="row shuffle-wrapper portfolio-gallery">
-			{% for portfolio in site.projects %}
+			{% for portfolio in site.raise %}
 			<div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[{% for category in portfolio.categories %} &quot;{{ category | downcase | slugify }}&quot; {% unless forloop.last %}, {% endunless %} {% endfor %}]">
 			  <div class="position-relative inner-box">
 				<div class="image position-relative ">

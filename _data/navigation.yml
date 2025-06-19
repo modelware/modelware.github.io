@@ -2,39 +2,16 @@
 main:
   - name: Home
     url: /index.html
-#    submenu:
-#      - name: Home
-#        url: /index.html
-#      - name: Home 2
-#        url: /index-2.html
-#      - name: Home 3
-#        url: /index-3.html
-#      - name: Home 4
-#        url: /index-4.html
-  - name: About
-    url: /about.html
-#    submenu:
-#      - name: About
-#        url: /about.html
-#      - name: About Me
-#        url: /about-me.html
-  - name: Blog
-    url: /blog-1.html
   - name: Services
     url: /services.html
-#    submenu:
-#      - name: Services
-#        url: /services.html
-#      - name: Portfolio One
-#        url: /portfolio-1.html
-#      - name: Portfolio Two
-#        url: /engagements.html
-#      - name: 404
-#        url: /404
+  - name: Projects
+    url: /projects.html
   - name: Academy
     url: /academy.html
-  - name: R&D
-    url: /r_and_d.html
+  - name: Blog
+    url: /blog-1.html
+  - name: About
+    url: /about.html
   - name: Contact
     url: /contact.html
 
@@ -42,16 +19,16 @@ main:
 footer:
   - name: Home
     url: /index.html
-  - name: About
-    url: /about.html
-  - name: Blog
-    url: /blog-1.html
   - name: Services
     url: /services.html
+  - name: Projects
+    url: /projects.html
   - name: Academy
     url: /academy.html
-  - name: R&D
-    url: /r_and_d.html
+  - name: Blog
+    url: /blog-1.html
+  - name: About
+    url: /about.html
   - name: Contact
     url: /contact.html
 

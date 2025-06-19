@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: raise
 title: "Firesat Functions"
 categories: ["Done"]
 feature: "/assets/images/projects/firesat-functions.png"

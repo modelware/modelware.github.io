@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: raise
 title: "OML CoPilot"
 categories: ["Active"]
 feature: "/assets/images/projects/oml-copilot.png"

@@ -63,7 +63,7 @@ collections:
     output: true
   programs:
     output: true
-  projects:
+  raise:
     output: true
 
 ########################################################

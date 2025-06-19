@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: raise
 title: "Gemini"
 categories: ["Done"]
 feature: "/assets/images/projects/gemini.png"

@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: raise
 title: "Deep Learning for COVID-19"
 categories: ["Done"]
 feature: "/assets/images/projects/deep-learning-for-covid-19.png"

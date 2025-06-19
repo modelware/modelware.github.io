@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: raise
 title: "Papyrus Adapter"
 categories: ["Done"]
 feature: "/assets/images/projects/papyrus-adapter.png"

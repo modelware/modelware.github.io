@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: raise
 title: "Fuseki Visualizer"
 categories: ["Done"]
 feature: "/assets/images/projects/fuseki-visualizer.png"

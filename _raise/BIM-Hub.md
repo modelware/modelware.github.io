@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: raise
 title: "Bim Hub"
 categories: ["Done"]
 feature: "/assets/images/projects/bim-hub.png"

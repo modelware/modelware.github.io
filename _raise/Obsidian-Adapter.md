@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: raise
 title: "Obsidian Adapter"
 categories: ["Active"]
 feature: "/assets/images/projects/obsidian-adapter.png"

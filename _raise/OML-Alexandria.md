@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: raise
 title: "OML Alexandria"
 categories: ["Done"]
 feature: "/assets/images/projects/oml-alexandria.png"

@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: raise
 title: "OML Compare & Merge"
 categories: ["Active"]
 feature: "/assets/images/projects/oml-compare-merge.png"

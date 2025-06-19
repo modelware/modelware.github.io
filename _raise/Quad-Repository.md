@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: raise
 title: "Quad Repository"
 categories: ["Done"]
 feature: "/assets/images/projects/quad-repository.png"
