@@ -63,6 +63,8 @@ collections:
     output: true
   programs:
     output: true
+  projects:
+    output: true
 
 ########################################################
 # Site configuration for the Jekyll 3 Pagination Gem
