@@ -2,7 +2,7 @@
 layout: raise
 title: "Gemini"
 categories: ["Done"]
-feature: "/assets/images/projects/gemini.png"
+feature: "/assets/images/raise/gemini.png"
 ---
 
 #### Description

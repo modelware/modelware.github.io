@@ -2,7 +2,7 @@
 layout: raise
 title: "Obsolescence Analysis"
 categories: ["Done"]
-feature: "/assets/images/projects/obsolescence-analysis.png"
+feature: "/assets/images/raise/obsolescence-analysis.png"
 ---
 
 #### Description

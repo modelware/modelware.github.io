@@ -2,7 +2,7 @@
 layout: raise
 title: "Autonomica"
 categories: ["Done"]
-feature: "/assets/images/projects/autonomica.png"
+feature: "/assets/images/raise/autonomica.png"
 ---
 
 #### Description

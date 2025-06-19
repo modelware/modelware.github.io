@@ -2,7 +2,7 @@
 layout: raise
 title: "OWL to OML Adapter"
 categories: ["Active"]
-feature: "/assets/images/projects/owl-to-oml-adapter.png"
+feature: "/assets/images/raise/owl-to-oml-adapter.png"
 ---
 
 #### Description

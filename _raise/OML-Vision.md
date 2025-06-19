@@ -2,7 +2,7 @@
 layout: raise
 title: "OML Vision"
 categories: ["Active"]
-feature: "/assets/images/projects/oml-vision.png"
+feature: "/assets/images/raise/oml-vision.png"
 ---
 
 #### Description
@@ -22,7 +22,7 @@ Ultimately, the project seeks to reimagine how system modelers interact with OML
 
 #### Results
 
-We released an alpha version of the VS Code extension of OML Vision. This version loads an OML dataset to Fuseki and allows visualize and editing it using custom declaratively-defined UI viewpoints. We have configured the Fuseki triple to have an incremental rule-based reasoner. This means every time the description models are changed in Fuseki, the reasoner runs to generate/update entailments and make them available to queries made by the UI viewpoints during the authoring session. This simplies the queries and enables the design of interesting dynamic viewpoints. We also use the newly developed [OWL-to-OML](/projects/2024-03-29-OWL-to-OML) interface to convert the changed description models back to OML format.
+We released an alpha version of the VS Code extension of OML Vision. This version loads an OML dataset to Fuseki and allows visualize and editing it using custom declaratively-defined UI viewpoints. We have configured the Fuseki triple to have an incremental rule-based reasoner. This means every time the description models are changed in Fuseki, the reasoner runs to generate/update entailments and make them available to queries made by the UI viewpoints during the authoring session. This simplies the queries and enables the design of interesting dynamic viewpoints. We also use the newly developed [OWL to OML Adapter](./OWL-to-OML-Adapter.html) to convert the changed description models back to OML format.
 
 {% include youtube.html id="chnKBsok-rY" %}
 

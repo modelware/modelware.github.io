@@ -2,7 +2,7 @@
 layout: default
 header_image: "/assets/images/bg/bg-portfolio.jpg"
 title: "Modelware Academy"
-description: "Center of Excellence in Software and Systems Engineering"
+description: "We are a leader in Model Based Systems Engineering Training"
 ---
 
 {% include page_header.html %}
@@ -13,9 +13,9 @@ description: "Center of Excellence in Software and Systems Engineering"
 		<div class="row justify-content-center">
 			<div class="col-lg-8 text-center">
 				<span class="h5 text-color text-uppercase">
-					Programs
+					Courses
 				</span>
-				<h3 class="mb-5 mt-2">Register for our next offering</h3>
+				<h3 class="mb-5 mt-2">Register for our next offerings</h3>
 			</div>
 		</div>
 
@@ -24,9 +24,9 @@ description: "Center of Excellence in Software and Systems Engineering"
 				<div class="btn-group btn-group-toggle " data-toggle="buttons">
 		  
 				  <label class="btn border-0 active">
-					<input type="radio" name="shuffle-filter" value="all" checked="checked" />All Programs
+					<input type="radio" name="shuffle-filter" value="all" checked="checked" />All
 				  </label>
-				  {% assign categories = site.programs| map: 'categories' | join: ',' | split: ',' | uniq %}
+				  {% assign categories = site.courses| map: 'categories' | join: ',' | split: ',' | uniq %}
 				  {% for category in categories %}
 				  <label class="btn border-0">
 					<input type="radio" name="shuffle-filter"
@@ -38,16 +38,15 @@ description: "Center of Excellence in Software and Systems Engineering"
 		</div>
 
 		<div class="row shuffle-wrapper portfolio-gallery">
-			{% for portfolio in site.programs %}
+			{% for portfolio in site.courses %}
 			<div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[{% for category in portfolio.categories %} &quot;{{ category | downcase | slugify }}&quot; {% unless forloop.last %}, {% endunless %} {% endfor %}]">
 			  <div class="position-relative inner-box">
 				<div class="image position-relative ">
-				  <img src="{{portfolio.thumbnail | relative_url }}" alt="portfolio-image" class="img-fluid w-100 d-block" />
+				  <img src="{{portfolio.feature | relative_url }}" alt="portfolio-image" class="img-fluid w-100 d-block" />
 				  <div class="overlay-box">
 					<div class="overlay-inner">
 					  <a class="overlay-content text-center" href="{{portfolio.url | relative_url }}">
 						<h5 class="mb-0 text-white">{{portfolio.title}}</h5>
-						<p>{{portfolio.location}}</p>
 					  </a>
 					</div>
 				  </div>
@@ -67,7 +66,7 @@ description: "Center of Excellence in Software and Systems Engineering"
 	<div class="container">
 		<div class="row align-items-center">
 			<div class="col-lg-9 mb-5 mb-lg-0">
-				<h2 class="text-white mb-0">Modelware Academy provides smart training programs</h2>
+				<h2 class="text-white mb-0">Let us train your team in MBSE Skills</h2>
 			</div>
 			<div class="col-lg-3">
 				<a href="contact.html" class="btn btn-primary">contact us</a>

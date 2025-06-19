@@ -2,7 +2,7 @@
 layout: raise
 title: "Papyrus Adapter"
 categories: ["Done"]
-feature: "/assets/images/projects/papyrus-adapter.png"
+feature: "/assets/images/raise/papyrus-adapter.png"
 ---
 
 #### Description

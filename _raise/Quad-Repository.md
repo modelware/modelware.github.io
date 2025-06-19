@@ -2,7 +2,7 @@
 layout: raise
 title: "Quad Repository"
 categories: ["Done"]
-feature: "/assets/images/projects/quad-repository.png"
+feature: "/assets/images/raise/quad-repository.png"
 ---
 
 #### Description

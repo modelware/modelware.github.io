@@ -2,7 +2,7 @@
 layout: raise
 title: "Fuseki Visualizer"
 categories: ["Done"]
-feature: "/assets/images/projects/fuseki-visualizer.png"
+feature: "/assets/images/raise/fuseki-visualizer.png"
 ---
 
 #### Description

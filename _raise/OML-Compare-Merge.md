@@ -2,7 +2,7 @@
 layout: raise
 title: "OML Compare & Merge"
 categories: ["Active"]
-feature: "/assets/images/projects/oml-compare-merge.png"
+feature: "/assets/images/raise/oml-compare-merge.png"
 ---
 
 #### Description

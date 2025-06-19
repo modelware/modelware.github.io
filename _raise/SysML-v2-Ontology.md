@@ -2,7 +2,7 @@
 layout: raise
 title: "SysML v2 Ontology"
 categories: ["Active"]
-feature: "/assets/images/projects/sysml-v2-ontology.png"
+feature: "/assets/images/raise/sysml-v2-ontology.png"
 ---
 
 #### Summary

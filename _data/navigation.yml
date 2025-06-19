@@ -4,8 +4,8 @@ main:
     url: /index.html
   - name: Services
     url: /services.html
-  - name: Projects
-    url: /projects.html
+  - name: Laboratory
+    url: /laboratory.html
   - name: Academy
     url: /academy.html
   - name: Blog
@@ -21,8 +21,8 @@ footer:
     url: /index.html
   - name: Services
     url: /services.html
-  - name: Projects
-    url: /projects.html
+  - name: Laboratory
+    url: /laboratory.html
   - name: Academy
     url: /academy.html
   - name: Blog

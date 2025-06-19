@@ -9,7 +9,7 @@ description: >- # this means to ignore newlines
 logo: "/assets/images/logo.png"
 logo_icon: "/assets/images/logo-b.png"
 # contact form action
-contact_form_action: "https://formspree.io/f/mbjvjrlj" # works with https://fomrspree.io
+contact_form_action: "https://formspree.io/f/xkgbvgrq" # works with https://fomrspree.io
 mailchimp_list: "https://themeix.us16.list-manage.com/subscribe/post?u=307862c135e4548eecf86f389&amp;id=342411fb35"
 footer_content: "Modelware is a technology leader in the field of model based systems engineering."
 copyright: "Modelware &copy; 2025 All Right Reserved"
@@ -20,7 +20,7 @@ google_map_api: "https://maps.googleapis.com/maps/api/js?key=AIzaSyDnh74UN6BKgq9
 ############### Call to Action ###############
 cta:
   enable: true
-  title: "Modelware provides smart solutions for your business"
+  title: "Modelware is your reliable MBSE technology partner"
   bg_image: "/assets/images/bg/cta-bg-2.png"
   button:
     label: "Contact Us"
@@ -61,7 +61,7 @@ sass:
 collections:
   engagements:
     output: true
-  programs:
+  courses:
     output: true
   raise:
     output: true

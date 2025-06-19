@@ -2,7 +2,7 @@
 layout: raise
 title: "Query Bot"
 categories: ["Done"]
-feature: "/assets/images/projects/query-bot.png"
+feature: "/assets/images/raise/query-bot.png"
 ---
 
 #### Description

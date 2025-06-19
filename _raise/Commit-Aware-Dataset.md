@@ -2,7 +2,7 @@
 layout: raise
 title: "Commit-Aware Dataset"
 categories: ["Done"]
-feature: "/assets/images/projects/commit-aware-dataset.png"
+feature: "/assets/images/raise/commit-aware-dataset.png"
 ---
 
 #### Description

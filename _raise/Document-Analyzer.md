@@ -2,7 +2,7 @@
 layout: raise
 title: "Document Analyzer"
 categories: ["Done"]
-feature: "/assets/images/projects/document-analyzer.png"
+feature: "/assets/images/raise/document-analyzer.png"
 ---
 
 #### Description
@@ -22,7 +22,7 @@ This project intends to develop an approach to use an LLM to extract information
 
 We are proud to report that this project has won an award from JPL.
 
-![Document Analyzer Award](/assets/images/projects/document-analyzer-award.png)
+![Document Analyzer Award](/assets/images/raise/document-analyzer-award.png)
 
 Click on the Slideshow button below to see the result in a slide deck:
 

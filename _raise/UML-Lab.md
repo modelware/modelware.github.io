@@ -2,7 +2,7 @@
 layout: raise
 title: "UML Lab"
 categories: ["Done"]
-feature: "/assets/images/projects/uml-lab.png"
+feature: "/assets/images/raise/uml-lab.png"
 ---
 
 #### Description

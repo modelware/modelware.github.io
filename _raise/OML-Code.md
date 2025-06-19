@@ -2,7 +2,7 @@
 layout: raise
 title: "OML Code"
 categories: ["Active"]
-feature: "/assets/images/projects/oml-code.png"
+feature: "/assets/images/raise/oml-code.png"
 ---
 
 #### Description
