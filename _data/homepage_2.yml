@@ -130,12 +130,12 @@ clients:
     - "/assets/images/clients/client-3.png"
     - "/assets/images/clients/client-4.png"
     - "/assets/images/clients/client-5.png"
-    - "/assets/images/clients/client-1.png"
-    - "/assets/images/clients/client-2.png"
-    - "/assets/images/clients/client-3.png"
-    - "/assets/images/clients/client-4.png"
-    - "/assets/images/clients/client-5.png"
-    
+    - "/assets/images/clients/client-6.png"
+    - "/assets/images/clients/client-7.png"
+    - "/assets/images/clients/client-8.png"
+    - "/assets/images/clients/client-9.png"
+    - "/assets/images/clients/client-10.png"
+    - "/assets/images/clients/client-11.png"
 
 ###################### Team ######################
 team:
