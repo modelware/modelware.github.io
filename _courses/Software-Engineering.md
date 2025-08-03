@@ -11,6 +11,4 @@ This course provides both theory and hands-on experience with the development of
 
 <b>Lecturer</b>: <a href="/maged-elaasar.html">Dr. Maged Elaasar</a>
 
-<b>Delivery</b>: Online
-
 <b>Duration</b>: 10 Weeks
