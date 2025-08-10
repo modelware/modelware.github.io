@@ -1,6 +1,13 @@
-_site
-.sass-cache
+# Bundler & Ruby build artifacts
+.bundle/
+vendor/
+.ruby-version
+
+# Jekyll build outputs & caches
+_site/
+.jekyll-cache/
 .jekyll-metadata
-*.DS_Store
-Gemfile.lock
-.jekyll-cache
+
+# OS/editor files
+.DS_Store
+*.swp
