@@ -1,9 +1,9 @@
 ######################### Hero Area ##############################
 hero_area:
   background_image : "/assets/images/bg/banner-2.png"
-  subtitle: "We are experts in"
-  title : "Model-Based Systems Engineering"
-  content : "We help organizations make their systems engineering practices more rigorous, agile, and automated"
+  subtitle: "Center of Excellence in"
+  title : "Model Based Systems Engineering"
+  content : "We help organizations make their systems engineering practices more rigorous, agile, and intelligent"
   image : "/assets/images/banner/banner-img-5.png"
   button:
     enable : true
@@ -12,17 +12,17 @@ hero_area:
 
 ########################### Service ##############################
 services:
-- title : "R&D"
-  icon : "ti-ruler-pencil"
-  content : "We can take on MBSE related problems and develop effective innovative solutions."
+- title : "Training"
+  icon : "ti-blackboard"
+  content : "We deliver consultative workshops to initiate an MBSE team or evolve it further."
 
 - title : "Consulting"
   icon : "ti-user"
-  content : "We can study organization's challenges and advise on the best MBSE strategy."
+  content : "We study organization's challenges and advise on the best MBSE strategy."
 
-- title : "Training"
-  icon : "ti-blackboard"
-  content : "We can deliver custom training to initiate an MBSE team or take it to the next level."
+- title : "R&D"
+  icon : "ti-ruler-pencil"
+  content : "We take on MBSE related problems and develop effective innovative solutions."
 
 ########################### Testimonial ###########################
 testimonial:
