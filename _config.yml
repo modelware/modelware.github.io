@@ -1,15 +1,15 @@
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.modelware.io" # the base hostname & protocol for your site
-title: "Modelware -  Model Based Systems Engineering Solutions"
-email: "modelwaresolutions@gmail.com"
+title: "Modelware - Enterprise MBSE Platform"
+email: "info@modelware.io"
 address: "Irvine, CA 92620, USA"
 author: melaasar
 description: >- # this means to ignore newlines
-  Modelware - Model Based Systems Engineering Solutions
-logo: "/assets/images/logo.png"
+  Modelware - Enterprise MBSE Platform for Next-Generation Systems Engineering
+logo: "/assets/images/logo.svg"
 logo_icon: "/assets/images/logo-b.png"
 # contact form action
-contact_form_action: "https://formspree.io/f/xkgbvgrq" # works with https://fomrspree.io
+contact_form_action: "https://formspree.io/f/xaqbdewz" # works with https://fomrspree.io
 mailchimp_list: "https://themeix.us16.list-manage.com/subscribe/post?u=307862c135e4548eecf86f389&amp;id=342411fb35"
 footer_content: "Modelware is a technology leader in the field of model based systems engineering."
 copyright: "Modelware &copy; 2025 All Rights Reserved"
@@ -64,6 +64,8 @@ collections:
   courses:
     output: true
   raise:
+    output: true
+  news:
     output: true
 
 ########################################################

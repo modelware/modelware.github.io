@@ -124,6 +124,65 @@
         $(this).addClass('animate-in');
       });
     });
+
+    // Hero rotator
+    $('.hero-rotator').each(function () {
+      var $rotator = $(this);
+      var sources = $rotator.data('rotator');
+      var urls = [];
+      if (sources) {
+        urls = sources.split(',').map(function (item) {
+          return item.trim();
+        });
+      }
+
+      if (urls.length === 0) {
+        return;
+      }
+
+      var index = 0;
+      var targetLink = $rotator.data('link');
+      var intervalId = null;
+      $rotator.css('background-image', 'url("' + urls[0] + '")');
+
+      var advance = function (dir) {
+        var delta = dir === 'prev' ? -1 : 1;
+        index = (index + delta + urls.length) % urls.length;
+        $rotator.css('background-image', 'url("' + urls[index] + '")');
+      };
+
+      var start = function () {
+        intervalId = setInterval(function () {
+          advance('next');
+        }, 4000);
+      };
+
+      start();
+
+      $rotator.on('click', '.hero-rotator-prev', function (e) {
+        e.stopPropagation();
+        advance('prev');
+        if (intervalId) {
+          clearInterval(intervalId);
+          start();
+        }
+      });
+
+      $rotator.on('click', '.hero-rotator-next', function (e) {
+        e.stopPropagation();
+        advance('next');
+        if (intervalId) {
+          clearInterval(intervalId);
+          start();
+        }
+      });
+
+      if (targetLink) {
+        $rotator.on('click', function () {
+          window.location.href = targetLink;
+        });
+      }
+    });
   });
 
 

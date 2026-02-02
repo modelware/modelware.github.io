@@ -35,12 +35,24 @@
 
 .banner-2 {
   overflow: hidden;
-  padding-top: 50px;
+  padding-top: 120px;
+  padding-bottom: 80px;
+  @include desktop-lg {
+    padding-top: 100px;
+    padding-bottom: 70px;
+  }
+
+  .row {
+    align-items: stretch;
+  }
 
   .banner-content-2 {
-    padding: 180px 0px 120px 0px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 40px 0;
     @include desktop-lg {
-      padding: 150px 0 100px 0;
+      padding: 32px 0;
     }
 
     h2 {
@@ -50,6 +62,101 @@
         font-size: 50px;
         line-height: 60px;
       }
+    }
+
+    .hero-title {
+      font-size: 50px;
+      line-height: 60px;
+
+      @include desktop-lg {
+        font-size: 44px;
+        line-height: 54px;
+      }
+    }
+
+    .hero-cta {
+      margin-top: auto;
+    }
+  }
+
+  .hero-media {
+    display: flex;
+    align-items: stretch;
+    padding: 40px 0;
+    @include desktop-lg {
+      padding: 32px 0;
+    }
+  }
+
+  .hero-media-card {
+    width: 100%;
+    height: auto;
+    min-height: 420px;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .hero-rotator {
+    position: relative;
+    flex: 1 1 auto;
+    width: 100%;
+    height: auto;
+    min-height: 420px;
+    overflow: hidden;
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .hero-rotator-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 0;
+    background: rgba(255, 255, 255, 0.9);
+    color: #1f1f40;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 2;
+
+    i {
+      font-size: 18px;
+    }
+  }
+
+  .hero-rotator-prev {
+    left: 16px;
+  }
+
+  .hero-rotator-next {
+    right: 16px;
+  }
+
+  .hero-rotator:hover .hero-rotator-btn {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .hero-rotator-btn:hover {
+    transform: translateY(-50%) scale(1.04);
+  }
+
+  @media (hover: none) {
+    .hero-rotator-btn {
+      opacity: 1;
+      pointer-events: auto;
     }
   }
 
@@ -62,6 +169,20 @@
   .btn:hover {
     background: $white;
     color: $black !important;
+  }
+
+  .btn-primary {
+    background: $primary-color;
+    border-color: $primary-color;
+    color: $white !important;
+  }
+
+  .btn-primary:hover,
+  .btn-primary:active,
+  .btn-primary:focus {
+    background: $secondary-color !important;
+    border-color: $secondary-color !important;
+    color: $white !important;
   }
 }
 

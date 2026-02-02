@@ -1,5 +1,26 @@
 #main-nav {
   height: 100px;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    img {
+      display: block;
+      height: 64px;
+      max-height: none;
+      width: auto;
+    }
+  }
+
+  .navbar-nav {
+    align-items: center;
+  }
 
   .navbar-nav .nav-link {
     text-transform: uppercase;
@@ -199,6 +220,21 @@
 @include desktop {
   .navbar-collapse {
     background: $secondary-color;
+  }
+
+  #main-nav .navbar-nav {
+    height: 100%;
+  }
+
+  #main-nav .navbar-nav .nav-item {
+    display: flex;
+    align-items: center;
+  }
+
+  #main-nav .navbar-nav .nav-link {
+    line-height: 1;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
 

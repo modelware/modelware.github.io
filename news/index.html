@@ -1,0 +1,38 @@
+---
+layout: default
+header_image: "/assets/images/bg/blog-bg.jpg"
+title: "Company News"
+description: "Latest announcements and updates from Modelware."
+permalink: /news/
+---
+
+{% include page_header.html %}
+
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+      {% assign news_items = site.news | sort: "date" | reverse %}
+      {% for item in news_items %}
+      <div class="col-lg-4 col-md-6">
+        <div class="blog-item mb-5">
+          {% if item.post_image %}
+          <div class="blog-img position-relative">
+            <a href="{{ item.url | relative_url }}"><img src="{{ item.post_image | relative_url }}" alt="{{ item.title }}" class="img-fluid w-100" /></a>
+          </div>
+          {% endif %}
+          <h4 class="mt-4 mb-2"><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h4>
+          <div class="post-meta text-uppercase mb-3">
+            {% if item.author %}
+            <span class="text-color">by {{ item.author }}</span>
+            {% endif %}
+            {% if item.date %}
+            <span class="text-color"> {{ item.date | date_to_long_string }}</span>
+            {% endif %}
+          </div>
+          <p>{{ item.description | default: item.excerpt | strip_html | truncatewords: 20 }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

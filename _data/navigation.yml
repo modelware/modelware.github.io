@@ -2,35 +2,49 @@
 main:
   - name: Home
     url: /index.html
-  - name: Services
-    url: /services.html
-  - name: Laboratory
-    url: /laboratory.html
-  - name: Academy
-    url: /academy.html
-  - name: Blog
-    url: /blog-1.html
-  - name: About
-    url: /about.html
-  - name: Contact
-    url: /contact.html
+  - name: Platform
+    url: /platform.html
+  - name: Solutions
+    url: /solutions.html
+  - name: Partners
+    url: /partners.html
+  - name: Customers
+    url: /index.html
+  - name: Resources
+    url: /resources.html
+    submenu:
+      - name: Blog
+        url: /blog-1.html
+  - name: Company
+    url: "#"
+    submenu:
+      - name: About Us
+        url: /about.html
+      - name: Academy
+        url: /academy.html
+      - name: Laboratory
+        url: /laboratory.html
+      - name: News
+        url: /news/
+      - name: Contact Us
+        url: /contact.html
 
 ########## footer menu ###############
 footer:
   - name: Home
     url: /index.html
-  - name: Services
-    url: /services.html
-  - name: Laboratory
-    url: /laboratory.html
-  - name: Academy
-    url: /academy.html
-  - name: Blog
-    url: /blog-1.html
-  - name: About
+  - name: Platform
+    url: /platform.html
+  - name: Solutions
+    url: /solutions.html
+  - name: Partners
+    url: /partners.html
+  - name: Customers
+    url: /customers.html
+  - name: Resources
+    url: /resources.html
+  - name: About Us
     url: /about.html
-  - name: Contact
-    url: /contact.html
 
 ############## Bottom menu ###############
 bottom:
