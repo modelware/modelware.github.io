@@ -3,13 +3,11 @@ main:
   - name: Home
     url: /index.html
   - name: Platform
-    url: /platform.html
-  - name: Solutions
-    url: /solutions.html
+    url: /oml-code
+  - name: Marketplace
+    url: /marketplace
   - name: Partners
     url: /partners.html
-  - name: Customers
-    url: /index.html
   - name: Resources
     url: /resources.html
     submenu:
@@ -34,13 +32,11 @@ footer:
   - name: Home
     url: /index.html
   - name: Platform
-    url: /platform.html
-  - name: Solutions
-    url: /solutions.html
+    url: /oml-code
+  - name: Marketplace
+    url: /marketplace
   - name: Partners
     url: /partners.html
-  - name: Customers
-    url: /customers.html
   - name: Resources
     url: /resources.html
   - name: About Us

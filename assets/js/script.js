@@ -128,27 +128,49 @@
     // Hero rotator
     $('.hero-rotator').each(function () {
       var $rotator = $(this);
-      var sources = $rotator.data('rotator');
-      var urls = [];
-      if (sources) {
-        urls = sources.split(',').map(function (item) {
-          return item.trim();
-        });
+      var slides = [];
+      var itemsRaw = $rotator.attr('data-rotator-items');
+      if (itemsRaw) {
+        try {
+          var parsed = JSON.parse(itemsRaw);
+          if (Array.isArray(parsed)) {
+            slides = parsed.map(function (item) {
+              return {
+                image: item && item.image ? String(item.image).trim() : '',
+                link: item && item.link ? String(item.link).trim() : ''
+              };
+            }).filter(function (item) {
+              return !!item.image;
+            });
+          }
+        } catch (err) {
+          console.warn('Invalid data-rotator-items JSON', err);
+        }
       }
 
-      if (urls.length === 0) {
+      if (slides.length === 0) {
         return;
       }
 
       var index = 0;
-      var targetLink = $rotator.data('link');
       var intervalId = null;
-      $rotator.css('background-image', 'url("' + urls[0] + '")');
+      var $overlayLink = $rotator.find('a[aria-label="Open featured page"]').first();
+      var $rotatorImage = $rotator.find('.hero-rotator-image').first();
+
+      var applySlide = function () {
+        var slide = slides[index];
+        if ($rotatorImage.length) {
+          $rotatorImage.attr('src', slide.image);
+        }
+        if ($overlayLink.length) {
+          $overlayLink.attr('href', slide.link || '#');
+        }
+      };
 
       var advance = function (dir) {
         var delta = dir === 'prev' ? -1 : 1;
-        index = (index + delta + urls.length) % urls.length;
-        $rotator.css('background-image', 'url("' + urls[index] + '")');
+        index = (index + delta + slides.length) % slides.length;
+        applySlide();
       };
 
       var start = function () {
@@ -157,6 +179,7 @@
         }, 4000);
       };
 
+      applySlide();
       start();
 
       $rotator.on('click', '.hero-rotator-prev', function (e) {
@@ -177,11 +200,12 @@
         }
       });
 
-      if (targetLink) {
-        $rotator.on('click', function () {
-          window.location.href = targetLink;
-        });
-      }
+      $rotator.on('click', function () {
+        var slide = slides[index];
+        if (slide.link) {
+          window.location.href = slide.link;
+        }
+      });
     });
   });
 

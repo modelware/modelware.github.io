@@ -81,7 +81,8 @@
 
   .hero-media {
     display: flex;
-    align-items: stretch;
+    align-items: center;
+    justify-content: center;
     padding: 40px 0;
     @include desktop-lg {
       padding: 32px 0;
@@ -89,27 +90,37 @@
   }
 
   .hero-media-card {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
     height: auto;
-    min-height: 420px;
-    display: flex;
-    align-items: stretch;
-    justify-content: stretch;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 0;
     overflow: hidden;
   }
 
   .hero-rotator {
     position: relative;
-    flex: 1 1 auto;
-    width: 100%;
+    flex: 0 1 auto;
+    width: auto;
+    max-width: 100%;
     height: auto;
-    min-height: 420px;
+    max-height: 420px;
     overflow: hidden;
     border-radius: 10px;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-rotator-image {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 420px;
+    object-fit: contain;
   }
 
   .hero-rotator-btn {

@@ -1,7 +1,11 @@
 <section class="banner-2 position-relative bg-blue">
-    <!-- <img src="/assets/images/bg/banner-bg-2.png" alt="" class="overlay-shape"> -->
-    {% assign hero_rotator_image = '/assets/images/wds2026.jpeg' | relative_url %}
-    {% assign hero_rotator_link = '/news/wds2026' | relative_url %}
+    {% capture hero_rotator_items %}
+    [
+      {"image":"{{ '/assets/images/oml-code.png' | relative_url }}","link":"{{ '/oml-code' | relative_url }}"},
+    ]
+    {% endcapture %}
+    {% assign hero_rotator_fallback_image = '/assets/images/oml-code.png' | relative_url %}
+    {% assign hero_rotator_fallback_link = '/oml-code' | relative_url %}
     <div class="container">
         <div class="row align-items-start">
             <div class="col-lg-6 col-md-7">
@@ -20,8 +24,9 @@
             <div class="col-lg-6 col-md-5 hero-media">
                 <!-- Placeholder for Product Demo Video/Animation -->
                 <div class="rounded shadow-lg hero-media-card" style="border: 2px solid rgba(255, 255, 255, 0.85);">
-                    <div class="hero-rotator" data-rotator="{{ hero_rotator_image }}" data-link="{{ hero_rotator_link }}" aria-label="Product demo screenshot" style="background-image: url('{{ hero_rotator_image }}'); cursor: pointer;">
-                        <a href="{{ hero_rotator_link }}" aria-label="Open featured page" style="position: absolute; inset: 0; z-index: 1;"></a>
+                    <div class="hero-rotator" data-rotator-items='{{ hero_rotator_items | strip_newlines }}' aria-label="Product demo screenshot" style="cursor: pointer;">
+                        <img class="hero-rotator-image" src="{{ hero_rotator_fallback_image }}" alt="OML Code product screenshot">
+                        <a href="{{ hero_rotator_fallback_link }}" aria-label="Open featured page" style="position: absolute; inset: 0; z-index: 1;"></a>
                         <button class="hero-rotator-btn hero-rotator-prev" type="button" aria-label="Previous slide">
                             <i class="ti-angle-left" aria-hidden="true"></i>
                         </button>
