@@ -1,17 +1,17 @@
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.modelware.io" # the base hostname & protocol for your site
-title: "Modelware | Logic-Based MBSE Platform"
+title: "Modelware | Ontological Modeling & Analysis Platform"
 email: "info@modelware.io"
 address: "Irvine, CA 92620, USA"
 author: melaasar
 description: >- # this means to ignore newlines
-  Modelware - Logic-Based Platform for Next-Generation MBSE
+  Modelware - Ontological Modeling and Analysis platform powered by Formal Methods, DevOps, and Artificial Intelligence.
 logo: "/assets/images/logo.svg"
 logo_icon: "/assets/images/logo-b.png"
 # contact form action
 contact_form_action: "https://formspree.io/f/xaqbdewz" # works with https://fomrspree.io
 mailchimp_list: "https://themeix.us16.list-manage.com/subscribe/post?u=307862c135e4548eecf86f389&amp;id=342411fb35"
-footer_content: "Modelware is a technology leader in the field of model based systems engineering."
+footer_content: "Modelware is an innovation leader in Ontological Modeling and Analysis and a recognized leader in MBSE."
 copyright: "Modelware &copy; 2025 All Rights Reserved"
 # page header default image
 cover_image: "/assets/images/bg/about-bg.jpg"
@@ -20,7 +20,7 @@ google_map_api: "https://maps.googleapis.com/maps/api/js?key=AIzaSyDnh74UN6BKgq9
 ############### Call to Action ###############
 cta:
   enable: true
-  title: "Modelware is your reliable MBSE technology partner"
+  title: "Modelware is your trusted Ontological Modeling and Analysis partner"
   bg_image: "/assets/images/bg/cta-bg-2.png"
   button:
     label: "Contact Us"

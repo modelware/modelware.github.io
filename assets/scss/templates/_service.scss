@@ -71,3 +71,16 @@
   background: #f4f6f8;
   border: 1px solid rgba(0, 0, 0, 0.04);
 }
+
+.platform-card,
+.marketplace-card {
+  border: 1px solid rgba(31, 31, 64, 0.08) !important;
+  box-shadow: 0 12px 28px rgba(31, 31, 64, 0.08) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.platform-card:hover,
+.marketplace-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 34px rgba(31, 31, 64, 0.14) !important;
+}

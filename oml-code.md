@@ -17,8 +17,8 @@ description: "Ontological Modeling Framework for rigorous, AI-enabled systems en
         <div class="row justify-content-center mb-5">
             <div class="col-lg-10 text-center">
                 <h2 class="mb-3">Ontological Modeling Framework</h2>
-                <p class="lead mb-4">OML Code is Modelware's innovation platform for engineering teams that need precision, speed, and confidence in complex system models.</p>
-                <p class="mb-0">Built on formal semantics and delivered through a modern development experience, OML Code helps organizations move from fragmented artifacts to connected, analyzable knowledge.</p>
+                <p class="lead mb-3 mx-auto" style="max-width: 620px;">A modern platform for Ontological Modeling and Analysis at enterprise scale.</p>
+                <p class="mb-0 mx-auto" style="max-width: 620px;">Built on Formal Methods, DevOps, and AI, with deep MBSE expertise for mission-critical programs.</p>
             </div>
         </div>
 
@@ -31,8 +31,8 @@ description: "Ontological Modeling Framework for rigorous, AI-enabled systems en
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body">
                         <div class="text-primary mb-2"><i class="ti-write h3"></i></div>
-                        <h5>Intelligent Authoring</h5>
-                        <p class="mb-0 small">Rich language support with completion, validation, formatting, and refactoring for fast, consistent model development.</p>
+                        <h5>OML-Native Authoring</h5>
+                        <p class="mb-0 small">Full language tooling with completion, validation, hover, formatting, and refactoring for high-velocity ontology engineering.</p>
                     </div>
                 </div>
             </div>
@@ -41,28 +41,8 @@ description: "Ontological Modeling Framework for rigorous, AI-enabled systems en
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body">
                         <div class="text-primary mb-2"><i class="ti-light-bulb h3"></i></div>
-                        <h5>Semantic Reasoning</h5>
-                        <p class="mb-0 small">Reasoning-ready models that support inference and consistency analysis across your ontology-driven architecture.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body">
-                        <div class="text-primary mb-2"><i class="ti-search h3"></i></div>
-                        <h5>SPARQL Query Power</h5>
-                        <p class="mb-0 small">Query your model knowledge graph directly to extract insight, verify assumptions, and drive informed decisions.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body">
-                        <div class="text-primary mb-2"><i class="ti-layout h3"></i></div>
-                        <h5>Interactive Diagrams</h5>
-                        <p class="mb-0 small">Generate visual model views with professional layout and direct navigation between diagrams and source models.</p>
+                        <h5>Semantic Mapping Layer</h5>
+                        <p class="mb-0 small">Native OML-to-OWL/RDF mapping that turns domain models into interoperable semantic assets for enterprise integration.</p>
                     </div>
                 </div>
             </div>
@@ -71,8 +51,28 @@ description: "Ontological Modeling Framework for rigorous, AI-enabled systems en
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body">
                         <div class="text-primary mb-2"><i class="ti-check-box h3"></i></div>
-                        <h5>SHACL Validation</h5>
-                        <p class="mb-0 small">Apply constraints with clear validation feedback to maintain model quality and reduce downstream risk.</p>
+                        <h5>Formal Verification</h5>
+                        <p class="mb-0 small">Integrated ontology reasoning and SHACL validation to check consistency, enforce constraints, and raise confidence before deployment.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <div class="text-primary mb-2"><i class="ti-search h3"></i></div>
+                        <h5>SPARQL Analytics</h5>
+                        <p class="mb-0 small">Run SPARQL SELECT and CONSTRUCT workflows to extract insights, generate graph views, and support evidence-based engineering decisions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <div class="text-primary mb-2"><i class="ti-layout h3"></i></div>
+                        <h5>Executable Notebooks</h5>
+                        <p class="mb-0 small">Turn markdown notebooks into live model-backed views with diagrams, tables, and traceable insights for technical and leadership audiences.</p>
                     </div>
                 </div>
             </div>
@@ -81,8 +81,34 @@ description: "Ontological Modeling Framework for rigorous, AI-enabled systems en
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body">
                         <div class="text-primary mb-2"><i class="ti-world h3"></i></div>
-                        <h5>Desktop + Web + CLI</h5>
-                        <p class="mb-0 small">Use OML Code in VS Code desktop or browser, and scale with CLI automation for validation, reasoning, and rendering pipelines.</p>
+                        <h5>DevOps Automation</h5>
+                        <p class="mb-0 small">CLI-driven lint, compile, reason, render, and validate pipelines for repeatable delivery across desktop, web, and CI/CD environments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-12 text-center mb-4">
+                <h3>Platform Components</h3>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <div class="text-primary mb-2"><i class="ti-blackboard h3"></i></div>
+                        <h5>VS Code Extension</h5>
+                        <p class="mb-0 small">A rich engineering workspace for OML authoring with language intelligence, validation feedback, semantic services, and visual model exploration.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <div class="text-primary mb-2"><i class="ti-settings h3"></i></div>
+                        <h5>CLI</h5>
+                        <p class="mb-0 small">A production-grade command line for linting, compile/reason workflows, markdown rendering, and validation in automated DevOps and CI/CD pipelines.</p>
                     </div>
                 </div>
             </div>
@@ -91,7 +117,7 @@ description: "Ontological Modeling Framework for rigorous, AI-enabled systems en
         <div class="row align-items-center mb-5">
             <div class="col-lg-6 mb-4 mb-lg-0">
                 <h3 class="mb-3">From Modeling to Operational Insight</h3>
-                <p class="mb-3">OML Code unifies language tooling, semantic analytics, and publication workflows so teams can engineer with clarity at enterprise scale.</p>
+                <p class="mb-3">OML Code unifies language tooling, semantic analytics, and delivery automation so teams can engineer with clarity at enterprise scale.</p>
                 <p class="mb-0">Whether you are defining frameworks, validating model integrity, or publishing model-backed documentation, OML Code provides one coherent environment.</p>
             </div>
             <div class="col-lg-6">
@@ -101,7 +127,7 @@ description: "Ontological Modeling Framework for rigorous, AI-enabled systems en
                         <li class="mb-2"><i class="ti-check text-primary mr-2"></i> Faster onboarding to formal modeling practices</li>
                         <li class="mb-2"><i class="ti-check text-primary mr-2"></i> Higher confidence through semantic and constraint checks</li>
                         <li class="mb-2"><i class="ti-check text-primary mr-2"></i> Stronger alignment across engineering disciplines</li>
-                        <li class="mb-0"><i class="ti-check text-primary mr-2"></i> Production-ready workflows from authoring to delivery</li>
+                        <li class="mb-0"><i class="ti-check text-primary mr-2"></i> Production-ready workflows from authoring to DevOps delivery</li>
                     </ul>
                 </div>
             </div>
