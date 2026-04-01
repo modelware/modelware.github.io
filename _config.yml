@@ -1,11 +1,11 @@
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.modelware.io" # the base hostname & protocol for your site
-title: "Modelware | Ontological Modeling & Analysis Platform"
+title: "Modelware | Ontological Modeling & Analysis Framework"
 email: "info@modelware.io"
 address: "Irvine, CA 92620, USA"
 author: melaasar
 description: >- # this means to ignore newlines
-  Modelware - Ontological Modeling and Analysis platform powered by Formal Methods, DevOps, and Artificial Intelligence.
+  Modelware - Ontological Modeling and Analysis framework powered by Formal Methods, DevOps, and Artificial Intelligence.
 logo: "/assets/images/logo.svg"
 logo_icon: "/assets/images/logo-b.png"
 # contact form action
