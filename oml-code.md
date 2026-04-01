@@ -137,8 +137,8 @@ description: "Ontological Modeling Framework for rigorous, AI-enabled systems en
             <div class="col-12">
                 <div class="bg-secondary rounded p-5 text-center text-white">
                     <h3 class="text-white mb-3">Experience the OML Code Platform</h3>
-                    <p class="mb-4">See how Modelware is advancing the state of ontological systems engineering for the next generation of mission-critical programs.</p>
-                    <a href="/contact.html" class="btn btn-primary mr-2 mb-2">Request a Demo</a>
+                    <p class="mb-4">OML Code is available through enterprise subscription plans. To discuss subscription options, licensing, and onboarding, contact us.</p>
+                    <a href="/contact.html" class="btn btn-primary mr-2 mb-2">Ask About Subscription</a>
                     <a href="/marketplace" class="btn btn-outline-light mb-2">Explore Marketplace</a>
                 </div>
             </div>
