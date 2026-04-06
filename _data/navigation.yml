@@ -19,6 +19,8 @@ main:
         url: /academy.html
       - name: Laboratory
         url: /laboratory.html
+      - name: YouTube Channel
+        url: /omlcode-youtube.html
   - name: Company
     url: "#"
     submenu:
