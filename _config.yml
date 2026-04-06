@@ -11,7 +11,7 @@ logo_icon: "/assets/images/logo-b.png"
 # contact form action
 contact_form_action: "https://formspree.io/f/xaqbdewz" # works with https://fomrspree.io
 mailchimp_list: "https://themeix.us16.list-manage.com/subscribe/post?u=307862c135e4548eecf86f389&amp;id=342411fb35"
-footer_content: "Modelware is an innovation leader in Ontological Modeling and Analysis and a recognized leader in MBSE."
+footer_content: "Modelware is a US-based innovative software company focused on advancing ontological modeling and analysis and a recognized leader in MBSE."
 copyright: "Modelware &copy; 2025 All Rights Reserved"
 # page header default image
 cover_image: "/assets/images/bg/about-bg.jpg"

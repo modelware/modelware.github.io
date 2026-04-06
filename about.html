@@ -2,16 +2,88 @@
 layout: default
 header_image: "/assets/images/bg/bg-1.jpg"
 title: "About Us"
-description: "We are an innovation software company focused on Advancing Ontological Modeling and Analysis."
+description: "Modelware is a US-based innovative software company"
 ---
 
-{% include page_header.html %}
+<style>
+	.about-hero-title-row {
+		display: flex;
+		align-items: center;
+		flex-wrap: nowrap;
+		gap: 12px;
+		margin-bottom: 8px;
+	}
+	.about-hero-logo {
+		max-height: 72px;
+		width: auto;
+		max-width: 100%;
+	}
+	@media (max-width: 767px) {
+		.about-hero-logo {
+			max-height: 56px;
+		}
+	}
+	.about-intro-row {
+		align-items: flex-start;
+	}
+	.about-intro-image {
+		height: 100%;
+	}
+	.about-intro-image img {
+		height: 100%;
+		min-height: 0;
+		max-height: 340px;
+		object-fit: cover;
+	}
+	.about-intro-text h3 {
+		margin-top: 0 !important;
+		margin-bottom: 16px !important;
+	}
+	.about-intro-text p {
+		margin-bottom: 12px;
+	}
+	.about-leader-card {
+		border: 1px solid #dfe6f4 !important;
+		border-radius: 14px;
+		box-shadow: 0 14px 28px rgba(10, 24, 70, 0.1) !important;
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+	}
+	.about-leader-card:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 18px 34px rgba(10, 24, 70, 0.14) !important;
+	}
+	.about-leader-card .card-body {
+		padding: 26px;
+	}
+	.about-leader-card h5 {
+		margin-bottom: 6px;
+	}
+	@media (max-width: 767px) {
+		.about-intro-image img {
+			max-height: none;
+		}
+	}
+</style>
+
+<section class="page-title header-padding" style="background-image:url({{ page.header_image | relative_url }});background-size:cover">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10">
+				<div class="about-hero-title-row">
+					<img src="/assets/images/modelware-logo.png" alt="Modelware" class="about-hero-logo">
+					<h2 class="text-capitalize mb-0 text-lg text-white">{{ page.title }}</h2>
+				</div>
+				<p class="text-white page-subtitle mb-0">{{ page.description }}</p>
+			</div>
+		</div>
+	</div>
+</section>
 <!-- About Start -->
 <section class="section-sm about overflow-hidden">
 	<div class="container">
-		<div class="row">
+		<div class="row about-intro-row">
 			<div class="col-md-5">
-				<div class="about-img">
+				<div class="about-img about-intro-image">
 					<img src="{{'/assets/images/about/about-2.jpg' | relative_url}}" alt="" class="img-fluid w-100"/>
 					<div class="video-play">
 						<div class="play-bg">
@@ -20,11 +92,10 @@ description: "We are an innovation software company focused on Advancing Ontolog
 					</div>
 				</div>
 			</div>
-				<div class="col-lg-6 col-md-7 offset-lg-1 mt-5 mt-md-0">
-					<span class="text-color h5 text-uppercase">About Us</span>
-					<h3 class="mb-4 mt-3">We Build Ontological Modeling and Analysis Software.</h3>
-					<p>Modelware is an innovation-led product company focused on Ontological Modeling and Analysis. Our platform combines Formal Methods, DevOps workflows, and Artificial Intelligence to help teams engineer complex systems with speed and confidence.</p>
-					<p class="mb-5">MBSE is a core leadership domain in our portfolio, where we deliver enterprise-grade solutions that scale rigor, interoperability, and decision quality across programs and teams.</p>
+				<div class="col-lg-6 col-md-7 offset-lg-1 mt-0 about-intro-text">
+					<h3 class="mb-4 mt-3">Software Company</h3>
+					<p>Modelware is a US-based innovative software company focused on ontological modeling and analysis. Our flagship product OML Code combines formal methods, DevOps workflows, and artificial intelligence to help teams describe and analyze knowledge logically.</p>
+					<p class="mb-3">MBSE is one of our core competencies, where we deliver enterprise-grade MBSE solutions that scale rigor, interoperability, and decision quality across programs and teams.</p>
 
 					<a href="/contact.html" class="btn btn-primary">Contact Us</a>
 				</div>
@@ -33,34 +104,34 @@ description: "We are an innovation software company focused on Advancing Ontolog
 </section>
 <!-- About End -->
 
-<section class="section pt-0">
+<section class="section pt-0 pb-0">
 	<div class="container">
 		<div class="row mb-5 align-items-stretch">
 			<div class="col-lg-6">
-				<h3>Our Mission</h3>
-				<p>To deliver a best-in-class Ontological Modeling and Analysis framework that makes complex engineering rigorous, collaborative, and operational at scale.</p>
+				<h3>Our Vision</h3>
+				<p>A world where complex knowledge is universally understood, shared, and reasoned upon without friction..</p>
 
-				<h3 class="mt-4">Our Vision</h3>
-				<p>A world where every complex system is designed, verified, and evolved through connected digital engineering powered by formal semantics, automation, and AI.</p>
+				<h3 class="mt-4">Our Mission</h3>
+				<p>To build modern, expressive ontological modeling tools that turn domain knowledge into structured, analyzable, and interoperable intelligence.</p>
 			</div>
 			<div class="col-lg-6 mt-4 mt-lg-0 d-flex">
-				<img src="/assets/images/bg/about-bg.jpg" alt="About Modelware" class="img-fluid rounded shadow w-100 h-100" style="object-fit: cover; min-height: 260px;">
+				<img src="/assets/images/ontological-modeling.png" alt="About Modelware" class="img-fluid rounded shadow w-100 h-100" style="object-fit: cover; min-height: 260px;">
 			</div>
 		</div>
 
 		<hr class="my-5">
 
-		<div class="row mb-5">
+		<div class="row mb-0 justify-content-center">
 			<div class="col-12 text-center mb-4">
 				<h2>Leadership Team</h2>
 			</div>
-			<div class="col-md-4 mb-4">
-				<div class="card border-0 shadow-sm text-center">
+			<div class="col-md-4 mb-0">
+				<div class="card border-0 shadow-sm text-center about-leader-card">
 					<div class="card-body">
 						<div class="mb-3">
 							<img src="{{ '/assets/images/elaasar.jpg' | relative_url }}" class="rounded-circle img-fluid" alt="Maged Elaasar" style="width: 160px; height: 160px; object-fit: cover;">
 						</div>
-							<h5><a href="/maged-elaasar.html">Maged Elaasar</a></h5>
+							<h5><a href="/partners/maged-elaasar.html">Maged Elaasar</a></h5>
 						<p class="text-muted">Founder & CEO</p>
 					</div>
 				</div>

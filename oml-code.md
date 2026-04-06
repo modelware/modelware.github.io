@@ -11,6 +11,21 @@ description: "A framework for rigorous, scalable, and AI-enabled ontological mod
         font-size: 15px;
         line-height: 1.6;
     }
+    .oml-hero-title-row {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 12px;
+        margin-bottom: 8px;
+    }
+    .oml-hero-title-logo {
+        max-height: 72px;
+        width: auto;
+        max-width: 100%;
+    }
+    @media (max-width: 767px) {
+        .oml-hero-title-logo { max-height: 56px; }
+    }
     .oml-capability-head {
         display: flex;
         align-items: flex-start;
@@ -32,14 +47,12 @@ description: "A framework for rigorous, scalable, and AI-enabled ontological mod
     <div class="container">
         <div class="row">
             <div class="col-lg-10">
-                <div class="d-flex align-items-center flex-column flex-md-row">
-                    <div class="mb-3 mb-md-0 mr-md-4">
-                        <img src="/assets/images/oml-code.png" alt="OML Code" style="max-height: 110px; width: auto; max-width: 100%;">
+                <div>
+                    <div class="oml-hero-title-row">
+                        <img src="/assets/images/oml-code.png" alt="OML Code" class="oml-hero-title-logo">
+                        <h2 class="text-capitalize mb-0 text-lg text-white">{{ page.title }}</h2>
                     </div>
-                    <div>
-                        <h2 class="text-capitalize mb-2 text-lg text-white">{{ page.title }}</h2>
-                        <p class="text-white page-subtitle mb-0">{{ page.description }}</p>
-                    </div>
+                    <p class="text-white page-subtitle mb-0">{{ page.description }}</p>
                 </div>
             </div>
         </div>
