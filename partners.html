@@ -7,38 +7,146 @@ description: "Modelware Centers of Excellence (CoE) are certified partners who p
 
 {% include page_header.html %}
 
-<section class="section">
+<style>
+    .partner-feature-card {
+        border: 0;
+        border-radius: 12px;
+        box-shadow: 0 10px 24px rgba(12, 26, 75, 0.08);
+        border-top: 3px solid #3f7cff;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        background: linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+    }
+    .partner-feature-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 30px rgba(12, 26, 75, 0.14);
+    }
+    .partner-feature-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 12px;
+        background: rgba(63, 124, 255, 0.1);
+        color: #3f7cff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 14px;
+    }
+    .partner-divider {
+        border-top: 1px solid #e8ecf5;
+        margin: 6px 0 28px 0;
+    }
+    .partner-profile-card {
+        border: 0;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 24px rgba(12, 26, 75, 0.09);
+        height: 100%;
+        background: #fff;
+    }
+    .partner-location {
+        display: inline-block;
+        margin-bottom: 10px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 600;
+        background: #edf2ff;
+        color: #2f5fd7;
+    }
+    .partner-filter-btn {
+        border-radius: 999px;
+        margin: 0 6px 8px 6px;
+    }
+    .partner-filter-btn.active {
+        background: #2f5fd7;
+        border-color: #2f5fd7;
+        color: #fff !important;
+    }
+    .partner-empty {
+        display: none;
+        width: 100%;
+        text-align: center;
+        color: #6b7486;
+        padding: 10px 0 0;
+    }
+    .partner-profile-media {
+        height: 210px;
+        background: #f5f7fc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 18px;
+    }
+    .partner-profile-media img {
+        max-height: 100%;
+        max-width: 100%;
+        width: auto;
+        object-fit: contain;
+    }
+    .partner-recruit {
+        border: 1px solid #dfe6f4;
+        border-radius: 14px;
+        background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
+        box-shadow: 0 14px 34px rgba(12, 26, 75, 0.08);
+        padding: 34px;
+    }
+    .partner-recruit h2,
+    .partner-recruit h4,
+    .partner-recruit h5 {
+        color: #172033;
+    }
+    .partner-recruit .program-badge {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: #edf2ff;
+        color: #2f5fd7;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-bottom: 12px;
+    }
+    .partner-recruit .panel {
+        border: 1px solid #e5ebf7;
+        border-radius: 12px;
+        background: #fff;
+        padding: 22px;
+        height: 100%;
+    }
+</style>
+
+<section class="section" style="padding-top: 48px;">
     <div class="container">
-        <div class="row mb-5">
+        <div class="row mb-3">
             <div class="col-lg-8 mx-auto text-center">
                 <h2>Global Reach, Local Expertise</h2>
-                <p class="lead">Modelware Centers of Excellence (CoE) are certified partners who provide local sales, support, implementation services, and customized training.</p>
             </div>
         </div>
 
-        <div class="row mb-5">
+        <div class="row mb-4">
             <div class="col-md-4 mb-4">
-                <div class="card h-100 border-0 shadow-sm">
+                <div class="card h-100 partner-feature-card">
                     <div class="card-body text-center">
-                        <i class="ti-world h2 text-primary mb-3"></i>
+                        <div class="partner-feature-icon"><i class="ti-world h3 mb-0"></i></div>
                         <h4>Local Support</h4>
                         <p>Get support in your language and time zone from certified experts.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card h-100 border-0 shadow-sm">
+                <div class="card h-100 partner-feature-card">
                     <div class="card-body text-center">
-                        <i class="ti-ruler-pencil h2 text-primary mb-3"></i>
+                        <div class="partner-feature-icon"><i class="ti-ruler-pencil h3 mb-0"></i></div>
                         <h4>Implementation</h4>
                         <p>Tailored implementation services to fit your specific industry needs.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card h-100 border-0 shadow-sm">
+                <div class="card h-100 partner-feature-card">
                     <div class="card-body text-center">
-                        <i class="ti-medall h2 text-primary mb-3"></i>
+                        <div class="partner-feature-icon"><i class="ti-medall h3 mb-0"></i></div>
                         <h4>Training</h4>
                         <p>Comprehensive training programs for your engineering teams.</p>
                     </div>
@@ -46,52 +154,98 @@ description: "Modelware Centers of Excellence (CoE) are certified partners who p
             </div>
         </div>
 
-        <!-- Interactive Map Placeholder -->
+        <div class="partner-divider"></div>
+
         <div class="row mb-5">
-            <div class="col-12">
-                <div class="bg-light p-5 text-center rounded border">
-                    <i class="ti-map-alt h1 text-muted mb-3"></i>
-                    <h3>Find a CoE Partner</h3>
-                    <img src="{{ '/assets/images/coe-map.png' | relative_url }}" alt="Global CoE Map" class="img-fluid rounded my-3" style="max-height: 360px; width: auto;">
-                    <div class="mt-4">
-                        <button class="btn btn-primary">North America</button>
-                        <button class="btn btn-outline-primary">Europe</button>
-                        <button class="btn btn-outline-primary">Asia Pacific</button>
+            <div class="col-12 text-center mb-4">
+                <h3>Partner Profiles</h3>
+                <div class="mt-3">
+                    <button class="btn btn-outline-primary partner-filter-btn active" type="button" data-region-filter="all">All</button>
+                    <button class="btn btn-outline-primary partner-filter-btn" type="button" data-region-filter="na">North America</button>
+                    <button class="btn btn-outline-primary partner-filter-btn" type="button" data-region-filter="eu">Europe</button>
+                    <button class="btn btn-outline-primary partner-filter-btn" type="button" data-region-filter="apac">Asia Pacific</button>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4 mx-auto partner-profile-item" data-region="na">
+                <div class="partner-profile-card">
+                    <div class="partner-profile-media">
+                        <img src="{{ '/assets/images/elaasar.jpg' | relative_url }}" alt="Dr. Maged Elaasar">
+                    </div>
+                    <div class="p-4 text-center">
+                        <span class="partner-location">US West Coast</span>
+                        <h5 class="mb-2"><a href="/maged-elaasar.html">Dr. Maged Elaasar</a></h5>
+                        <p class="mb-0">Founder and CEO at Modelware, with deep expertise in ontological modeling and analysis.</p>
                     </div>
                 </div>
             </div>
+
+            <div class="partner-empty" id="partner-empty-state">
+                No partner profiles are published yet for this region.
+            </div>
         </div>
 
-        <hr class="my-5">
+        <div class="partner-divider"></div>
 
-        <div id="become-partner" class="row align-items-center">
-            <div class="col-lg-6">
-                <h2>Join the Modelware Partner Network</h2>
-                <p>Become a certified Center of Excellence and grow your business with Modelware.</p>
-                
-                <h5 class="mt-4">Benefits of Becoming a CoE:</h5>
-                <ul class="list-unstyled mt-3">
-                    <li class="mb-2"><i class="ti-check text-success mr-2"></i> Comprehensive training & certification</li>
-                    <li class="mb-2"><i class="ti-check text-success mr-2"></i> Marketing & sales support</li>
-                    <li class="mb-2"><i class="ti-check text-success mr-2"></i> Revenue share model</li>
-                    <li class="mb-2"><i class="ti-check text-success mr-2"></i> Access to R&D roadmap</li>
-                    <li class="mb-2"><i class="ti-check text-success mr-2"></i> Co-branded marketing materials</li>
-                </ul>
-                
-                <a href="/contact.html" class="btn btn-primary mt-4">Become a CoE Partner</a>
-            </div>
-            <div class="col-lg-6 mt-5 mt-lg-0">
-                <div class="bg-light p-4 rounded">
-                    <h4>Application Process</h4>
-                    <ol class="pl-3 mt-3">
-                        <li class="mb-3"><strong>Submit Application:</strong> Fill out our partner inquiry form.</li>
-                        <li class="mb-3"><strong>Initial Review:</strong> Our team reviews your capabilities and market presence.</li>
-                        <li class="mb-3"><strong>Interview:</strong> Discuss strategy and alignment.</li>
-                        <li class="mb-3"><strong>Certification:</strong> Complete technical and sales training.</li>
-                        <li class="mb-3"><strong>Onboarding:</strong> Launch your CoE with our support.</li>
-                    </ol>
+        <div id="become-partner" class="partner-recruit">
+            <span class="program-badge">Partner Program</span>
+            <div class="row align-items-stretch">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="panel">
+                        <h2 class="mb-3">Join the Modelware Partner Network</h2>
+                        <p class="mb-3">Become a certified Center of Excellence and deliver high-impact ontological modeling and analysis services in your region.</p>
+
+                        <h5 class="mt-4 mb-3">Program Benefits</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><i class="ti-check text-success mr-2"></i> Comprehensive training and certification</li>
+                            <li class="mb-2"><i class="ti-check text-success mr-2"></i> Joint marketing and sales enablement</li>
+                            <li class="mb-2"><i class="ti-check text-success mr-2"></i> Structured revenue-share opportunities</li>
+                            <li class="mb-2"><i class="ti-check text-success mr-2"></i> Access to product roadmap and partner briefings</li>
+                            <li class="mb-0"><i class="ti-check text-success mr-2"></i> Co-branded solution collateral</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="panel">
+                        <h4>Application Process</h4>
+                        <ol class="pl-3 mt-3 mb-4">
+                            <li class="mb-3"><strong>Submit Application:</strong> Complete the partner inquiry form.</li>
+                            <li class="mb-3"><strong>Initial Review:</strong> We evaluate capabilities, domain fit, and market presence.</li>
+                            <li class="mb-3"><strong>Strategic Interview:</strong> Confirm goals, alignment, and execution plan.</li>
+                            <li class="mb-3"><strong>Certification:</strong> Complete technical and go-to-market readiness tracks.</li>
+                            <li class="mb-0"><strong>Onboarding:</strong> Launch as a certified CoE with Modelware support.</li>
+                        </ol>
+                        <a href="/contact.html" class="btn btn-primary btn-block">Apply to Become a CoE Partner</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+    (function () {
+        var buttons = document.querySelectorAll('.partner-filter-btn');
+        var cards = document.querySelectorAll('.partner-profile-item');
+        var empty = document.getElementById('partner-empty-state');
+        if (!buttons.length || !cards.length || !empty) return;
+
+        function applyFilter(region) {
+            var visibleCount = 0;
+            cards.forEach(function (card) {
+                var show = region === 'all' || card.getAttribute('data-region') === region;
+                card.style.display = show ? '' : 'none';
+                if (show) visibleCount += 1;
+            });
+            empty.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        buttons.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                buttons.forEach(function (b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                applyFilter(btn.getAttribute('data-region-filter'));
+            });
+        });
+    })();
+</script>
