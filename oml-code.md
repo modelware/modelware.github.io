@@ -3,7 +3,7 @@ layout: default
 title: OML Code
 permalink: /oml-code
 header_image: "/assets/images/bg/banner-7.jpg"
-description: "A framework for rigorous, scalable, and AI-enabled ontological modeling and analysis using Ontological Modeling Language"
+description: "A platform for rigorous, scalable, and AI-enabled ontological modeling and analysis using Ontological Modeling Language"
 ---
 
 <style>
@@ -41,6 +41,55 @@ description: "A framework for rigorous, scalable, and AI-enabled ontological mod
         line-height: 1.3;
         margin-bottom: 0;
     }
+    .oml-stage {
+        margin-bottom: 2.5rem;
+    }
+    .oml-stage-head {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 1.25rem;
+        padding-bottom: 0.85rem;
+        border-bottom: 1px solid rgba(31,31,64,0.08);
+    }
+    .oml-stage-num {
+        flex: 0 0 auto;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 16px;
+    }
+    .oml-stage-title {
+        margin: 0;
+        font-size: 20px;
+        flex: 1 1 auto;
+    }
+    .oml-pillars {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+    .oml-pillar {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1;
+        padding: 5px 11px;
+        border-radius: 999px;
+        border: 1px solid rgba(31,31,64,0.12);
+        background: #f7f8fc;
+        white-space: nowrap;
+    }
+    .oml-pillar i {
+        font-size: 13px;
+    }
 </style>
 
 <section class="page-title header-padding" style="background-image:url({{ page.header_image | relative_url }});background-size:cover">
@@ -66,7 +115,7 @@ description: "A framework for rigorous, scalable, and AI-enabled ontological mod
                 <h3>Main Components</h3>
             </div>
 
-            <div class="col-lg-6 mb-4">
+            <div class="col-lg-4 mb-4">
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body d-flex align-items-start">
                         <img src="/assets/images/vs-code-ext.png" alt="VS Code Extension" style="width: 64px; height: 64px; object-fit: contain;" class="mr-3">
@@ -78,7 +127,7 @@ description: "A framework for rigorous, scalable, and AI-enabled ontological mod
                 </div>
             </div>
 
-            <div class="col-lg-6 mb-4">
+            <div class="col-lg-4 mb-4">
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body d-flex align-items-start">
                         <img src="/assets/images/cli.png" alt="CLI" style="width: 64px; height: 64px; object-fit: contain;" class="mr-3">
@@ -89,153 +138,207 @@ description: "A framework for rigorous, scalable, and AI-enabled ontological mod
                     </div>
                 </div>
             </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body d-flex align-items-start">
+                        <img src="/assets/images/mcp.svg" alt="MCP Server" style="width: 64px; height: 64px; object-fit: contain;" class="mr-3">
+                        <div>
+                            <h5 class="mb-2">MCP Server</h5>
+                            <p class="mb-0 oml-card-desc">OML MCP server exposing modeling, validation, and query tools to AI assistants and agentic workflows.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     
-        <div class="row mb-5">
-            <div class="col-12 text-center mb-4">
+        <div class="mb-5">
+            <div class="text-center mb-5">
                 <h3>Core Capabilities</h3>
+                <p class="text-muted mb-0">Twelve capabilities across the modeling lifecycle, aligned to the three pillars of Ontological Modeling and Analysis.</p>
             </div>
 
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body">
-                        <div class="oml-capability-head">
-                            <div class="text-primary"><i class="ti-write oml-capability-icon"></i></div>
-                            <h5>Intelligent OML Authoring</h5>
+            <!-- Stage 1: Author & Model -->
+            <div class="oml-stage">
+                <div class="oml-stage-head">
+                    <div class="oml-stage-num bg-primary text-white">1</div>
+                    <h4 class="oml-stage-title">Author &amp; Model</h4>
+                    <div class="oml-pillars">
+                        <span class="oml-pillar text-primary"><i class="ti-layers-alt"></i> Formal Methods</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="oml-capability-head">
+                                    <div class="text-primary"><i class="ti-write oml-capability-icon"></i></div>
+                                    <h5>Intelligent OML Authoring</h5>
+                                </div>
+                                <p class="mb-0 oml-card-desc">Rich editor workflows with validation, guidance, and acceleration for high-velocity ontology engineering.</p>
+                            </div>
                         </div>
-                        <p class="mb-0 oml-card-desc">Rich editor workflows with validation, guidance, and acceleration for high-velocity ontology engineering.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="oml-capability-head">
+                                    <div class="text-primary"><i class="ti-light-bulb oml-capability-icon"></i></div>
+                                    <h5>Semantic Mapping &amp; Interoperability</h5>
+                                </div>
+                                <p class="mb-0 oml-card-desc">Map OML to OWL/RDF and keep models interoperable across engineering tools and enterprise ecosystems.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="oml-capability-head">
+                                    <div class="text-primary"><i class="ti-desktop oml-capability-icon"></i></div>
+                                    <h5>Web-Based Modeling Workspace</h5>
+                                </div>
+                                <p class="mb-0 oml-card-desc">Enable secure browser-based modeling for remote work, onboarding, tutorials, and zero-footprint demos.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body">
-                        <div class="oml-capability-head">
-                            <div class="text-primary"><i class="ti-light-bulb oml-capability-icon"></i></div>
-                            <h5>Semantic Mapping &amp; Interoperability</h5>
+            <!-- Stage 2: Verify & Analyze -->
+            <div class="oml-stage">
+                <div class="oml-stage-head">
+                    <div class="oml-stage-num bg-primary text-white">2</div>
+                    <h4 class="oml-stage-title">Verify &amp; Analyze</h4>
+                    <div class="oml-pillars">
+                        <span class="oml-pillar text-primary"><i class="ti-layers-alt"></i> Formal Methods</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="oml-capability-head">
+                                    <div class="text-primary"><i class="ti-check-box oml-capability-icon"></i></div>
+                                    <h5>Formal Verification &amp; Reasoning</h5>
+                                </div>
+                                <p class="mb-0 oml-card-desc">Continuously verify consistency and constraints with integrated reasoning and SHACL validation.</p>
+                            </div>
                         </div>
-                        <p class="mb-0 oml-card-desc">Map OML to OWL/RDF and keep models interoperable across engineering tools and enterprise ecosystems.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="oml-capability-head">
+                                    <div class="text-primary"><i class="ti-search oml-capability-icon"></i></div>
+                                    <h5>Query-Driven Analytics</h5>
+                                </div>
+                                <p class="mb-0 oml-card-desc">Use query workflows to surface actionable insights and support evidence-based engineering decisions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="oml-capability-head">
+                                    <div class="text-primary"><i class="ti-export oml-capability-icon"></i></div>
+                                    <h5>View-Based Data Exchange</h5>
+                                </div>
+                                <p class="mb-0 oml-card-desc">Round-trip modeling views through CSV, JSON, and SVG for integration with external analysis tools.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body">
-                        <div class="oml-capability-head">
-                            <div class="text-primary"><i class="ti-check-box oml-capability-icon"></i></div>
-                            <h5>Formal Verification &amp; Reasoning</h5>
+            <!-- Stage 3: Automate & Deliver -->
+            <div class="oml-stage">
+                <div class="oml-stage-head">
+                    <div class="oml-stage-num bg-primary text-white">3</div>
+                    <h4 class="oml-stage-title">Automate &amp; Deliver</h4>
+                    <div class="oml-pillars">
+                        <span class="oml-pillar text-primary"><i class="ti-infinite"></i> DevOps</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="oml-capability-head">
+                                    <div class="text-primary"><i class="ti-world oml-capability-icon"></i></div>
+                                    <h5>DevOps &amp; CI/CD Automation</h5>
+                                </div>
+                                <p class="mb-0 oml-card-desc">Operationalize lint, compile, reason, validate, and publish workflows through repeatable automation pipelines.</p>
+                            </div>
                         </div>
-                        <p class="mb-0 oml-card-desc">Continuously verify consistency and constraints with integrated reasoning and SHACL validation.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="oml-capability-head">
+                                    <div class="text-primary"><i class="ti-layout oml-capability-icon"></i></div>
+                                    <h5>Executable Method Notebooks</h5>
+                                </div>
+                                <p class="mb-0 oml-card-desc">Deliver methodology steps as connected, runnable notebooks for guided execution and analysis.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="oml-capability-head">
+                                    <div class="text-primary"><i class="ti-link oml-capability-icon"></i></div>
+                                    <h5>Methodology Lifecycle Management</h5>
+                                </div>
+                                <p class="mb-0 oml-card-desc">Select, compose, and evolve methodologies using reusable assets, examples, and organizational patterns.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body">
-                        <div class="oml-capability-head">
-                            <div class="text-primary"><i class="ti-search oml-capability-icon"></i></div>
-                            <h5>Query-Driven Analytics</h5>
-                        </div>
-                        <p class="mb-0 oml-card-desc">Use query workflows to surface actionable insights and support evidence-based engineering decisions.</p>
+            <!-- Stage 4: Collaborate & AI-Assist -->
+            <div class="oml-stage">
+                <div class="oml-stage-head">
+                    <div class="oml-stage-num bg-primary text-white">4</div>
+                    <h4 class="oml-stage-title">Collaborate &amp; AI-Assist</h4>
+                    <div class="oml-pillars">
+                        <span class="oml-pillar text-primary"><i class="ti-infinite"></i> DevOps</span>
+                        <span class="oml-pillar text-primary"><i class="ti-cloud"></i> AI</span>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body">
-                        <div class="oml-capability-head">
-                            <div class="text-primary"><i class="ti-layout oml-capability-icon"></i></div>
-                            <h5>Executable Method Notebooks</h5>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="oml-capability-head">
+                                    <div class="text-primary"><i class="ti-user oml-capability-icon"></i></div>
+                                    <h5>Collaborative Engineering</h5>
+                                </div>
+                                <p class="mb-0 oml-card-desc">Support asynchronous Git collaboration and synchronous Live Share sessions for mentoring and rapid troubleshooting.</p>
+                            </div>
                         </div>
-                        <p class="mb-0 oml-card-desc">Deliver methodology steps as connected, runnable notebooks for guided execution and analysis.</p>
                     </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body">
-                        <div class="oml-capability-head">
-                            <div class="text-primary"><i class="ti-world oml-capability-icon"></i></div>
-                            <h5>DevOps &amp; CI/CD Automation</h5>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="oml-capability-head">
+                                    <div class="text-primary"><i class="ti-comments oml-capability-icon"></i></div>
+                                    <h5>GenAI Co-Modeling Assistant</h5>
+                                </div>
+                                <p class="mb-0 oml-card-desc">Use natural-language assistance to accelerate authoring, querying, and model exploration tasks.</p>
+                            </div>
                         </div>
-                        <p class="mb-0 oml-card-desc">Operationalize lint, compile, reason, validate, and publish workflows through repeatable automation pipelines.</p>
                     </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body">
-                        <div class="oml-capability-head">
-                            <div class="text-primary"><i class="ti-user oml-capability-icon"></i></div>
-                            <h5>Collaborative Engineering</h5>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="oml-capability-head">
+                                    <div class="text-primary"><i class="ti-agenda oml-capability-icon"></i></div>
+                                    <h5>Change Intelligence for Reviews</h5>
+                                </div>
+                                <p class="mb-0 oml-card-desc">Generate AI-assisted change summaries to streamline pull-request reviews and team decision-making.</p>
+                            </div>
                         </div>
-                        <p class="mb-0 oml-card-desc">Support asynchronous Git collaboration and synchronous Live Share sessions for mentoring and rapid troubleshooting.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body">
-                        <div class="oml-capability-head">
-                            <div class="text-primary"><i class="ti-link oml-capability-icon"></i></div>
-                            <h5>Methodology Lifecycle Management</h5>
-                        </div>
-                        <p class="mb-0 oml-card-desc">Select, compose, and evolve methodologies using reusable assets, examples, and organizational patterns.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body">
-                        <div class="oml-capability-head">
-                            <div class="text-primary"><i class="ti-desktop oml-capability-icon"></i></div>
-                            <h5>Web-Based Modeling Workspace</h5>
-                        </div>
-                        <p class="mb-0 oml-card-desc">Enable secure browser-based modeling for remote work, onboarding, tutorials, and zero-footprint demos.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body">
-                        <div class="oml-capability-head">
-                            <div class="text-primary"><i class="ti-comments oml-capability-icon"></i></div>
-                            <h5>GenAI Co-Modeling Assistant</h5>
-                        </div>
-                        <p class="mb-0 oml-card-desc">Use natural-language assistance to accelerate authoring, querying, and model exploration tasks.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body">
-                        <div class="oml-capability-head">
-                            <div class="text-primary"><i class="ti-export oml-capability-icon"></i></div>
-                            <h5>View-Based Data Exchange</h5>
-                        </div>
-                        <p class="mb-0 oml-card-desc">Round-trip modeling views through CSV, JSON, and SVG for integration with external analysis tools.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body">
-                        <div class="oml-capability-head">
-                            <div class="text-primary"><i class="ti-agenda oml-capability-icon"></i></div>
-                            <h5>Change Intelligence for Reviews</h5>
-                        </div>
-                        <p class="mb-0 oml-card-desc">Generate AI-assisted change summaries to streamline pull-request reviews and team decision-making.</p>
                     </div>
                 </div>
             </div>
@@ -263,7 +366,7 @@ description: "A framework for rigorous, scalable, and AI-enabled ontological mod
         <div class="row">
             <div class="col-12">
                 <div class="bg-secondary rounded p-5 text-center text-white">
-                    <h3 class="text-white mb-3">Experience the OML Code Framework</h3>
+                    <h3 class="text-white mb-3">Experience the OML Code Platform</h3>
                     <p class="mb-4">OML Code is available through enterprise subscription plans. To discuss subscription options, licensing, and onboarding, contact us.</p>
                     <a href="/contact.html" class="btn btn-primary mr-2 mb-2">Ask About Subscription</a>
                     <a href="/marketplace" class="btn btn-outline-light mb-2">Explore Marketplace</a>
