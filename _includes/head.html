@@ -18,14 +18,14 @@
   <meta property="og:title" content="{% if page.title %}{{page.title}}{% else %}{{site.title}}{% endif %}">
   <meta property="og:description" content="{%if page.description%}{{page.description}}{%else%}{{site.description}}{%endif%}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:image" content="{{ '/assets/images/oml-code.png' | absolute_url }}">
+  <meta property="og:image" content="{{ '/assets/images/oml-code-social.png' | absolute_url }}">
   <meta property="og:site_name" content="{{ site.title }}">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{% if page.title %}{{page.title}}{% else %}{{site.title}}{% endif %}">
   <meta name="twitter:description" content="{%if page.description%}{{page.description}}{%else%}{{site.description}}{%endif%}">
-  <meta name="twitter:image" content="{{ '/assets/images/oml-code.png' | absolute_url }}">
+  <meta name="twitter:image" content="{{ '/assets/images/oml-code-social.png' | absolute_url }}">
 
   {% for css in site.data.plugins.css %}
   <link rel="stylesheet" href="{{ css | relative_url }}">
@@ -35,8 +35,8 @@
   <link href="{{ '/assets/scss/style.css' | relative_url }}" rel="stylesheet">
 
   <!--Favicon-->
-  <link rel="shortcut icon" href="{{ '/assets/images/modelware-logo.png' | relative_url }}" type="image/png">
-  <link rel="icon" href="{{ '/assets/images/modelware-logo.png' | relative_url }}" type="image/png">
-  <link rel="apple-touch-icon" href="{{ '/assets/images/modelware-logo.png' | relative_url }}">
+  <link rel="icon" href="{{ '/assets/images/modelware-icon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="shortcut icon" href="{{ '/assets/images/modelware-icon.png' | relative_url }}" type="image/png">
+  <link rel="apple-touch-icon" href="{{ '/assets/images/modelware-icon.png' | relative_url }}">
   
 </head>

@@ -127,7 +127,7 @@ description: "An intelligence-centric engineering platform built on Logic · AI 
             <div class="col-lg-10">
                 <div>
                     <div class="oml-hero-title-row">
-                        <img src="/assets/images/oml-code.png" alt="OML Code" class="oml-hero-title-logo">
+                        <img src="/assets/images/oml-code-icon.svg" alt="OML Code" class="oml-hero-title-logo">
                         <h2 class="text-capitalize mb-0 text-lg text-white">{{ page.title }}</h2>
                     </div>
                     <p class="oml-hero-tagline">An <span class="gradient-text">intelligence-centric</span> engineering platform</p>
