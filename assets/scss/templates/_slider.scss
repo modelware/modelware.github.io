@@ -67,6 +67,7 @@
     .hero-title {
       font-size: 45px;
       line-height: 53px;
+      text-transform: none;
 
       @include desktop-lg {
         font-size: 41px;

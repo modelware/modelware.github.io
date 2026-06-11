@@ -12,6 +12,34 @@
 
 .bg-blue{
 	background: $blue !important;
+	background: radial-gradient(ellipse 80% 60% at 85% -10%, rgba(15, 185, 168, 0.18), transparent 60%),
+	            radial-gradient(ellipse 60% 50% at 10% 110%, rgba(139, 92, 246, 0.14), transparent 60%),
+	            linear-gradient(160deg, #0d1626 0%, #0a1322 55%, #0a1120 100%) !important;
+}
+
+.text-teal {
+	color: $primary-color !important;
+}
+
+.text-purple {
+	color: $extra-color !important;
+}
+
+.eyebrow {
+	display: inline-block;
+	font-family: $heading-font;
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+	color: $primary-color;
+}
+
+.gradient-text {
+	background: linear-gradient(90deg, $primary-color 0%, #6ee7db 50%, $extra-color 100%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .bg-clients {

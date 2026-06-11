@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Poppins:400,500,700');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
 
 
 html,body{
@@ -22,8 +22,9 @@ p{
 }
 h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
   font-family: $heading-font;
-  color: #222530;
-  font-weight: 500;
+  color: #141a26;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 h1 ,.h1{
