@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Modelware">
+  <defs>
+    <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e3242b"/>
+      <stop offset="1" stop-color="#9e1b1e"/>
+    </linearGradient>
+    <linearGradient id="grayGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5a5f63"/>
+      <stop offset="1" stop-color="#2e3134"/>
+    </linearGradient>
+    <linearGradient id="silverGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fafafa"/>
+      <stop offset="0.5" stop-color="#d7d9db"/>
+      <stop offset="1" stop-color="#8c9093"/>
+    </linearGradient>
+    <clipPath id="tile">
+      <rect width="512" height="512" rx="84"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#tile)">
+    <!-- white base shows through as the swoosh -->
+    <rect width="512" height="512" fill="#ffffff"/>
+    <!-- red upper-left sweep -->
+    <path d="M0 0 H430 C300 150 130 280 0 380 Z" fill="url(#redGrad)"/>
+    <!-- charcoal lower-right sweep -->
+    <path d="M460 0 H512 V512 H0 V410 C160 320 330 180 460 0 Z" fill="url(#grayGrad)"/>
+
+    <!-- M monogram -->
+    <text x="256" y="268" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="240" fill="url(#silverGrad) #d7d9db" stroke="#3a3d40" stroke-width="3" paint-order="stroke">M</text>
+
+    <!-- wordmark -->
+    <text x="256" y="448" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="58" letter-spacing="3" fill="#ffffff">MODELWARE</text>
+  </g>
+</svg>
