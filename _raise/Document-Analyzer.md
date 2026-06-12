@@ -12,16 +12,16 @@ This project intends to develop an approach to use an LLM to extract information
 
 #### Team
 
-- Kelli McCoy, NASA JPL, (PI)
-- [Maged Elaasar](/maged-elaasar.html), Ph.D., NASA JPL (Co-I)
-- Patric Bjornstadt, NASA JPL
-- Mahmudur Khan, NASA JPL
+- Kelli McCoy, NASA, (PI)
+- [Maged Elaasar](/maged-elaasar.html), Ph.D., (Co-I)
+- Patric Bjornstadt, NASA
+- Mahmudur Khan, NASA
 - Kareem Elaasar, UCI (M.Sc. Student)
 - Namrata Acharya, UCLA (M.Sc. Student)
 
 #### Results
 
-We are proud to report that this project has won an award from JPL.
+We are proud to report that this project has won an award from its sponsor.
 
 ![Document Analyzer Award](/assets/images/raise/document-analyzer-award.png)
 
@@ -36,6 +36,3 @@ Click on the Slideshow button below to see the result in a slide deck:
 <!-- Google embed ends -->
 </div>
 
-#### Sponsors
-
-[<img width="400" src="/assets/images/jpl-logo.png"/>](https://www.jpl.nasa.gov/)

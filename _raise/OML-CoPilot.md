@@ -28,7 +28,6 @@ TBD
 
 #### Sponsors
 
-[<img width="400px" src="/assets/images/jpl-logo.png"/>](https://www.jpl.nasa.gov/)
 
 [<img width="400px" src="https://upload.wikimedia.org/wikipedia/commons/b/b6/University_of_Arizona_logo.svg"/>](https://sie.engineering.arizona.edu/)
 

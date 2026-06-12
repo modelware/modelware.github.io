@@ -35,7 +35,7 @@ description: "BAE Systems is a British multinational arms, security, and aerospa
 	<p>{{page.description}}</p>
 
 	<div class="col-lg-12 text-left mt-5">
-		<p>We delivered a 2-day workshop on the openCAESAR engagement to BAE Systems. We presented the history of the engagement and how it is adopted at JPL. We also overviewed the different components, features, and workflows of the platform.</p>
+		<p>We delivered a 2-day workshop on the openCAESAR engagement to BAE Systems. We presented the history of the engagement and how it is adopted in the space industry. We also overviewed the different components, features, and workflows of the platform.</p>
 	</div>
 
 	<div class="post-single-share py-4 mt-4 mb+5">

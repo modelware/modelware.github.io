@@ -21,6 +21,3 @@ A new ontological systems engineering method called `Sierra` will be specified a
 
 - [Maged Elaasar](/maged-elaasar.html), Ph.D., Modelware (Co-I)
 
-#### Sponsors
-
-[<img width="400" src="/assets/images/jpl-logo.png"/>](https://www.jpl.nasa.gov/)

@@ -18,8 +18,8 @@ Ultimately, the project seeks to reimagine how system modelers interact with OML
 
 #### Team
 
-- [Maged Elaasar](/maged-elaasar.html), Ph.D., NASA JPL (PI)
-- Aaron Levitt, NASA JPL (Co-I)
+- [Maged Elaasar](/maged-elaasar.html), Ph.D., (PI)
+- Aaron Levitt, NASA (Co-I)
 
 #### Results
 
@@ -27,6 +27,3 @@ We released an alpha version of the VS Code extension of OML Vision. This versio
 
 {% include youtube.html id="chnKBsok-rY" %}
 
-#### Sponsors
-
-[<img width="400" src="/assets/images/jpl-logo.png"/>](https://www.jpl.nasa.gov/)

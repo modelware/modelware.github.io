@@ -271,13 +271,50 @@ description: "An intelligence-centric engineering platform built on Logic · AI 
             </div>
         </div>
 
+        <div class="mb-5" id="licensing">
+            <div class="text-center mb-5">
+                <span class="eyebrow">Get OML Code</span>
+                <h3>An Enterprise Solution, Built for Your Organization</h3>
+                <p class="text-muted mb-0">OML Code is delivered as an enterprise solution, with the support and partnership an engineering organization expects.</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 platform-card">
+                        <div class="card-body">
+                            <div class="text-teal mb-2"><i class="ti-agenda oml-capability-icon"></i></div>
+                            <h5 class="mb-2">Tailored to Your Organization</h5>
+                            <p class="mb-0 oml-card-desc">Subscriptions sized to your teams, programs, and goals, with terms that fit the way your organization works.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 platform-card">
+                        <div class="card-body">
+                            <div class="text-teal mb-2"><i class="ti-server oml-capability-icon"></i></div>
+                            <h5 class="mb-2">Deployed Your Way</h5>
+                            <p class="mb-0 oml-card-desc">Desktop, browser, or cloud, aligned with your security and IT requirements. Your models stay under your control.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 platform-card">
+                        <div class="card-body">
+                            <div class="text-teal mb-2"><i class="ti-headphone-alt oml-capability-icon"></i></div>
+                            <h5 class="mb-2">Partnership Beyond the Platform</h5>
+                            <p class="mb-0 oml-card-desc">Onboarding, training, and methodology development with our team and certified partners, so adoption succeeds, not just installation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-12">
                 <div class="bg-blue rounded p-5 text-center text-white">
-                    <h3 class="text-white mb-3">Experience the OML Code Platform</h3>
-                    <p class="mb-4 text-white-50">The future of MBSE is not just creating models. It is enabling knowledge to ground engineering intelligence. OML Code is available through enterprise subscription plans.</p>
-                    <a href="/contact.html" class="btn btn-primary mr-2 mb-2">Request a Demo</a>
-                    <a href="/marketplace" class="btn btn-outline-light mb-2">Explore Marketplace</a>
+                    <h3 class="text-white mb-3">Let's Find the Right Fit for Your Organization</h3>
+                    <p class="mb-4 text-white-50">Every engineering organization is different in size, security posture, and methodology. Tell us about yours and we will walk you through the platform and shape an arrangement that fits.</p>
+                    <a href="/contact.html" class="btn btn-primary mr-2 mb-2">Talk to Sales</a>
+                    <a href="/contact.html" class="btn btn-outline-light mb-2">Request a Demo</a>
                 </div>
             </div>
         </div>
