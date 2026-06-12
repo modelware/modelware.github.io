@@ -2,6 +2,7 @@
 layout: raise
 title: "ReqGPT"
 categories: ["Done"]
+cover: "/assets/images/research/covers/reqgpt.png"
 feature: "/assets/images/raise/reqgpt.png"
 ---
 

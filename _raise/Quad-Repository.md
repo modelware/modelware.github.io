@@ -2,6 +2,7 @@
 layout: raise
 title: "Quad Repository"
 categories: ["Done"]
+cover: "/assets/images/research/covers/quad-repository.png"
 feature: "/assets/images/raise/quad-repository.png"
 ---
 

@@ -2,6 +2,7 @@
 layout: raise
 title: "Electronic Data Sheets"
 categories: ["Done"]
+cover: "/assets/images/research/covers/electronic-data-sheets.png"
 feature: "/assets/images/raise/electronic-data-sheets.png"
 ---
 

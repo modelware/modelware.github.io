@@ -59,6 +59,12 @@ sass:
 
 #collections
 collections:
+  capabilities:
+    output: true
+    permalink: /oml-code/capabilities/:name
+  components:
+    output: true
+    permalink: /oml-code/components/:name
   engagements:
     output: true
   courses:

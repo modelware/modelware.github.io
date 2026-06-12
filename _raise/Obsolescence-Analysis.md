@@ -2,6 +2,7 @@
 layout: raise
 title: "Obsolescence Analysis"
 categories: ["Done"]
+cover: "/assets/images/research/covers/obsolescence-analysis.png"
 feature: "/assets/images/raise/obsolescence-analysis.png"
 ---
 

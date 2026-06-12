@@ -2,6 +2,7 @@
 layout: raise
 title: "Gemini"
 categories: ["Done"]
+cover: "/assets/images/research/covers/gemini.png"
 feature: "/assets/images/raise/gemini.png"
 ---
 

@@ -4,7 +4,10 @@
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="{%if page.description%}{{page.description}}{%else%}{{site.description}}{%endif%}">
+  {% assign social_title = page.title | default: site.title %}
+  {% assign social_description = page.description | default: page.summary | default: site.description | strip_html | strip_newlines | truncate: 200 %}
+  {% assign social_image = page.image | default: page.post_image | default: '/assets/images/oml-code-social.png' %}
+  <meta name="description" content="{{ social_description }}">
 
   <!-- theme meta -->
   <meta name="theme-name" content="dizer-jekyll" />
@@ -13,19 +16,26 @@
   <meta name="author" content="{{ . }}">
   {% endif %}
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="{% if page.title %}{{page.title}}{% else %}{{site.title}}{% endif %}">
-  <meta property="og:description" content="{%if page.description%}{{page.description}}{%else%}{{site.description}}{%endif%}">
+  <!-- Open Graph / LinkedIn / Facebook -->
+  <meta property="og:type" content="{% if page.video %}video.other{% else %}website{% endif %}">
+  <meta property="og:title" content="{{ social_title }}">
+  <meta property="og:description" content="{{ social_description }}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:image" content="{{ '/assets/images/oml-code-social.png' | absolute_url }}">
+  <meta property="og:image" content="{{ social_image | absolute_url }}">
   <meta property="og:site_name" content="{{ site.title }}">
+  {% if page.video %}
+  <meta property="og:video" content="{{ page.video | absolute_url }}">
+  <meta property="og:video:secure_url" content="{{ page.video | absolute_url }}">
+  <meta property="og:video:type" content="video/mp4">
+  <meta property="og:video:width" content="1200">
+  <meta property="og:video:height" content="706">
+  {% endif %}
 
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{% if page.title %}{{page.title}}{% else %}{{site.title}}{% endif %}">
-  <meta name="twitter:description" content="{%if page.description%}{{page.description}}{%else%}{{site.description}}{%endif%}">
-  <meta name="twitter:image" content="{{ '/assets/images/oml-code-social.png' | absolute_url }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ social_title }}">
+  <meta name="twitter:description" content="{{ social_description }}">
+  <meta name="twitter:image" content="{{ social_image | absolute_url }}">
 
   {% for css in site.data.plugins.css %}
   <link rel="stylesheet" href="{{ css | relative_url }}">

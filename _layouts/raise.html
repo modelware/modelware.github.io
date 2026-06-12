@@ -1,93 +1,135 @@
 ---
-layout: default_2
+layout: default
 ---
 
-{% include header_2.html %}
-
-<section class="portfolio-single">
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-lg-8">
-				<h1 class="mb-3 mt text-center">{{page.title}}</h1>
-
-				<div class="col-lg-12 mt text-center">
-					<div class="carousel-item active">
-						<img src="{{page.feature}}" alt="" class="img-fluid">
-					</div>
-				</div>
-				<p></p>
-				{{page.content}}
-
-			</div>
-		</div>
-	</div>
-</section>
-
-<section class="section post-single-share py-4">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<h3 class="text-white text-center">Share Project On</h3>
-				<ul class="list-inline socials-links">
-					<li class="list-inline-item">
-						<a href="#" class="active"><i class="ti-linkedin"></i></a>
-					</li>
-					<li class="list-inline-item">
-						<a href="#"><i class="ti-facebook"></i></a>
-					</li>
-					<li class="list-inline-item">
-						<a href="#"><i class="ti-twitter"></i></a>
-					</li>
-					<li class="list-inline-item">
-						<a href="#"><i class="ti-vimeo"></i></a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section class="section related-engagement py-4">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 text-center">
-				<h3 class="mb-5">Other Projects</h3>
-			</div>
-
-			<!-- Hidden list of all raise items -->
-			<div id="all-projects" style="display: none;">
-				{% for portfolio in site.raise %}
-				<div class="col-lg-4 project">
-					<div class="portfolio-block text-center border-0">
-						<img src="{{ portfolio.feature | relative_url }}" class="img-fluid" alt="{{ portfolio.title }}" />
-						<a class="card-img-overlay" href="{{ portfolio.url }}">
-							<h5 class="card-title text-white mb-0">{{ portfolio.title }}</h5>
-							<p class="card-text text-white text-uppercase text-sm">{{ portfolio.category }}</p>
-						</a>
-					</div>
-				</div>
-				{% endfor %}
-			</div>
-
-			<!-- Output container for 3 random items -->
-			<div id="random-project" class="row"></div>
-		</div>
-	</div>
-</section>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const allItems = Array.from(document.querySelectorAll("#all-projects .project"));
-    const outputContainer = document.getElementById("random-project");
-
-    // Shuffle function
-    function getRandomItems(arr, count) {
-      const shuffled = arr.sort(() => 0.5 - Math.random());
-      return shuffled.slice(0, count);
+<style>
+    .proj-hero-eyebrow a {
+        color: #6ee7db;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 13px;
+        font-weight: 600;
     }
+    .proj-badge {
+        display: inline-block;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding: 6px 14px;
+        border-radius: 999px;
+        margin-top: 20px;
+        color: #6ee7db;
+        border: 1px solid rgba(15, 185, 168, 0.5);
+        background: rgba(15, 185, 168, 0.08);
+    }
+    .proj-content {
+        font-size: 16.5px;
+        line-height: 1.8;
+        color: #46505c;
+    }
+    .proj-content h4 {
+        margin-top: 38px;
+        margin-bottom: 16px;
+    }
+    .proj-feature {
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(16, 26, 46, 0.12);
+        box-shadow: 0 18px 44px rgba(16, 26, 46, 0.16);
+        margin-bottom: 42px;
+        background: #0a1322;
+    }
+    .proj-feature img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    .proj-more-card {
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(16, 26, 46, 0.08);
+        box-shadow: 0 10px 24px rgba(16, 26, 46, 0.07);
+        background: #fff;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .proj-more-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 40px rgba(15, 185, 168, 0.18);
+    }
+    .proj-more-card img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 8 / 5;
+        object-fit: cover;
+    }
+    .proj-more-card .body {
+        padding: 14px 18px;
+    }
+    .proj-more-card .body h6 {
+        margin: 0;
+        line-height: 1.35;
+    }
+    .proj-more-card .body h6 a { color: inherit; }
+</style>
 
-    // Pick 3 random items
-    const selectedItems = getRandomItems(allItems, 3);
-    selectedItems.forEach(item => outputContainer.appendChild(item));
-  });
-</script>
+<section class="page-title bg-blue" style="padding: 190px 0 80px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10">
+                <p class="proj-hero-eyebrow mb-2">
+                    <a href="/research#projects"><i class="ti-arrow-left mr-1"></i> Research &middot; RAISE Lab Projects</a>
+                </p>
+                <h2 class="text-lg text-white mb-0">{{ page.title }}</h2>
+                <span class="proj-badge">RAISE Lab Project</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="padding-top: 70px; padding-bottom: 60px;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                {% if page.feature %}
+                <div class="proj-feature">
+                    <img src="{{ page.feature | relative_url }}" alt="{{ page.title }}">
+                </div>
+                {% endif %}
+                <div class="proj-content">
+                    {{ content }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-sm" style="padding-top: 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-4">
+                <span class="eyebrow">Keep Exploring</span>
+                <h3>More Research Projects</h3>
+            </div>
+        </div>
+        <div class="row" id="related-projects">
+            {% assign others = site.raise | where_exp: "p", "p.url != page.url" | sample: 3 %}
+            {% for p in others %}
+            <div class="col-lg-4 col-md-4 mb-4">
+                <div class="proj-more-card">
+                    <a href="{{ p.url | relative_url }}"><img src="{{ p.cover | default: p.feature | relative_url }}" alt="{{ p.title }}" loading="lazy"></a>
+                    <div class="body"><h6><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h6></div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row mt-2">
+            <div class="col-12 text-center">
+                <a href="/research#projects" class="btn btn-primary">All Research Projects</a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -2,6 +2,7 @@
 layout: raise
 title: "Firesat Functions"
 categories: ["Done"]
+cover: "/assets/images/research/covers/firesat-functions.png"
 feature: "/assets/images/raise/firesat-functions.png"
 ---
 

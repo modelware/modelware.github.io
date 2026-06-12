@@ -2,6 +2,7 @@
 layout: raise
 title: "OWL to OML Adapter"
 categories: ["Active"]
+cover: "/assets/images/research/covers/owl-to-oml-adapter.png"
 feature: "/assets/images/raise/owl-to-oml-adapter.png"
 ---
 

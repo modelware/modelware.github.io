@@ -2,6 +2,7 @@
 layout: raise
 title: "Deep Learning for COVID-19"
 categories: ["Done"]
+cover: "/assets/images/research/covers/deep-learning-for-covid-19.png"
 feature: "/assets/images/raise/deep-learning-for-covid-19.png"
 ---
 

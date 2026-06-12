@@ -1,0 +1,263 @@
+---
+layout: default
+---
+
+<style>
+    .cap-hero-eyebrow a {
+        color: #6ee7db;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+    }
+    .cap-hero-lead {
+        color: rgba(255, 255, 255, 0.72) !important;
+        font-size: 18px;
+        line-height: 1.7;
+        max-width: 760px;
+        margin: 18px 0 0;
+    }
+    .cap-pills {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 22px;
+    }
+    .cap-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #6ee7db;
+        padding: 7px 16px;
+        border-radius: 999px;
+        border: 1px solid rgba(15, 185, 168, 0.5);
+        background: rgba(15, 185, 168, 0.08);
+        white-space: nowrap;
+    }
+    .cap-pill.purple {
+        color: #c4b5fd;
+        border-color: rgba(139, 92, 246, 0.55);
+        background: rgba(139, 92, 246, 0.1);
+    }
+    .cap-content {
+        font-size: 16.5px;
+        line-height: 1.8;
+        color: #46505c;
+    }
+    .cap-content h4 {
+        margin-top: 38px;
+        margin-bottom: 16px;
+    }
+    .cap-content ul {
+        padding-left: 0;
+        list-style: none;
+    }
+    .cap-content ul li {
+        position: relative;
+        padding-left: 28px;
+        margin-bottom: 10px;
+    }
+    .cap-content ul li::before {
+        content: "\2713";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #0fb9a8;
+        font-weight: 700;
+    }
+    .cap-media {
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(16, 26, 46, 0.12);
+        box-shadow: 0 18px 44px rgba(16, 26, 46, 0.16);
+        background: #0a1322;
+    }
+    .cap-media-bar {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 10px 14px;
+        background: #101a2e;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .cap-media-bar span {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.18);
+    }
+    .cap-media-bar span:first-child { background: rgba(227, 80, 80, 0.7); }
+    .cap-media-bar span:nth-child(2) { background: rgba(240, 160, 48, 0.7); }
+    .cap-media-bar span:nth-child(3) { background: rgba(15, 185, 168, 0.7); }
+    .cap-media-bar em {
+        margin-left: 10px;
+        font-style: normal;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12.5px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        color: rgba(255, 255, 255, 0.55);
+    }
+    .cap-media img,
+    .cap-media video {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1200 / 706;
+        background: #0a1322;
+    }
+    .cap-demo-block {
+        margin-top: 48px;
+    }
+    .cap-demo-block .cap-demo-caption {
+        margin-top: 16px;
+        font-size: 15.5px;
+        color: #5d6b7e;
+    }
+    .cap-nav {
+        border-top: 1px solid #e9edf2;
+        margin-top: 70px;
+        padding-top: 28px;
+    }
+    .cap-nav a {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 600;
+        color: #101a2e;
+    }
+    .cap-nav small {
+        display: block;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        font-size: 11px;
+        color: #8c97a5;
+        margin-bottom: 4px;
+    }
+    .cap-cta {
+        border-radius: 14px;
+        padding: 48px 30px;
+    }
+</style>
+
+{% if page.collection == "components" %}
+    {% assign caps = site.components | sort: "order" %}
+    {% assign group_label = "Components" %}
+    {% assign group_plural = "Components" %}
+    {% assign group_kind = "component" %}
+    {% assign group_anchor = "/oml-code#components" %}
+{% else %}
+    {% assign caps = site.capabilities | sort: "order" %}
+    {% assign group_label = "Platform Capabilities" %}
+    {% assign group_plural = "Capabilities" %}
+    {% assign group_kind = "capability" %}
+    {% assign group_anchor = "/oml-code#capabilities" %}
+{% endif %}
+
+<section class="page-title bg-blue" style="padding: 190px 0 90px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10">
+                <p class="cap-hero-eyebrow mb-2">
+                    <a href="{{ group_anchor }}"><i class="ti-arrow-left mr-1"></i> OML Code &middot; {{ group_label }}</a>
+                </p>
+                <h2 class="text-lg text-white mb-0">{{ page.title }}</h2>
+                {% if page.summary %}<p class="cap-hero-lead">{{ page.summary }}</p>{% endif %}
+                <div class="cap-pills">
+                    {% for pillar in page.pillars %}
+                        {% if pillar == "logic" %}<span class="cap-pill"><i class="ti-shield"></i> Logic</span>{% endif %}
+                        {% if pillar == "ai" %}<span class="cap-pill purple"><i class="ti-bolt"></i> AI</span>{% endif %}
+                        {% if pillar == "devops" %}<span class="cap-pill"><i class="ti-infinite"></i> DevOps</span>{% endif %}
+                    {% endfor %}
+                    {% for tag in page.tags %}<span class="cap-pill">{{ tag }}</span>{% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="padding-top: 70px; padding-bottom: 80px;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="cap-content">
+                    {{ content }}
+                </div>
+
+                {% for gif in page.gifs %}
+                <div class="cap-demo-block">
+                    {% if gif.title %}<h4 class="mb-3">{{ gif.title }}</h4>{% endif %}
+                    <div class="cap-media">
+                        <div class="cap-media-bar"><span></span><span></span><span></span><em>{{ gif.title | default: page.title }} &middot; OML Code</em></div>
+                        {% if gif.src contains ".mp4" %}
+                        <video class="cap-video" muted loop playsinline preload="none" aria-label="{{ gif.title | default: page.title }} demo">
+                            <source data-src="{{ gif.src | relative_url }}" type="video/mp4">
+                        </video>
+                        {% else %}
+                        <img src="{{ gif.src | relative_url }}" alt="{{ gif.title | default: page.title }} demo" loading="lazy">
+                        {% endif %}
+                    </div>
+                    {% if gif.caption %}<p class="cap-demo-caption">{{ gif.caption }}</p>{% endif %}
+                </div>
+                {% endfor %}
+
+                {% assign prev_cap = nil %}{% assign next_cap = nil %}{% assign found = false %}
+                {% for cap in caps %}
+                    {% if found and next_cap == nil %}{% assign next_cap = cap %}{% endif %}
+                    {% if cap.url == page.url %}{% assign found = true %}{% endif %}
+                    {% unless found %}{% assign prev_cap = cap %}{% endunless %}
+                {% endfor %}
+
+                <div class="cap-nav d-flex justify-content-between flex-wrap">
+                    <div class="mb-3 pr-3">
+                        {% if prev_cap %}
+                        <small>Previous {{ group_kind }}</small>
+                        <a href="{{ prev_cap.url | relative_url }}"><i class="ti-arrow-left mr-1"></i> {{ prev_cap.title }}</a>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3 text-right">
+                        {% if next_cap %}
+                        <small>Next {{ group_kind }}</small>
+                        <a href="{{ next_cap.url | relative_url }}">{{ next_cap.title }} <i class="ti-arrow-right ml-1"></i></a>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="bg-blue cap-cta text-center text-white mt-4">
+                    <h3 class="text-white mb-3">See {{ page.title }} on your own models</h3>
+                    <p class="mb-4 text-white-50">A short, personalized demo says more than any page. Tell us about your engineering challenge and we will show you exactly how OML Code handles it.</p>
+                    <a href="/contact.html" class="btn btn-primary mr-2 mb-2">Request a Demo</a>
+                    <a href="{{ group_anchor }}" class="btn btn-outline-light mb-2">Explore More {{ group_plural }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var videos = document.querySelectorAll('video.cap-video');
+    if (!('IntersectionObserver' in window)) {
+        videos.forEach(function (v) {
+            var s = v.querySelector('source');
+            if (s && s.dataset.src) { s.src = s.dataset.src; v.load(); v.play(); }
+        });
+        return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var v = entry.target;
+            var s = v.querySelector('source');
+            if (s && s.dataset.src && !s.src) { s.src = s.dataset.src; v.load(); }
+            v.play();
+            io.unobserve(v);
+        });
+    }, { rootMargin: '300px 0px' });
+    videos.forEach(function (v) { io.observe(v); });
+});
+</script>

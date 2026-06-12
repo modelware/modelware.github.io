@@ -2,6 +2,7 @@
 layout: raise
 title: "Autonomica"
 categories: ["Done"]
+cover: "/assets/images/research/covers/autonomica.png"
 feature: "/assets/images/raise/autonomica.png"
 ---
 

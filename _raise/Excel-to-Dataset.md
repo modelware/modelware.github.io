@@ -2,6 +2,7 @@
 layout: raise
 title: "Excel to Dataset"
 categories: ["Done"]
+cover: "/assets/images/research/covers/excel-to-dataset.png"
 feature: "/assets/images/raise/excel-to-dataset.png"
 ---
 

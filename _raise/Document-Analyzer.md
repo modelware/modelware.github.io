@@ -2,6 +2,7 @@
 layout: raise
 title: "Document Analyzer"
 categories: ["Done"]
+cover: "/assets/images/research/covers/document-analyzer.png"
 feature: "/assets/images/raise/document-analyzer.png"
 ---
 

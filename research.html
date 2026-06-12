@@ -1,0 +1,201 @@
+---
+layout: default
+title: Research
+permalink: /research
+description: "OML Code is built on a decade of research in ontological modeling and intelligence-centric engineering, with roots at NASA JPL and a global community of partners."
+---
+
+<style>
+    .res-hero-lead {
+        color: rgba(255, 255, 255, 0.72) !important;
+        font-size: 18px;
+        line-height: 1.7;
+        max-width: 760px;
+        margin: 18px 0 0;
+    }
+    .res-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin-top: 34px;
+    }
+    .res-stat .num {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 34px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.1;
+    }
+    .res-stat .lbl {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #6ee7db;
+        margin-top: 6px;
+    }
+    .res-initiative {
+        border-radius: 12px;
+        border: 1px solid rgba(16, 26, 46, 0.08);
+        box-shadow: 0 12px 28px rgba(16, 26, 46, 0.08);
+        padding: 30px 28px;
+        height: 100%;
+        background: #fff;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .res-initiative:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 40px rgba(15, 185, 168, 0.18);
+    }
+    .res-initiative .kicker {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11.5px;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #0fb9a8;
+    }
+    .res-initiative h4 { margin: 8px 0 12px; }
+    .res-initiative p { font-size: 15px; line-height: 1.65; margin-bottom: 14px; }
+    .res-initiative a.more {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        color: #0fb9a8;
+    }
+    .res-card {
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(16, 26, 46, 0.08);
+        box-shadow: 0 10px 24px rgba(16, 26, 46, 0.07);
+        background: #fff;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .res-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 40px rgba(15, 185, 168, 0.18);
+    }
+    .res-card img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 8 / 5;
+        object-fit: cover;
+    }
+    .res-card-body {
+        padding: 18px 20px 16px;
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+    }
+    .res-card-body h6 {
+        margin-bottom: 6px;
+        line-height: 1.35;
+    }
+    .res-card-body h6 a { color: inherit; }
+    .res-card-body p {
+        font-size: 13.5px;
+        line-height: 1.6;
+        color: #5d6b7e;
+        margin-bottom: 0;
+    }
+    .res-section-head { margin-bottom: 36px; }
+</style>
+
+<section class="page-title bg-blue" style="padding: 200px 0 100px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10">
+                <span class="eyebrow" style="color:#6ee7db;">Modelware &middot; Research</span>
+                <h2 class="text-lg text-white mb-0 mt-2">Built on a Decade of Research</h2>
+                <p class="res-hero-lead">OML Code did not start as a product idea. It grew out of years of research in ontological modeling and rigorous systems engineering, with roots at NASA's Jet Propulsion Laboratory and collaborations spanning corporate, government, and academic laboratories. That research foundation is why the platform can make claims most tools cannot.</p>
+                <div class="res-stats">
+                    <div class="res-stat"><div class="num">10+</div><div class="lbl">Years of Research</div></div>
+                    <div class="res-stat"><div class="num">{{ site.raise | size }}</div><div class="lbl">Research Projects</div></div>
+                    <div class="res-stat"><div class="num">3</div><div class="lbl">Flagship Initiatives</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="padding-top: 70px; padding-bottom: 40px;">
+    <div class="container">
+        <div class="text-center res-section-head">
+            <span class="eyebrow">The Foundations</span>
+            <h3>Flagship Initiatives</h3>
+            <p class="text-muted mb-0">Three long-running initiatives carry our research from idea to open practice.</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="res-initiative">
+                    <span class="kicker">Open Source Platform</span>
+                    <h4>openCAESAR</h4>
+                    <p>The open source platform for ontological modeling and analysis, created at NASA JPL and proven on flagship space missions. openCAESAR pioneered the rigorous, model-as-code approach that OML Code productizes today.</p>
+                    <a class="more" href="https://www.opencaesar.io/" target="_blank" rel="noopener">Visit openCAESAR <i class="ti-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="res-initiative">
+                    <span class="kicker">Research Laboratory</span>
+                    <h4>RAISE Lab</h4>
+                    <p>The Rigorous, Agile, and Intelligent Systems Engineering laboratory runs research projects with leading corporate, government, and academic partners, exploring what is next for intelligence-centric engineering.</p>
+                    <a class="more" href="#projects">Browse the projects <i class="ti-arrow-down"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="res-initiative">
+                    <span class="kicker">Community Forum</span>
+                    <h4>onto:Nexus</h4>
+                    <p>A forum and workshop series where practitioners and researchers of ontological modeling share methods, results, and lessons learned, keeping the community connected and the state of the art moving.</p>
+                    <a class="more" href="https://www.opencaesar.io/events/" target="_blank" rel="noopener">Explore onto:Nexus <i class="ti-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="projects" style="padding-top: 40px; padding-bottom: 70px;">
+    <div class="container">
+        <div class="text-center res-section-head">
+            <span class="eyebrow">RAISE Lab</span>
+            <h3>Research Projects</h3>
+            <p class="text-muted mb-0">Conducted with leading partners. Many results now ship inside OML Code.</p>
+        </div>
+
+        <div class="row">
+            {% assign projects = site.raise | sort: "title" %}
+            {% for p in projects %}
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="res-card">
+                    <a href="{{ p.url | relative_url }}"><img src="{{ p.cover | default: p.feature | relative_url }}" alt="{{ p.title }}" loading="lazy"></a>
+                    <div class="res-card-body">
+                        <h6><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h6>
+                        <p>{{ p.content | markdownify | strip_html | remove_first: 'Description' | strip_newlines | truncate: 95 }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section-sm" style="padding-top: 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="bg-blue rounded p-5 text-center text-white">
+                    <h3 class="text-white mb-3">Research You Can Build On</h3>
+                    <p class="mb-4 text-white-50">The results of this research ship today inside OML Code. If you want to co-sponsor a RAISE Lab project, propose a new one, or see how a decade of research becomes your engineering advantage, we should talk.</p>
+                    <a href="/contact.html" class="btn btn-primary mr-2 mb-2">Talk to Us</a>
+                    <a href="/oml-code" class="btn btn-outline-light mb-2">Explore OML Code</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

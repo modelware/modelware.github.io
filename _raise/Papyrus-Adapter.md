@@ -2,6 +2,7 @@
 layout: raise
 title: "Papyrus Adapter"
 categories: ["Done"]
+cover: "/assets/images/research/covers/papyrus-adapter.png"
 feature: "/assets/images/raise/papyrus-adapter.png"
 ---
 

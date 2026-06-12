@@ -2,6 +2,7 @@
 layout: raise
 title: "Query Bot"
 categories: ["Done"]
+cover: "/assets/images/research/covers/query-bot.png"
 feature: "/assets/images/raise/query-bot.png"
 ---
 

@@ -2,6 +2,7 @@
 layout: raise
 title: "OML Vision"
 categories: ["Active"]
+cover: "/assets/images/research/covers/oml-vision.png"
 feature: "/assets/images/raise/oml-vision.png"
 ---
 

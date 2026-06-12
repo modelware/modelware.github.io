@@ -2,6 +2,7 @@
 layout: raise
 title: "Bim Hub"
 categories: ["Done"]
+cover: "/assets/images/research/covers/bim-hub.png"
 feature: "/assets/images/raise/bim-hub.png"
 ---
 

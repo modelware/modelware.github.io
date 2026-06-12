@@ -2,6 +2,7 @@
 layout: raise
 title: "OML Alexandria"
 categories: ["Done"]
+cover: "/assets/images/research/covers/oml-alexandria.png"
 feature: "/assets/images/raise/oml-alexandria.png"
 ---
 

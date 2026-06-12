@@ -17,8 +17,8 @@ main:
         url: /blog-1.html
       - name: Academy
         url: /academy.html
-      - name: Laboratory
-        url: /laboratory.html
+      - name: Research
+        url: /research
       - name: Youtube
         url: /omlcode-youtube.html
   - name: Company

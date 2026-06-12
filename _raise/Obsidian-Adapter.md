@@ -2,6 +2,7 @@
 layout: raise
 title: "Obsidian Adapter"
 categories: ["Active"]
+cover: "/assets/images/research/covers/obsidian-adapter.png"
 feature: "/assets/images/raise/obsidian-adapter.png"
 ---
 
