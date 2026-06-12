@@ -69,6 +69,44 @@ description: "An intelligence-centric engineering platform built on Logic · AI 
     .oml-pillar i {
         font-size: 12px;
     }
+    .oml-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        max-width: 620px;
+        margin: 10px auto 58px;
+    }
+    .oml-divider::before,
+    .oml-divider::after {
+        content: "";
+        flex: 1 1 auto;
+        height: 2px;
+        border-radius: 2px;
+    }
+    .oml-divider::before {
+        background: linear-gradient(90deg, rgba(15, 185, 168, 0), rgba(15, 185, 168, 0.5));
+    }
+    .oml-divider::after {
+        background: linear-gradient(90deg, rgba(139, 92, 246, 0.5), rgba(139, 92, 246, 0));
+    }
+    .oml-divider span {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #0fb9a8;
+        opacity: 0.75;
+    }
+    .oml-divider span:nth-child(2) {
+        width: 11px;
+        height: 11px;
+        background: #fff;
+        border: 2.5px solid #6ee7db;
+        opacity: 1;
+    }
+    .oml-divider span:nth-child(3) {
+        background: #8b5cf6;
+    }
     .oml-cap-title-link {
         color: inherit;
     }
@@ -215,6 +253,8 @@ description: "An intelligence-centric engineering platform built on Logic · AI 
             {% endfor %}
         </div>
 
+        <div class="oml-divider" aria-hidden="true"><span></span><span></span><span></span></div>
+
         <div class="mb-5" id="capabilities">
             <div class="text-center mb-5">
                 <span class="eyebrow">The Platform</span>
@@ -251,6 +291,8 @@ description: "An intelligence-centric engineering platform built on Logic · AI 
             </div>
         </div>
 
+        <div class="oml-divider" aria-hidden="true"><span></span><span></span><span></span></div>
+
         <div class="row align-items-center mb-5">
             <div class="col-lg-6 mb-4 mb-lg-0">
                 <span class="eyebrow">Why It Matters</span>
@@ -270,6 +312,8 @@ description: "An intelligence-centric engineering platform built on Logic · AI 
                 </div>
             </div>
         </div>
+
+        <div class="oml-divider" aria-hidden="true"><span></span><span></span><span></span></div>
 
         <div class="mb-5" id="licensing">
             <div class="text-center mb-5">
