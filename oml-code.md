@@ -2,7 +2,6 @@
 layout: default
 title: OML Code
 permalink: /oml-code
-header_image: "/assets/images/bg/banner-7.jpg"
 description: "An intelligence-centric engineering platform built on Logic · AI · DevOps. Engineering models you can reason on and compute over."
 ---
 

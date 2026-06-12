@@ -1,4 +1,4 @@
-<section class="page-title header-padding" style="background-image:url({% if page.header_image %}{{page.header_image | relative_url}} {% else %} {{site.cover_image}} {% endif %});background-size:cover">
+<section class="page-title header-padding{% if page.header_dark %} bg-blue{% endif %}"{% unless page.header_dark %} style="background-image:url({% if page.header_image %}{{page.header_image | relative_url}} {% else %} {{site.cover_image}} {% endif %});background-size:cover"{% endunless %}>
   <div class="container">
     <div class="row">
       <div class="col-lg-10">
