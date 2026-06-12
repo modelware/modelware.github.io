@@ -7,14 +7,6 @@
 				<div class="footer-widget  mb-5 mb-lg-0">
 					<h4 class="font-weight-bold text-white mb-3">About Us</h4>
 					{{site.footer_content | markdownify}}
-
-					<ul class="list-inline socials-links">
-						{% for social in site.social %}
-						<li class="list-inline-item mb-2">
-							<a target="_blank" href="{{social.link}}" class="active"><i class="{{social.icon}}"></i></a>
-						</li>
-						{% endfor %}
-					</ul>
 				</div>
 			</div>
 
@@ -48,6 +40,14 @@
 						<li>{{site.address}}</li>
 						<li><a href="tel:{{site.phone}}">{{site.phone}}</a></li>
 						<li><a href="mailto:{{site.email}}">{{site.email}}</a></li>
+					</ul>
+
+					<ul class="list-inline socials-links mt-2 mb-0">
+						{% for social in site.social %}
+						<li class="list-inline-item mb-2">
+							<a target="_blank" rel="noopener" href="{{social.link}}" class="active" aria-label="{{social.name}}"><i class="{{social.icon}}"></i></a>
+						</li>
+						{% endfor %}
 					</ul>
 				</div>
 			</div>		

@@ -3,76 +3,168 @@ layout: default
 header_image: "/assets/images/bg/bg-portfolio.jpg"
 header_dark: true
 title: "Modelware Academy"
-description: "We are a leader in Advanced Technology Training"
+description: "Training for intelligence-centric engineering: the upcoming OML Code curriculum, plus graduate engineering courses taught by our founder at leading universities."
 ---
 
 {% include page_header.html %}
 
-<!-- Service Start -->
-<section class="service-main section">
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-lg-8 text-center">
-				<span class="h5 text-color text-uppercase">
-					Courses
-				</span>
-				<h3 class="mb-5 mt-2">Register for our next offerings</h3>
-			</div>
-		</div>
+<style>
+    .acad-card {
+        border-radius: 12px;
+        border: 1px solid rgba(16, 26, 46, 0.08);
+        box-shadow: 0 12px 28px rgba(16, 26, 46, 0.08);
+        padding: 28px 26px;
+        height: 100%;
+        background: #fff;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .acad-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 40px rgba(15, 185, 168, 0.18);
+    }
+    .acad-card h5 { margin: 10px 0 10px; }
+    .acad-card p { font-size: 14.5px; line-height: 1.65; margin-bottom: 0; color: #5d6b7e; }
+    .acad-badge {
+        display: inline-block;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 4px 12px;
+        border-radius: 999px;
+        color: #6b5bd2;
+        background: rgba(139, 92, 246, 0.12);
+    }
+    .acad-icon {
+        font-size: 26px;
+        color: #0fb9a8;
+        margin-bottom: 6px;
+        display: inline-block;
+    }
+    .course-card {
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(16, 26, 46, 0.08);
+        box-shadow: 0 10px 24px rgba(16, 26, 46, 0.07);
+        background: #fff;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .course-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 40px rgba(15, 185, 168, 0.18);
+    }
+    .course-card img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 8 / 5;
+        object-fit: cover;
+    }
+    .course-card-body { padding: 20px 22px 18px; display: flex; flex-direction: column; flex: 1 1 auto; }
+    .course-card-body h5 { margin-bottom: 8px; }
+    .course-card-body h5 a { color: inherit; }
+    .course-card-body p { font-size: 14px; line-height: 1.65; color: #5d6b7e; margin-bottom: 0; }
+    .acad-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        max-width: 620px;
+        margin: 10px auto 58px;
+    }
+    .acad-divider::before,
+    .acad-divider::after {
+        content: "";
+        flex: 1 1 auto;
+        height: 2px;
+        border-radius: 2px;
+    }
+    .acad-divider::before { background: linear-gradient(90deg, rgba(15, 185, 168, 0), rgba(15, 185, 168, 0.5)); }
+    .acad-divider::after { background: linear-gradient(90deg, rgba(139, 92, 246, 0.5), rgba(139, 92, 246, 0)); }
+    .acad-divider span { width: 7px; height: 7px; border-radius: 50%; background: #0fb9a8; opacity: 0.75; }
+    .acad-divider span:nth-child(2) { width: 11px; height: 11px; background: #fff; border: 2.5px solid #6ee7db; opacity: 1; }
+    .acad-divider span:nth-child(3) { background: #8b5cf6; }
+</style>
 
-		<div class="row justify-content-center">
-			<div class="d-flex flex-wrap align-items-center justify-content-between mb-5">
-				<div class="btn-group btn-group-toggle " data-toggle="buttons">
-		  
-				  <label class="btn border-0 active">
-					<input type="radio" name="shuffle-filter" value="all" checked="checked" />All
-				  </label>
-				  {% assign categories = site.courses| map: 'categories' | join: ',' | split: ',' | uniq %}
-				  {% for category in categories %}
-				  <label class="btn border-0">
-					<input type="radio" name="shuffle-filter"
-					  value="{{ category | downcase | slugify }}" />{{ category }}
-				  </label>
-				  {% endfor %}
-				</div>
-			</div>
-		</div>
+<section class="section" style="padding-top: 70px; padding-bottom: 70px;">
+    <div class="container">
 
-		<div class="row shuffle-wrapper portfolio-gallery">
-			{% for portfolio in site.courses %}
-			<div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[{% for category in portfolio.categories %} &quot;{{ category | downcase | slugify }}&quot; {% unless forloop.last %}, {% endunless %} {% endfor %}]">
-			  <div class="position-relative inner-box">
-				<div class="image position-relative ">
-				  <img src="{{portfolio.feature | relative_url }}" alt="portfolio-image" class="img-fluid w-100 d-block" />
-				  <div class="overlay-box">
-					<div class="overlay-inner">
-					  <a class="overlay-content text-center" href="{{portfolio.url | relative_url }}">
-						<h5 class="mb-0 text-white">{{portfolio.title}}</h5>
-					  </a>
-					</div>
-				  </div>
-				</div>
-			  </div>
-			</div>
-			{% endfor %}
-		</div>
-	
-	</div>
+        <div class="text-center mb-5">
+            <span class="eyebrow">Coming Soon</span>
+            <h3>The OML Code Curriculum</h3>
+            <p class="text-muted mb-0">We are developing a hands-on training curriculum for intelligence-centric engineering with OML Code.<br>Courses are organized around the platform's four foundations.</p>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="acad-card">
+                    <i class="ti-write acad-icon"></i><br>
+                    <span class="acad-badge">In Development</span>
+                    <h5>Knowledge Engineering with OML</h5>
+                    <p>Author formal vocabularies and system descriptions in OML, and turn domain expertise into machine-understandable models.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="acad-card">
+                    <i class="ti-map-alt acad-icon"></i><br>
+                    <span class="acad-badge">In Development</span>
+                    <h5>Methodology Development</h5>
+                    <p>Design declarative methodologies: vocabularies, patterns, viewpoints, and analyses that guide your whole team.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="acad-card">
+                    <i class="ti-bolt acad-icon"></i><br>
+                    <span class="acad-badge">In Development</span>
+                    <h5>Reasoning, Querying &amp; AI</h5>
+                    <p>Verify models with automated reasoning, answer engineering questions with queries, and put grounded AI assistance to work.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="acad-card">
+                    <i class="ti-infinite acad-icon"></i><br>
+                    <span class="acad-badge">In Development</span>
+                    <h5>Model DevOps</h5>
+                    <p>Operationalize engineering knowledge with Git-native versioning, CI validation pipelines, and continuous delivery of gate products.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="bg-blue rounded p-5 text-center text-white">
+                    <h3 class="text-white mb-3">Be First in Class</h3>
+                    <p class="mb-4 text-white-50">Want to be notified when enrollment opens, or discuss early-access training for your team? We would love to hear from you.</p>
+                    <a href="/contact.html" class="btn btn-primary mr-2 mb-2">Get Notified</a>
+                    <a href="/contact.html" class="btn btn-outline-light mb-2">Team Training Inquiry</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="acad-divider" aria-hidden="true"><span></span><span></span><span></span></div>
+
+        <div class="text-center mb-5">
+            <span class="eyebrow">Academic Teaching</span>
+            <h3>Taught at Leading Universities</h3>
+            <p class="text-muted mb-0">Our founder, <a href="/maged-elaasar.html">Dr. Maged Elaasar</a>, teaches graduate engineering at UCLA and Northeastern University.<br>The same expertise behind these courses informs the OML Code curriculum.</p>
+        </div>
+
+        <div class="row justify-content-center">
+            {% for course in site.courses %}
+            <div class="col-lg-5 col-md-6 mb-4">
+                <div class="course-card">
+                    <a href="{{ course.url | relative_url }}"><img src="{{ course.feature | relative_url }}" alt="{{ course.title }}" loading="lazy"></a>
+                    <div class="course-card-body">
+                        <h5><a href="{{ course.url | relative_url }}">{{ course.title }}</a></h5>
+                        <p>{{ course.content | markdownify | strip_html | remove_first: 'Description' | strip_newlines | truncate: 150 }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </section>
-<!-- Service End -->
-
-<!-- Call To action Start -->
-<section class="position-relative section-sm bg-extra">
-	<img src="/assets/images/bg/cta-bg-2.png" alt="" class="overlay-shape">
-	<div class="container">
-		<div class="row align-items-center">
-			<div class="col-lg-9 mb-5 mb-lg-0">
-				<h2 class="text-white mb-0">Let us train your team in MBSE Skills</h2>
-			</div>
-			<div class="col-lg-3">
-				<a href="contact.html" class="btn btn-primary">contact us</a>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- Call to action End -->
