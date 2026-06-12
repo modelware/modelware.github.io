@@ -105,6 +105,44 @@ description: "OML Code is built on a decade of research in ontological modeling 
         margin-bottom: 0;
     }
     .res-section-head { margin-bottom: 36px; }
+    .res-partner {
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(16, 26, 46, 0.08);
+        box-shadow: 0 10px 24px rgba(16, 26, 46, 0.07);
+        background: #fff;
+        height: 100%;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .res-partner:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 40px rgba(15, 185, 168, 0.18);
+    }
+    .res-partner img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 4.2;
+        object-fit: cover;
+        object-position: top;
+    }
+    .res-partner-body { padding: 20px 22px 18px; text-align: center; }
+    .res-partner-body .chip {
+        display: inline-block;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 4px 12px;
+        border-radius: 999px;
+        color: #0a7f73;
+        background: rgba(15, 185, 168, 0.12);
+        margin-bottom: 10px;
+    }
+    .res-partner-body h5 { margin-bottom: 8px; }
+    .res-partner-body h5 a { color: inherit; }
+    .res-partner-body p { font-size: 14px; line-height: 1.65; color: #5d6b7e; margin-bottom: 0; }
 </style>
 
 <section class="page-title bg-blue" style="padding: 200px 0 100px;">
@@ -181,6 +219,28 @@ description: "OML Code is built on a decade of research in ontological modeling 
                 </div>
             </div>
             {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section" id="academic-partners" style="padding-top: 0; padding-bottom: 50px;">
+    <div class="container">
+        <div class="text-center res-section-head">
+            <span class="eyebrow">Academic Partners</span>
+            <h3>University Researchers We Collaborate With</h3>
+            <p class="text-muted mb-0">The RAISE Lab partners with leading academics to push intelligence-centric engineering forward.</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="res-partner">
+                    <a href="/partners/alejandro-salado.html"><img src="{{ '/assets/images/alejandro-salado.jpg' | relative_url }}" alt="Dr. Alejandro Salado"></a>
+                    <div class="res-partner-body">
+                        <span class="chip">University of Arizona</span>
+                        <h5><a href="/partners/alejandro-salado.html">Dr. Alejandro Salado</a></h5>
+                        <p>Associate Professor of Systems and Industrial Engineering. Collaborating with Modelware on OML CoPilot research since 2024.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
