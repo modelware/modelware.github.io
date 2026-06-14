@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Scattered domain knowledge becoming structured, computable engineering intelligence">
+  <defs>
+    <linearGradient id="av-bg" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#16233c"/>
+      <stop offset="0.78" stop-color="#0a1322"/>
+    </linearGradient>
+    <radialGradient id="av-glow-tl" cx="0.1" cy="0.12" r="0.9">
+      <stop offset="0" stop-color="#0fb9a8" stop-opacity="0.20"/>
+      <stop offset="0.6" stop-color="#0fb9a8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="av-glow-br" cx="0.9" cy="0.9" r="0.95">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.24"/>
+      <stop offset="0.6" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="av-edge" x1="360" y1="300" x2="710" y2="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0fb9a8"/>
+      <stop offset="0.5" stop-color="#6ee7db"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="av-flow" x1="120" y1="300" x2="380" y2="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3a4a63"/>
+      <stop offset="1" stop-color="#0fb9a8"/>
+    </linearGradient>
+    <filter id="av-soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- backdrop -->
+  <rect width="800" height="600" rx="18" fill="url(#av-bg)"/>
+  <rect width="800" height="600" rx="18" fill="url(#av-glow-tl)"/>
+  <rect width="800" height="600" rx="18" fill="url(#av-glow-br)"/>
+  <rect x="1.5" y="1.5" width="797" height="597" rx="16.5" fill="none" stroke="#6ee7db" stroke-opacity="0.16" stroke-width="3"/>
+
+  <!-- LEFT: scattered, unstructured domain knowledge -->
+  <g stroke="#33455f" stroke-opacity="0.55" stroke-width="2">
+    <line x1="105" y1="235" x2="165" y2="205"/>
+    <line x1="100" y1="335" x2="165" y2="205"/>
+    <line x1="100" y1="335" x2="170" y2="395"/>
+    <line x1="205" y1="300" x2="170" y2="395"/>
+  </g>
+  <g fill="#46597a">
+    <circle cx="105" cy="235" r="7"/>
+    <circle cx="100" cy="335" r="6"/>
+    <circle cx="150" cy="195" r="5"/>
+    <circle cx="165" cy="205" r="7"/>
+    <circle cx="170" cy="395" r="7"/>
+    <circle cx="205" cy="300" r="6"/>
+    <circle cx="140" cy="420" r="5"/>
+  </g>
+
+  <!-- FLOW: knowledge converging and brightening toward structure -->
+  <g fill="none" stroke="url(#av-flow)" stroke-width="3" stroke-linecap="round" opacity="0.9">
+    <path d="M165 205 C 260 205, 305 270, 365 300"/>
+    <path d="M205 300 C 280 300, 315 300, 365 300"/>
+    <path d="M170 395 C 265 395, 310 335, 365 300"/>
+  </g>
+
+  <!-- gateway node -->
+  <circle cx="368" cy="300" r="10" fill="#6ee7db" filter="url(#av-soft)"/>
+
+  <!-- bridge edges into the structured graph -->
+  <g fill="none" stroke="url(#av-edge)" stroke-width="5" stroke-linecap="round" filter="url(#av-soft)">
+    <path d="M368 300 L 500 225"/>
+    <path d="M368 300 L 560 300"/>
+    <path d="M368 300 L 500 375"/>
+  </g>
+
+  <!-- RIGHT: structured, computable intelligence (brand constellation) -->
+  <g filter="url(#av-soft)" fill="none" stroke="url(#av-edge)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M560 180 L500 225 L500 375 L560 420 L640 375 L640 225 Z"/>
+    <path d="M560 180 L560 300 M500 225 L560 300 M640 225 L560 300 M500 375 L560 300 M640 375 L560 300 M560 420 L560 300"/>
+    <path d="M640 225 L705 258"/>
+    <path d="M640 375 L705 342"/>
+  </g>
+  <g filter="url(#av-soft)">
+    <circle cx="560" cy="180" r="11" fill="#6ee7db"/>
+    <circle cx="500" cy="225" r="11" fill="#0fb9a8"/>
+    <circle cx="640" cy="225" r="11" fill="#8b5cf6"/>
+    <circle cx="500" cy="375" r="11" fill="#0fb9a8"/>
+    <circle cx="640" cy="375" r="11" fill="#8b5cf6"/>
+    <circle cx="560" cy="420" r="11" fill="#8b5cf6"/>
+    <circle cx="705" cy="258" r="8" fill="#6ee7db"/>
+    <circle cx="705" cy="342" r="8" fill="#8b5cf6"/>
+    <circle cx="560" cy="300" r="15" fill="#ffffff"/>
+    <circle cx="560" cy="300" r="15" fill="none" stroke="url(#av-edge)" stroke-width="5"/>
+  </g>
+</svg>

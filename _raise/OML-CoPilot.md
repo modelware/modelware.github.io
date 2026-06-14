@@ -1,6 +1,7 @@
 ---
 layout: raise
 title: "OML CoPilot"
+featured: true
 categories: ["Active"]
 cover: "/assets/images/research/covers/oml-copilot.png"
 feature: "/assets/images/raise/oml-copilot.png"

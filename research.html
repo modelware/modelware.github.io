@@ -2,7 +2,7 @@
 layout: default
 title: Research
 permalink: /research
-description: "OML Code is built on a decade of research in ontological modeling and intelligence-centric engineering, with a global community of corporate, government, and academic partners."
+description: "Modelware Labs is the research engine behind OML Code — a decade of work in ontological modeling and intelligence-centric engineering, with corporate, government, and academic partners."
 ---
 
 <style>
@@ -34,6 +34,60 @@ description: "OML Code is built on a decade of research in ontological modeling 
         text-transform: uppercase;
         color: #6ee7db;
         margin-top: 6px;
+    }
+    .lab-lead { font-size: 16px; line-height: 1.8; color: #475264; }
+    .lab-lead p { margin-bottom: 16px; }
+    .lab-panel {
+        border-radius: 14px;
+        background: linear-gradient(160deg, #0a1322 0%, #16233c 100%);
+        color: #fff;
+        padding: 30px 30px 26px;
+        height: 100%;
+        box-shadow: 0 18px 40px rgba(16, 26, 46, 0.18);
+    }
+    .lab-panel .kicker {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11.5px;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #6ee7db;
+    }
+    .lab-panel h4 { color: #fff; margin: 8px 0 18px; }
+    .lab-panel ul { list-style: none; padding: 0; margin: 0; }
+    .lab-panel li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 14.5px;
+        line-height: 1.55;
+        color: rgba(255, 255, 255, 0.82);
+        padding: 11px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .lab-panel li:first-child { border-top: 0; }
+    .lab-panel li i { color: #0fb9a8; font-size: 16px; margin-top: 2px; }
+    .pipe-step {
+        text-align: center;
+        padding: 0 14px;
+    }
+    .pipe-num {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        color: #0fb9a8;
+        display: block;
+        margin-bottom: 10px;
+    }
+    .pipe-step h5 { margin-bottom: 8px; }
+    .pipe-step p { font-size: 14px; line-height: 1.6; color: #5d6b7e; margin-bottom: 0; }
+    .pipe-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #c3cbd8;
+        font-size: 20px;
     }
     .res-initiative {
         border-radius: 12px;
@@ -143,52 +197,133 @@ description: "OML Code is built on a decade of research in ontological modeling 
     .res-partner-body h5 { margin-bottom: 8px; }
     .res-partner-body h5 a { color: inherit; }
     .res-partner-body p { font-size: 14px; line-height: 1.65; color: #5d6b7e; margin-bottom: 0; }
+    .res-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        max-width: 620px;
+        margin: 0 auto;
+    }
+    .res-divider::before,
+    .res-divider::after {
+        content: "";
+        flex: 1 1 auto;
+        height: 2px;
+        border-radius: 2px;
+    }
+    .res-divider::before { background: linear-gradient(90deg, rgba(15, 185, 168, 0), rgba(15, 185, 168, 0.5)); }
+    .res-divider::after { background: linear-gradient(90deg, rgba(139, 92, 246, 0.5), rgba(139, 92, 246, 0)); }
+    .res-divider span { width: 7px; height: 7px; border-radius: 50%; background: #0fb9a8; opacity: 0.75; }
+    .res-divider span:nth-child(2) { width: 11px; height: 11px; background: #fff; border: 2.5px solid #6ee7db; opacity: 1; }
+    .res-divider span:nth-child(3) { background: #8b5cf6; }
 </style>
 
+<!-- HERO -->
 <section class="page-title bg-blue" style="padding: 200px 0 100px;">
     <div class="container">
         <div class="row">
             <div class="col-lg-10">
                 <span class="eyebrow" style="color:#6ee7db;">Modelware &middot; Research</span>
-                <h2 class="text-lg text-white mb-0 mt-2">Built on a Decade of Research</h2>
-                <p class="res-hero-lead">OML Code did not start as a product idea. It grew out of years of research in ontological modeling and rigorous systems engineering, through collaborations spanning corporate, government, and academic laboratories. That research foundation is why the platform can make claims most tools cannot.</p>
+                <h1 class="text-lg text-white mb-0 mt-2">Built on a Decade of Research</h1>
+                <p class="res-hero-lead">OML Code did not start as a product idea. It grew out of years of work at <strong style="color:#fff;">Modelware Labs</strong>, our research engine, advancing ontological modeling and rigorous systems engineering with corporate, government, and academic partners. That research foundation is why the platform can make claims most tools cannot.</p>
                 <div class="res-stats">
                     <div class="res-stat"><div class="num">10+</div><div class="lbl">Years of Research</div></div>
                     <div class="res-stat"><div class="num">{{ site.raise | size }}</div><div class="lbl">Research Projects</div></div>
-                    <div class="res-stat"><div class="num">3</div><div class="lbl">Flagship Initiatives</div></div>
+                    <div class="res-stat"><div class="num">3</div><div class="lbl">University Partners</div></div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="section" style="padding-top: 70px; padding-bottom: 40px;">
+<!-- MODELWARE LABS -->
+<section class="section" style="padding-top: 80px; padding-bottom: 50px;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7 mb-4 mb-lg-0 pr-lg-5">
+                <span class="eyebrow">Our Research Engine</span>
+                <h2 class="mb-4">Modelware Labs</h2>
+                <div class="lab-lead">
+                    <p>Modelware Labs is where our work begins. For over a decade, its researchers have tackled the hardest problems in intelligence-centric engineering: how to capture engineering knowledge as formal, machine-understandable models, how to reason over those models with confidence, and how to put trustworthy AI to work on them.</p>
+                    <p>The lab runs projects hand in hand with leading corporate, government, and academic partners, and pressure-tests its ideas on real, high-stakes engineering, not toy examples. What proves out in the lab is what becomes OML Code.</p>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="lab-panel">
+                    <span class="kicker">What the Lab Pursues</span>
+                    <h4>Research Focus</h4>
+                    <ul>
+                        <li><i class="ti-check"></i> Ontological modeling languages and methods</li>
+                        <li><i class="ti-check"></i> Automated reasoning and analysis at scale</li>
+                        <li><i class="ti-check"></i> AI agents grounded in formal models</li>
+                        <li><i class="ti-check"></i> Model DevOps and continuous validation</li>
+                        <li><i class="ti-check"></i> Interoperability across engineering tools</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- RESEARCH TO PRODUCT -->
+<section class="section" style="padding-top: 30px; padding-bottom: 60px;">
     <div class="container">
         <div class="text-center res-section-head">
-            <span class="eyebrow">The Foundations</span>
-            <h3>Flagship Initiatives</h3>
-            <p class="text-muted mb-0">Three long-running initiatives carry our research from idea to open practice.</p>
+            <span class="eyebrow">How It Works</span>
+            <h3>From Research to Product</h3>
+            <p class="text-muted mb-0">A repeatable path turns open-ended research into capabilities you can depend on.</p>
         </div>
-        <div class="row">
-            <div class="col-lg-4 mb-4">
+        <div class="row align-items-center">
+            <div class="col-lg-3 col-6 mb-4 mb-lg-0">
+                <div class="pipe-step">
+                    <span class="pipe-num">01</span>
+                    <h5>Explore</h5>
+                    <p>The lab investigates open problems alongside corporate, government, and academic partners.</p>
+                </div>
+            </div>
+            <div class="col-lg-1 d-none d-lg-flex pipe-arrow mb-4 mb-lg-0"><i class="ti-arrow-right"></i></div>
+            <div class="col-lg-3 col-6 mb-4 mb-lg-0">
+                <div class="pipe-step">
+                    <span class="pipe-num">02</span>
+                    <h5>Prove</h5>
+                    <p>Promising ideas are validated in the open and on demanding, real engineering programs.</p>
+                </div>
+            </div>
+            <div class="col-lg-1 d-none d-lg-flex pipe-arrow mb-4 mb-lg-0"><i class="ti-arrow-right"></i></div>
+            <div class="col-lg-3 col-12">
+                <div class="pipe-step">
+                    <span class="pipe-num">03</span>
+                    <h5>Productize</h5>
+                    <p>What proves out is hardened and shipped as a supported capability inside OML Code.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container"><div class="res-divider" aria-hidden="true"><span></span><span></span><span></span></div></div>
+
+<!-- OPEN SOURCE FOUNDATION & COMMUNITY -->
+<section class="section" style="padding-top: 60px; padding-bottom: 50px;">
+    <div class="container">
+        <div class="text-center res-section-head">
+            <span class="eyebrow">Open by Design</span>
+            <h3>Foundation &amp; Community</h3>
+            <p class="text-muted mb-0">Our research lives in the open, on a shared foundation and in an active community.</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-6 mb-4">
                 <div class="res-initiative">
-                    <span class="kicker">Open Source Platform</span>
+                    <span class="kicker">Open Source Foundation</span>
                     <h4>openCAESAR</h4>
-                    <p>The open source platform for ontological modeling and analysis, proven on flagship space missions. openCAESAR pioneered the rigorous, model-as-code approach that OML Code productizes today.</p>
+                    <p>The open source platform for ontological modeling and analysis, proven on flagship space missions. openCAESAR pioneered the rigorous, model-as-code approach that OML Code builds on and productizes today.</p>
                     <a class="more" href="https://www.opencaesar.io/" target="_blank" rel="noopener">Visit openCAESAR <i class="ti-arrow-right"></i></a>
                 </div>
             </div>
-            <div class="col-lg-4 mb-4">
+            <div class="col-lg-5 col-md-6 mb-4">
                 <div class="res-initiative">
-                    <span class="kicker">Research Laboratory</span>
-                    <h4>RAISE Lab</h4>
-                    <p>The Rigorous, Agile, and Intelligent Systems Engineering laboratory runs research projects with leading corporate, government, and academic partners, exploring what is next for intelligence-centric engineering.</p>
-                    <a class="more" href="#projects">Browse the projects <i class="ti-arrow-down"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-4">
-                <div class="res-initiative">
-                    <span class="kicker">Community Forum</span>
+                    <span class="kicker">Community</span>
                     <h4>onto:Nexus</h4>
                     <p>A forum and workshop series where practitioners and researchers of ontological modeling share methods, results, and lessons learned, keeping the community connected and the state of the art moving.</p>
                     <a class="more" href="https://www.opencaesar.io/events/" target="_blank" rel="noopener">Explore onto:Nexus <i class="ti-arrow-right"></i></a>
@@ -198,12 +333,25 @@ description: "OML Code is built on a decade of research in ontological modeling 
     </div>
 </section>
 
+<!-- PROVEN IN PRACTICE -->
+<section class="section" style="padding-top: 10px; padding-bottom: 40px;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9 text-center">
+                <span class="eyebrow">Proven in Practice</span>
+                <p style="font-size: 17px; line-height: 1.75; color: #46505c; margin: 12px 0 0;">Before OML Code, through consulting and the open source <a href="https://www.opencaesar.io/" target="_blank" rel="noopener">openCAESAR</a> platform, our team supported engineering at leading aerospace and defense organizations, including <strong>BAE Systems</strong>, <strong>Leonardo</strong>, and <strong>CAE</strong>.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ACADEMIC PARTNERS -->
 <section class="section" id="academic-partners" style="padding-top: 0; padding-bottom: 50px;">
     <div class="container">
         <div class="text-center res-section-head">
             <span class="eyebrow">Academic Partners</span>
             <h3>University Researchers We Collaborate With</h3>
-            <p class="text-muted mb-0">The RAISE Lab partners with leading academics to push intelligence-centric engineering forward.</p>
+            <p class="text-muted mb-0">Modelware Labs partners with leading academics to push intelligence-centric engineering forward.</p>
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
@@ -222,7 +370,17 @@ description: "OML Code is built on a decade of research in ontological modeling 
                     <div class="res-partner-body">
                         <span class="chip">University of Twente</span>
                         <h5><a href="/partners/giancarlo-guizzardi.html">Prof. Giancarlo Guizzardi</a></h5>
-                        <p>Full Professor and Chair of Semantics, Cybersecurity &amp; Services. A world authority on formal ontology, conceptual modeling, and OntoUML.</p>
+                        <p>Full Professor and Chair of Semantics, Cybersecurity &amp; Services. Collaborating with Modelware on encoding gUFO in OML so domain ontologies inherit formal analytical patterns.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="res-partner">
+                    <a href="/partners/sambit-bhattacharya.html"><img src="{{ '/assets/images/sambit-bhattacharya.jpg' | relative_url }}" alt="Dr. Sambit Bhattacharya"></a>
+                    <div class="res-partner-body">
+                        <span class="chip">Fayetteville State University</span>
+                        <h5><a href="/partners/sambit-bhattacharya.html">Dr. Sambit Bhattacharya</a></h5>
+                        <p>Professor of Computer Science and Director of the Intelligent Systems Lab. Collaborating with Modelware on MCP-based AI tools for OML Code and converting legacy engineering documents into OML knowledge bases.</p>
                     </div>
                 </div>
             </div>
@@ -230,39 +388,44 @@ description: "OML Code is built on a decade of research in ontological modeling 
     </div>
 </section>
 
-<section class="section" id="projects" style="padding-top: 40px; padding-bottom: 70px;">
+<!-- SELECTED RESEARCH -->
+<section class="section bg-light" id="projects" style="padding-top: 70px; padding-bottom: 70px;">
     <div class="container">
         <div class="text-center res-section-head">
-            <span class="eyebrow">RAISE Lab</span>
-            <h3>Research Projects</h3>
-            <p class="text-muted mb-0">Conducted with leading partners. Many results now ship inside OML Code.</p>
+            <span class="eyebrow">From the Lab</span>
+            <h3>Selected Research</h3>
+            <p class="text-muted mb-0">A sample of recent projects. Many of their results now ship inside OML Code.</p>
         </div>
 
         <div class="row">
-            {% assign projects = site.raise | sort: "title" %}
-            {% for p in projects %}
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            {% assign featured = site.raise | where: "featured", true | sort: "title" %}
+            {% for p in featured %}
+            <div class="col-lg-4 col-md-6 mb-4">
                 <div class="res-card">
                     <a href="{{ p.url | relative_url }}"><img src="{{ p.cover | default: p.feature | relative_url }}" alt="{{ p.title }}" loading="lazy"></a>
                     <div class="res-card-body">
                         <h6><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h6>
-                        <p>{{ p.content | markdownify | strip_html | remove_first: 'Description' | strip_newlines | truncate: 95 }}</p>
+                        <p>{{ p.content | markdownify | strip_html | remove_first: 'Project Summary' | strip_newlines | truncate: 120 }}</p>
                     </div>
                 </div>
             </div>
             {% endfor %}
         </div>
+
+        <div class="text-center mt-4">
+            <a href="/research/projects/" class="btn btn-primary">Browse all {{ site.raise | size }} projects <i class="ti-arrow-right ml-1"></i></a>
+        </div>
     </div>
 </section>
 
-
-<section class="section-sm" style="padding-top: 0;">
+<!-- CTA -->
+<section class="section-sm" style="padding-top: 70px;">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="bg-blue rounded p-5 text-center text-white">
                     <h3 class="text-white mb-3">Research You Can Build On</h3>
-                    <p class="mb-4 text-white-50">The results of this research ship today inside OML Code. If you want to co-sponsor a RAISE Lab project, propose a new one, or see how a decade of research becomes your engineering advantage, we should talk.</p>
+                    <p class="mb-4 text-white-50">The results of this research ship today inside OML Code. If you want to co-sponsor a Modelware Labs project, propose a new one, or see how a decade of research becomes your engineering advantage, we should talk.</p>
                     <a href="/contact.html" class="btn btn-primary mr-2 mb-2">Talk to Us</a>
                     <a href="/oml-code" class="btn btn-outline-light mb-2">Explore OML Code</a>
                 </div>

@@ -357,7 +357,7 @@ description: "An intelligence-centric engineering platform built on Logic · AI 
                 <div class="bg-blue rounded p-5 text-center text-white">
                     <h3 class="text-white mb-3">Let's Find the Right Fit for Your Organization</h3>
                     <p class="mb-4 text-white-50">Every engineering organization is different in size, security posture, and methodology. Tell us about yours and we will walk you through the platform and shape an arrangement that fits.</p>
-                    <a href="/contact.html" class="btn btn-primary mr-2 mb-2">Talk to Sales</a>
+                    <a href="/contact.html" class="btn btn-primary mr-2 mb-2">Talk to Us</a>
                     <a href="/contact.html" class="btn btn-outline-light mb-2">Request a Demo</a>
                 </div>
             </div>

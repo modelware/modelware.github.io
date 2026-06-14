@@ -9,126 +9,122 @@ description: "Modelware Centers of Excellence (CoE) are certified partners who p
 {% include page_header.html %}
 
 <style>
+    /* value-prop feature cards */
     .partner-feature-card {
-        border: 0;
-        border-radius: 12px;
-        box-shadow: 0 10px 24px rgba(12, 26, 75, 0.08);
-        border-top: 3px solid #3f7cff;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-        background: linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+        border: 1px solid rgba(16, 26, 46, 0.08);
+        border-radius: 14px;
+        box-shadow: 0 12px 28px rgba(16, 26, 46, 0.08);
+        border-top: 3px solid #0fb9a8;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        background: #fff;
     }
     .partner-feature-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 14px 30px rgba(12, 26, 75, 0.14);
+        transform: translateY(-6px);
+        box-shadow: 0 18px 40px rgba(15, 185, 168, 0.18);
     }
     .partner-feature-icon {
-        width: 52px;
-        height: 52px;
-        border-radius: 12px;
-        background: rgba(63, 124, 255, 0.1);
-        color: #3f7cff;
+        width: 54px;
+        height: 54px;
+        border-radius: 13px;
+        background: rgba(15, 185, 168, 0.1);
+        color: #0fb9a8;
         display: inline-flex;
         align-items: center;
         justify-content: center;
         margin-bottom: 14px;
     }
-    .partner-divider {
-        border-top: 1px solid #e8ecf5;
-        margin: 6px 0 28px 0;
-    }
-    .partner-profile-card {
-        border: 0;
+    .partner-feature-card h4 { font-size: 19px; }
+    .partner-feature-card p { color: #5d6b7e; margin-bottom: 0; }
+
+    /* CoE partner cards (matches Research academic-partner cards) */
+    .coe-partner {
         border-radius: 12px;
         overflow: hidden;
-        box-shadow: 0 10px 24px rgba(12, 26, 75, 0.09);
-        height: 100%;
+        border: 1px solid rgba(16, 26, 46, 0.08);
+        box-shadow: 0 10px 24px rgba(16, 26, 46, 0.07);
         background: #fff;
+        height: 100%;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
-    .partner-location {
-        display: inline-block;
-        margin-bottom: 10px;
-        padding: 4px 10px;
-        border-radius: 999px;
-        font-size: 12px;
-        font-weight: 600;
-        background: #edf2ff;
-        color: #2f5fd7;
+    .coe-partner:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 40px rgba(15, 185, 168, 0.18);
     }
-    .partner-filter-btn {
-        border-radius: 999px;
-        margin: 0 6px 8px 6px;
-    }
-    .partner-filter-btn.active {
-        background: #2f5fd7;
-        border-color: #2f5fd7;
-        color: #fff !important;
-    }
-    .partner-empty {
-        display: none;
+    .coe-partner img {
+        display: block;
         width: 100%;
-        text-align: center;
-        color: #6b7486;
-        padding: 10px 0 0;
+        height: auto;
+        aspect-ratio: 4 / 4.2;
+        object-fit: cover;
+        object-position: top;
     }
-    .partner-profile-media {
-        height: 210px;
-        background: #f5f7fc;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 18px;
+    .coe-partner-body { padding: 20px 22px 18px; text-align: center; }
+    .coe-partner-body .chip {
+        display: inline-block;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 4px 12px;
+        border-radius: 999px;
+        color: #0a7f73;
+        background: rgba(15, 185, 168, 0.12);
+        margin-bottom: 10px;
     }
-    .partner-profile-media img {
-        max-height: 100%;
-        max-width: 100%;
-        width: auto;
-        object-fit: contain;
-    }
+    .coe-partner-body h5 { margin-bottom: 8px; }
+    .coe-partner-body h5 a { color: inherit; }
+    .coe-partner-body p { font-size: 14px; line-height: 1.65; color: #5d6b7e; margin-bottom: 0; }
+
+    /* recruit panel */
     .partner-recruit {
-        border: 1px solid #dfe6f4;
-        border-radius: 14px;
-        background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
-        box-shadow: 0 14px 34px rgba(12, 26, 75, 0.08);
-        padding: 34px;
+        border: 1px solid rgba(16, 26, 46, 0.10);
+        border-radius: 16px;
+        background: linear-gradient(160deg, #ffffff 0%, #f2f7fb 100%);
+        box-shadow: 0 16px 36px rgba(16, 26, 46, 0.08);
+        padding: 40px;
     }
     .partner-recruit h2,
     .partner-recruit h4,
-    .partner-recruit h5 {
-        color: #172033;
-    }
+    .partner-recruit h5 { color: #16233c; }
     .partner-recruit .program-badge {
         display: inline-block;
-        padding: 6px 12px;
+        font-family: 'Space Grotesk', sans-serif;
+        padding: 5px 13px;
         border-radius: 999px;
-        background: #edf2ff;
-        color: #2f5fd7;
-        font-size: 12px;
+        background: rgba(15, 185, 168, 0.12);
+        color: #0a7f73;
+        font-size: 11px;
         font-weight: 700;
         text-transform: uppercase;
-        letter-spacing: 0.04em;
-        margin-bottom: 12px;
+        letter-spacing: 0.1em;
+        margin-bottom: 14px;
     }
     .partner-recruit .panel {
         border: 1px solid #e5ebf7;
         border-radius: 12px;
         background: #fff;
-        padding: 22px;
+        padding: 26px;
         height: 100%;
     }
+    .partner-recruit .ti-check { color: #0fb9a8 !important; }
 </style>
 
-<section class="section" style="padding-top: 48px;">
+<!-- VALUE PROP -->
+<section class="section">
     <div class="container">
-        <div class="row mb-3">
+        <div class="row mb-5">
             <div class="col-lg-8 mx-auto text-center">
-                <h2>Global Reach, Local Expertise</h2>
+                <span class="eyebrow">Centers of Excellence</span>
+                <h2 class="mb-3">Global Reach, Local Expertise</h2>
+                <p class="text-muted mb-0">Modelware delivers OML Code through a network of certified Centers of Excellence, expert partners who bring intelligence-centric engineering to organizations in their regions.</p>
             </div>
         </div>
 
-        <div class="row mb-4">
+        <div class="row">
             <div class="col-md-4 mb-4">
                 <div class="card h-100 partner-feature-card">
-                    <div class="card-body text-center">
+                    <div class="card-body text-center p-4">
                         <div class="partner-feature-icon"><i class="ti-world h3 mb-0"></i></div>
                         <h4>Local Support</h4>
                         <p>Get support in your language and time zone from certified experts.</p>
@@ -137,7 +133,7 @@ description: "Modelware Centers of Excellence (CoE) are certified partners who p
             </div>
             <div class="col-md-4 mb-4">
                 <div class="card h-100 partner-feature-card">
-                    <div class="card-body text-center">
+                    <div class="card-body text-center p-4">
                         <div class="partner-feature-icon"><i class="ti-ruler-pencil h3 mb-0"></i></div>
                         <h4>Implementation</h4>
                         <p>Tailored implementation services to fit your specific industry needs.</p>
@@ -146,7 +142,7 @@ description: "Modelware Centers of Excellence (CoE) are certified partners who p
             </div>
             <div class="col-md-4 mb-4">
                 <div class="card h-100 partner-feature-card">
-                    <div class="card-body text-center">
+                    <div class="card-body text-center p-4">
                         <div class="partner-feature-icon"><i class="ti-medall h3 mb-0"></i></div>
                         <h4>Training</h4>
                         <p>Comprehensive training programs for your engineering teams.</p>
@@ -154,94 +150,73 @@ description: "Modelware Centers of Excellence (CoE) are certified partners who p
                 </div>
             </div>
         </div>
+    </div>
+</section>
 
-        <div class="partner-divider"></div>
-
-        <div class="row mb-5">
-            <div class="col-12 text-center mb-4">
-                <h3>Strategic Partners</h3>
-                <div class="mt-3">
-                    <button class="btn btn-outline-primary partner-filter-btn active" type="button" data-region-filter="all">All</button>
-                    <button class="btn btn-outline-primary partner-filter-btn" type="button" data-region-filter="na">North America</button>
-                    <button class="btn btn-outline-primary partner-filter-btn" type="button" data-region-filter="eu">Europe</button>
-                    <button class="btn btn-outline-primary partner-filter-btn" type="button" data-region-filter="apac">Asia Pacific</button>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4 partner-profile-item" data-region="na">
-                <div class="partner-profile-card">
-                    <div class="partner-profile-media">
-                        <img src="{{ '/assets/images/elaasar.jpg' | relative_url }}" alt="Dr. Maged Elaasar">
-                    </div>
-                    <div class="p-4 text-center">
-                        <span class="partner-location">US West Coast</span>
-                        <h5 class="mb-2"><a href="/partners/maged-elaasar.html">Dr. Maged Elaasar</a></h5>
-                        <p class="mb-0">Founder and CEO of Modelware.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4 partner-profile-item" data-region="na">
-                <div class="partner-profile-card">
-                    <div class="partner-profile-media">
-                        <img src="https://www.opencaesar.io/assets/img/wagner.jpg" alt="David Wagner">
-                    </div>
-                    <div class="p-4 text-center">
-                        <span class="partner-location">US West Coast</span>
-                        <h5 class="mb-2"><a href="/partners/david-wagner.html">David Wagner</a></h5>
-                        <p class="mb-0">Senior Aerospace Engineer (JPL Retiree).</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4 partner-profile-item" data-region="na">
-                <div class="partner-profile-card">
-                    <div class="partner-profile-media">
-                        <img src="https://www.opencaesar.io/assets/img/stevej.png" alt="Dr Steve Jenkins">
-                    </div>
-                    <div class="p-4 text-center">
-                        <span class="partner-location">US East Coast</span>
-                        <h5 class="mb-2"><a href="/partners/steve-jenkins.html">Dr Steve Jenkins</a></h5>
-                        <p class="mb-0">Senior Ontologist (JPL Retiree).</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4 partner-profile-item" data-region="apac">
-                <div class="partner-profile-card">
-                    <div class="partner-profile-media">
-                        <img src="https://www.opencaesar.io/assets/img/yuta.png" alt="Yuta Nakajima">
-                    </div>
-                    <div class="p-4 text-center">
-                        <span class="partner-location">Japan</span>
-                        <h5 class="mb-2"><a href="/partners/yuta-nakajima.html">Yuta Nakajima</a></h5>
-                        <p class="mb-0">Senior Aerospace Engineer.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="partner-empty" id="partner-empty-state">
-                No partner profiles are published yet for this region.
-            </div>
+<!-- CENTERS OF EXCELLENCE -->
+<section class="section bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="eyebrow">Our Network</span>
+            <h3>Meet Our Centers of Excellence</h3>
+            <p class="text-muted mb-0">Independent expert partners delivering OML Code services around the world.</p>
         </div>
 
-        <div class="partner-divider"></div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="coe-partner">
+                    <a href="/partners/david-wagner.html"><img src="https://www.opencaesar.io/assets/img/wagner.jpg" alt="David Wagner"></a>
+                    <div class="coe-partner-body">
+                        <span class="chip">US West Coast</span>
+                        <h5><a href="/partners/david-wagner.html">David Wagner</a></h5>
+                        <p>Senior Aerospace Engineer (JPL Retiree).</p>
+                    </div>
+                </div>
+            </div>
 
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="coe-partner">
+                    <a href="/partners/steve-jenkins.html"><img src="https://www.opencaesar.io/assets/img/stevej.png" alt="Dr Steve Jenkins"></a>
+                    <div class="coe-partner-body">
+                        <span class="chip">US East Coast</span>
+                        <h5><a href="/partners/steve-jenkins.html">Dr Steve Jenkins</a></h5>
+                        <p>Senior Ontologist (JPL Retiree).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="coe-partner">
+                    <a href="/partners/yuta-nakajima.html"><img src="https://www.opencaesar.io/assets/img/yuta.png" alt="Yuta Nakajima"></a>
+                    <div class="coe-partner-body">
+                        <span class="chip">Japan</span>
+                        <h5><a href="/partners/yuta-nakajima.html">Yuta Nakajima</a></h5>
+                        <p>Senior Aerospace Engineer at JAXA.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PARTNER PROGRAM -->
+<section class="section">
+    <div class="container">
         <div id="become-partner" class="partner-recruit">
             <span class="program-badge">Partner Program</span>
             <div class="row align-items-stretch">
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <div class="panel">
                         <h2 class="mb-3">Join the Modelware Partner Network</h2>
-                        <p class="mb-3">Become a certified Center of Excellence and deliver high-impact ontological modeling and analysis services in your region.</p>
+                        <p class="mb-3">Become a certified Center of Excellence and deliver intelligence-centric engineering with OML Code in your region.</p>
 
                         <h5 class="mt-4 mb-3">Program Benefits</h5>
                         <ul class="list-unstyled mb-0">
-                            <li class="mb-2"><i class="ti-check text-success mr-2"></i> Comprehensive training and certification</li>
-                            <li class="mb-2"><i class="ti-check text-success mr-2"></i> Joint marketing and sales enablement</li>
-                            <li class="mb-2"><i class="ti-check text-success mr-2"></i> Structured revenue-share opportunities</li>
-                            <li class="mb-2"><i class="ti-check text-success mr-2"></i> Access to product roadmap and partner briefings</li>
-                            <li class="mb-0"><i class="ti-check text-success mr-2"></i> Co-branded solution collateral</li>
+                            <li class="mb-2"><i class="ti-check mr-2"></i> Comprehensive training and certification</li>
+                            <li class="mb-2"><i class="ti-check mr-2"></i> Joint marketing and sales enablement</li>
+                            <li class="mb-2"><i class="ti-check mr-2"></i> Structured revenue-share opportunities</li>
+                            <li class="mb-2"><i class="ti-check mr-2"></i> Access to product roadmap and partner briefings</li>
+                            <li class="mb-0"><i class="ti-check mr-2"></i> Co-branded solution collateral</li>
                         </ul>
                     </div>
                 </div>
@@ -262,30 +237,3 @@ description: "Modelware Centers of Excellence (CoE) are certified partners who p
         </div>
     </div>
 </section>
-
-<script>
-    (function () {
-        var buttons = document.querySelectorAll('.partner-filter-btn');
-        var cards = document.querySelectorAll('.partner-profile-item');
-        var empty = document.getElementById('partner-empty-state');
-        if (!buttons.length || !cards.length || !empty) return;
-
-        function applyFilter(region) {
-            var visibleCount = 0;
-            cards.forEach(function (card) {
-                var show = region === 'all' || card.getAttribute('data-region') === region;
-                card.style.display = show ? '' : 'none';
-                if (show) visibleCount += 1;
-            });
-            empty.style.display = visibleCount === 0 ? 'block' : 'none';
-        }
-
-        buttons.forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                buttons.forEach(function (b) { b.classList.remove('active'); });
-                btn.classList.add('active');
-                applyFilter(btn.getAttribute('data-region-filter'));
-            });
-        });
-    })();
-</script>

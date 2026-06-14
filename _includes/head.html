@@ -1,9 +1,10 @@
 <head>
   <meta charset="utf-8">
-  <title>{% if page.title %}{{page.title}}{% else %}{{site.title}}{% endif %}</title>
+  <title>{% if page.title %}{{ page.title }}{% unless page.title contains 'Modelware' %} | Modelware{% endunless %}{% else %}{{ site.title }}{% endif %}</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
   {% assign social_title = page.title | default: site.title %}
   {% assign social_description = page.description | default: page.summary | default: site.description | strip_html | strip_newlines | truncate: 200 %}
   {% assign social_image = page.image | default: page.post_image | default: '/assets/images/oml-code-social.png' %}
@@ -22,7 +23,12 @@
   <meta property="og:description" content="{{ social_description }}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   <meta property="og:image" content="{{ social_image | absolute_url }}">
-  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:image:secure_url" content="{{ social_image | absolute_url }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{ social_title }}">
+  <meta property="og:site_name" content="Modelware">
+  <meta property="og:locale" content="en_US">
   {% if page.video %}
   <meta property="og:video" content="{{ page.video | absolute_url }}">
   <meta property="og:video:secure_url" content="{{ page.video | absolute_url }}">
@@ -48,5 +54,28 @@
   <link rel="icon" href="{{ '/assets/images/modelware-icon.svg' | relative_url }}" type="image/svg+xml">
   <link rel="shortcut icon" href="{{ '/assets/images/modelware-icon.png' | relative_url }}" type="image/png">
   <link rel="apple-touch-icon" href="{{ '/assets/images/modelware-icon.png' | relative_url }}">
-  
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Modelware",
+    "url": "{{ site.url }}",
+    "logo": "{{ site.logo | absolute_url }}",
+    "description": "{{ site.description | strip_html | strip_newlines | truncate: 200 }}",
+    "sameAs": [
+      {% assign socials = site.social %}{% for s in socials %}"{{ s.link }}"{% unless forloop.last %},{% endunless %}{% endfor %}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "{{ site.title }}",
+    "url": "{{ site.url }}"
+  }
+  </script>
+
 </head>

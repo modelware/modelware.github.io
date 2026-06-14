@@ -9,6 +9,9 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navigation">
 			{% include navigation.html %}
+			{% if site.data.navigation.cta %}
+			<a href="{{ site.data.navigation.cta.url | relative_url }}" class="btn btn-primary rounded-pill nav-cta my-2 my-lg-0 ml-lg-3">{{ site.data.navigation.cta.name }}</a>
+			{% endif %}
 		</div>
 	</div>
 </nav>

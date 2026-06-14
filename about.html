@@ -1,8 +1,8 @@
 ---
 layout: default
-header_image: "/assets/images/bg/bg-1.jpg"
+header_dark: true
 title: "About Us"
-description: "Modelware is a software company driving innovation in ontological modeling, analysis, and MBSE"
+description: "Modelware is the company behind OML Code, an intelligence-centric engineering platform forged from a decade of research in ontological modeling and rigorous systems engineering."
 ---
 
 <style>
@@ -10,8 +10,8 @@ description: "Modelware is a software company driving innovation in ontological 
 		display: flex;
 		align-items: center;
 		flex-wrap: nowrap;
-		gap: 12px;
-		margin-bottom: 8px;
+		gap: 14px;
+		margin-bottom: 10px;
 	}
 	.about-hero-logo {
 		max-height: 72px;
@@ -19,324 +19,239 @@ description: "Modelware is a software company driving innovation in ontological 
 		max-width: 100%;
 	}
 	@media (max-width: 767px) {
-		.about-hero-logo {
-			max-height: 56px;
-		}
+		.about-hero-logo { max-height: 54px; }
 	}
-	.about-intro-row {
-		align-items: flex-start;
-	}
-	.about-intro-image {
+
+	/* shared body copy */
+	.about-copy { font-size: 16px; line-height: 1.8; color: #475264; }
+	.about-copy p { margin-bottom: 16px; }
+
+	/* framed figures (story + vision) */
+	.about-figure { height: 100%; }
+	.about-figure img {
+		display: block;
+		width: 100%;
 		height: 100%;
-	}
-	.about-intro-image img {
-		height: 100%;
-		min-height: 0;
-		max-height: 340px;
+		max-height: 380px;
 		object-fit: cover;
+		border-radius: 16px;
+		box-shadow: 0 20px 44px rgba(16, 26, 46, 0.16);
 	}
-	.about-intro-text h3 {
-		margin-top: 0 !important;
-		margin-bottom: 16px !important;
-	}
-	.about-intro-text p {
-		margin-bottom: 12px;
-	}
-	.about-leader-card {
-		border: 1px solid #dfe6f4 !important;
+
+	/* foundations */
+	.about-foundation {
 		border-radius: 14px;
-		box-shadow: 0 14px 28px rgba(10, 24, 70, 0.1) !important;
-		transition: transform 0.2s ease, box-shadow 0.2s ease;
+		border: 1px solid rgba(16, 26, 46, 0.08);
+		box-shadow: 0 12px 28px rgba(16, 26, 46, 0.08);
+		padding: 30px 28px;
+		height: 100%;
+		background: #fff;
+		transition: transform 0.25s ease, box-shadow 0.25s ease;
 	}
-	.about-leader-card:hover {
-		transform: translateY(-4px);
-		box-shadow: 0 18px 34px rgba(10, 24, 70, 0.14) !important;
+	.about-foundation:hover {
+		transform: translateY(-6px);
+		box-shadow: 0 18px 40px rgba(15, 185, 168, 0.18);
 	}
-	.about-leader-card .card-body {
-		padding: 26px;
+	.about-foundation .ic {
+		width: 54px; height: 54px;
+		display: inline-flex; align-items: center; justify-content: center;
+		border-radius: 13px;
+		background: rgba(15, 185, 168, 0.1);
+		color: #0fb9a8;
+		margin-bottom: 16px;
 	}
-	.about-leader-card h5 {
-		margin-bottom: 6px;
+	.about-foundation .ic i { font-size: 24px; }
+	.about-foundation h5 { margin: 0 0 8px; }
+	.about-foundation p { font-size: 14.5px; line-height: 1.65; color: #5d6b7e; margin-bottom: 0; }
+
+	/* leadership */
+	.about-leader-card {
+		border: 1px solid #e3e9f4;
+		border-radius: 16px;
+		box-shadow: 0 16px 36px rgba(10, 24, 70, 0.10);
+		overflow: hidden;
+		background: #fff;
 	}
-	@media (max-width: 767px) {
-		.about-intro-image img {
-			max-height: none;
-		}
+	.about-leader-photo {
+		width: 100%; height: 100%;
+		min-height: 260px;
+		object-fit: cover;
+		object-position: center top;
+	}
+	.about-leader-body { padding: 34px 36px; }
+	.about-leader-body h4 { margin: 4px 0 10px; }
+	.about-leader-body h4 a { color: inherit; }
+	.about-leader-body p { color: #5d6b7e; line-height: 1.7; margin-bottom: 16px; }
+
+	/* network panel */
+	.about-network {
+		border-radius: 16px;
+		background: linear-gradient(160deg, #ffffff 0%, #f2f7fb 100%);
+		border: 1px solid rgba(16, 26, 46, 0.10);
+		border-left: 4px solid #0fb9a8;
+		box-shadow: 0 16px 36px rgba(16, 26, 46, 0.08);
+		padding: 46px 44px;
+	}
+	.about-network h3 { color: #16233c; }
+	.about-network p { color: #5d6b7e; font-size: 15.5px; line-height: 1.75; }
+	.about-network .eyebrow { color: #0fb9a8; }
+
+	/* cta */
+	.about-cta {
+		border-radius: 16px;
+		background: linear-gradient(150deg, #0a1322 0%, #16233c 100%);
+		box-shadow: 0 22px 50px rgba(10, 19, 34, 0.28);
+		padding: 56px 40px;
 	}
 </style>
 
+<!-- HERO -->
 <section class="page-title header-padding bg-blue">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-10">
 				<div class="about-hero-title-row">
-					<img src="/assets/images/modelware-logo.png" alt="Modelware" class="about-hero-logo">
-					<h2 class="text-capitalize mb-0 text-lg text-white">{{ page.title }}</h2>
+					<img src="/assets/images/modelware-icon.svg" alt="Modelware" class="about-hero-logo">
+					<h1 class="text-capitalize mb-0 text-lg text-white">{{ page.title }}</h1>
 				</div>
-				<p class="text-white page-subtitle mb-0">{{ page.description }}</p>
+				<p class="text-white page-subtitle mb-0">We make engineering knowledge formal, computable, and trustworthy.</p>
 			</div>
 		</div>
 	</div>
 </section>
-<!-- About Start -->
-<section class="section-sm about overflow-hidden">
-	<div class="container">
-		<div class="row about-intro-row">
-			<div class="col-md-5">
-				<div class="about-img about-intro-image">
-					<img src="{{'/assets/images/about/about-2.jpg' | relative_url}}" alt="" class="img-fluid w-100"/>
-					<div class="video-play">
-						<div class="play-bg">
-							<a class="popup-youtube" href="https://www.youtube.com/watch?v=jrkvirglgaQ"><i class="fa fa-play"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-				<div class="col-lg-6 col-md-7 offset-lg-1 mt-0 about-intro-text">
-					<h3 class="mb-4 mt-3">Software Company</h3>
-						<p>Modelware is a US-based software company focused on innovation in ontological modeling and analysis. We build modern tools and solutions that help organizations structure complex knowledge, reason about it with precision, and turn it into actionable engineering intelligence.</p>
-						<p class="mb-3">Model-based systems engineering is a core focus of our work. We deliver MBSE solutions that combine rigorous semantics, interoperability, and scalable analysis to improve consistency, traceability, and decision-making across the engineering lifecycle.</p>
 
-					<a href="/contact.html" class="btn btn-primary">Contact Us</a>
-				</div>
-			</div>
-		</div>
-</section>
-<!-- About End -->
-
-<section class="section pt-0 pb-0">
+<!-- ORIGIN STORY  (text left / image right) -->
+<section class="section">
 	<div class="container">
-		<div class="row mb-5 align-items-stretch">
+		<div class="row align-items-center">
+			<div class="col-lg-6 mb-4 mb-lg-0 pr-lg-5 about-copy">
+				<span class="eyebrow">Who We Are</span>
+				<h2 class="mb-4">A Decade in the Making</h2>
+				<p>Modelware is a US-based company with a single mission: to make engineering knowledge formal, computable, and trustworthy. We believe the models engineers build should be something you can reason on and compute over, not static documents that drift out of date.</p>
+				<p>That conviction did not appear overnight. It was forged over more than a decade of research, now carried forward by <a href="/research">Modelware Labs</a>, and proven in the open through the <a href="https://www.opencaesar.io/" target="_blank" rel="noopener">openCAESAR</a> platform on some of the most demanding engineering programs in the world.</p>
+				<p>OML Code is the result: an intelligence-centric engineering platform that brings that rigor to any organization, built on three foundations, Logic, AI, and DevOps.</p>
+				<a href="/oml-code" class="btn btn-primary mt-2">Explore OML Code</a>
+			</div>
 			<div class="col-lg-6">
-				<h3>Our Vision</h3>
-				<p>A world where complex knowledge is universally understood, shared, and reasoned upon without friction..</p>
-
-				<h3 class="mt-4">Our Mission</h3>
-				<p>To build modern, expressive ontological modeling tools that turn domain knowledge into structured, analyzable, and interoperable intelligence.</p>
-			</div>
-			<div class="col-lg-6 mt-4 mt-lg-0 d-flex">
-				<img src="/assets/images/ontological-modeling.png" alt="About Modelware" class="img-fluid rounded shadow w-100 h-100" style="object-fit: cover; min-height: 260px;">
-			</div>
-		</div>
-
-		<hr class="my-5">
-
-		<div class="row mb-0 justify-content-center">
-			<div class="col-12 text-center mb-4">
-				<h2>Leadership Team</h2>
-			</div>
-			<div class="col-md-4 mb-0">
-				<div class="card border-0 shadow-sm text-center about-leader-card">
-					<div class="card-body">
-						<div class="mb-3">
-							<img src="{{ '/assets/images/elaasar.jpg' | relative_url }}" class="rounded-circle img-fluid" alt="Maged Elaasar" style="width: 160px; height: 160px; object-fit: cover;">
-						</div>
-							<h5><a href="/partners/maged-elaasar.html">Maged Elaasar</a></h5>
-						<p class="text-muted">Founder & CEO</p>
-					</div>
+				<div class="about-figure">
+					<img src="{{ '/assets/images/oml-code-hero-wide.png' | relative_url }}" alt="OML Code, the intelligence-centric engineering platform">
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
-<!-- Team Start
-<section class="section team-2">
+<!-- FOUNDATIONS -->
+<section class="section bg-light">
 	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-lg-7 text-center">
-				<span class="h5 text-color text-uppercase">
-					Our Team
-				</span>
-				<h3 class="mb-5 mt-2">Meet Our Team</h3>
-			</div>
+		<div class="text-center mb-5">
+			<span class="eyebrow">What We Stand On</span>
+			<h3>Built on Three Foundations</h3>
+			<p class="text-muted mb-0">Everything we build rests on the same three pillars.</p>
 		</div>
-
-		<div class="row no-gutters">
-			<div class="col-lg-4">
-				<div class="team-item position-relative">
-					<img src="{{'/assets/images/team/team-1.jpg' | relative_url}}" alt="" class="img-fluid w-100">
-					<div class="team-overlay-content px-4 py-3">
-						<h5 class="mb-0 text-white">Liam Hughes</h5>
-						<p>Manager</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4">
-				<div class="team-item position-relative">
-					<img src="{{'/assets/images/team/team-2.jpg' | relative_url}}" alt="" class="img-fluid w-100">
-					<div class="team-overlay-content px-4 py-3">
-						<h5 class="mb-0 text-white">Liam Hughes</h5>
-						<p>Manager</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4">
-				<div class="team-item position-relative">
-					<img src="{{'/assets/images/team/team-3.jpg' | relative_url}}" alt="" class="img-fluid w-100">
-					<div class="team-overlay-content px-4 py-3">
-						<h5 class="mb-0 text-white">Liam Hughes</h5>
-						<p>Manager</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
- Team End -->
-
-<!-- Clients Start 
-<section class="section-sm bg-secondary">
-	<div class="container">
-		<div class="row clients-wrap">
-			<div>
-				<img src="{{'/assets/images/clients/client-1.png' | relative_url}}" alt="" class="img-fluid mx-auto">
-			</div>
-			<div>
-				<img src="{{'/assets/images/clients/client-2.png' | relative_url}}" alt="" class="img-fluid mx-auto">
-			</div>
-			<div>
-				<img src="{{'/assets/images/clients/client-3.png' | relative_url}}" alt="" class="img-fluid mx-auto">
-			</div>
-			<div>
-				<img src="{{'/assets/images/clients/client-4.png' | relative_url}}" alt="" class="img-fluid mx-auto">
-			</div>
-			<div>
-				<img src="{{'/assets/images/clients/client-5.png' | relative_url}}" alt="" class="img-fluid mx-auto">
-			</div>
-			<div>
-				<img src="{{'/assets/images/clients/client-3.png' | relative_url}}" alt="" class="img-fluid mx-auto">
-			</div>
-		</div>
-	</div>
-</section>
- Clients End -->
-
-<!-- Testimonial Start 
-<section class="section testimonial position-relative bg-2 overflow-hidden">
-	<div class="container">
 		<div class="row">
-			<div class="col-lg-12 text-center">
-				<span class="h5 text-color text-uppercase">
-					testimonials
-				</span>
-				<h3 class="mb-5 mt-2">Our Clients Say</h3>
-			</div>
-		</div>
-
-		<div class="row testimonial-slider">
-			<div class="col-lg-4">
-				<div class="card text-center rounded-0 shadow mb-4">
-					<div class="img-block position-relative mb-4">
-						<img src="{{'/assets/images/team/test-1.jpg' | relative_url}}" alt="" class="img-fluid">
-						<i class="fa fa-quote-right"></i>
-					</div>
-					<p>Lorem ipsum dolor amet constur adipisicing elit sed eiusmtempor incid dolore magna aliqu. enim minim
-						veniam.</p>
-					<h5 class="mb-0 mt-2">Liam Hughes</h5>
-					<span class="text-color">Manager</span>
+			<div class="col-lg-4 mb-4">
+				<div class="about-foundation">
+					<span class="ic"><i class="ti-ruler-pencil"></i></span>
+					<h5>Logic</h5>
+					<p>Formal, machine-understandable models with the semantics to be reasoned over and verified, not just drawn.</p>
 				</div>
 			</div>
-			<div class="col-lg-4">
-				<div class="card text-center rounded-0 shadow mb-4">
-					<div class="img-block position-relative mb-4">
-						<img src="{{'/assets/images/team/test-2.jpg' | relative_url}}" alt="" class="img-fluid">
-						<i class="fa fa-quote-right"></i>
-					</div>
-					<p>Lorem ipsum dolor amet constur adipisicing elit sed eiusmtempor incid dolore magna aliqu. enim minim
-						veniam.</p>
-					<h5 class="mb-0 mt-2">Liam Hughes</h5>
-					<span class="text-color">Manager</span>
+			<div class="col-lg-4 mb-4">
+				<div class="about-foundation">
+					<span class="ic"><i class="ti-bolt"></i></span>
+					<h5>AI</h5>
+					<p>AI agents grounded in those formal models, so assistance is trustworthy and rooted in your real engineering knowledge.</p>
 				</div>
 			</div>
-			<div class="col-lg-4">
-				<div class="card text-center rounded-0 shadow mb-4 pattern-bg">
-					<div class="img-block position-relative mb-4">
-						<img src="{{'/assets/images/team/test-3.jpg' | relative_url}}" alt="" class="img-fluid">
-						<i class="fa fa-quote-right"></i>
-					</div>
-					<p>Lorem ipsum dolor amet constur adipisicing elit sed eiusmtempor incid dolore magna aliqu. enim minim
-						veniam.</p>
-					<h5 class="mb-0 mt-2">Liam Hughes</h5>
-					<span class="text-color">Manager</span>
-				</div>
-			</div>
-			<div class="col-lg-4">
-				<div class="card text-center rounded-0 shadow mb-4">
-					<div class="img-block position-relative mb-4">
-						<img src="{{'/assets/images/team/test-1.jpg' | relative_url}}" alt="" class="img-fluid">
-						<i class="fa fa-quote-right"></i>
-					</div>
-					<p>Lorem ipsum dolor amet constur adipisicing elit sed eiusmtempor incid dolore magna aliqu. enim minim
-						veniam.</p>
-					<h5 class="mb-0 mt-2">Liam Hughes</h5>
-					<span class="text-color">Manager</span>
-				</div>
-			</div>
-			<div class="col-lg-4">
-				<div class="card text-center rounded-0 shadow mb-4">
-					<div class="img-block position-relative mb-4">
-						<img src="{{'/assets/images/team/test-2.jpg' | relative_url}}" alt="" class="img-fluid">
-						<i class="fa fa-quote-right"></i>
-					</div>
-					<p>Lorem ipsum dolor amet constur adipisicing elit sed eiusmtempor incid dolore magna aliqu. enim minim
-						veniam.</p>
-					<h5 class="mb-0 mt-2">Liam Hughes</h5>
-					<span class="text-color">Manager</span>
-				</div>
-			</div>
-			<div class="col-lg-4">
-				<div class="card text-center rounded-0 shadow mb-4 pattern-bg">
-					<div class="img-block position-relative mb-4">
-						<img src="{{'/assets/images/team/test-3.jpg' | relative_url}}" alt="" class="img-fluid">
-						<i class="fa fa-quote-right"></i>
-					</div>
-					<p>Lorem ipsum dolor amet constur adipisicing elit sed eiusmtempor incid dolore magna aliqu. enim minim
-						veniam.</p>
-					<h5 class="mb-0 mt-2">Liam Hughes</h5>
-					<span class="text-color">Manager</span>
-				</div>
-			</div>
-
-			<div class="col-lg-4">
-				<div class="card text-center rounded-0 shadow mb-4">
-					<div class="img-block position-relative mb-4">
-						<img src="{{'/assets/images/team/test-1.jpg' | relative_url}}" alt="" class="img-fluid">
-						<i class="fa fa-quote-right"></i>
-					</div>
-					<p>Lorem ipsum dolor amet constur adipisicing elit sed eiusmtempor incid dolore magna aliqu. enim minim
-						veniam.</p>
-					<h5 class="mb-0 mt-2">Liam Hughes</h5>
-					<span class="text-color">Manager</span>
-				</div>
-			</div>
-			<div class="col-lg-4">
-				<div class="card text-center rounded-0 shadow mb-4">
-					<div class="img-block position-relative mb-4">
-						<img src="{{'/assets/images/team/test-2.jpg' | relative_url}}" alt="" class="img-fluid">
-						<i class="fa fa-quote-right"></i>
-					</div>
-					<p>Lorem ipsum dolor amet constur adipisicing elit sed eiusmtempor incid dolore magna aliqu. enim minim
-						veniam.</p>
-					<h5 class="mb-0 mt-2">Liam Hughes</h5>
-					<span class="text-color">Manager</span>
-				</div>
-			</div>
-			<div class="col-lg-4">
-				<div class="card text-center rounded-0 shadow mb-4 pattern-bg">
-					<div class="img-block position-relative mb-4">
-						<img src="{{'/assets/images/team/test-3.jpg' | relative_url}}" alt="" class="img-fluid">
-						<i class="fa fa-quote-right"></i>
-					</div>
-					<p>Lorem ipsum dolor amet constur adipisicing elit sed eiusmtempor incid dolore magna aliqu. enim minim
-						veniam.</p>
-					<h5 class="mb-0 mt-2">Liam Hughes</h5>
-					<span class="text-color">Manager</span>
+			<div class="col-lg-4 mb-4">
+				<div class="about-foundation">
+					<span class="ic"><i class="ti-infinite"></i></span>
+					<h5>DevOps</h5>
+					<p>Git-native versioning and continuous validation that operationalize engineering knowledge across the lifecycle.</p>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
- Testimonial End -->
 
-<!-- Call to action End -->
+<!-- VISION & MISSION  (image left / text right) -->
+<section class="section">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-6 mb-4 mb-lg-0 order-lg-1">
+				<div class="about-figure">
+					<img src="{{ '/assets/images/about-vision.svg' | relative_url }}" alt="Scattered domain knowledge becoming structured, computable engineering intelligence">
+				</div>
+			</div>
+			<div class="col-lg-6 order-lg-2 pl-lg-5 about-copy">
+				<span class="eyebrow">Our Purpose</span>
+				<h3 class="mt-2 mb-2">Vision</h3>
+				<p>A world where complex engineering knowledge is universally understood, shared, and reasoned upon without friction.</p>
+
+				<h3 class="mt-4 mb-2">Mission</h3>
+				<p class="mb-0">To give every engineering organization a platform that turns domain knowledge into structured, analyzable, and trustworthy intelligence, powering better decisions across the entire lifecycle.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- LEADERSHIP -->
+<section class="section bg-light">
+	<div class="container">
+		<div class="text-center mb-5">
+			<span class="eyebrow">Leadership</span>
+			<h3>Who Leads Modelware</h3>
+		</div>
+		<div class="row">
+			<div class="col-lg-9 mx-auto">
+				<div class="about-leader-card">
+					<div class="row no-gutters align-items-stretch">
+						<div class="col-md-4">
+							<img src="{{ '/assets/images/elaasar.jpg' | relative_url }}" class="about-leader-photo" alt="Dr. Maged Elaasar">
+						</div>
+						<div class="col-md-8">
+							<div class="about-leader-body">
+								<span class="eyebrow">Founder &amp; CEO</span>
+								<h4><a href="/maged-elaasar.html">Dr. Maged Elaasar</a></h4>
+								<p>A longtime leader in ontological modeling and rigorous systems engineering, and the architect behind OML Code. He has spent over a decade turning foundational research and mission-grade engineering experience into a platform any organization can build on.</p>
+								<a href="/maged-elaasar.html" class="btn btn-outline-primary btn-sm">View Full Profile</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- GLOBAL NETWORK -->
+<section class="section">
+	<div class="container">
+		<div class="about-network">
+			<div class="row align-items-center">
+				<div class="col-lg-8 mb-4 mb-lg-0">
+					<span class="eyebrow">A Global Network</span>
+					<h3 class="mt-2 mb-3">Delivered Through Centers of Excellence</h3>
+					<p class="mb-0">Modelware works through a growing network of independent Centers of Excellence, expert partners who provide local implementation, support, and training in their regions. Many also build their own solutions on top of OML Code, available in the Marketplace.</p>
+				</div>
+				<div class="col-lg-4 text-lg-right">
+					<a href="/partners.html" class="btn btn-primary mb-2">Meet Our Partners</a><br>
+					<a href="/marketplace" class="btn btn-outline-primary">Explore the Marketplace</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- CTA -->
+<section class="section bg-light">
+	<div class="container">
+		<div class="about-cta text-center text-white">
+			<h3 class="text-white mb-3">Let's Build Engineering Intelligence Together</h3>
+			<p class="mb-4 text-white-50">Whether you want to see OML Code in action, discuss your engineering challenges, or partner with us, we would love to hear from you.</p>
+			<a href="/contact.html" class="btn btn-primary mr-2 mb-2">Talk to Us</a>
+			<a href="/demos" class="btn btn-outline-light mb-2">Watch the Demos</a>
+		</div>
+	</div>
+</section>

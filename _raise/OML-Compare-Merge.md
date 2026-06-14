@@ -1,6 +1,7 @@
 ---
 layout: raise
 title: "OML Compare & Merge"
+featured: true
 categories: ["Active"]
 cover: "/assets/images/research/covers/oml-compare-merge.png"
 feature: "/assets/images/raise/oml-compare-merge.png"

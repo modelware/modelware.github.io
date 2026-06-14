@@ -1,24 +1,25 @@
 #Please use the main menu items under the "name"
 main:
-  - name: Home
-    url: /index.html
   - name: OML Code
-    url: /oml-code
+    url: "#"
+    submenu:
+      - name: Overview
+        url: /oml-code
+      - name: Marketplace
+        url: /marketplace
   - name: Demos
     url: /demos
-  - name: Marketplace
-    url: /marketplace
+  - name: Research
+    url: /research
   - name: Partners
     url: /partners.html
-  - name: Resources
-    url: /resources.html
+  - name: Learn
+    url: "#"
     submenu:
       - name: Blog
-        url: /blog-1.html
+        url: /blog/
       - name: Academy
         url: /academy.html
-      - name: Research
-        url: /research
       - name: Youtube
         url: /omlcode-youtube.html
   - name: Company
@@ -26,27 +27,36 @@ main:
     submenu:
       - name: About Us
         url: /about.html
-      - name: Contact Us
-        url: /contact.html
       - name: News
         url: /news/
 
+# Primary call-to-action button (rendered separately, right-aligned in the nav)
+cta:
+  name: Book a Demo
+  url: /contact.html
+
 ########## footer menu ###############
 footer:
-  - name: Home
-    url: /index.html
   - name: OML Code
     url: /oml-code
-  - name: Demos
-    url: /demos
   - name: Marketplace
     url: /marketplace
+  - name: Demos
+    url: /demos
+  - name: Research
+    url: /research
   - name: Partners
     url: /partners.html
-  - name: Resources
-    url: /resources.html
+  - name: Academy
+    url: /academy.html
+  - name: Blog
+    url: /blog/
   - name: About Us
     url: /about.html
+  - name: News
+    url: /news/
+  - name: Contact Us
+    url: /contact.html
 
 ############## Bottom menu ###############
 bottom:

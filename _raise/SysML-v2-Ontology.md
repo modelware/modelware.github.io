@@ -1,6 +1,7 @@
 ---
 layout: raise
 title: "SysML v2 Ontology"
+featured: true
 categories: ["Active"]
 cover: "/assets/images/research/covers/sysml-v2-ontology.png"
 feature: "/assets/images/raise/sysml-v2-ontology.png"
