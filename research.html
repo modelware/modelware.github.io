@@ -13,28 +13,6 @@ description: "Modelware Labs is the research engine behind OML Code — a decade
         max-width: 760px;
         margin: 18px 0 0;
     }
-    .res-stats {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 40px;
-        margin-top: 34px;
-    }
-    .res-stat .num {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 34px;
-        font-weight: 700;
-        color: #fff;
-        line-height: 1.1;
-    }
-    .res-stat .lbl {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: #6ee7db;
-        margin-top: 6px;
-    }
     .lab-lead { font-size: 16px; line-height: 1.8; color: #475264; }
     .lab-lead p { margin-bottom: 16px; }
     .lab-panel {
@@ -217,6 +195,24 @@ description: "Modelware Labs is the research engine behind OML Code — a decade
     .res-divider span { width: 7px; height: 7px; border-radius: 50%; background: #0fb9a8; opacity: 0.75; }
     .res-divider span:nth-child(2) { width: 11px; height: 11px; background: #fff; border: 2.5px solid #6ee7db; opacity: 1; }
     .res-divider span:nth-child(3) { background: #8b5cf6; }
+    .proof-orgs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 32px;
+    }
+    .proof-org {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        color: #1a2740;
+        padding: 16px 34px;
+        border-radius: 12px;
+        background: #fff;
+        border: 1px solid rgba(16, 26, 46, 0.08);
+        box-shadow: 0 10px 24px rgba(16, 26, 46, 0.07);
+    }
 </style>
 
 <!-- HERO -->
@@ -226,12 +222,7 @@ description: "Modelware Labs is the research engine behind OML Code — a decade
             <div class="col-lg-10">
                 <span class="eyebrow" style="color:#6ee7db;">Modelware &middot; Research</span>
                 <h1 class="text-lg text-white mb-0 mt-2">Built on a Decade of Research</h1>
-                <p class="res-hero-lead">OML Code did not start as a product idea. It grew out of years of work at <strong style="color:#fff;">Modelware Labs</strong>, our research engine, advancing ontological modeling and rigorous systems engineering with corporate, government, and academic partners. That research foundation is why the platform can make claims most tools cannot.</p>
-                <div class="res-stats">
-                    <div class="res-stat"><div class="num">10+</div><div class="lbl">Years of Research</div></div>
-                    <div class="res-stat"><div class="num">{{ site.raise | size }}</div><div class="lbl">Research Projects</div></div>
-                    <div class="res-stat"><div class="num">3</div><div class="lbl">University Partners</div></div>
-                </div>
+                <p class="res-hero-lead">OML Code did not start as a product idea. It grew out of <strong style="color:#fff;">over a decade</strong> of work at <strong style="color:#fff;">Modelware Labs</strong>, our research engine, advancing ontological modeling and rigorous systems engineering with corporate, government, and academic partners. That research foundation is why the platform can make claims most tools cannot.</p>
             </div>
         </div>
     </div>
@@ -310,7 +301,7 @@ description: "Modelware Labs is the research engine behind OML Code — a decade
         <div class="text-center res-section-head">
             <span class="eyebrow">Open by Design</span>
             <h3>Foundation &amp; Community</h3>
-            <p class="text-muted mb-0">Our research lives in the open, on a shared foundation and in an active community.</p>
+            <p class="text-muted mb-0">Our research lives in the open — anchored by an open-source foundation and the community that has grown around it.</p>
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-5 col-md-6 mb-4">
@@ -334,13 +325,17 @@ description: "Modelware Labs is the research engine behind OML Code — a decade
 </section>
 
 <!-- PROVEN IN PRACTICE -->
-<section class="section" style="padding-top: 10px; padding-bottom: 40px;">
+<section class="section" style="padding-top: 20px; padding-bottom: 60px;">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-9 text-center">
-                <span class="eyebrow">Proven in Practice</span>
-                <p style="font-size: 17px; line-height: 1.75; color: #46505c; margin: 12px 0 0;">Before OML Code, through consulting and the open source <a href="https://www.opencaesar.io/" target="_blank" rel="noopener">openCAESAR</a> platform, our team supported engineering at leading aerospace and defense organizations, including <strong>BAE Systems</strong>, <strong>Leonardo</strong>, and <strong>CAE</strong>.</p>
-            </div>
+        <div class="text-center res-section-head" style="margin-bottom: 8px;">
+            <span class="eyebrow">Proven in Practice</span>
+            <h3>Tested on Real Engineering Programs</h3>
+            <p class="text-muted mb-0">This research is not theoretical. Through the open-source <a href="https://www.opencaesar.io/" target="_blank" rel="noopener">openCAESAR</a> platform, our team has put it to work on demanding aerospace and defense programs.</p>
+        </div>
+        <div class="proof-orgs">
+            <span class="proof-org">BAE Systems</span>
+            <span class="proof-org">Leonardo</span>
+            <span class="proof-org">CAE</span>
         </div>
     </div>
 </section>
