@@ -21,7 +21,7 @@ google_map_api: "https://maps.googleapis.com/maps/api/js?key=AIzaSyDnh74UN6BKgq9
 # Paste IDs to activate. Blank = nothing loads (no scripts, no consent banner).
 analytics:
   ga4_id: "G-HE2R1892V7"  # Google Analytics 4 Measurement ID
-  linkedin_partner_id: "" # LinkedIn Insight Tag Partner ID, e.g. 1234567
+  linkedin_partner_id: "9527284" # LinkedIn Insight Tag Partner ID
 google_site_verification: "" # Google Search Console meta token (or verify via DNS)
 
 ############### Call to Action ###############
