@@ -1,0 +1,23 @@
+{%- comment -%} Loaded in <head>. Activates only when IDs are set in _config.yml. {%- endcomment -%}
+{% assign mw_gsc = site.google_site_verification | default: "" %}
+{% assign mw_ga = site.analytics.ga4_id | default: "" %}
+{% if mw_gsc != "" %}<meta name="google-site-verification" content="{{ mw_gsc }}">
+{% endif %}
+{% if mw_ga != "" %}
+<!-- Google Consent Mode v2: default to denied until the visitor opts in -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ mw_ga }}"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', '{{ mw_ga }}');
+</script>
+{% endif %}

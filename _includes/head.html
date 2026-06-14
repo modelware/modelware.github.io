@@ -5,6 +5,8 @@
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+  {% include analytics-head.html %}
   {% assign social_title = page.title | default: site.title %}
   {% assign social_description = page.description | default: page.summary | default: site.description | strip_html | strip_newlines | truncate: 200 %}
   {% assign social_image = page.image | default: page.post_image | default: '/assets/images/oml-code-social.png' %}

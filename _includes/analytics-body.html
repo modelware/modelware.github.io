@@ -1,0 +1,61 @@
+{%- comment -%} Consent banner + LinkedIn tag + conversion events. Renders only when tracking IDs are set. {%- endcomment -%}
+{% assign mw_ga = site.analytics.ga4_id | default: "" %}
+{% assign mw_li = site.analytics.linkedin_partner_id | default: "" %}
+{% if mw_ga != "" or mw_li != "" %}
+<div id="mw-consent" class="mw-consent" role="dialog" aria-label="Cookie consent" hidden>
+  <p class="mw-consent-text">We use cookies to measure traffic and improve your experience. See our <a href="/privacy.html">Privacy Policy</a>.</p>
+  <div class="mw-consent-actions">
+    <button type="button" id="mw-consent-decline" class="btn btn-outline-light btn-sm mb-0">Decline</button>
+    <button type="button" id="mw-consent-accept" class="btn btn-primary btn-sm mb-0">Accept</button>
+  </div>
+</div>
+<style>
+  .mw-consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:1080;max-width:580px;margin:0 auto;background:#0a1322;border:1px solid rgba(110,231,219,0.25);border-radius:12px;box-shadow:0 16px 40px rgba(0,0,0,0.45);padding:18px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:14px;}
+  .mw-consent-text{color:rgba(255,255,255,0.82);font-size:13.5px;line-height:1.55;margin:0;flex:1 1 240px;}
+  .mw-consent-text a{color:#6ee7db;}
+  .mw-consent-actions{display:flex;gap:8px;margin-left:auto;}
+</style>
+<script>
+(function(){
+  var KEY='mw_consent';
+  var ga='{{ mw_ga }}';
+  var liId='{{ mw_li }}';
+  function push(){ if(window.dataLayer){ window.dataLayer.push(arguments); } }
+
+  function loadLinkedIn(){
+    if(!liId || window.__mwLiLoaded) return; window.__mwLiLoaded=true;
+    window._linkedin_partner_id = liId;
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(liId);
+    var s=document.createElement('script'); s.type='text/javascript'; s.async=true;
+    s.src='https://snap.licdn.com/li.lms-analytics/insight.min.js';
+    document.head.appendChild(s);
+  }
+
+  function grant(){
+    if(ga){ push('consent','update',{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'}); }
+    loadLinkedIn();
+  }
+
+  var banner=document.getElementById('mw-consent');
+  var choice=null; try{ choice=localStorage.getItem(KEY); }catch(e){}
+  if(choice==='granted'){ grant(); }
+  else if(choice!=='denied' && banner){ banner.hidden=false; }
+
+  function decide(val){ try{ localStorage.setItem(KEY,val); }catch(e){} if(banner){ banner.hidden=true; } if(val==='granted'){ grant(); } }
+  var a=document.getElementById('mw-consent-accept'); if(a){ a.addEventListener('click',function(){ decide('granted'); }); }
+  var d=document.getElementById('mw-consent-decline'); if(d){ d.addEventListener('click',function(){ decide('denied'); }); }
+
+  // ---- Conversion event tracking (GA4) ----
+  function track(name, params){ if(ga){ push('event', name, params||{}); } }
+  document.addEventListener('click', function(e){
+    var t=e.target; var link=t && t.closest ? t.closest('a[href]') : null;
+    if(!link) return;
+    var href=link.getAttribute('href')||'';
+    if(href.indexOf('/contact')!==-1){ track('cta_contact_click',{link_text:(link.textContent||'').trim().slice(0,60)}); }
+  });
+  var form=document.querySelector('form.contact__form');
+  if(form){ form.addEventListener('submit', function(){ track('generate_lead',{form:'contact'}); }); }
+})();
+</script>
+{% endif %}
