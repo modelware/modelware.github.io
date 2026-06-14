@@ -1,16 +1,40 @@
+<style>
+    .hero-demo-caption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 34px 20px 14px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        color: #fff;
+        text-align: left;
+        background: linear-gradient(to top, rgba(10, 19, 34, 0.88), rgba(10, 19, 34, 0));
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        pointer-events: none;
+    }
+    .hero-demo-caption.show { opacity: 1; }
+    .hero-demo-caption::before {
+        content: "";
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #0fb9a8;
+        margin-right: 9px;
+        vertical-align: middle;
+    }
+</style>
+
 <section class="banner-2 position-relative bg-blue">
-    {% capture hero_rotator_items %}
-    [
-      {"image":"{{ '/assets/images/oml-code-logo-hero.png' | relative_url }}","link":"{{ '/oml-code' | relative_url }}"}
-    ]
-    {% endcapture %}
-    {% assign hero_rotator_fallback_image = '/assets/images/oml-code-logo-hero.png' | relative_url %}
-    {% assign hero_rotator_fallback_link = '/oml-code' | relative_url %}
     <div class="container">
         <div class="row align-items-stretch">
             <div class="col-lg-6 col-md-7">
                 <div class="banner-content-2">
-                    <span class="eyebrow">OML Code &nbsp;·&nbsp; Logic &nbsp;·&nbsp; AI &nbsp;·&nbsp; DevOps</span>
+                    <span class="eyebrow">OML Code:&nbsp; Logic &nbsp;·&nbsp; AI &nbsp;·&nbsp; DevOps</span>
                     <h1 class="text-white mt-2 hero-title">Engineering models you can <span class="gradient-text">reason on</span> and <span class="gradient-text">compute over</span></h1>
                     <p class="my-4 text-white">OML Code is an intelligence-centric engineering platform. It captures engineering knowledge as formal models, verifies them with automated reasoning, and grounds AI agents in them, turning your models into active, trustworthy engineering intelligence.</p>
                     <div class="hero-cta">
@@ -22,20 +46,53 @@
             </div>
 
             <div class="col-lg-6 col-md-5 hero-media">
-                <!-- Placeholder for Product Demo Video/Animation -->
-                <div class="rounded shadow-lg hero-media-card" style="border: 1px solid rgba(15, 185, 168, 0.45); box-shadow: 0 0 60px rgba(15, 185, 168, 0.25), 0 24px 60px rgba(0, 0, 0, 0.5);">
-                    <div class="hero-rotator" data-rotator-items='{{ hero_rotator_items | strip_newlines }}' aria-label="Product demo screenshot" style="cursor: pointer;">
-                        <img class="hero-rotator-image" src="{{ hero_rotator_fallback_image }}" alt="OML Code product screenshot">
-                        <a href="{{ hero_rotator_fallback_link }}" aria-label="Open featured page" style="position: absolute; inset: 0; z-index: 1;"></a>
-                        <button class="hero-rotator-btn hero-rotator-prev" type="button" aria-label="Previous slide">
-                            <i class="ti-angle-left" aria-hidden="true"></i>
-                        </button>
-                        <button class="hero-rotator-btn hero-rotator-next" type="button" aria-label="Next slide">
-                            <i class="ti-angle-right" aria-hidden="true"></i>
-                        </button>
-                    </div>
+                <!-- Product demo loop: montage of OML Code capability clips -->
+                <div class="rounded shadow-lg hero-media-card hero-demo-card" style="position: relative; overflow: hidden; border: 1px solid rgba(15, 185, 168, 0.45); box-shadow: 0 0 60px rgba(15, 185, 168, 0.25), 0 24px 60px rgba(0, 0, 0, 0.5);">
+                    <a href="/oml-code" aria-label="Explore OML Code">
+                        <video class="hero-demo-video" autoplay muted loop playsinline preload="metadata"
+                               poster="{{ '/assets/images/oml-code-hero-demo-poster.jpg' | relative_url }}"
+                               style="display: block; width: 100%; height: auto;">
+                            <source src="{{ '/assets/images/oml-code-hero-demo.mp4' | relative_url }}" type="video/mp4">
+                        </video>
+                    </a>
+                    <span class="hero-demo-caption" id="heroDemoCaption" aria-hidden="true"></span>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+    (function () {
+        var v = document.querySelector('.hero-demo-video');
+        var cap = document.getElementById('heroDemoCaption');
+        if (!v || !cap) return;
+        // Cues must match the montage: ~2.9s logo intro, then clips every 4.5s.
+        // Empty label = no caption (used for the logo title card).
+        var cues = [
+            { t: 0.0,  label: '' },
+            { t: 2.9,  label: 'Formal Knowledge Representation' },
+            { t: 7.4,  label: 'GenAI-Assisted Capture' },
+            { t: 11.9, label: 'Automated Reasoning' },
+            { t: 16.4, label: 'Structured Querying' },
+            { t: 20.9, label: 'Methodology-Driven Viewpoints' },
+            { t: 25.4, label: 'DevOps Integration' }
+        ];
+        var cur = -1;
+        function update() {
+            var ct = v.currentTime, idx = 0;
+            for (var i = 0; i < cues.length; i++) { if (ct >= cues[i].t) idx = i; }
+            if (idx !== cur) {
+                cur = idx;
+                cap.classList.remove('show');
+                setTimeout(function () {
+                    cap.textContent = cues[idx].label;
+                    if (cues[idx].label) cap.classList.add('show');
+                }, 150);
+            }
+        }
+        v.addEventListener('timeupdate', update);
+        v.addEventListener('play', update);
+        update();
+    })();
+</script>
