@@ -79,5 +79,34 @@
     "url": "{{ site.url }}"
   }
   </script>
+  {% if page.date %}
+  {% assign is_news = page.url contains '/news/' %}
+  {% assign article_desc = page.description | default: page.summary | default: page.excerpt | strip_html | strip_newlines | truncate: 200 %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": {{ page.title | jsonify }},
+    "datePublished": "{{ page.date | date_to_xmlschema }}",
+    "dateModified": "{{ page.date | date_to_xmlschema }}",
+    "author": { "@type": "{% if page.author contains 'Modelware' %}Organization{% else %}Person{% endif %}", "name": {{ page.author | default: 'Modelware' | jsonify }} },
+    "publisher": { "@type": "Organization", "name": "Modelware", "logo": { "@type": "ImageObject", "url": "{{ site.logo | absolute_url }}" } },
+    {% if page.post_image %}"image": "{{ page.post_image | absolute_url }}",{% endif %}
+    "description": {{ article_desc | jsonify }},
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ page.url | absolute_url }}" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}/" },
+      { "@type": "ListItem", "position": 2, "name": "{% if is_news %}News{% else %}Blog{% endif %}", "item": "{{ site.url }}{% if is_news %}/news/{% else %}/blog/{% endif %}" },
+      { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }}, "item": "{{ page.url | absolute_url }}" }
+    ]
+  }
+  </script>
+  {% endif %}
 
 </head>

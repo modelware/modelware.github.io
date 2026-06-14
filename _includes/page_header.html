@@ -2,6 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-10">
+          {% if page.url contains '/news/' %}<span class="eyebrow" style="color:#6ee7db;"><a href="/news/" style="color:#6ee7db;">News</a></span>{% endif %}
           <h2 class="text-capitalize mb-2 text-lg text-white">{{page.title}}</h2>
       </div>
       <div class="col-lg-10">
