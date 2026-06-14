@@ -19,12 +19,16 @@ body {
 
 p{
   color: $black-light;
+  // Avoid leaving a single word alone on the last line (progressive enhancement).
+  text-wrap: pretty;
 }
 h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
   font-family: $heading-font;
   color: #141a26;
   font-weight: 600;
   letter-spacing: -0.01em;
+  // Balance multi-line headings instead of leaving short trailing lines.
+  text-wrap: balance;
 }
 
 h1 ,.h1{
