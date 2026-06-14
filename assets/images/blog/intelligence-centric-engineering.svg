@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="The progression from scattered documents to intelligence-centric engineering">
+  <defs>
+    <linearGradient id="ice-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#16233c"/>
+      <stop offset="0.8" stop-color="#0a1322"/>
+    </linearGradient>
+    <radialGradient id="ice-glow" cx="0.82" cy="0.5" r="0.6">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.28"/>
+      <stop offset="0.6" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ice-glow2" cx="0.12" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#0fb9a8" stop-opacity="0.16"/>
+      <stop offset="0.6" stop-color="#0fb9a8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ice-edge" x1="100" y1="250" x2="720" y2="250" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0fb9a8"/>
+      <stop offset="0.5" stop-color="#6ee7db"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <filter id="ice-soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" rx="0" fill="url(#ice-bg)"/>
+  <rect width="800" height="500" fill="url(#ice-glow)"/>
+  <rect width="800" height="500" fill="url(#ice-glow2)"/>
+
+  <!-- progression baseline -->
+  <path d="M120 250 H700" stroke="#33455f" stroke-opacity="0.45" stroke-width="2" stroke-dasharray="2 10" stroke-linecap="round"/>
+
+  <!-- Stage 1: scattered (documents) -->
+  <g fill="#46597a">
+    <circle cx="120" cy="210" r="7"/>
+    <circle cx="100" cy="285" r="6"/>
+    <circle cx="150" cy="300" r="5"/>
+  </g>
+
+  <!-- Stage 2: connected (models) -->
+  <g stroke="#3f7f78" stroke-width="2.5" fill="none" opacity="0.9">
+    <path d="M300 210 L270 295 L345 285 Z"/>
+  </g>
+  <g fill="#2a9d8f">
+    <circle cx="300" cy="210" r="7"/>
+    <circle cx="270" cy="295" r="7"/>
+    <circle cx="345" cy="285" r="7"/>
+  </g>
+
+  <!-- Stage 3: structured graph (knowledge) -->
+  <g stroke="url(#ice-edge)" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.95">
+    <path d="M470 190 L430 255 L470 320 L520 255 Z M470 190 L470 320 M430 255 L520 255"/>
+  </g>
+  <g fill="#0fb9a8">
+    <circle cx="470" cy="190" r="7.5"/>
+    <circle cx="430" cy="255" r="7.5"/>
+    <circle cx="520" cy="255" r="7.5"/>
+    <circle cx="470" cy="320" r="7.5"/>
+    <circle cx="470" cy="255" r="6" fill="#6ee7db"/>
+  </g>
+
+  <!-- Stage 4: intelligent hub (intelligence) -->
+  <g filter="url(#ice-soft)" stroke="url(#ice-edge)" stroke-width="3.5" fill="none" stroke-linecap="round">
+    <path d="M680 250 L680 175 M680 250 L745 213 M680 250 L745 287 M680 250 L680 325 M680 250 L615 287 M680 250 L615 213"/>
+  </g>
+  <g filter="url(#ice-soft)">
+    <circle cx="680" cy="175" r="8" fill="#6ee7db"/>
+    <circle cx="745" cy="213" r="8" fill="#8b5cf6"/>
+    <circle cx="745" cy="287" r="8" fill="#8b5cf6"/>
+    <circle cx="680" cy="325" r="8" fill="#8b5cf6"/>
+    <circle cx="615" cy="287" r="8" fill="#0fb9a8"/>
+    <circle cx="615" cy="213" r="8" fill="#0fb9a8"/>
+    <circle cx="680" cy="250" r="13" fill="#ffffff"/>
+    <circle cx="680" cy="250" r="13" fill="none" stroke="url(#ice-edge)" stroke-width="4"/>
+  </g>
+</svg>

@@ -5,7 +5,7 @@ date: 2026-06-13
 author: "Maged Elaasar"
 categories: [insights]
 tags: [intelligence-centric engineering, MBSE, OML Code, AI]
-post_image: "/assets/images/about-vision.svg"
+post_image: "/assets/images/blog/intelligence-centric-engineering.svg"
 description: "Intelligence-centric engineering is the fourth era of engineering practice: formal, computable knowledge with AI grounded in it. Here is what the term means, how it builds on knowledge-centric engineering, and why it matters."
 ---
 
