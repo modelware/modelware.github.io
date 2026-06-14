@@ -156,6 +156,7 @@
       var intervalId = null;
       var $overlayLink = $rotator.find('a[aria-label="Open featured page"]').first();
       var $rotatorImage = $rotator.find('.hero-rotator-image').first();
+      var $controls = $rotator.find('.hero-rotator-btn');
 
       var applySlide = function () {
         var slide = slides[index];
@@ -180,7 +181,11 @@
       };
 
       applySlide();
-      start();
+      if (slides.length > 1) {
+        start();
+      } else {
+        $controls.hide();
+      }
 
       $rotator.on('click', '.hero-rotator-prev', function (e) {
         e.stopPropagation();
