@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Two Kinds of Upper Ontology: Classes to Inherit, or Classes to Instantiate?"
+title: "Upper Ontologies: Inherit or Instantiate?"
 date: 2026-06-16 10:00:00 -0700
 author: "Maged Elaasar"
 categories: [insights]
