@@ -16,12 +16,12 @@ main:
   - name: Learn
     url: "#"
     submenu:
-      - name: Blog
-        url: /blog/
+      - name: The Axiom
+        url: /axiom/
       - name: Academy
-        url: /academy.html
-      - name: Youtube
-        url: /omlcode-youtube.html
+        url: /academy/
+      - name: Channel
+        url: /channel/
   - name: Company
     url: "#"
     submenu:
@@ -49,8 +49,8 @@ footer:
     url: /partners.html
   - name: Academy
     url: /academy.html
-  - name: Blog
-    url: /blog/
+  - name: The Axiom
+    url: /axiom/
   - name: About Us
     url: /about.html
   - name: News
