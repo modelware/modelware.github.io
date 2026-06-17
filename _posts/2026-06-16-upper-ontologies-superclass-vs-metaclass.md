@@ -6,6 +6,7 @@ author: "Maged Elaasar"
 categories: [insights]
 tags: [ontologies, upper ontology, foundational ontology, OWL, OML, metaclass, punning, metamodeling]
 post_image: "/assets/images/blog/superclass-vs-metaclass.svg"
+image: "/assets/images/blog/superclass-vs-metaclass-social.png"
 description: "An upper ontology's classes can be meant to be inherited by your domain classes, or to act as metaclasses that classify them. They look similar but mean very different things, and choosing the wrong one quietly breaks your reasoning. Here is how to tell them apart."
 ---
 

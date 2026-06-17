@@ -6,6 +6,7 @@ author: "Maged Elaasar"
 categories: [insights]
 tags: [OML, OWL, ontologies, MBSE, systems engineering]
 post_image: "/assets/images/blog/why-oml-vs-owl.svg"
+image: "/assets/images/blog/why-oml-vs-owl-social.png"
 description: "OML is not an alternative to OWL. It treats ontological modeling and semantic interoperability as two distinct tasks: OML is the modeling layer, and by mapping to standard OWL 2 DL it delivers the interoperability."
 ---
 
