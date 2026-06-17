@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="An automated analysis pipeline for early space mission design: orbit, scenario, and power analyses orchestrated by a CI/CD loop feeding a dashboard">
+  <defs>
+    <linearGradient id="ms-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#16233c"/>
+      <stop offset="0.8" stop-color="#0a1322"/>
+    </linearGradient>
+    <radialGradient id="ms-glow-t" cx="0.25" cy="0.22" r="0.7">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.22"/>
+      <stop offset="0.6" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ms-glow-b" cx="0.8" cy="0.85" r="0.7">
+      <stop offset="0" stop-color="#0fb9a8" stop-opacity="0.22"/>
+      <stop offset="0.6" stop-color="#0fb9a8" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="ms-soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="ms-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6ee7db"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#ms-bg)"/>
+  <rect width="800" height="500" fill="url(#ms-glow-t)"/>
+  <rect width="800" height="500" fill="url(#ms-glow-b)"/>
+
+  <!-- orbit motif (top-left) -->
+  <g opacity="0.85">
+    <ellipse cx="180" cy="130" rx="120" ry="46" fill="none" stroke="#46597a" stroke-width="1.5" transform="rotate(-18 180 130)"/>
+    <circle cx="180" cy="130" r="13" fill="#a78bfa" filter="url(#ms-soft)"/>
+    <circle cx="282" cy="92" r="6" fill="#6ee7db"/>
+  </g>
+
+  <!-- pipeline stages -->
+  <g font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#dfe6f0" text-anchor="middle">
+    <g filter="url(#ms-soft)">
+      <rect x="80"  y="250" width="150" height="64" rx="12" fill="#16233c" stroke="#0fb9a8" stroke-width="2"/>
+      <rect x="325" y="250" width="150" height="64" rx="12" fill="#16233c" stroke="#0fb9a8" stroke-width="2"/>
+      <rect x="570" y="250" width="150" height="64" rx="12" fill="#16233c" stroke="#0fb9a8" stroke-width="2"/>
+    </g>
+    <text x="155" y="278">Orbit</text>
+    <text x="155" y="298" font-size="11" fill="#8aa0bb">analysis</text>
+    <text x="400" y="278">Scenario</text>
+    <text x="400" y="298" font-size="11" fill="#8aa0bb">generation</text>
+    <text x="645" y="278">Power</text>
+    <text x="645" y="298" font-size="11" fill="#8aa0bb">balance</text>
+  </g>
+
+  <!-- pipeline arrows -->
+  <g stroke="#5b6f93" stroke-width="2.5" fill="none">
+    <path d="M230 282 L322 282" marker-end="url(#ms-arr)"/>
+    <path d="M475 282 L567 282" marker-end="url(#ms-arr)"/>
+  </g>
+
+  <!-- CI/CD loop arrow back -->
+  <path d="M645 318 C645 400, 155 400, 155 320" stroke="#0fb9a8" stroke-width="2" stroke-dasharray="3 7" fill="none" marker-end="url(#ms-arr)" opacity="0.8"/>
+  <text x="400" y="392" font-family="Arial, Helvetica, sans-serif" font-size="12" letter-spacing="2" fill="#6ee7db" text-anchor="middle">CI/CD ORCHESTRATION (OML · SPARQL)</text>
+
+  <!-- dashboard (top-right) -->
+  <g filter="url(#ms-soft)">
+    <rect x="540" y="95" width="190" height="92" rx="10" fill="#101c33" stroke="#2a3a52" stroke-width="1.5"/>
+  </g>
+  <g fill="#0fb9a8">
+    <rect x="560" y="150" width="20" height="22"/>
+    <rect x="590" y="135" width="20" height="37"/>
+    <rect x="620" y="120" width="20" height="52" fill="#6ee7db"/>
+    <rect x="650" y="142" width="20" height="30"/>
+    <rect x="680" y="128" width="20" height="44" fill="#a78bfa"/>
+  </g>
+  <text x="635" y="120" font-family="Arial, Helvetica, sans-serif" font-size="11" letter-spacing="2" fill="#7f8ca3" text-anchor="middle">DASHBOARD</text>
+
+  <!-- arrow from power to dashboard -->
+  <path d="M680 248 L660 192" stroke="#5b6f93" stroke-width="2" fill="none" marker-end="url(#ms-arr)" opacity="0.8"/>
+</svg>
