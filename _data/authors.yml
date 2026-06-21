@@ -1,0 +1,13 @@
+# Author profiles for The Axiom articles.
+# Keyed by the exact string used in each post's `author:` front matter.
+"Maged Elaasar":
+  photo: "/assets/images/elaasar.jpg"
+  title: "Founder & CEO, Modelware"
+  url: "/maged-elaasar.html"
+  bio: "Dr. Maged Elaasar is the Founder and CEO of Modelware and the architect behind OML Code. Drawing on 12+ years at NASA JPL leading the Integrated Model Centric Engineering program and the open-source openCAESAR platform, he brings mission-grade rigor to organizations engineering complex systems."
+
+"Yuta Nakajima":
+  photo: "https://www.opencaesar.io/assets/img/yuta.png"
+  title: "Senior Aerospace Engineer, JAXA"
+  url: "/partners/yuta-nakajima.html"
+  bio: "Yuta Nakajima is a senior aerospace engineer at the Japan Aerospace Exploration Agency (JAXA) and an openCAESAR contributor focused on advancing model-centric engineering practice on real space programs."

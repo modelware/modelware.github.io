@@ -31,11 +31,16 @@ Two examples:
 
 The point is not that OWL cannot express these things. It is that OML gives you one correct way to express them, every time.
 
+<aside class="axiom-aside" markdown="1">
+<span class="axiom-aside-label">The core idea</span>
+OML is not an alternative to OWL. It is the modeling layer for ontological modeling, sitting on OWL as the interoperability layer you never actually leave.
+</aside>
+
 ## 2. Closed-world checks where engineering expects them
 
 OWL assumes an open world (anything not stated is merely unknown, not false) and does not assume unique names. Both are the right defaults for the open web and the wrong ones for checking a design. The practical effect is that real errors stay hidden: without explicit disjointness, two things you consider distinct can be silently treated as possibly the same, and a missing element is never flagged as missing.
 
-OML handles this at well-defined module boundaries. Its bundle mechanism mechanically adds the closure axioms, so you can reason over a design as a closed system while still connecting to open, shared knowledge elsewhere. You get closed-world rigor without writing and maintaining the closure by hand.
+OML handles this at well-defined module boundaries. Its bundle mechanism mechanically adds the closure axioms, so you can [reason over a design](/oml-code/capabilities/automated-reasoning) as a closed system while still connecting to open, shared knowledge elsewhere. You get closed-world rigor without writing and maintaining the closure by hand.
 
 ## 3. An enforced separation of vocabulary from data
 
@@ -43,7 +48,7 @@ OML separates vocabularies (the concepts and relations, your schema) from descri
 
 ## 4. A deterministic subset is what makes real tooling possible
 
-Because OML restricts itself to a deterministic, well-defined subset, you can build the tooling engineering teams actually need. Its textual syntax diffs and merges like source code, so models live in Git and go through pull-request review. Editors and validators can be pattern-aware. Data entry can be unit-aware. Generic OWL tooling, operating at the level of arbitrary axioms, cannot offer any of this.
+Because OML restricts itself to a deterministic, well-defined subset, you can build the tooling engineering teams actually need. Its textual syntax diffs and merges like source code, so models live in Git and go through [pull-request review](/oml-code/capabilities/collaboration-support). Editors and validators can be pattern-aware. Data entry can be unit-aware. Generic OWL tooling, operating at the level of arbitrary axioms, cannot offer any of this.
 
 ## The trade, and why it is worth it
 

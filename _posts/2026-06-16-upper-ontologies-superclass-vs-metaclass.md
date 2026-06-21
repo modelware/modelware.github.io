@@ -68,6 +68,11 @@ Here is what matters most, and the part people miss:
 - With **superclasses**, asserting `Dog ⊑ Animal` *entails facts about every dog*. Say it, and the reasoner now knows Fido is an animal. Consequences propagate downward to individuals.
 - With **metaclasses via punning**, asserting `Dog : NaturalKind` entails *nothing whatsoever about any individual dog*. Because punning treats the class `Dog` and the individual `Dog` as separate entities that only share a name, a classification you make at the meta level does not, and cannot, reach the members below.
 
+<aside class="axiom-aside" markdown="1">
+<span class="axiom-aside-label">The distinction that bites</span>
+Asserting that Dog is a subclass of Animal tells the reasoner something about every dog. Asserting that Dog is an instance of NaturalKind tells it nothing about any individual dog at all. That asymmetry is the whole decision.
+</aside>
+
 That asymmetry is the whole decision. If you want a top-level commitment to flow to instances, "everything below `PhysicalObject` is a physical object," the upper classes must be superclasses; using them as metaclasses will silently give you nothing at the instance level. If you want to characterize the concepts themselves without entailing anything about their members, the upper classes must be metaclasses; making them superclasses would force commitments you never intended onto every individual.
 
 | If you want… | The upper classes should be… |
@@ -83,7 +88,7 @@ If the documentation tells you to declare your domain concepts as *subclasses* o
 
 ## Where OML lands
 
-This is precisely the kind of discipline a real modeling language should make explicit rather than leave to convention. In [OML](/oml-code), specialization is a first-class construct: when you mean inheritance, you say so, and the closed, deterministic semantics make the downward consequences predictable and checkable. Today, when you want to say something *about* a concept rather than its members, OML offers annotations on classes, a deliberate, well-scoped way to attach metadata without pretending it carries instance-level consequences.
+This is precisely the kind of discipline a real modeling language should make explicit rather than leave to convention. In [OML](/oml-code), specialization is a first-class construct: when you mean inheritance, you say so, and the closed, deterministic semantics make the downward consequences predictable and [checkable by a reasoner](/oml-code/capabilities/automated-reasoning). Today, when you want to say something *about* a concept rather than its members, OML offers annotations on classes, a deliberate, well-scoped way to attach metadata without pretending it carries instance-level consequences.
 
 The metaclass pattern proper is something we are evaluating, and we do it the way we grow every OML feature: from a concrete use case, not from a desire for expressivity on its own. The use case here is metamodeling, and the question we are working through, with the UFO team, is what analytical value it actually brings to a domain vocabulary that adopts it, using gUFO as the worked example. If classifying concepts as kinds, roles, and phases lets us check a vocabulary for modeling errors, surface structural patterns, and reason about its design, then punning earns its place in the language. That assessment is still in progress, and the point of this article is exactly why we are being careful with it. Metaclasses and inheritance must stay distinct in both the language and the engineer's mind, because the reasoning consequences are not interchangeable.
 

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="A description-logic reasoner deriving entailed facts: asserted facts and an ontology feed a reasoner that infers new, implied facts">
+  <defs>
+    <linearGradient id="en-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#16233c"/>
+      <stop offset="0.8" stop-color="#0a1322"/>
+    </linearGradient>
+    <radialGradient id="en-glow-l" cx="0.18" cy="0.3" r="0.7">
+      <stop offset="0" stop-color="#0fb9a8" stop-opacity="0.20"/>
+      <stop offset="0.6" stop-color="#0fb9a8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="en-glow-c" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.30"/>
+      <stop offset="0.7" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="en-soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="en-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6ee7db"/>
+    </marker>
+    <marker id="en-arr-p" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#a78bfa"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#en-bg)"/>
+  <rect width="800" height="500" fill="url(#en-glow-l)"/>
+  <rect width="800" height="500" fill="url(#en-glow-c)"/>
+
+  <!-- labels -->
+  <text x="70" y="92" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="2" fill="#7f8ca3">ASSERTED FACTS</text>
+  <text x="356" y="92" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="2" fill="#cdb8ff">DL REASONER</text>
+  <text x="600" y="92" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="2" fill="#7f8ca3">ENTAILED FACTS</text>
+
+  <!-- asserted facts graph (left) -->
+  <g stroke="#46597a" stroke-width="1.5" opacity="0.7" fill="none">
+    <path d="M120 175 L205 150 M120 175 L155 270 M205 150 L245 235 M155 270 L245 235 M245 235 L225 340"/>
+  </g>
+  <g fill="#0fb9a8" filter="url(#en-soft)">
+    <circle cx="120" cy="175" r="9"/>
+    <circle cx="205" cy="150" r="9"/>
+    <circle cx="245" cy="235" r="10"/>
+    <circle cx="155" cy="270" r="8"/>
+    <circle cx="225" cy="340" r="8"/>
+  </g>
+
+  <!-- feed arrow into reasoner -->
+  <path d="M285 245 L360 245" stroke="#5b6f93" stroke-width="2.5" fill="none" marker-end="url(#en-arr)"/>
+
+  <!-- reasoner core (center hexagon) -->
+  <g filter="url(#en-soft)">
+    <polygon points="430,175 490,210 490,280 430,315 370,280 370,210"
+             fill="#1b2746" stroke="#8b5cf6" stroke-width="3"/>
+  </g>
+  <g stroke="#a78bfa" stroke-width="2" fill="none" opacity="0.9">
+    <circle cx="430" cy="245" r="22"/>
+    <path d="M430 223 V267 M408 245 H452"/>
+  </g>
+  <text x="430" y="360" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#cdb8ff" text-anchor="middle">infers what must be true</text>
+
+  <!-- output arrows -->
+  <path d="M495 220 L575 180" stroke="#2f6e54" stroke-width="2.5" fill="none" marker-end="url(#en-arr)"/>
+  <path d="M495 245 L575 255" stroke="#2f6e54" stroke-width="2.5" fill="none" marker-end="url(#en-arr)"/>
+  <path d="M495 270 L575 330" stroke="#6a3f4a" stroke-width="2.5" fill="none" marker-end="url(#en-arr-p)"/>
+
+  <!-- entailed facts (right): solid asserted node + dashed derived nodes -->
+  <g stroke="#46597a" stroke-width="1.5" opacity="0.6" fill="none">
+    <path d="M620 175 L690 215 M620 175 L600 320 M690 215 L660 330"/>
+  </g>
+  <!-- derived (dashed, teal) nodes -->
+  <g fill="#10261f" stroke="#0fb9a8" stroke-width="2.5" stroke-dasharray="4 4" filter="url(#en-soft)">
+    <circle cx="620" cy="175" r="11"/>
+    <circle cx="690" cy="215" r="10"/>
+  </g>
+  <!-- a contradictory derived node (purple) -->
+  <g filter="url(#en-soft)">
+    <circle cx="660" cy="330" r="11" fill="#2a1730" stroke="#a78bfa" stroke-width="2.5"/>
+  </g>
+  <!-- existing asserted node carried over -->
+  <circle cx="600" cy="320" r="9" fill="#0fb9a8" filter="url(#en-soft)"/>
+
+  <text x="655" y="400" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#9fe7dd" text-anchor="middle">classifications | links | conflicts</text>
+</svg>

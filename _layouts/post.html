@@ -3,12 +3,116 @@ layout: default
 ---
 
 <style>
+	/* ---- Magazine byline in the header ---- */
+	.post-byline { gap: 14px; }
+	.post-byline-avatar {
+		width: 52px; height: 52px; border-radius: 50%;
+		object-fit: cover; border: 2px solid rgba(110,231,219,0.5);
+		flex: 0 0 auto;
+	}
+	.post-byline-meta { line-height: 1.4; }
+	.post-byline-name { display: block; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 15px; color: #fff; }
+	.post-byline-name a { color: #fff; }
+	.post-byline-name a:hover { color: #6ee7db; }
+	.post-byline-sub { display: block; font-size: 12.5px; letter-spacing: 0.04em; color: rgba(255,255,255,0.6); text-transform: uppercase; }
+
 	.post-content { font-size: 16.5px; line-height: 1.8; color: #46505c; }
-	.post-content h2 { font-size: 26px; margin-top: 40px; margin-bottom: 14px; }
+	/* Lead-in: first paragraph reads larger, with a magazine drop cap */
+	.post-content > p:first-of-type { font-size: 19px; line-height: 1.7; color: #2c3744; }
+	.post-content > p:first-of-type::first-letter {
+		float: left; font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+		font-size: 66px; line-height: 0.82; padding: 6px 12px 0 0; color: #0fb9a8;
+	}
+	.post-content h2 {
+		font-size: 26px; margin-top: 46px; margin-bottom: 14px;
+		padding-top: 8px; position: relative;
+	}
+	.post-content h2::before {
+		content: ""; display: block;
+		width: 42px; height: 3px; border-radius: 3px;
+		background: linear-gradient(90deg, #0fb9a8, #8b5cf6);
+		margin-bottom: 16px;
+	}
 	.post-content h3 { font-size: 20px; margin-top: 30px; margin-bottom: 12px; }
 	.post-content p { margin-bottom: 18px; }
-	.post-content ul, .post-content ol { margin-bottom: 18px; padding-left: 20px; }
-	.post-content li { margin-bottom: 8px; }
+	.post-content a { color: #0c8e80; text-decoration: none; border-bottom: 1px solid rgba(15,185,168,0.35); transition: color .2s ease, border-color .2s ease; }
+	.post-content a:hover { color: #8b5cf6; border-color: #8b5cf6; }
+	.post-content strong { color: #1d2838; font-weight: 600; }
+	.post-content ul, .post-content ol { margin-bottom: 18px; padding-left: 4px; list-style: none; }
+	.post-content ol { padding-left: 22px; list-style: decimal; }
+	.post-content ul li { position: relative; padding-left: 26px; margin-bottom: 12px; }
+	.post-content ul li::before {
+		content: ""; position: absolute; left: 4px; top: 11px;
+		width: 8px; height: 8px; border-radius: 50%;
+		background: #0fb9a8; box-shadow: 0 0 0 4px rgba(15,185,168,0.14);
+	}
+	.post-content ol li { margin-bottom: 12px; padding-left: 4px; }
+	/* Reference/citation blockquote at the foot of articles */
+	.post-content blockquote {
+		margin: 24px 0; padding: 16px 20px;
+		background: #f6f8fb; border-left: 4px solid #c8ccd0;
+		border-radius: 8px; font-size: 15px; color: #535a60;
+	}
+	.post-content blockquote p { margin-bottom: 0; }
+	.post-content blockquote p::before { display: none; }
+	.post-content hr { margin: 40px 0; border: 0; border-top: 1px solid rgba(16,26,46,0.1); }
+	/* Inline figures that illustrate an idea */
+	.post-figure { margin: 34px 0; }
+	.post-figure img { display: block; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 14px 34px rgba(16,26,46,0.14); }
+	.post-figure figcaption { margin-top: 12px; font-size: 13.5px; color: #74808f; text-align: center; line-height: 1.55; }
+
+	/* Side note / key-message callout that echoes the article */
+	.axiom-aside {
+		margin: 30px 0;
+		padding: 22px 26px;
+		border-left: 4px solid #0fb9a8;
+		border-radius: 10px;
+		background: linear-gradient(135deg, rgba(15,185,168,0.07), rgba(139,92,246,0.06));
+	}
+	.axiom-aside .axiom-aside-label {
+		display: block;
+		font-family: 'Space Grotesk', sans-serif;
+		font-size: 11.5px; font-weight: 600; letter-spacing: 0.12em;
+		text-transform: uppercase; color: #0fb9a8; margin-bottom: 8px;
+	}
+	.axiom-aside p {
+		font-family: 'Space Grotesk', sans-serif;
+		font-size: 19px; line-height: 1.55; color: #1d2838;
+		margin-bottom: 0; font-weight: 500;
+	}
+	/* Floated side note for wider screens */
+	@media (min-width: 992px) {
+		.axiom-aside.axiom-aside-side {
+			float: right; width: 300px; margin: 8px 0 22px 34px;
+		}
+	}
+
+	/* ---- About-the-author card ---- */
+	.author-card {
+		display: flex; gap: 22px; align-items: flex-start;
+		padding: 26px 28px; margin: 10px 0 40px;
+		background: linear-gradient(135deg, #0e1a30, #142544);
+		border-radius: 14px; color: #d7e0ee;
+	}
+	.author-card-avatar {
+		width: 86px; height: 86px; border-radius: 50%;
+		object-fit: cover; flex: 0 0 auto;
+		border: 2px solid rgba(15,185,168,0.55);
+	}
+	.author-card-eyebrow {
+		font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600;
+		letter-spacing: 0.12em; text-transform: uppercase; color: #6ee7db;
+	}
+	.author-card-name { margin: 6px 0 2px; }
+	.author-card-name a { color: #fff; }
+	.author-card-name a:hover { color: #6ee7db; }
+	.author-card-title { font-size: 13px; color: #9fb0c9; margin-bottom: 10px; }
+	.author-card-bio { font-size: 14.5px; line-height: 1.65; color: #c4cfe0; margin-bottom: 12px; }
+	.author-card-link { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; color: #6ee7db; }
+	.author-card-link:hover { color: #a78bfa; }
+	@media (max-width: 575px) {
+		.author-card { flex-direction: column; align-items: center; text-align: center; }
+	}
 
 	.related-posts { background: #f6f8fb; }
 	.related-posts .section-eyebrow {
@@ -41,15 +145,29 @@ layout: default
 	.blog-card-more { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; color: #0fb9a8; }
 </style>
 
-<section class="page-title bg-blue" style="padding: 180px 0 70px;">
+{% comment %} Resolve author profile and reading time {% endcomment %}
+{% assign author_data = site.data.authors[page.author] %}
+{% assign words = page.content | strip_html | number_of_words %}
+{% assign read_min = words | divided_by: 200 | plus: 1 %}
+
+<section class="page-title bg-blue" style="padding: 180px 0 64px;">
 	<div class="container">
-		<div class="row">
-			<div class="col-lg-9">
-				<span class="eyebrow" style="color:#6ee7db;"><a href="/axiom/" style="color:#6ee7db;">The Axiom</a></span>
-				<h1 class="text-lg text-white mb-3 mt-2">{{ page.title }}</h1>
-				<div class="post-meta text-uppercase" style="color: rgba(255,255,255,0.65); font-size: 13px; letter-spacing: 0.08em;">
-					{% if page.author %}<span>{{ page.author }}</span>{% endif %}
-					{% if page.date %}<span> &middot; {{ page.date | date_to_long_string }}</span>{% endif %}
+		<div class="row justify-content-center">
+			<div class="col-lg-8">
+				<span class="eyebrow" style="color:#6ee7db;"><a href="/axiom/" style="color:#6ee7db;">The Axiom</a>{% if page.categories.first %} &middot; <span style="color:rgba(255,255,255,0.6);">{{ page.categories.first }}</span>{% endif %}</span>
+				<h1 class="text-lg text-white mb-4 mt-2">{{ page.title }}</h1>
+				<div class="post-byline d-flex align-items-center">
+					{% if author_data.photo %}
+					<a href="{{ author_data.url | default: '#' }}"><img class="post-byline-avatar" src="{{ author_data.photo }}" alt="{{ page.author }}" loading="lazy"></a>
+					{% endif %}
+					<div class="post-byline-meta">
+						{% if page.author %}<span class="post-byline-name">{% if author_data.url %}<a href="{{ author_data.url }}">{{ page.author }}</a>{% else %}{{ page.author }}{% endif %}</span>{% endif %}
+						<span class="post-byline-sub">
+							{% if author_data.title %}{{ author_data.title }} &middot; {% endif %}
+							{% if page.date %}{{ page.date | date_to_long_string }}{% endif %}
+							&middot; {{ read_min }} min read
+						</span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -81,6 +199,21 @@ layout: default
 						{% include social_share.html %}
 					</div>
 				</div>
+
+				{% if author_data %}
+				<div class="author-card">
+					{% if author_data.photo %}
+					<a href="{{ author_data.url | default: '#' }}"><img class="author-card-avatar" src="{{ author_data.photo }}" alt="{{ page.author }}" loading="lazy"></a>
+					{% endif %}
+					<div class="author-card-body">
+						<span class="author-card-eyebrow">About the author</span>
+						<h5 class="author-card-name">{% if author_data.url %}<a href="{{ author_data.url }}">{{ page.author }}</a>{% else %}{{ page.author }}{% endif %}</h5>
+						{% if author_data.title %}<div class="author-card-title">{{ author_data.title }}</div>{% endif %}
+						{% if author_data.bio %}<p class="author-card-bio">{{ author_data.bio }}</p>{% endif %}
+						{% if author_data.url %}<a class="author-card-link" href="{{ author_data.url }}">Read full profile <i class="ti-arrow-right ml-1"></i></a>{% endif %}
+					</div>
+				</div>
+				{% endif %}
 
 				<div class="bg-blue rounded p-5 text-center text-white mb-5">
 					<h4 class="text-white mb-3">See OML Code in action</h4>

@@ -22,7 +22,7 @@ To answer those questions you need formal semantics, and a tool that can compute
 
 ## Turning the model into logic
 
-Our approach uses the [openCAESAR](https://www.opencaesar.io/) platform together with the Ontological Modeling Language (OML). The SysML model and the meta-model it must conform to are represented in OML, which maps deterministically to standard OWL 2 Description Logic. Once the model is expressed as a logical theory, an OWL 2 DL reasoner can be turned loose on it.
+Our approach uses the [openCAESAR](https://www.opencaesar.io/) platform together with the Ontological Modeling Language (OML). The SysML model and the meta-model it must conform to are represented in OML, which maps deterministically to standard OWL 2 Description Logic. Once the model is expressed as a logical theory, an [OWL 2 DL reasoner](/oml-code/capabilities/automated-reasoning) can be turned loose on it.
 
 That reasoner does two things a structural checker cannot:
 
@@ -36,6 +36,11 @@ The result is validation of the model's semantic correctness against its meta-mo
 We applied this to a sample SysML model from the Satellite DX Research Working Group at the Japan Aerospace Exploration Agency (JAXA). The OWL 2 DL reasoner integrated within openCAESAR effectively validated the semantic correctness of that system model against its meta-model: confirming what was consistent, and flagging where the model said something it should not have. The checks were automatic and repeatable, the kind of thing you can run on every change rather than save for a milestone.
 
 ## Why this matters
+
+<aside class="axiom-aside" markdown="1">
+<span class="axiom-aside-label">Why it matters</span>
+A SysML tool tells you when a model is malformed. A reasoner tells you when a well-formed model is wrong, exhaustively, automatically, and on every change.
+</aside>
 
 The significance is not that a reasoner is clever. It is that model validation stops being a manual, human-paced activity and becomes something a machine does completely and continuously. On a large, collaborative model, that is the difference between catching a contradiction the moment it is introduced and discovering it months later. A reasoner brings the rigor engineering has always wanted from its models, and it scales in exactly the way human review cannot.
 

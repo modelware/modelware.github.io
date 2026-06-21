@@ -16,6 +16,11 @@ In the earliest phase of a space mission, the concept of operations (ConOps) is 
 
 That manual loop has a hidden cost. The goals and constraints behind the timeline, the real operator intent, stay implicit. They live in someone's head, not in the model. Every iteration needs a human to re-interpret them, which slows the study down and limits how much of the design space a team can actually explore. As constellations scale and the ConOps grows more complex, hand interpretation stops being viable.
 
+<aside class="axiom-aside axiom-aside-side" markdown="1">
+<span class="axiom-aside-label">The shift</span>
+Stop describing how operations unfold, and start stating the goals they must satisfy. Then a machine can check, and eventually synthesize, the timeline for you.
+</aside>
+
 ## From procedural to declarative
 
 The shift we are exploring is from *procedural* ConOps modeling to *declarative* ConOps modeling.
@@ -28,7 +33,7 @@ Declarative modeling flips that around. You state the high-level mission goals a
 
 The methodology pairs a semantic knowledge graph with formal methods.
 
-**An ontological knowledge graph, in OML.** Built on [openCAESAR](https://www.opencaesar.io/) and the Ontological Modeling Language, the graph captures abstract, goal-based mission behaviors: goals, operational tasks, and the state variables they constrain. Because it is a logic-based model, a description-logic reasoner can infer relationships that were never stated by hand, such as which state variables affect which others, giving the team a form of automatic state discovery and full semantic traceability from a mission goal down to the states it touches.
+**An ontological knowledge graph, in OML.** Built on [openCAESAR](https://www.opencaesar.io/) and the Ontological Modeling Language, the graph captures abstract, goal-based mission behaviors: goals, operational tasks, and the state variables they constrain. Because it is a logic-based model, a description-logic reasoner can [infer relationships that were never stated by hand](/oml-code/capabilities/automated-reasoning), such as which state variables affect which others, giving the team a form of automatic state discovery and full semantic traceability from a mission goal down to the states it touches.
 
 **Formal verification, with FRET.** [FRET](https://github.com/NASA-SW-VnV/fret), the Formal Requirements Elicitation Tool from NASA Ames, lets systems engineers author temporal constraints in a controlled natural language, FRETish, that maps automatically to Linear Temporal Logic. Its LTL simulator then checks whether a given operational timeline satisfies the constraints, and flags realizability and consistency problems before they reach the design. Engineers get rigorous formal verification without writing temporal logic by hand.
 

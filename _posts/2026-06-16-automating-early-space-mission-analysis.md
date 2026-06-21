@@ -18,15 +18,20 @@ We took a different route. Instead of asking the model to keep pace with manual 
 
 The [openCAESAR](https://www.opencaesar.io/) platform served as a workflow orchestration layer that automates multi-domain analysis. For an early mission study, the relevant domains are orbit dynamics, power balance, and mission operation scenarios, each handled by its own specialized tool. Orchestration means these tools no longer exchange information through people; they exchange it through a common model.
 
-That common model is expressed in the Ontological Modeling Language (OML). We built a tailored vocabulary for the domain, with concepts such as *Work Package*, *Component*, *Mass Properties*, and *Power Modes*, and captured the recurring computations as explicit analysis patterns, including mass aggregation and power aggregation. SPARQL queries pull the right data out of that model for each tool and write the results back into it. The vocabulary gives every tool a single, unambiguous understanding of the system, which is exactly what keeps the data consistent as it flows around the loop.
+That common model is expressed in the Ontological Modeling Language (OML). We built a tailored vocabulary for the domain, with concepts such as *Work Package*, *Component*, *Mass Properties*, and *Power Modes*, and captured the recurring computations as explicit analysis patterns, including mass aggregation and power aggregation. [SPARQL queries](/oml-code/capabilities/structured-querying) pull the right data out of that model for each tool and write the results back into it. The vocabulary gives every tool a single, unambiguous understanding of the system, which is exactly what keeps the data consistent as it flows around the loop.
 
 ## The workflow, on autopilot
 
-The three analyses, orbit analysis, operational scenario generation, and power balance analysis, were wired into a single automated pipeline. Once an engineer sets up an operational scenario, a GitLab CI/CD pipeline takes over: it executes the workflow, cycles through the analysis tools in order, aggregates the power results in OML, and deploys the output as a dashboard. The familiar elements of an early study, the Mass Equipment List (MEL) and the Power Equipment List (PEL), fall out of the model rather than being maintained by hand.
+The three analyses, orbit analysis, operational scenario generation, and power balance analysis, were wired into a single automated pipeline. Once an engineer sets up an operational scenario, a [GitLab CI/CD pipeline](/oml-code/capabilities/devops-integration) takes over: it executes the workflow, cycles through the analysis tools in order, aggregates the power results in OML, and deploys the output as a dashboard. The familiar elements of an early study, the Mass Equipment List (MEL) and the Power Equipment List (PEL), [fall out of the model](/oml-code/capabilities/code-generation) rather than being maintained by hand.
 
 In other words, the same continuous-integration discipline that software teams use to build and test on every commit is applied to engineering analysis: change the scenario, and the whole analysis re-runs itself.
 
 ## What changed on a real study
+
+<aside class="axiom-aside axiom-aside-side" markdown="1">
+<span class="axiom-aside-label">The headline</span>
+A study cycle that ran on spreadsheets and slides went from weeks to hours, and gained rigor instead of trading it away for speed.
+</aside>
 
 We applied this to a mission study for a Very Low Earth Orbit (VLEO) satellite at JAXA. The results were striking:
 

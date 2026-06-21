@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380" role="img" aria-label="Worked example: three asserted facts about a satellite's solar array entail that it is a Generator, which clashes with the asserted fact that it is a Sensor, making the model inconsistent">
+  <defs>
+    <linearGradient id="we-bg" x1="0" y1="0" x2="760" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#16233c"/>
+      <stop offset="0.85" stop-color="#0a1322"/>
+    </linearGradient>
+    <marker id="we-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6ee7db"/>
+    </marker>
+    <marker id="we-arr-d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#9fe7dd"/>
+    </marker>
+    <style>
+      .lbl { font-family: 'Space Grotesk', Arial, sans-serif; }
+      .box { fill:#16233c; stroke:#0fb9a8; stroke-width:1.6; }
+      .box-d { fill:#10261f; stroke:#0fb9a8; stroke-width:1.6; stroke-dasharray:5 4; }
+      .box-x { fill:#2a1730; stroke:#a78bfa; stroke-width:1.6; }
+      .nm { fill:#e7eefb; font-size:15px; font-weight:600; }
+      .edge-lbl { fill:#8da0bd; font-size:12px; }
+      .tag { fill:#6ee7db; font-size:11px; letter-spacing:1.5px; }
+    </style>
+  </defs>
+
+  <rect width="760" height="380" rx="14" fill="url(#we-bg)"/>
+
+  <!-- legend tags -->
+  <text x="30" y="40" class="lbl tag">ASSERTED</text>
+  <text x="30" y="40" class="lbl tag" dx="98" fill="#9fe7dd">— ENTAILED ·····</text>
+
+  <!-- Satellite -->
+  <rect class="box lbl" x="30" y="150" width="120" height="46" rx="9"/>
+  <text x="90" y="178" class="lbl nm" text-anchor="middle">Satellite</text>
+
+  <!-- arrow: primary power source -->
+  <path d="M152 173 L268 173" stroke="#0fb9a8" stroke-width="2" fill="none" marker-end="url(#we-arr)"/>
+  <text x="210" y="163" class="lbl edge-lbl" text-anchor="middle">primary power source</text>
+
+  <!-- Solar Array -->
+  <rect class="box lbl" x="270" y="150" width="130" height="46" rx="9"/>
+  <text x="335" y="178" class="lbl nm" text-anchor="middle">Solar Array</text>
+
+  <!-- asserted: is a Sensor (up) -->
+  <path d="M402 162 L560 96" stroke="#0fb9a8" stroke-width="2" fill="none" marker-end="url(#we-arr)"/>
+  <text x="470" y="116" class="lbl edge-lbl" text-anchor="middle">is a</text>
+  <rect class="box lbl" x="562" y="74" width="120" height="44" rx="9"/>
+  <text x="622" y="101" class="lbl nm" text-anchor="middle">Sensor</text>
+
+  <!-- entailed: is a Generator (down) -->
+  <path d="M402 184 L560 250" stroke="#9fe7dd" stroke-width="2" stroke-dasharray="5 4" fill="none" marker-end="url(#we-arr-d)"/>
+  <text x="466" y="238" class="lbl edge-lbl" fill="#9fe7dd" text-anchor="middle">is a (entailed)</text>
+  <rect class="box-d lbl" x="562" y="228" width="120" height="44" rx="9"/>
+  <text x="622" y="255" class="lbl nm" text-anchor="middle">Generator</text>
+
+  <!-- disjoint clash between Sensor and Generator -->
+  <path d="M622 118 L622 228" stroke="#a78bfa" stroke-width="1.6" stroke-dasharray="3 3" fill="none"/>
+  <g transform="translate(622,173)">
+    <circle r="18" fill="#2a1730" stroke="#a78bfa" stroke-width="2"/>
+    <path d="M-7 -7 L7 7 M7 -7 L-7 7" stroke="#c9b3ff" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <text x="660" y="177" class="lbl edge-lbl" fill="#cdb8ff">disjoint</text>
+
+  <!-- verdict -->
+  <text x="335" y="330" class="lbl" font-size="14" fill="#cdb8ff" text-anchor="middle">Three innocent facts entail a fourth that contradicts them &#8594; <tspan fill="#c9b3ff" font-weight="600">inconsistent</tspan></text>
+</svg>

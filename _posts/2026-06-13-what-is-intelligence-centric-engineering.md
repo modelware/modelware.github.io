@@ -12,6 +12,11 @@ description: "Intelligence-centric engineering is the fourth era of engineering 
 
 Engineering has moved through distinct eras, and each one changed what a "model" is and what you can do with it. Understanding that progression is the clearest way to see what **intelligence-centric engineering** means and why it is the natural next step.
 
+<aside class="axiom-aside axiom-aside-side" markdown="1">
+<span class="axiom-aside-label">In one line</span>
+Intelligence-centric engineering treats engineering knowledge as formal models you can reason on, then puts AI and automation to work on them.
+</aside>
+
 ## Era 1: Document-centric
 
 For most of its history, engineering was document-centric. Requirements, analyses, and decisions lived in specifications, reports, and slide decks. The knowledge was there, but it was locked inside prose: impossible for a computer to check, hard for a human to trace, and out of date the moment something changed.
@@ -48,9 +53,9 @@ This pairing has a name in AI research: **neurosymbolic AI**, the combination of
 
 In practice, an intelligence-centric platform rests on three foundations working together:
 
-- **Logic.** Knowledge is captured as formal models with the semantics to be reasoned over: automated inference, classification, consistency checking, and validation turn static descriptions into actionable knowledge. This is the knowledge-centric core.
-- **AI.** Agents generate, explain, query, and navigate those models while staying grounded in their formal semantics, so assistance is trustworthy rather than plausible-sounding.
-- **DevOps.** Engineering knowledge becomes a first-class artifact: version-controlled, automatically validated in continuous-integration pipelines, peer-reviewed, and continuously delivered, just like software.
+- **Logic.** Knowledge is captured as formal models with the semantics to be reasoned over: [automated inference, classification, consistency checking, and validation](/oml-code/capabilities/automated-reasoning) turn static descriptions into actionable knowledge. This is the knowledge-centric core.
+- **AI.** [Agents generate, explain, query, and navigate](/oml-code/capabilities/ai-integration) those models while staying grounded in their formal semantics, so assistance is trustworthy rather than plausible-sounding.
+- **DevOps.** Engineering knowledge becomes a first-class artifact: [version-controlled, automatically validated in continuous-integration pipelines, peer-reviewed, and continuously delivered](/oml-code/capabilities/devops-integration), just like software.
 
 Logic makes the knowledge trustworthy. AI makes it accessible. DevOps keeps it alive. Together, they turn a static model into a living source of engineering intelligence.
 
