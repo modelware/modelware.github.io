@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="A specification rendered through an ontological lens: the UAF Domain Metamodel grid on the left passes through an ontological lens and emerges as the IDEAS primitives it is built on — Individual, Type, and Tuple">
+  <defs>
+    <linearGradient id="uaf-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#16233c"/>
+      <stop offset="0.8" stop-color="#0a1322"/>
+    </linearGradient>
+    <radialGradient id="uaf-glow-l" cx="0.2" cy="0.24" r="0.7">
+      <stop offset="0" stop-color="#0fb9a8" stop-opacity="0.22"/>
+      <stop offset="0.6" stop-color="#0fb9a8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="uaf-glow-r" cx="0.82" cy="0.82" r="0.7">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.24"/>
+      <stop offset="0.6" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="uaf-lens" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6ee7db"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <filter id="uaf-soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="uaf-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6ee7db"/>
+    </marker>
+    <marker id="uaf-arr-p" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#a78bfa"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#uaf-bg)"/>
+  <rect width="800" height="500" fill="url(#uaf-glow-l)"/>
+  <rect width="800" height="500" fill="url(#uaf-glow-r)"/>
+
+  <!-- ===================== LEFT: UAF DMM as a grid ===================== -->
+  <text x="60" y="98" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="2" fill="#6ee7db">UAF DMM</text>
+  <text x="60" y="119" font-family="Arial, Helvetica, sans-serif" font-size="11" letter-spacing="2" fill="#7f8ca3">GRID OF VIEWPOINTS</text>
+
+  <g filter="url(#uaf-soft)">
+    <!-- row 1 -->
+    <rect x="60"  y="180" width="52" height="52" rx="7" fill="#0fb9a8" opacity="0.85"/>
+    <rect x="122" y="180" width="52" height="52" rx="7" fill="#16233c" stroke="#0fb9a8" stroke-width="1.8"/>
+    <rect x="184" y="180" width="52" height="52" rx="7" fill="#16233c" stroke="#0fb9a8" stroke-width="1.8"/>
+    <!-- row 2 -->
+    <rect x="60"  y="242" width="52" height="52" rx="7" fill="#16233c" stroke="#0fb9a8" stroke-width="1.8"/>
+    <rect x="122" y="242" width="52" height="52" rx="7" fill="#16233c" stroke="#0fb9a8" stroke-width="1.8"/>
+    <rect x="184" y="242" width="52" height="52" rx="7" fill="#16233c" stroke="#0fb9a8" stroke-width="1.8"/>
+    <!-- row 3 -->
+    <rect x="60"  y="304" width="52" height="52" rx="7" fill="#16233c" stroke="#0fb9a8" stroke-width="1.8"/>
+    <rect x="122" y="304" width="52" height="52" rx="7" fill="#16233c" stroke="#0fb9a8" stroke-width="1.8"/>
+    <rect x="184" y="304" width="52" height="52" rx="7" fill="#16233c" stroke="#0fb9a8" stroke-width="1.8"/>
+  </g>
+
+  <!-- arrow: grid -> lens -->
+  <path d="M244 268 L336 268" stroke="#5b6f93" stroke-width="2.5" fill="none" marker-end="url(#uaf-arr)"/>
+
+  <!-- ===================== CENTER: ontological lens ===================== -->
+  <g filter="url(#uaf-soft)">
+    <ellipse cx="400" cy="268" rx="40" ry="72" fill="none" stroke="url(#uaf-lens)" stroke-width="3"/>
+    <circle cx="400" cy="268" r="15" fill="url(#uaf-lens)"/>
+  </g>
+  <text x="400" y="176" font-family="Arial, Helvetica, sans-serif" font-size="12" letter-spacing="2" fill="#cdb8ff" text-anchor="middle">ONTOLOGICAL</text>
+  <text x="400" y="376" font-family="Arial, Helvetica, sans-serif" font-size="12" letter-spacing="3" fill="#7f8ca3" text-anchor="middle">LENS · OML</text>
+
+  <!-- arrow: lens -> primitives -->
+  <path d="M444 268 L512 268" stroke="#5b6f93" stroke-width="2.5" fill="none" marker-end="url(#uaf-arr-p)"/>
+
+  <!-- ===================== RIGHT: IDEAS primitives ===================== -->
+  <text x="560" y="98" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="2" fill="#a78bfa">IDEAS</text>
+  <text x="560" y="119" font-family="Arial, Helvetica, sans-serif" font-size="11" letter-spacing="2" fill="#7f8ca3">ELEMENT PRIMITIVES</text>
+
+  <!-- Individual -->
+  <circle cx="566" cy="180" r="12" fill="#a78bfa" filter="url(#uaf-soft)"/>
+  <text x="596" y="176" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#cdd6e4">Individual</text>
+  <text x="596" y="196" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#8aa0bb">a single instance</text>
+
+  <!-- Type: a set of individuals -->
+  <g filter="url(#uaf-soft)">
+    <circle cx="566" cy="268" r="20" fill="none" stroke="#8b5cf6" stroke-width="2.2"/>
+    <circle cx="560" cy="262" r="4" fill="#a78bfa"/>
+    <circle cx="573" cy="264" r="4" fill="#a78bfa"/>
+    <circle cx="566" cy="276" r="4" fill="#a78bfa"/>
+  </g>
+  <text x="596" y="264" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#cdd6e4">Type</text>
+  <text x="596" y="284" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#8aa0bb">a set of Individuals</text>
+
+  <!-- Tuple: a reified relationship -->
+  <g filter="url(#uaf-soft)">
+    <circle cx="552" cy="356" r="9" fill="#8b5cf6"/>
+    <circle cx="620" cy="356" r="9" fill="#8b5cf6"/>
+  </g>
+  <path d="M563 356 L607 356" stroke="#a78bfa" stroke-width="2.2" fill="none" marker-end="url(#uaf-arr-p)"/>
+  <text x="586" y="342" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-style="italic" fill="#cdb8ff" text-anchor="middle">Exhibits</text>
+  <text x="596" y="384" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#cdd6e4">Tuple</text>
+  <text x="596" y="404" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#8aa0bb">a reified relationship</text>
+
+  <!-- caption strip -->
+  <text x="400" y="452" font-family="Arial, Helvetica, sans-serif" font-size="12" letter-spacing="2" fill="#6ee7db" text-anchor="middle">RENDER A SPECIFICATION AS AN ONTOLOGY</text>
+</svg>
