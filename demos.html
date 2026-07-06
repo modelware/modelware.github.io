@@ -9,6 +9,64 @@ permalink: /demos
 
 {% include page_header.html %}
 
+<style>
+  .video-card {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(16, 26, 46, 0.08);
+    box-shadow: 0 10px 24px rgba(16, 26, 46, 0.07);
+    background: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .video-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(15, 185, 168, 0.18);
+  }
+  .video-card-thumb {
+    position: relative;
+    display: block;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+  .video-card-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .video-card-thumb::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 68px;
+    height: 48px;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+    background: rgba(15, 26, 46, 0.75);
+    transition: background 0.25s ease;
+  }
+  .video-card-thumb::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-40%, -50%);
+    border-style: solid;
+    border-width: 11px 0 11px 18px;
+    border-color: transparent transparent transparent #fff;
+  }
+  .video-card:hover .video-card-thumb::after { background: #0fb9a8; }
+  .video-card-body { padding: 20px 22px 18px; display: flex; flex-direction: column; flex: 1 1 auto; }
+  .video-card-body h5 { margin-bottom: 8px; }
+  .video-card-body h5 a { color: inherit; }
+  .video-card-body p { font-size: 14px; line-height: 1.65; color: #5d6b7e; margin-bottom: 0; }
+</style>
+
 <section class="section">
   <div class="container">
     <div class="row justify-content-center">
@@ -17,6 +75,20 @@ permalink: /demos
         <p class="mx-auto" style="max-width: 620px;">See OML Code in action through guided product demos. More demo scenarios are being added.</p>
         <a href="https://www.youtube.com/@OMLCode" class="btn btn-primary mt-2 mr-2" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
         <a href="/contact.html" class="btn btn-outline-primary mt-2">Request a Demo Session</a>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mt-5">
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="video-card">
+          <a class="video-card-thumb" href="https://www.youtube.com/watch?v=5PojCZcfteA" target="_blank" rel="noopener noreferrer" aria-label="Watch: OML Code: Intelligence-Centric Engineering Platform">
+            <img src="https://img.youtube.com/vi/5PojCZcfteA/maxresdefault.jpg" alt="OML Code: Intelligence-Centric Engineering Platform" loading="lazy">
+          </a>
+          <div class="video-card-body">
+            <h5><a href="https://www.youtube.com/watch?v=5PojCZcfteA" target="_blank" rel="noopener noreferrer">OML Code: Intelligence-Centric Engineering Platform</a></h5>
+            <p>An introduction to OML Code, the intelligence-centric engineering platform that unifies Logic, AI, and DevOps.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
