@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Towards an Ontological Implementation of UAF, Part 2: How Far Platform Independence Reaches"
-date: 2026-07-12 06:00:00 +0300
+date: 2026-07-08 06:00:00 +0300
 author: "Maged Elaasar"
 categories: [insights]
 tags: [UAF, ontologies, OML, MBSE, systems engineering, enterprise architecture, DoDAF, SysML]
