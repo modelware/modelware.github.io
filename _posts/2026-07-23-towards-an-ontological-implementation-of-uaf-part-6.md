@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Towards an Ontological Implementation of UAF, Part 6: What It Adds Up To"
-date: 2026-08-09 06:00:00 +0300
+date: 2026-07-23 06:00:00 +0300
 author: "Maged Elaasar"
 categories: [insights]
 tags: [UAF, ontologies, OML, MBSE, systems engineering, enterprise architecture, DoDAF, SysML]

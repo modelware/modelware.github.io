@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Towards an Ontological Implementation of UAF, Part 4: Keeping a Large Specification Consistent"
-date: 2026-07-26 06:00:00 +0300
+date: 2026-07-16 06:00:00 +0300
 author: "Maged Elaasar"
 categories: [insights]
 tags: [UAF, ontologies, OML, MBSE, systems engineering, enterprise architecture, DoDAF, SysML]
