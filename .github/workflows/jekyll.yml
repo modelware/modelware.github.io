@@ -9,6 +9,11 @@ on:
   push:
     branches: [master]
   workflow_dispatch:
+  # Daily rebuild so future-dated (scheduled) posts publish on their date.
+  # Production builds exclude future posts, and GitHub Pages only rebuilds on
+  # push, so without this a scheduled post stays hidden until the next push.
+  schedule:
+    - cron: '0 7 * * *'
 
 permissions:
   contents: read
