@@ -1,0 +1,61 @@
+{% comment %}
+Series navigation box. Renders on any post with `series` and `series_part`
+front matter, listing every part of the same series in order, with the current
+part marked. Reusable across series; nothing here is UAF-specific.
+{% endcomment %}
+{% if page.series %}
+{% assign series_posts = site.posts | where: "series", page.series | sort: "series_part" %}
+{% if series_posts.size > 1 %}
+<style>
+.series-nav {
+	margin: 44px 0 8px;
+	padding: 22px 26px;
+	border: 1px solid rgba(16,26,46,0.1);
+	border-left: 4px solid #0fb9a8;
+	border-radius: 10px;
+	background: linear-gradient(135deg, rgba(15,185,168,0.06), rgba(139,92,246,0.05));
+}
+.series-nav-eyebrow {
+	display: block;
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: 11.5px; font-weight: 600; letter-spacing: 0.12em;
+	text-transform: uppercase; color: #0fb9a8; margin-bottom: 12px;
+}
+.series-nav-list { margin: 0; padding: 0; list-style: none; counter-reset: series; }
+.series-nav-item {
+	position: relative; padding: 8px 0 8px 40px; margin: 0;
+	font-family: 'Space Grotesk', sans-serif; font-size: 15px; line-height: 1.45;
+	border-top: 1px solid rgba(16,26,46,0.06);
+}
+.series-nav-item:first-child { border-top: 0; }
+.series-nav-item::before {
+	counter-increment: series;
+	content: counter(series);
+	position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+	width: 26px; height: 26px; border-radius: 50%;
+	display: flex; align-items: center; justify-content: center;
+	font-size: 12.5px; font-weight: 600;
+	background: rgba(15,185,168,0.14); color: #0c8e80;
+}
+.series-nav-item a { color: #46505c; border-bottom: 0; }
+.series-nav-item a:hover { color: #8b5cf6; }
+.series-nav-item.is-current { font-weight: 600; color: #1d2838; }
+.series-nav-item.is-current::before { background: #0fb9a8; color: #fff; }
+.series-nav-here {
+	font-family: 'Inter', sans-serif; font-weight: 400; font-size: 12.5px;
+	color: #74808f; letter-spacing: 0.02em;
+}
+</style>
+<nav class="series-nav" aria-label="Series navigation">
+	<span class="series-nav-eyebrow">In this series</span>
+	<ol class="series-nav-list">
+		{% for p in series_posts %}
+		{% assign label = p.title | remove_first: page.series | remove_first: ", " %}
+		{% capture partprefix %}Part {{ p.series_part }}: {% endcapture %}
+		{% assign label = label | remove_first: partprefix %}
+		<li class="series-nav-item{% if p.url == page.url %} is-current{% endif %}">{% if p.url == page.url %}{{ label }} <span class="series-nav-here">(you are here)</span>{% else %}<a href="{{ p.url | relative_url }}">{{ label }}</a>{% endif %}</li>
+		{% endfor %}
+	</ol>
+</nav>
+{% endif %}
+{% endif %}

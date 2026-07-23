@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Towards an Ontological Implementation of UAF, Part 3: Views Without Queries"
+series: "Towards an Ontological Implementation of UAF"
+series_part: 3
 date: 2026-07-13 06:00:00 +0300
 author: "Maged Elaasar"
 categories: [insights]
@@ -10,7 +12,7 @@ image: "/assets/images/blog/ontological-uaf-social.png"
 description: "Part 3 of a series holding UAF to its own objectives. UAF exists to support the analysis of complex systems, and its unit of analysis is the view. Yet a UAF view is specified as a static list of element types and a schema diagram, never as a query. UAF describes the analysis it cannot compute."
 ---
 
-This series reads the OMG's Unified Architecture Framework (UAF) in light of its own stated goals, using an ontology as the instrument. The previous part traced how far the DMM's platform independence actually reaches ([Part 2](/towards-an-ontological-implementation-of-uaf-part-2)). This part takes up the most consequential goal of all, and the finding that, more than any other, motivates an ontological implementation.
+This series reads the OMG's Unified Architecture Framework (UAF) in light of its own stated goals, using an ontology, built with AI and verified by automated reasoning on [OML Code](/oml-code), as the lens. The previous part traced how far the DMM's platform independence actually reaches ([Part 2](/towards-an-ontological-implementation-of-uaf-part-2)). This part takes up the most consequential goal of all, and the finding that, more than any other, motivates an ontological implementation.
 
 ## The promise
 

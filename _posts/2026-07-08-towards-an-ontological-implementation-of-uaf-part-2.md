@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Towards an Ontological Implementation of UAF, Part 2: How Far Platform Independence Reaches"
+series: "Towards an Ontological Implementation of UAF"
+series_part: 2
 date: 2026-07-08 06:00:00 +0300
 author: "Maged Elaasar"
 categories: [insights]
@@ -10,7 +12,7 @@ image: "/assets/images/blog/ontological-uaf-social.png"
 description: "Part 2 of a series reading UAF in light of its own objectives. UAF sets out to be platform-independent at the DMM level. Rendering it as an ontology shows exactly where that independence holds firm, in its relational core, and where, by deliberate design, it builds on the semantics of UML and BPMN."
 ---
 
-This series reads the OMG's Unified Architecture Framework (UAF) in light of the objectives it sets for itself, using an ontology as the measuring instrument. [Part 1](/towards-an-ontological-implementation-of-uaf-part-1) found that UAF was designed for exactly this: it is IDEAS-ontology-driven and explicitly meant to be implemented beyond UML and SysML. This part looks at a second objective, platform independence, and finds a more layered answer than a simple yes or no.
+This series reads the OMG's Unified Architecture Framework (UAF) in light of the objectives it sets for itself, using an ontology, built with AI and verified by automated reasoning on [OML Code](/oml-code), as the lens. [Part 1](/towards-an-ontological-implementation-of-uaf-part-1) found that UAF was designed for exactly this: it is IDEAS-ontology-driven and explicitly meant to be implemented beyond UML and SysML. This part looks at a second objective, platform independence, and finds a more layered answer than a simple yes or no.
 
 ## The objective
 

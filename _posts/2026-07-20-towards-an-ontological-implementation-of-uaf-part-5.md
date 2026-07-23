@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Towards an Ontological Implementation of UAF, Part 5: Keeping the Profile and the Metamodel Aligned"
+series: "Towards an Ontological Implementation of UAF"
+series_part: 5
 date: 2026-07-20 06:00:00 +0300
 author: "Maged Elaasar"
 categories: [insights]
@@ -10,7 +12,7 @@ image: "/assets/images/blog/ontological-uaf-social.png"
 description: "Part 5 of a series reading UAF in light of its own objectives. UAFML is the SysML profile that realizes the platform-neutral DMM. Maintaining two large artifacts in parallel is hard, and a formal rendering shows a few small places where they have drifted, offered as a checklist rather than a critique."
 ---
 
-This series reads the OMG's Unified Architecture Framework (UAF) in light of its own objectives, using an ontology as the instrument. [Part 4](/towards-an-ontological-implementation-of-uaf-part-4) looked at consistency within the DMM. This part looks at consistency between the two normative documents: the platform-neutral Domain Metamodel (DMM) and the SysML profile, UAFML, that implements it.
+This series reads the OMG's Unified Architecture Framework (UAF) in light of its own objectives, using an ontology, built with AI and verified by automated reasoning on [OML Code](/oml-code), as the lens. [Part 4](/towards-an-ontological-implementation-of-uaf-part-4) looked at consistency within the DMM. This part looks at consistency between the two normative documents: the platform-neutral Domain Metamodel (DMM) and the SysML profile, UAFML, that implements it.
 
 ## The objective
 

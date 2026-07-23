@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Towards an Ontological Implementation of UAF, Part 4: Keeping a Large Specification Consistent"
+series: "Towards an Ontological Implementation of UAF"
+series_part: 4
 date: 2026-07-16 06:00:00 +0300
 author: "Maged Elaasar"
 categories: [insights]
@@ -10,7 +12,7 @@ image: "/assets/images/blog/ontological-uaf-social.png"
 description: "Part 4 of a series reading UAF in light of its own objectives. Any specification told across prose, diagrams, and a profile accumulates small inconsistencies; keeping them aligned is one of the hardest parts of maintaining a standard. A formal rendering catches them automatically, which makes it a natural ally for the people who maintain UAF."
 ---
 
-This series reads the OMG's Unified Architecture Framework (UAF) in light of its own objectives, using an ontology as the instrument. The previous part examined how UAF specifies its views for analysis ([Part 3](/towards-an-ontological-implementation-of-uaf-part-3)). This one takes up a challenge every large standard faces, and that UAF takes seriously: keeping the specification consistent with itself.
+This series reads the OMG's Unified Architecture Framework (UAF) in light of its own objectives, using an ontology, built with AI and verified by automated reasoning on [OML Code](/oml-code), as the lens. The previous part examined how UAF specifies its views for analysis ([Part 3](/towards-an-ontological-implementation-of-uaf-part-3)). This one takes up a challenge every large standard faces, and that UAF takes seriously: keeping the specification consistent with itself.
 
 ## The objective
 
@@ -34,7 +36,7 @@ Any specification that states the same fact in prose, in figures, and in a profi
 
 ## Why an ontology helps here
 
-We did not go looking for these; they surfaced on their own, because OML Code will not let them pass. Every generalization must resolve to a declared class, so an unresolved `Requirement` is caught at load time. Every element a view cites must exist, so a retired `EnterpriseMission` cannot be referenced. A supertype stated one way in text and another in a figure becomes two statements a reasoner compares immediately.
+We did not go looking for these; they surfaced on their own. Getting UAF into OML Code meant AI doing the fluent reading, taking in the prose, figures, and profile and drafting the ontology, and then a reasoner checking that draft, and the reasoner will not let these pass. Every generalization must resolve to a declared class, so an unresolved `Requirement` is caught at load time. Every element a view cites must exist, so a retired `EnterpriseMission` cannot be referenced. A supertype stated one way in text and another in a figure becomes two statements a reasoner compares immediately.
 
 That is why rendering a standard formally is worth doing even when consistency is already a goal: it turns consistency from something people sustain by vigilance into something a tool checks by construction. Used this way, the ontology is an ally to the maintainers rather than a critic. It hands them a short, precise list of what to reconcile, of the sort any working group is glad to have.
 
