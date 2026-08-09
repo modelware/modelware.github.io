@@ -5,6 +5,7 @@
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
+  {% if page.noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
 
   {% include analytics-head.html %}
   {% assign social_title = page.title | default: site.title %}
@@ -51,6 +52,10 @@
 
   <!-- Main Stylesheet -->
   <link href="{{ '/assets/scss/style.css' | relative_url }}" rel="stylesheet">
+
+  {% if page.extra_css %}{% for css in page.extra_css %}
+  <link rel="stylesheet" href="{{ css | relative_url }}">
+  {% endfor %}{% endif %}
 
   <!--Favicon-->
   <link rel="icon" href="{{ '/assets/images/modelware-icon.svg' | relative_url }}" type="image/svg+xml">

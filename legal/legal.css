@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+:root{
+  --charcoal:#101a2e; --crimson:#0fb9a8; --ink:#1f2937; --muted:#5d6b7e;
+  --line:#E3E5EA; --rail:#F6F7F9; --bg:#FFFFFF; --accent-soft:#E6F7F4;
+  --heading:'Space Grotesk','Poppins',sans-serif;
+  --body:'Inter','Open Sans',sans-serif;
+  --maxc:1140px;
+}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* content area — scoped so nothing leaks into the site header/footer */
+.legal-page{background:var(--bg); color:var(--ink);
+  font-family:var(--body); font-size:17px; line-height:1.65; -webkit-font-smoothing:antialiased}
+.legal-page *{box-sizing:border-box}
+.legal-page a{color:var(--crimson); text-decoration:none}
+.legal-page a:hover{text-decoration:underline}
+.legal-page :focus-visible{outline:2px solid var(--crimson); outline-offset:2px; border-radius:2px}
+
+/* layout */
+.legal-page .wrap{max-width:var(--maxc); margin:0 auto; padding:52px 24px 8px}
+
+/* doc meta bar (version / effective date / draft badge) */
+.legal-page .doc-meta{display:flex; flex-wrap:wrap; align-items:center; gap:10px 16px;
+  padding-bottom:22px; margin-bottom:6px; border-bottom:1px solid var(--line);
+  color:var(--muted); font-size:14.5px}
+.legal-page .doc-meta .sep{color:var(--line)}
+.legal-page .draft{display:inline-block; font-size:12px; font-weight:700; letter-spacing:.08em;
+  color:var(--crimson); background:var(--accent-soft); border:1px solid #BFE9E2;
+  padding:6px 11px; border-radius:999px}
+
+.legal-page .cols{display:grid; grid-template-columns:250px 1fr; gap:56px; padding:34px 0 20px}
+@media (max-width:880px){.legal-page .cols{grid-template-columns:1fr; gap:8px; padding-top:24px}}
+
+/* toc */
+.legal-page .toc{position:sticky; top:100px; align-self:start; font-size:14px}
+.legal-page .toc h2{font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin:0 0 12px; font-weight:700}
+.legal-page .toc ol{list-style:none; margin:0; padding:0; counter-reset:t}
+.legal-page .toc li{margin:0 0 3px}
+.legal-page .toc a{display:flex; gap:9px; padding:5px 9px; border-radius:6px; color:var(--ink);
+  border-left:2px solid transparent; line-height:1.35}
+.legal-page .toc a .n{color:var(--muted); font-variant-numeric:tabular-nums; min-width:18px}
+.legal-page .toc a:hover{background:var(--rail); text-decoration:none}
+.legal-page .toc a.active{background:var(--rail); border-left-color:var(--crimson); color:var(--charcoal); font-weight:600}
+.legal-page .toc details{display:none}
+@media (max-width:880px){
+  .legal-page .toc{position:static}
+  .legal-page .toc>h2{display:none}
+  .legal-page .toc>ol{display:none}
+  .legal-page .toc details{display:block; border:1px solid var(--line); border-radius:10px; background:var(--rail); margin-bottom:8px}
+  .legal-page .toc summary{cursor:pointer; padding:14px 16px; font-weight:700; color:var(--charcoal); font-size:14px; letter-spacing:.04em}
+  .legal-page .toc details ol{padding:4px 10px 12px}
+}
+
+/* body */
+.legal-page .doc{max-width:760px; min-width:0}
+.legal-page .doc .intro{color:var(--ink); font-size:17.5px}
+.legal-page .doc .intro:first-of-type{font-size:19px; color:var(--charcoal)}
+.legal-page section{padding-top:34px; scroll-margin-top:104px}
+.legal-page section h2{font-family:var(--heading); font-size:21px; color:var(--charcoal); font-weight:700; margin:0 0 14px;
+  padding-bottom:9px; border-bottom:2px solid var(--crimson); letter-spacing:-.005em;
+  display:flex; gap:12px; align-items:baseline}
+.legal-page section h2 .num{color:var(--crimson); font-variant-numeric:tabular-nums; font-size:16px; font-weight:800}
+.legal-page .doc p{margin:0 0 13px}
+.legal-page .lead{color:var(--charcoal)}
+.legal-page .clause{display:grid; grid-template-columns:34px 1fr; margin:0 0 9px}
+.legal-page .clause .marker{color:var(--muted); font-variant-numeric:tabular-nums}
+.legal-page .caps{letter-spacing:.005em}
+
+/* legal hub cards */
+.legal-page .hub{padding:20px 0 8px}
+.legal-page .hub .card{display:block; border:1px solid var(--line); border-radius:14px; padding:26px 28px;
+  margin:0 0 16px; color:inherit; transition:border-color .15s ease, transform .15s ease}
+.legal-page .hub a.card:hover{border-color:var(--crimson); text-decoration:none; transform:translateY(-1px)}
+.legal-page .hub .card h3{font-family:var(--heading); margin:0; font-size:20px; color:var(--charcoal); font-weight:700; display:flex; align-items:center; gap:12px}
+.legal-page .hub .card h3 .arrow{color:var(--crimson); font-weight:700}
+.legal-page .hub .card p{margin:9px 0 0; color:var(--muted); font-size:15px; max-width:64ch}
+.legal-page .hub .card .tag{font-size:12px; letter-spacing:.08em; color:var(--muted); text-transform:uppercase; margin-top:14px; font-weight:600}
+.legal-page .hub .card.pending{opacity:.72}
+.legal-page .hub .card.pending h3 .arrow{color:var(--muted)}
+
+/* schedule chooser shown inside the Terms of Service document */
+.legal-page .schedules{margin:22px 0 6px; padding:18px 20px; border:1px solid var(--line); border-radius:12px; background:var(--rail)}
+.legal-page .schedules .schedules-label{margin:0 0 12px; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:700}
+.legal-page .schedules a.subcard{display:block; border:1px solid var(--line); border-radius:10px; padding:14px 18px; margin:0 0 10px; background:var(--bg); color:inherit; transition:border-color .15s ease, transform .15s ease}
+.legal-page .schedules a.subcard:last-child{margin-bottom:0}
+.legal-page .schedules a.subcard:hover{border-color:var(--crimson); text-decoration:none; transform:translateY(-1px)}
+.legal-page .schedules a.subcard h3{font-family:var(--heading); margin:0; font-size:16px; color:var(--charcoal); font-weight:700; display:flex; align-items:center; gap:10px}
+.legal-page .schedules a.subcard h3 .arrow{color:var(--crimson); font-weight:700}
+.legal-page .schedules a.subcard p{margin:5px 0 0; color:var(--muted); font-size:14px}

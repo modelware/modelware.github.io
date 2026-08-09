@@ -57,10 +57,10 @@ footer:
     url: /news/
   - name: Contact Us
     url: /contact.html
+  - name: Legal
+    url: /legal/
 
 ############## Bottom menu ###############
 bottom:
-  - name: Terms of Service
-    link: "#"
-  - name: Privacy Policy
-    link: "#"
+  - name: Legal
+    link: /legal/
