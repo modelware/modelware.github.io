@@ -16,6 +16,33 @@
 ################################################################
 
 publications:
+- title: "Power of a Reasoner: Model Validation for SysML Model using openCAESAR"
+  authors: "Nakajima, Y., Wada, A., Komatsu, Y., Elaasar, M., Jenkins, J.S., Wagner, D.A."
+  venue: "ACM/IEEE MODELS 2025 Companion Proceedings (MODELS-C), pp. 853–857"
+  date: 2025-10-05
+  year: 2025
+  url: "https://ieeexplore.ieee.org/abstract/document/11273279/"
+  topics: ["Reasoning", "SysML"]
+  summary: "Validates SysML models with an automated reasoner through openCAESAR."
+
+- title: "openCAESAR Application to Power Balance Analysis in Early Space Mission Formulation"
+  authors: "Nakajima, Y., Katsumata, H., Tate, D., Komatsu, Y., Levitt, A., Jenkins, J.S., Elaasar, M., Rouquette, N.F., Wagner, D.A."
+  venue: "ACM/IEEE MODELS 2025 Companion Proceedings (MODELS-C), pp. 844–852"
+  date: 2025-10-04
+  year: 2025
+  url: "https://ieeexplore.ieee.org/abstract/document/11273301/"
+  topics: ["Aerospace", "Analysis"]
+  summary: "Applies openCAESAR to power balance analysis during the early formulation of a space mission."
+
+- title: "Model-Based Systems Engineering Perspectives: A Survey of Practitioner Experiences and Challenges"
+  authors: "Elaasar, M., Hamou-Lhadj, A., Oakes, B., Hamdaqa, M."
+  venue: "ACM/IEEE MODELS 2025 Companion Proceedings (MODELS-C), pp. 367–376"
+  date: 2025-10-03
+  year: 2025
+  url: "https://ieeexplore.ieee.org/abstract/document/11273299/"
+  topics: ["Methodology", "Adoption"]
+  summary: "Surveys practitioners on their experience with model-based systems engineering and the challenges that hold its adoption back."
+
 - title: "openCAESAR: Balancing Agility and Rigor in Model-Based Systems Engineering"
   authors: "Elaasar, M., Rouquette, N., Wagner, D., Oakes, B., Hamou-Lhadj, A., Hamdaqa, M."
   venue: "Proceedings of SAM 2023"
