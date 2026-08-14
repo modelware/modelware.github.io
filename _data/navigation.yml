@@ -19,7 +19,7 @@ main:
       - name: The Axiom
         url: /axiom/
       - name: Academy
-        url: /academy/
+        url: https://academy.modelware.io
       - name: Channel
         url: /channel/
   - name: Company
@@ -48,7 +48,7 @@ footer:
   - name: Partners
     url: /partners.html
   - name: Academy
-    url: /academy.html
+    url: https://academy.modelware.io
   - name: The Axiom
     url: /axiom/
   - name: About Us
