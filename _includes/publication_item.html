@@ -1,0 +1,34 @@
+{%- comment -%}
+One entry in a publication list. Takes `pub`, an item from
+_data/publications.yml. The whole row is a link when the paper is online,
+and a plain block when it is not, so nothing looks clickable but dead.
+{%- endcomment -%}
+{%- assign pub = include.pub -%}
+<div class="pub-item{% if pub.primary %} pub-item-primary{% endif %}">
+    <div class="pub-year">{{ pub.year }}</div>
+    <div class="pub-body">
+        <h6 class="pub-title">
+            {%- if pub.url -%}
+            <a href="{{ pub.url }}" target="_blank" rel="noopener">{{ pub.title }}</a>
+            {%- else -%}
+            {{ pub.title }}
+            {%- endif -%}
+        </h6>
+        <p class="pub-authors">{{ pub.authors }}</p>
+        <p class="pub-venue">{{ pub.venue }}{% if pub.where %}, {{ pub.where }}{% endif %}</p>
+        {%- if pub.summary %}
+        <p class="pub-summary">{{ pub.summary }}</p>
+        {%- endif %}
+        <div class="pub-foot">
+            {%- for topic in pub.topics %}
+            <span class="pub-topic">{{ topic }}</span>
+            {%- endfor %}
+            {%- if pub.primary %}
+            <span class="pub-topic pub-topic-primary">Primary citation</span>
+            {%- endif %}
+            {%- if pub.url %}
+            <a href="{{ pub.url }}" target="_blank" rel="noopener" class="pub-link">Read the paper <i class="ti-arrow-right"></i></a>
+            {%- endif %}
+        </div>
+    </div>
+</div>

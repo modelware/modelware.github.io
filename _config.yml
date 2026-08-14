@@ -77,8 +77,6 @@ collections:
     output: true
   courses:
     output: true
-  raise:
-    output: true
   news:
     output: true
 

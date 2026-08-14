@@ -1,0 +1,65 @@
+---
+layout: default
+title: "Publications"
+permalink: /research/publications/
+description: "Peer-reviewed publications by Modelware's founder and collaborators on ontological modeling, automated reasoning, and rigorous model-based systems engineering."
+---
+
+<style>
+    .pub-hero-lead {
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 18px;
+        line-height: 30px;
+        margin-top: 18px;
+        max-width: 780px;
+    }
+</style>
+
+<!-- HERO -->
+<section class="page-title bg-blue" style="padding: 200px 0 100px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10">
+                <span class="eyebrow" style="color:#6ee7db;">Modelware &middot; Research</span>
+                <h1 class="text-lg text-white mb-0 mt-2">Publications</h1>
+                <p class="pub-hero-lead">Peer-reviewed work by our founder and collaborators at NASA JPL, Airbus, and partner universities, on ontological modeling, automated reasoning, and rigorous model-based systems engineering. The ideas in these papers are the foundation OML Code is built on.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="padding-top: 70px; padding-bottom: 80px;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+
+                {%- assign primary = site.data.publications.publications | where: "primary", true | first -%}
+                {%- if primary %}
+                <div class="pub-cite">
+                    <span class="eyebrow">How to Cite openCAESAR</span>
+                    <p class="mt-2">{{ primary.authors }} &ldquo;{{ primary.title }}&rdquo;, {{ primary.venue }}{% if primary.where %}, {{ primary.where }}{% endif %}, {{ primary.year }}.</p>
+                </div>
+                {%- endif %}
+
+                {% for pub in site.data.publications.publications %}
+                {% include publication_item.html pub=pub %}
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="section-sm bg-blue" style="padding: 70px 0;">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+                <h3 class="text-white mb-3">Research You Can Build On</h3>
+                <p class="text-white-50 mb-4">The methods in these papers are not theory left on the page. They ship inside OML Code.</p>
+                <a href="/oml-code" class="btn btn-primary mr-2">Explore OML Code</a>
+                <a href="/contact.html" class="btn btn-outline-light">Talk to Us</a>
+            </div>
+        </div>
+    </div>
+</section>

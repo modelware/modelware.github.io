@@ -133,12 +133,17 @@
       }
     }
 
+    // Flex rather than inline-block: an inline row adds ~10px of line-box
+    // slack under the buttons, which made the column taller than its visible
+    // content and pushed the promo card 10px below the buttons.
     .hero-cta {
       margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 10px;
 
-      // Keeps the two buttons off each other once they wrap on narrow screens.
       .btn {
-        margin-bottom: 10px;
+        margin-bottom: 0;
       }
     }
   }
@@ -230,23 +235,27 @@
     background: #0d1a2e;
   }
 
-  // The art always spans the full width of the card and sets its own height
-  // from its aspect ratio; the copy panel takes whatever vertical space is
-  // left. The blurb is clamped to three lines below, which is what keeps the
-  // divider from moving as slides with different copy lengths cycle through.
+  // The copy panel is sized by its content and never squeezed, so text can
+  // never spill past the card; the art takes the height that is left over.
   .hero-promo-figure {
     position: relative;
     display: block;
-    flex: 0 0 auto;
+    flex: 1 1 auto;
+    min-height: 0;
     overflow: hidden;
   }
 
-  // In normal flow at full width, so the poster spans the card edge to edge
-  // and is never pillarboxed. Its own aspect ratio sets the figure height.
+  // Fills the figure edge to edge at any height the copy leaves it. `cover`
+  // rather than `contain` so the art always spans the full card width with no
+  // pillarbox bars; the trim is a few px off the top and bottom.
   .hero-promo-img {
+    position: absolute;
+    inset: 0;
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 
   // Badge rides on the title's first line rather than taking a row of its
@@ -282,7 +291,7 @@
   // slack sits evenly above and below rather than pooling in one gap.
   .hero-promo-body {
     position: relative;
-    flex: 1 1 auto;
+    flex: 0 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;

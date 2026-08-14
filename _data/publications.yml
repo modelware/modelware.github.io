@@ -1,0 +1,84 @@
+##################### Publications #############################
+#
+# Peer-reviewed papers co-authored by Modelware's founder, drawn from the
+# openCAESAR body of work. Newest first; that order is what the site shows.
+#
+# Fields:
+#   title    - paper title
+#   authors  - full author list, in publication order
+#   venue    - conference, journal or book
+#   where    - location, omitted for journals and book chapters
+#   date     - publication date (used for display and sorting)
+#   year     - display year
+#   url      - DOI or publisher link; omit if the paper is not online
+#   topics   - short tags used for the filter chips
+#
+################################################################
+
+publications:
+- title: "openCAESAR: Balancing Agility and Rigor in Model-Based Systems Engineering"
+  authors: "Elaasar, M., Rouquette, N., Wagner, D., Oakes, B., Hamou-Lhadj, A., Hamdaqa, M."
+  venue: "Proceedings of SAM 2023"
+  where: "Västerås, Sweden"
+  date: 2023-09-26
+  year: 2023
+  url: "https://bentleyjoakes.github.io/assets/publications/Elaasar2023%20-%20openCAESAR%20Balancing%20Agility%20and%20Rigor%20in%20Model-Based%20Systems%20Engineering.pdf"
+  primary: true
+  topics: ["Methodology", "Ontologies"]
+  summary: "The primary citation for openCAESAR. Presents an approach that keeps model-based systems engineering both agile and formally rigorous, as applied at NASA JPL."
+
+- title: "Autonomica: Ontological Modeling and Analysis of Autonomous Behavior"
+  authors: "Elaasar, M., Rouquette, N., Havelund, K., Feather, M., Bandyopadhyay, S., Candela, A."
+  venue: "Proceedings of INCOSE IS 2023"
+  where: "Honolulu, Hawaii"
+  date: 2023-07-20
+  year: 2023
+  url: "https://incose.onlinelibrary.wiley.com/doi/10.1002/iis2.13099"
+  topics: ["Autonomy", "Reasoning"]
+  summary: "Models autonomous behavior ontologically so that planning and execution can be analyzed formally rather than only tested."
+
+- title: "Ontological Metamodeling and Analysis Using openCAESAR"
+  authors: "Wagner, D., Chodas, M., Elaasar, M., Jenkins, J.S., Rouquette, N."
+  venue: "Handbook of Model-Based Systems Engineering, Springer, Cham"
+  date: 2022-11-25
+  year: 2022
+  url: "https://doi.org/10.1007/978-3-030-27486-3_78-1"
+  topics: ["Ontologies", "Metamodeling"]
+  summary: "A book chapter on treating metamodeling as the modeling of vocabularies, and on analyzing the resulting models with description logic."
+
+- title: "Building a Semantic Layer for Early Design Trade Studies in the Development of Commercial Aircraft"
+  authors: "Zindel, A., Feo-Arenis, S., Helle, P., Schramm, G., Elaasar, M."
+  venue: "Proceedings of the 8th IEEE International Symposium on Systems Engineering (ISSE)"
+  where: "Vienna, Austria"
+  date: 2022-10-08
+  year: 2022
+  topics: ["Aerospace", "Trade Studies"]
+  summary: "Applies a semantic layer to early aircraft design trade studies so data distributed across engineering disciplines becomes openly queryable."
+
+- title: "Semantic Modeling for Power Management using CAESAR"
+  authors: "Wagner, D., Chodas, M., Elaasar, M., Jenkins, J.S., Rouquette, N."
+  venue: "Handbook of Model-Based Systems Engineering, pp. 1–18"
+  date: 2022-05-06
+  year: 2022
+  url: "https://link.springer.com/referenceworkentry/10.1007/978-3-030-27486-3_81-1"
+  topics: ["Aerospace", "Analysis"]
+  summary: "Shows how semantic models bring the rigor of computer-aided design to spacecraft power management."
+
+- title: "CAESAR Model-Based Approach to Harness Design"
+  authors: "Wagner, D., Kim, S., Jimenez, A., Elaasar, M., Rouquette, N., Jenkins, S."
+  venue: "Proceedings of the IEEE Aerospace Conference"
+  where: "Big Sky, MT, USA"
+  date: 2020-03-07
+  year: 2020
+  url: "https://ieeexplore.ieee.org/document/9172630"
+  topics: ["Aerospace", "Case Study"]
+  summary: "A case study developing spacecraft electrical interface and harness specifications for the Europa Clipper flight project."
+
+- title: "The Case for Integrated Model Centric Engineering"
+  authors: "Elaasar, M., Rouquette, N., Jenkins, S., Gerard, S."
+  venue: "Proceedings of the Model Based Enterprise Summit"
+  where: "Gaithersburg, MD"
+  date: 2019-04-02
+  year: 2019
+  topics: ["Methodology"]
+  summary: "Argues that MBSE adoption stalls without an integrated, model-centric foundation, and sets out what such a foundation requires."

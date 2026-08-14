@@ -326,31 +326,25 @@ description: "Modelware Labs is the research engine behind OML Code, a decade of
 </section>
 
 <!-- SELECTED RESEARCH -->
-<section class="section bg-light" id="projects" style="padding-top: 70px; padding-bottom: 70px;">
+<section class="section bg-light" id="publications" style="padding-top: 70px; padding-bottom: 70px;">
     <div class="container">
         <div class="text-center res-section-head">
             <span class="eyebrow">From the Lab</span>
-            <h3>Selected Research</h3>
-            <p class="text-muted mb-0">A sample of recent projects. Many of their results now ship inside OML Code.</p>
+            <h3>Recent Publications</h3>
+            <p class="text-muted mb-0">Peer-reviewed work by our founder and collaborators. Much of it now ships inside OML Code.</p>
         </div>
 
-        <div class="row">
-            {% assign featured = site.raise | where: "featured", true | sort: "title" %}
-            {% for p in featured %}
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="res-card">
-                    <a href="{{ p.url | relative_url }}"><img src="{{ p.cover | default: p.feature | relative_url }}" alt="{{ p.title }}" loading="lazy"></a>
-                    <div class="res-card-body">
-                        <h6><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h6>
-                        <p>{{ p.content | markdownify | strip_html | remove_first: 'Project Summary' | strip_newlines | truncate: 120 }}</p>
-                    </div>
-                </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                {% assign recent = site.data.publications.publications | slice: 0, 3 %}
+                {% for pub in recent %}
+                {% include publication_item.html pub=pub %}
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
 
         <div class="text-center mt-4">
-            <a href="/research/projects/" class="btn btn-primary">Browse all {{ site.raise | size }} projects <i class="ti-arrow-right ml-1"></i></a>
+            <a href="/research/publications/" class="btn btn-primary">Browse all {{ site.data.publications.publications | size }} publications <i class="ti-arrow-right ml-1"></i></a>
         </div>
     </div>
 </section>
