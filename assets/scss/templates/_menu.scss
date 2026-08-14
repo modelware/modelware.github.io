@@ -22,21 +22,39 @@
     align-items: center;
   }
 
+  // Spacing is kept tight enough that the menu plus its CTA fit inside the
+  // container, so the bar lines up with the page grid instead of spilling
+  // past its right edge.
   .navbar-nav .nav-link {
     text-transform: uppercase;
     color: $white;
     font-size: 16px;
     white-space: nowrap;
-    padding-right: 20px;
-    padding-left: 35px;
+    padding-right: 11px;
+    padding-left: 11px;
     font-weight: 500;
     line-height: 40px;
     font-family: $heading-font;
   }
 
   .navbar-nav.extra-nav .nav-link {
-    padding-left: 30px;
+    padding-left: 11px;
     padding-right: 0px;
+  }
+
+  // Between the lg breakpoint and 1200px the container is narrow but the
+  // full menu is still expanded, so it needs to tighten further to fit.
+  @include desktop-lg {
+    .navbar-nav .nav-link {
+      font-size: 14px;
+      padding-left: 7px;
+      padding-right: 7px;
+    }
+
+    .navbar-nav.extra-nav .nav-link {
+      padding-left: 7px;
+      padding-right: 0px;
+    }
   }
 }
 

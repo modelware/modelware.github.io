@@ -50,8 +50,9 @@
   <link rel="stylesheet" href="{{ css | relative_url }}">
   {% endfor %}
 
-  <!-- Main Stylesheet -->
-  <link href="{{ '/assets/scss/style.css' | relative_url }}" rel="stylesheet">
+  <!-- Main Stylesheet. The build timestamp busts browser caches so a
+       returning visitor never gets stale CSS after a deploy. -->
+  <link href="{{ '/assets/scss/style.css' | relative_url }}?v={{ site.time | date: '%s' }}" rel="stylesheet">
 
   {% if page.extra_css %}{% for css in page.extra_css %}
   <link rel="stylesheet" href="{{ css | relative_url }}">

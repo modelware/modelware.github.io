@@ -20,6 +20,28 @@
   });
 
 
+  // homepage hero promo carousel (curated in _data/promos.yml)
+  if ($('.hero-promo').length > 0) {
+    var heroPromoCount = parseInt($('.hero-promo').data('slide-count'), 10) || 0;
+    $('.hero-promo').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: heroPromoCount > 1,
+      dots: heroPromoCount > 1,
+      arrows: heroPromoCount > 1,
+      autoplay: heroPromoCount > 1,
+      autoplaySpeed: 6000,
+      // The card sits mid-screen, so a resting cursor would otherwise
+      // freeze the rotation silently and indefinitely.
+      pauseOnHover: false,
+      fade: true,
+      adaptiveHeight: false,
+      nextArrow: '<button class="hero-promo-btn hero-promo-next" aria-label="Next"><i class="ti-arrow-right"></i></button>',
+      prevArrow: '<button class="hero-promo-btn hero-promo-prev" aria-label="Previous"><i class="ti-arrow-left"></i></button>'
+    });
+  }
+
+
   // clients slider
   $('.clients-wrap').slick({
     slidesToShow: 5,

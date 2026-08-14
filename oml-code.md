@@ -259,8 +259,10 @@ description: "An intelligence-centric engineering platform built on Logic · AI 
             <div class="text-center mb-5">
                 <span class="eyebrow">The Platform</span>
                 <h3>Capabilities of an Intelligence-Centric Platform</h3>
-                <p class="text-muted mb-0">Everything systems engineers need to create, trust, exploit, and operationalize engineering knowledge.<br>Open any capability to see it in action, live product demos included.</p>
+                <p class="text-muted mb-0">Everything systems engineers need to create, trust, exploit, and operationalize engineering knowledge.<br>Watch them in action below, then open any capability for the full product demo.</p>
             </div>
+
+            {% include oml_code_demo.html %}
 
             <div class="row">
                 {% assign caps = site.capabilities | sort: "order" %}

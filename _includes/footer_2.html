@@ -28,4 +28,4 @@
 {% endfor %}
 
 <!-- Main Script -->
-<script src="{{ '/assets/js/script.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/script.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>

@@ -1,0 +1,94 @@
+<style>
+    .oml-demo-row {
+        margin-bottom: 46px;
+    }
+    .oml-demo-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        border: 1px solid rgba(15, 185, 168, 0.45);
+        box-shadow: 0 0 60px rgba(15, 185, 168, 0.25), 0 24px 60px rgba(0, 0, 0, 0.35);
+    }
+    .oml-demo-video {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    .oml-demo-caption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 42px 24px 18px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        color: #fff;
+        text-align: left;
+        background: linear-gradient(to top, rgba(10, 19, 34, 0.88), rgba(10, 19, 34, 0));
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        pointer-events: none;
+    }
+    .oml-demo-caption.show { opacity: 1; }
+    .oml-demo-caption::before {
+        content: "";
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #0fb9a8;
+        margin-right: 9px;
+        vertical-align: middle;
+    }
+</style>
+
+<!-- Full width so the video's edges line up with the capability grid below. -->
+<div class="row oml-demo-row" id="demo">
+    <div class="col-12">
+        <!-- Product demo loop: montage of OML Code capability clips -->
+        <div class="oml-demo-card">
+            <video class="oml-demo-video" autoplay muted loop playsinline preload="metadata"
+                   poster="{{ '/assets/images/oml-code-hero-demo-poster.jpg' | relative_url }}">
+                <source src="{{ '/assets/images/oml-code-hero-demo.mp4' | relative_url }}" type="video/mp4">
+            </video>
+            <span class="oml-demo-caption" id="omlDemoCaption" aria-hidden="true"></span>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function () {
+        var v = document.querySelector('.oml-demo-video');
+        var cap = document.getElementById('omlDemoCaption');
+        if (!v || !cap) return;
+        // Cues must match the montage: ~2.9s logo intro, then clips every 4.5s.
+        // Empty label = no caption (used for the logo title card).
+        var cues = [
+            { t: 0.0,  label: '' },
+            { t: 2.9,  label: 'Formal Knowledge Representation' },
+            { t: 7.4,  label: 'GenAI-Assisted Capture' },
+            { t: 11.9, label: 'Automated Reasoning' },
+            { t: 16.4, label: 'Structured Querying' },
+            { t: 20.9, label: 'Methodology-Driven Viewpoints' },
+            { t: 25.4, label: 'DevOps Integration' }
+        ];
+        var cur = -1;
+        function update() {
+            var ct = v.currentTime, idx = 0;
+            for (var i = 0; i < cues.length; i++) { if (ct >= cues[i].t) idx = i; }
+            if (idx !== cur) {
+                cur = idx;
+                cap.classList.remove('show');
+                setTimeout(function () {
+                    cap.textContent = cues[idx].label;
+                    if (cues[idx].label) cap.classList.add('show');
+                }, 150);
+            }
+        }
+        v.addEventListener('timeupdate', update);
+        v.addEventListener('play', update);
+        update();
+    })();
+</script>

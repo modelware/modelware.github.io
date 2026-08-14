@@ -1,0 +1,40 @@
+##################### Homepage Hero Promos #######################
+#
+# Curated list of things to promote in the homepage hero carousel.
+# Nothing appears here automatically: slides show in the order below,
+# and only while they are listed.
+#
+# Each entry is either:
+#   a) a pointer to an existing page via `page:` (the permalink), in
+#      which case title / text / image come from that page's front
+#      matter and any field below overrides it, or
+#   b) a fully self-contained slide, with `link:` pointing anywhere.
+#
+# Fields:
+#   page    - permalink of any page on this site: news, posts, capabilities,
+#             components, or a standalone page such as /academy/
+#   badge   - short chip shown at the top right of the slide
+#   title   - overrides the page title
+#   content - overrides the page description
+#   image   - overrides the page post_image / image / header_image
+#   link    - required only for self-contained slides; an absolute URL is
+#             used as-is and opens in a new tab
+#   button  - call to action label (default: "Read more")
+#   until   - optional expiry date; the slide drops out after it passes
+#
+##################################################################
+
+promos:
+- badge: "Masterclass"
+  page: /news/gpmf2026
+
+- badge: "Panel"
+  page: /news/gpmf2026-panel
+  
+
+- badge: "Course"
+  title: "Systems Engineering Professional"
+  content: "An interactive course on SE foundations and INCOSE SEP exam preparation. Work through the SE Handbook by modelling a real case study, with auto-graded quizzes, exercises, and mock exams."
+  image: "/assets/images/academy-sep-en.jpg"
+  link: "https://academy.modelware.io/catalog/sep-en"
+  button: "View the course"

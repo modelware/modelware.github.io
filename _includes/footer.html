@@ -73,7 +73,8 @@
 <script src="{{ js | relative_url }}"></script>
 {% endfor %}
 
-<!-- Main Script -->
-<script src="{{ '/assets/js/script.js' | relative_url }}"></script>
+<!-- Main Script. Timestamp query busts caches so a returning visitor
+     never runs a stale script (which would leave sliders uninitialized). -->
+<script src="{{ '/assets/js/script.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 
 {% include analytics-body.html %}

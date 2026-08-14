@@ -64,19 +64,82 @@
       }
     }
 
+    // The OML Code lockup carries the brand, so the headline is sized to
+    // support it rather than compete with it, and the column stays short
+    // enough to sit fully above the fold.
+    .hero-brand {
+      display: inline-block;
+      margin-bottom: 14px;
+    }
+
+    .hero-brand-logo {
+      display: block;
+      width: 300px;
+      max-width: 78%;
+      height: auto;
+
+      @include desktop-lg {
+        width: 250px;
+      }
+    }
+
     .hero-title {
-      font-size: 45px;
-      line-height: 53px;
+      font-size: 36px;
+      line-height: 42px;
       text-transform: none;
 
       @include desktop-lg {
-        font-size: 41px;
-        line-height: 49px;
+        font-size: 31px;
+        line-height: 38px;
+      }
+    }
+
+    .hero-lead {
+      margin: 14px 0 16px;
+      font-size: 17px;
+      line-height: 25px;
+      color: rgba(255, 255, 255, 0.82);
+      padding-right: 0;
+    }
+
+    .hero-points {
+      list-style: none;
+      margin: 0 0 18px;
+      padding: 0;
+
+      li {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 6px;
+        font-size: 15px;
+        line-height: 22px;
+        color: rgba(255, 255, 255, 0.66);
+      }
+
+      li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #0fb9a8;
+      }
+
+      strong {
+        color: #fff;
+        font-weight: 600;
       }
     }
 
     .hero-cta {
       margin-top: auto;
+
+      // Keeps the two buttons off each other once they wrap on narrow screens.
+      .btn {
+        margin-bottom: 10px;
+      }
     }
   }
 
@@ -84,9 +147,13 @@
     display: flex;
     align-items: stretch;
     justify-content: center;
-    padding: 40px 0;
+    // Vertical only: the column keeps Bootstrap's 15px gutter so the card
+    // does not go full-bleed once the columns stack.
+    padding-top: 40px;
+    padding-bottom: 40px;
     @include desktop-lg {
-      padding: 32px 0;
+      padding-top: 32px;
+      padding-bottom: 32px;
     }
   }
 
@@ -100,90 +167,308 @@
     overflow: hidden;
   }
 
-  .hero-rotator {
+  // Curated promo carousel (slides listed in _data/promos.yml).
+  // Keeps the teal-glow card treatment the product demo used, so the
+  // hero reads the same whether it is showing a promo or the fallback.
+  // Fixed ratio so swapping slides never changes the hero height. The ratio
+  // box has to be the card, not the slide: slick sizes .slick-track to the
+  // sum of all slides, and a percentage padding on a slide would resolve
+  // against that full track width instead of one slide.
+  .hero-promo-card {
     position: relative;
-    flex: 1 1 auto;
+    display: block;
+    align-self: center;
+    width: 100%;
+    height: 0;
+    padding-bottom: 96%;
+    border: 1px solid rgba(15, 185, 168, 0.45);
+    box-shadow: 0 0 60px rgba(15, 185, 168, 0.25), 0 24px 60px rgba(0, 0, 0, 0.5);
+  }
+
+  // Side by side: drop the aspect ratio and let the card take the column's
+  // height, so it always matches the copy column exactly and stays matched
+  // if the copy is edited later. Below 992px the columns stack and the
+  // column has no height to inherit, so the ratio box above applies.
+  @media (min-width: 992px) {
+    .hero-promo-card {
+      align-self: stretch;
+      height: 100%;
+      padding-bottom: 0;
+    }
+  }
+
+  .hero-promo,
+  .hero-promo-fallback {
+    position: absolute;
+    inset: 0;
+    display: block;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
-  // Absolutely positioned so the image never contributes to the row
-  // height; the text column alone sets it and the logo scales to fit.
-  .hero-rotator-image {
+  .hero-promo .slick-list,
+  .hero-promo .slick-track {
+    height: 100%;
+  }
+
+  .hero-promo-slide {
+    position: relative;
+    display: block;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  // Image on top, copy on a solid panel below. The figure absorbs the
+  // slack, so a long title pushes the image down rather than overflowing.
+  .hero-promo-link {
     position: absolute;
     inset: 0;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    background: #0d1a2e;
+  }
+
+  // The art always spans the full width of the card and sets its own height
+  // from its aspect ratio; the copy panel takes whatever vertical space is
+  // left. The blurb is clamped to three lines below, which is what keeps the
+  // divider from moving as slides with different copy lengths cycle through.
+  .hero-promo-figure {
+    position: relative;
+    display: block;
+    flex: 0 0 auto;
+    overflow: hidden;
+  }
+
+  // In normal flow at full width, so the poster spans the card edge to edge
+  // and is never pillarboxed. Its own aspect ratio sets the figure height.
+  .hero-promo-img {
+    display: block;
     width: 100%;
-    height: 100%;
-    object-fit: contain;
-    padding: 18px;
+    height: auto;
   }
 
+  // Badge rides on the title's first line rather than taking a row of its
+  // own, which keeps the copy panel a line shorter.
+  .hero-promo-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .hero-promo-badge {
+    flex: 0 0 auto;
+    display: inline-block;
+    margin-left: 14px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: #0fb9a8;
+    background: rgba(15, 185, 168, 0.1);
+    border: 1px solid rgba(15, 185, 168, 0.5);
+    border-radius: 999px;
+    padding: 5px 11px;
+  }
+
+  // Fills the card floor rather than shrink-wrapping the blurb, so the
+  // call to action pinned to its bottom lands at the same height on every
+  // slide regardless of how long the copy is.
+  // Centres the title and blurb in whatever height is left over, so the
+  // slack sits evenly above and below rather than pooling in one gap.
+  .hero-promo-body {
+    position: relative;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 18px 24px 46px;
+    background: #0d1a2e;
+    border-top: 1px solid rgba(15, 185, 168, 0.22);
+  }
+
+  .hero-promo-title {
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #fff;
+  }
+
+  // Grows to whatever the blurb needs, up to the room the panel has. The
+  // clamp is only a backstop against copy long enough to overflow the card.
+  .hero-promo-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-top: 7px;
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  // Pinned to the panel floor, level with the dots, so it does not drift up
+  // and down as slides with different blurb lengths cycle through.
+  .hero-promo-more {
+    position: absolute;
+    left: 24px;
+    bottom: 11px;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    color: #0fb9a8;
+
+    i {
+      font-size: 11px;
+      margin-left: 3px;
+    }
+  }
+
+  @include desktop-lg {
+    .hero-promo-body {
+      padding: 16px 20px 44px;
+    }
+
+    .hero-promo-more {
+      left: 20px;
+    }
+
+    .hero-promo-title {
+      font-size: 18px;
+    }
+
+    .hero-promo-text {
+      display: none;
+    }
+
+    .hero-promo-btn {
+      top: 50%;
+    }
+  }
+
+  // The card is narrow enough here that the chip would take half the header
+  // row and wrap the title to three ragged lines, so it steps aside.
   @include desktop {
-    // Columns stack below 992px: give the media its own height again.
-    .hero-rotator {
-      height: auto;
+    .hero-promo-badge {
+      display: none;
     }
 
-    .hero-rotator-image {
-      position: static;
-      width: auto;
-      max-width: 100%;
-      height: auto;
-      max-height: 420px;
-      padding: 0;
+    // Taller ratio box: the card is narrow here, so the title wraps to two
+    // lines and the copy needs more room than the desktop ratio allows.
+    .hero-promo-card {
+      padding-bottom: 108%;
     }
   }
 
-  .hero-rotator-btn {
+  // Always visible, never hover-revealed: the manual controls have to be
+  // discoverable without the user first guessing that they exist.
+  .hero-promo-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    border: 0;
-    background: rgba(255, 255, 255, 0.9);
-    color: #1f1f40;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(10, 19, 34, 0.72);
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    z-index: 2;
+    cursor: pointer;
+    opacity: 1;
+    transition: background 0.2s ease, transform 0.2s ease;
+    z-index: 3;
 
     i {
-      font-size: 18px;
+      font-size: 16px;
+      line-height: 1;
     }
   }
 
-  .hero-rotator-prev {
-    left: 16px;
+  .hero-promo-prev {
+    left: 14px;
   }
 
-  .hero-rotator-next {
-    right: 16px;
+  .hero-promo-next {
+    right: 14px;
   }
 
-  .hero-rotator:hover .hero-rotator-btn {
-    opacity: 1;
-    pointer-events: auto;
+  .hero-promo-btn:hover,
+  .hero-promo-btn:focus {
+    background: #0fb9a8;
+    border-color: #0fb9a8;
+    color: #fff;
+    outline: none;
+    transform: translateY(-50%) scale(1.06);
   }
 
-  .hero-rotator-btn:hover {
-    transform: translateY(-50%) scale(1.04);
-  }
+  // Dots sit inside the gradient, below the call to action.
+  // slick-theme.css is not loaded site-wide (see _data/plugins.yml), so
+  // these rules have to cover the base list reset too, not just the skin.
+  .hero-promo .slick-dots {
+    // Bottom-right of the copy panel, opposite the call to action.
+    position: absolute;
+    bottom: 13px;
+    right: 24px;
+    left: auto;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 0;
+    text-align: right;
+    z-index: 3;
 
-  @media (hover: none) {
-    .hero-rotator-btn {
-      opacity: 1;
-      pointer-events: auto;
+    li:last-child {
+      margin-right: 0;
+    }
+
+    li {
+      display: inline-block;
+      width: auto;
+      height: auto;
+      margin: 0 5px 0 0;
+      padding: 0;
+      line-height: 0;
+
+      button {
+        display: block;
+        width: 10px;
+        height: 10px;
+        padding: 0;
+        border: 0;
+        outline: none;
+        font-size: 0;
+        line-height: 0;
+        cursor: pointer;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        transition: background 0.2s ease, width 0.2s ease;
+
+        &::before {
+          display: none;
+        }
+      }
+
+      button:hover,
+      button:focus {
+        background: rgba(255, 255, 255, 0.85);
+      }
+    }
+
+    li.slick-active button {
+      width: 24px;
+      border-radius: 999px;
+      background: #0fb9a8;
     }
   }
 

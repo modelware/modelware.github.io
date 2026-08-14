@@ -1,98 +1,119 @@
-<style>
-    .hero-demo-caption {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        padding: 34px 20px 14px;
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 14px;
-        font-weight: 600;
-        letter-spacing: 0.03em;
-        color: #fff;
-        text-align: left;
-        background: linear-gradient(to top, rgba(10, 19, 34, 0.88), rgba(10, 19, 34, 0));
-        opacity: 0;
-        transition: opacity 0.4s ease;
-        pointer-events: none;
-    }
-    .hero-demo-caption.show { opacity: 1; }
-    .hero-demo-caption::before {
-        content: "";
-        display: inline-block;
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        background: #0fb9a8;
-        margin-right: 9px;
-        vertical-align: middle;
-    }
-</style>
-
 <section class="banner-2 position-relative bg-blue">
     <div class="container">
         <div class="row align-items-stretch">
             <div class="col-lg-6 col-md-7">
                 <div class="banner-content-2">
-                    <span class="eyebrow">OML Code:&nbsp; Logic &nbsp;·&nbsp; AI &nbsp;·&nbsp; DevOps</span>
-                    <h1 class="text-white mt-2 hero-title">Engineering models you can <span class="gradient-text">reason on</span> and <span class="gradient-text">compute over</span></h1>
-                    <p class="my-4 text-white">OML Code is an intelligence-centric engineering platform. It captures engineering knowledge as formal models, verifies them with automated reasoning, and grounds AI agents in them, turning your models into active, trustworthy engineering intelligence.</p>
+                    <a href="/oml-code" class="hero-brand" aria-label="OML Code">
+                        {%- comment -%} The "dark" variant is the one with the white
+                        wordmark, i.e. the one for dark backgrounds. {%- endcomment -%}
+                        <img src="{{ '/assets/images/oml-code-logo-dark.svg' | relative_url }}" alt="OML Code: Logic, AI, DevOps" class="hero-brand-logo">
+                    </a>
+                    <h1 class="text-white hero-title">Turn your engineering methodology into an <span class="gradient-text">intelligent digital foundation</span></h1>
+                    <p class="hero-lead">OML Code lets you codify your methodology as declarative, executable knowledge in your workspace, where it drives how models are built, visualized, and analyzed.</p>
+                    <ul class="hero-points">
+                        <li><strong>Formal models.</strong> The concepts, rules, and analyses behind how you engineer.</li>
+                        <li><strong>Neurosymbolic AI.</strong> Reasons over those models continuously as they evolve.</li>
+                        <li><strong>DevOps digital thread.</strong> Versioned, federated, and traceable across teams and tools.</li>
+                    </ul>
                     <div class="hero-cta">
-                        <a href="/contact.html" class="btn btn-primary mr-2">Request Demo</a>
-                        <a href="/oml-code" class="btn btn-outline-light">Explore the Platform</a>
+                        <a href="/oml-code" class="btn btn-primary mr-2">Explore OML Code</a>
+                        <a href="/contact.html" class="btn btn-outline-light">Request a Demo</a>
                     </div>
 
                 </div>
             </div>
 
             <div class="col-lg-6 col-md-5 hero-media">
-                <!-- Product demo loop: montage of OML Code capability clips -->
-                <div class="rounded shadow-lg hero-media-card hero-demo-card" style="position: relative; overflow: hidden; border: 1px solid rgba(15, 185, 168, 0.45); box-shadow: 0 0 60px rgba(15, 185, 168, 0.25), 0 24px 60px rgba(0, 0, 0, 0.5);">
-                    <a href="/oml-code" aria-label="Explore OML Code">
-                        <video class="hero-demo-video" autoplay muted loop playsinline preload="metadata"
-                               poster="{{ '/assets/images/oml-code-hero-demo-poster.jpg' | relative_url }}"
-                               style="display: block; width: 100%; height: auto;">
-                            <source src="{{ '/assets/images/oml-code-hero-demo.mp4' | relative_url }}" type="video/mp4">
-                        </video>
+                {%- comment -%}
+                Curated promo carousel. Slides are hand-listed in _data/promos.yml;
+                nothing rotates in on its own. Entries with a `page` are resolved
+                against the collections below, and any field in the data file
+                overrides what the page's front matter provides.
+                {%- endcomment -%}
+                {%- assign promo_docs = site.news | concat: site.posts | concat: site.capabilities | concat: site.components | concat: site.pages -%}
+                {%- assign now_ts = 'now' | date: "%s" | plus: 0 -%}
+                {%- assign slides = "" | split: "" -%}
+                {%- for promo in site.data.promos.promos -%}
+                    {%- if promo.until -%}
+                        {%- assign until_ts = promo.until | date: "%s" | plus: 0 -%}
+                        {%- if until_ts < now_ts -%}{%- continue -%}{%- endif -%}
+                    {%- endif -%}
+                    {%- assign slides = slides | push: promo -%}
+                {%- endfor -%}
+
+                <div class="rounded shadow-lg hero-media-card hero-promo-card">
+                    {%- if slides.size > 0 -%}
+                    <div class="hero-promo" data-slide-count="{{ slides.size }}">
+                        {%- for promo in slides -%}
+                            {%- assign doc = nil -%}
+                            {%- if promo.page -%}
+                                {%- assign doc = promo_docs | where: "url", promo.page | first -%}
+                            {%- endif -%}
+                            {%- assign p_title = promo.title | default: doc.title -%}
+                            {%- assign p_text = promo.content | default: doc.description | default: doc.summary -%}
+                            {%- assign p_image = promo.image | default: doc.post_image | default: doc.image | default: doc.header_image -%}
+                            {%- assign p_link = promo.link | default: doc.url -%}
+                            {%- assign p_button = promo.button | default: "Read more" -%}
+                            {%- comment -%}
+                            A slide may point off-site (another Modelware property, say).
+                            Absolute URLs are used verbatim and opened in a new tab; only
+                            site-relative paths go through relative_url.
+                            {%- endcomment -%}
+                            {%- if p_link contains '://' -%}
+                                {%- assign p_href = p_link -%}
+                                {%- assign p_target = ' target="_blank" rel="noopener"' -%}
+                            {%- else -%}
+                                {%- assign p_href = p_link | relative_url -%}
+                                {%- assign p_target = '' -%}
+                            {%- endif -%}
+                            {%- if p_image contains '://' -%}
+                                {%- assign p_img_src = p_image -%}
+                            {%- else -%}
+                                {%- assign p_img_src = p_image | relative_url -%}
+                            {%- endif -%}
+                            {%- if p_link -%}
+                            <div class="hero-promo-slide">
+                                <a href="{{ p_href }}"{{ p_target }} class="hero-promo-link">
+                                    {%- comment -%}
+                                    Image sits above the copy rather than behind it: these
+                                    promo images are posters carrying their own titles, so
+                                    an overlay would collide with the artwork.
+                                    {%- endcomment -%}
+                                    <span class="hero-promo-figure">
+                                        {%- if p_image %}
+                                        <img src="{{ p_img_src }}" alt="" class="hero-promo-img">
+                                        {%- endif %}
+                                    </span>
+                                    <span class="hero-promo-body">
+                                        <span class="hero-promo-head">
+                                            <span class="hero-promo-title">{{ p_title }}</span>
+                                            {%- if promo.badge %}
+                                            <span class="hero-promo-badge">{{ promo.badge }}</span>
+                                            {%- endif %}
+                                        </span>
+                                        {%- if p_text %}
+                                        {%- comment -%}
+                                        A blurb written by hand in the data file is used in
+                                        full; only text pulled from a page's own description
+                                        is shortened, since that was not written for a card.
+                                        {%- endcomment -%}
+                                        <span class="hero-promo-text">{% if promo.content %}{{ p_text | strip_html }}{% else %}{{ p_text | strip_html | truncatewords: 26 }}{% endif %}</span>
+                                        {%- endif %}
+                                        <span class="hero-promo-more">{{ p_button }} <i class="ti-arrow-right"></i></span>
+                                    </span>
+                                </a>
+                            </div>
+                            {%- endif -%}
+                        {%- endfor -%}
+                    </div>
+                    {%- else -%}
+                    {%- comment -%} No promos listed: fall back to a static product link. {%- endcomment -%}
+                    <a href="/oml-code" class="hero-promo-fallback" aria-label="Explore OML Code">
+                        <img src="{{ '/assets/images/oml-code-hero-demo-poster.jpg' | relative_url }}" alt="OML Code" class="hero-promo-img">
                     </a>
-                    <span class="hero-demo-caption" id="heroDemoCaption" aria-hidden="true"></span>
+                    {%- endif -%}
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-<script>
-    (function () {
-        var v = document.querySelector('.hero-demo-video');
-        var cap = document.getElementById('heroDemoCaption');
-        if (!v || !cap) return;
-        // Cues must match the montage: ~2.9s logo intro, then clips every 4.5s.
-        // Empty label = no caption (used for the logo title card).
-        var cues = [
-            { t: 0.0,  label: '' },
-            { t: 2.9,  label: 'Formal Knowledge Representation' },
-            { t: 7.4,  label: 'GenAI-Assisted Capture' },
-            { t: 11.9, label: 'Automated Reasoning' },
-            { t: 16.4, label: 'Structured Querying' },
-            { t: 20.9, label: 'Methodology-Driven Viewpoints' },
-            { t: 25.4, label: 'DevOps Integration' }
-        ];
-        var cur = -1;
-        function update() {
-            var ct = v.currentTime, idx = 0;
-            for (var i = 0; i < cues.length; i++) { if (ct >= cues[i].t) idx = i; }
-            if (idx !== cur) {
-                cur = idx;
-                cap.classList.remove('show');
-                setTimeout(function () {
-                    cap.textContent = cues[idx].label;
-                    if (cues[idx].label) cap.classList.add('show');
-                }, 150);
-            }
-        }
-        v.addEventListener('timeupdate', update);
-        v.addEventListener('play', update);
-        update();
-    })();
-</script>
