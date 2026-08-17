@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="A Semantic Web knowledge graph on the left and an MBSE system decomposition on the right, joined by OML in the middle">
+  <defs>
+    <linearGradient id="sw-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#16233c"/>
+      <stop offset="0.8" stop-color="#0a1322"/>
+    </linearGradient>
+    <radialGradient id="sw-glow-l" cx="0.16" cy="0.55" r="0.6">
+      <stop offset="0" stop-color="#0fb9a8" stop-opacity="0.20"/>
+      <stop offset="0.7" stop-color="#0fb9a8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sw-glow-r" cx="0.84" cy="0.55" r="0.6">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.22"/>
+      <stop offset="0.7" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sw-glow-c" cx="0.5" cy="0.5" r="0.4">
+      <stop offset="0" stop-color="#6ee7db" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#6ee7db" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="sw-soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#sw-bg)"/>
+  <rect width="800" height="500" fill="url(#sw-glow-l)"/>
+  <rect width="800" height="500" fill="url(#sw-glow-r)"/>
+  <rect width="800" height="500" fill="url(#sw-glow-c)"/>
+
+  <text x="52" y="86" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="2" fill="#7f8ca3">SEMANTIC WEB</text>
+  <text x="366" y="86" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="2" fill="#6ee7db">OML</text>
+  <text x="654" y="86" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="2" fill="#7f8ca3">MBSE</text>
+
+  <!-- left: an open knowledge graph -->
+  <g stroke="#46597a" stroke-width="1.5" opacity="0.75" fill="none">
+    <path d="M96 190 L172 148 M96 190 L128 268 M172 148 L232 214 M128 268 L232 214 M232 214 L196 320 M196 320 L104 356 M232 214 L288 300"/>
+  </g>
+  <g fill="#0fb9a8" filter="url(#sw-soft)">
+    <circle cx="96" cy="190" r="9"/><circle cx="172" cy="148" r="7"/><circle cx="128" cy="268" r="7"/>
+    <circle cx="232" cy="214" r="11"/><circle cx="196" cy="320" r="8"/><circle cx="104" cy="356" r="6"/>
+    <circle cx="288" cy="300" r="7"/>
+  </g>
+
+  <!-- right: a system decomposition -->
+  <g stroke="#5a6ea8" stroke-width="1.5" opacity="0.8" fill="none">
+    <path d="M660 150 L588 232 M660 150 L732 232 M588 232 L552 330 M588 232 L624 330 M732 232 L696 330 M732 232 L768 330"/>
+  </g>
+  <g fill="#a78bfa" filter="url(#sw-soft)">
+    <rect x="648" y="138" width="24" height="24" rx="5"/>
+    <rect x="576" y="220" width="24" height="24" rx="5"/><rect x="720" y="220" width="24" height="24" rx="5"/>
+  </g>
+  <g fill="#8b5cf6" opacity="0.9">
+    <rect x="542" y="320" width="20" height="20" rx="4"/><rect x="614" y="320" width="20" height="20" rx="4"/>
+    <rect x="686" y="320" width="20" height="20" rx="4"/><rect x="758" y="320" width="20" height="20" rx="4"/>
+  </g>
+
+  <!-- centre: one language carrying both -->
+  <g stroke="#6ee7db" stroke-width="2" opacity="0.55" fill="none" stroke-dasharray="2 8" stroke-linecap="round">
+    <path d="M300 250 H352"/>
+    <path d="M448 250 H524"/>
+  </g>
+  <path d="M400 178 L452 214 L452 286 L400 322 L348 286 L348 214 Z" fill="#101a2e" stroke="#6ee7db" stroke-width="2.5" filter="url(#sw-soft)"/>
+  <g stroke="#eafcf9" stroke-width="2" fill="none" opacity="0.95">
+    <circle cx="400" cy="250" r="8"/>
+    <path d="M400 214 V242 M400 258 V286 M370 232 L392 245 M430 232 L408 245 M370 268 L392 255 M430 268 L408 255"/>
+  </g>
+  <g fill="#6ee7db">
+    <circle cx="400" cy="214" r="4"/><circle cx="400" cy="286" r="4"/>
+    <circle cx="370" cy="232" r="4"/><circle cx="430" cy="232" r="4"/>
+    <circle cx="370" cy="268" r="4"/><circle cx="430" cy="268" r="4"/>
+  </g>
+
+  <text x="400" y="392" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="1" fill="#96a3b8">one body of knowledge, two ways of reading it</text>
+</svg>

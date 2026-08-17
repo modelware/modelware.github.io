@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Generated candidates all pass a grammar check, and only some of them pass a method check">
+  <defs>
+    <linearGradient id="sy-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#16233c"/>
+      <stop offset="0.8" stop-color="#0a1322"/>
+    </linearGradient>
+    <radialGradient id="sy-glow-l" cx="0.12" cy="0.5" r="0.6">
+      <stop offset="0" stop-color="#0fb9a8" stop-opacity="0.18"/>
+      <stop offset="0.7" stop-color="#0fb9a8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sy-glow-r" cx="0.78" cy="0.5" r="0.55">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.24"/>
+      <stop offset="0.7" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="sy-soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="sy-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6ee7db"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#sy-bg)"/>
+  <rect width="800" height="500" fill="url(#sy-glow-l)"/>
+  <rect width="800" height="500" fill="url(#sy-glow-r)"/>
+
+  <text x="44" y="86" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="2" fill="#7f8ca3">GENERATED</text>
+  <text x="286" y="86" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="2" fill="#7f8ca3">GRAMMAR</text>
+  <text x="484" y="86" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="2" fill="#cdb8ff">METHOD</text>
+  <text x="678" y="86" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="2" fill="#7f8ca3">USABLE</text>
+
+  <!-- candidates -->
+  <g fill="#0fb9a8" opacity="0.95">
+    <rect x="52" y="146" width="26" height="26" rx="6"/>
+    <rect x="52" y="216" width="26" height="26" rx="6"/>
+    <rect x="52" y="286" width="26" height="26" rx="6"/>
+    <rect x="52" y="356" width="26" height="26" rx="6"/>
+  </g>
+
+  <!-- everything clears the grammar gate -->
+  <g stroke="#46597a" stroke-width="1.6" fill="none" opacity="0.85">
+    <path d="M86 159 H316" marker-end="url(#sy-arr)"/>
+    <path d="M86 229 H316" marker-end="url(#sy-arr)"/>
+    <path d="M86 299 H316" marker-end="url(#sy-arr)"/>
+    <path d="M86 369 H316" marker-end="url(#sy-arr)"/>
+  </g>
+  <path d="M330 124 V404" stroke="#6ee7db" stroke-width="3" stroke-dasharray="3 11" stroke-linecap="round" opacity="0.7"/>
+
+  <g stroke="#46597a" stroke-width="1.6" fill="none" opacity="0.85">
+    <path d="M344 159 H516"/>
+    <path d="M344 229 H516"/>
+    <path d="M344 299 H516"/>
+    <path d="M344 369 H516"/>
+  </g>
+
+  <!-- the method gate is the one that rejects -->
+  <path d="M530 124 V404" stroke="#8b5cf6" stroke-width="12" stroke-linecap="round" opacity="0.35" filter="url(#sy-soft)"/>
+  <path d="M530 124 V404" stroke="#c4b5fd" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- two get through -->
+  <g stroke="#6ee7db" stroke-width="2" fill="none" opacity="0.95">
+    <path d="M544 229 H690" marker-end="url(#sy-arr)"/>
+    <path d="M544 299 H690" marker-end="url(#sy-arr)"/>
+  </g>
+  <g fill="#6ee7db" filter="url(#sy-soft)">
+    <rect x="700" y="216" width="26" height="26" rx="6"/>
+    <rect x="700" y="286" width="26" height="26" rx="6"/>
+  </g>
+
+  <!-- two bounce off, well-formed and wrong -->
+  <g stroke="#f0779b" stroke-width="2" fill="none" opacity="0.85">
+    <path d="M516 159 C544 159 552 132 540 118"/>
+    <path d="M516 369 C544 369 552 396 540 410"/>
+  </g>
+  <g stroke="#f0779b" stroke-width="2.6" stroke-linecap="round" opacity="0.95">
+    <path d="M556 104 L578 126 M578 104 L556 126"/>
+    <path d="M556 402 L578 424 M578 402 L556 424"/>
+  </g>
+
+  <text x="400" y="452" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="1" fill="#96a3b8">well-formed is not the same as method-compliant</text>
+</svg>

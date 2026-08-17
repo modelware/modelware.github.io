@@ -25,12 +25,18 @@
 ##################################################################
 
 promos:
+- badge: "Workshop"
+  page: /news/onto-nexus2026
+
+- badge: "Tutorial"
+  page: /news/models2026-tutorial
+
 - badge: "Masterclass"
   page: /news/gpmf2026
 
 - badge: "Panel"
   page: /news/gpmf2026-panel
-  
+
 
 - badge: "Course"
   title: "Systems Engineering Professional"

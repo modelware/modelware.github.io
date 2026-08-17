@@ -1,14 +1,15 @@
 ##################### Publications #############################
 #
 # Peer-reviewed papers co-authored by Modelware's founder, drawn from the
-# openCAESAR body of work. Newest first; that order is what the site shows.
+# openCAESAR body of work. Ordered by the date of the conference, newest
+# first; that order is what the site shows.
 #
 # Fields:
 #   title    - paper title
 #   authors  - full author list, in publication order
 #   venue    - conference, journal or book
 #   where    - location, omitted for journals and book chapters
-#   date     - publication date (used for display and sorting)
+#   date     - date of the conference (used for sorting)
 #   year     - display year
 #   url      - DOI or publisher link; omit if the paper is not online
 #   topics   - short tags used for the filter chips
@@ -16,6 +17,32 @@
 ################################################################
 
 publications:
+- title: "Bridging the Semantic Web and Model-Based Systems Engineering with the Ontological Modeling Language"
+  authors: "Elaasar, M., Oakes, B., Kamburjan, E., Hamdaqa, M., Hamou-Lhadj, A."
+  venue: "Proceedings of ISWC 2026, In Use Track"
+  where: "Bari, Italy"
+  date: 2026-10-25
+  year: 2026
+  topics: ["Ontologies", "Semantic Web", "MBSE"]
+  summary: "Presents OML to the Semantic Web community: the two obstacles that have held back Semantic Web adoption in systems engineering, namely the lack of rigorous semantics for SE models and of an established methodology for using ontologies in SE, and the language, methodology, and tooling that answer them, with adoption at NASA, JAXA, Leonardo, and in academia."
+
+- title: "Beyond Syntax: Method-Compliant AI Assistance for Low-Resource Modeling Languages"
+  authors: "Amar, S., Elaasar, M., Bhattacharya, S."
+  venue: "Proceedings of MDE Intelligence 2026, co-located with ACM/IEEE MODELS 2026"
+  where: "Málaga, Spain"
+  date: 2026-10-05
+  year: 2026
+  topics: ["AI", "Evaluation", "Modeling Languages"]
+  summary: "An evaluation framework and protocol-driven architecture for AI-assisted modeling in low-resource languages: the LLM interprets intent while all edits run through validated MCP tools and a SHACL shape catalog enforces the method. Measured on the FireForce VI case study, tool augmentation helps most on the hardest tasks."
+
+- title: "Large Language Models for Systems and Ontological Modeling: Fine-tuning and Evaluation"
+  authors: "Alarcia, R., Alhamadah, A., Elaasar, M., Golkar, A., Salado, A., Cornejo, S."
+  venue: "Proceedings of the Conference on Systems Engineering Research (CSER) 2026"
+  date: 2026-04-08
+  year: 2026
+  topics: ["AI", "OML", "Fine-tuning"]
+  summary: "Specialized LLMs now serve domain-specific tasks at a fraction of the inference cost of general-purpose ones, but systems engineering has neither a corpus of them nor fine-tuning methods suited to its languages. Contributes a methodology for fine-tuning LLMs for small, underrepresented modeling languages, using OML as the reference, and explores the balance between fine-tuning a model and using a general-purpose one."
+
 - title: "Power of a Reasoner: Model Validation for SysML Model using openCAESAR"
   authors: "Nakajima, Y., Wada, A., Komatsu, Y., Elaasar, M., Jenkins, J.S., Wagner, D.A."
   venue: "ACM/IEEE MODELS 2025 Companion Proceedings (MODELS-C), pp. 853–857"
