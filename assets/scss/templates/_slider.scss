@@ -369,10 +369,40 @@
       display: none;
     }
 
-    // Taller ratio box: the card is narrow here, so the title wraps to two
-    // lines and the copy needs more room than the desktop ratio allows.
+    // No ratio box at all here: the card is as tall as the art plus the copy.
+    // A ratio box this narrow left the figure nearly square, and `cover` then
+    // trimmed ~13% off each side of a 16:10 poster, cutting into its title and
+    // artwork. Giving the figure the posters' own ratio shows them whole, and
+    // the card height still only varies by the odd second title line.
     .hero-promo-card {
-      padding-bottom: 108%;
+      height: auto;
+      padding-bottom: 0;
+    }
+
+    .hero-promo,
+    .hero-promo-fallback {
+      position: relative;
+      inset: auto;
+      height: auto;
+    }
+
+    .hero-promo .slick-list,
+    .hero-promo .slick-track {
+      height: auto;
+    }
+
+    .hero-promo-slide {
+      height: auto;
+    }
+
+    .hero-promo-link {
+      position: relative;
+      inset: auto;
+    }
+
+    .hero-promo-figure {
+      flex: 0 0 auto;
+      aspect-ratio: 16 / 10;
     }
   }
 
@@ -418,6 +448,26 @@
     color: #fff;
     outline: none;
     transform: translateY(-50%) scale(1.06);
+  }
+
+  // Arrows move to the top corners of the art below 992px: the card is short
+  // there, and arrows on its centre line sat right across the poster title.
+  @include desktop {
+    .hero-promo-btn {
+      top: 12px;
+      transform: none;
+      width: 34px;
+      height: 34px;
+    }
+
+    .hero-promo-btn:hover,
+    .hero-promo-btn:focus {
+      transform: scale(1.06);
+    }
+
+    .hero-promo-btn i {
+      font-size: 14px;
+    }
   }
 
   // Dots sit inside the gradient, below the call to action.
