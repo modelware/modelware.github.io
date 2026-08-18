@@ -21,7 +21,7 @@ permalink: /news/models2026-tutorial
           <em>OML Code: Turning SME Knowledge into Reusable Ontological Modeling Methodologies</em> at
           <a href="https://conf.researchr.org/track/models-2026/models-2026-tutorials#event-overview" target="_blank" rel="noopener">MODELS 2026</a>,
           the 29th International Conference on Model Driven Engineering Languages and Systems, held October 4 to 9,
-          2026 in Málaga, Spain. Tutorials run as part of the satellite events, October 4 to 6.
+          2026 in Málaga, Spain. Tutorials run as part of the conference's satellite events.
         </p>
         <p class="text-left">
           The hardest thing to scale in engineering is not tooling, it is judgment. The methodology a subject matter
@@ -37,7 +37,7 @@ permalink: /news/models2026-tutorial
           teams and projects rather than re-explained.
         </p>
         <p class="text-left">
-          Attending MODELS 2026? <a href="/contact.html">Reach out</a> to meet with us in Málaga.
+          Attending MODELS 2026? <a href="/contact.html">Get in touch</a> to connect with our team.
         </p>
       </div>
     </div>
