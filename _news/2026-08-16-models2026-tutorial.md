@@ -5,7 +5,7 @@ date: 2026-08-16
 author: "Modelware"
 post_image: "/assets/images/models2026-tutorial.png"
 header_dark: true
-description: "Modelware founder and CEO Dr. Maged Elaasar will deliver the tutorial 'OML Code: Turning SME Knowledge into Reusable Ontological Modeling Methodologies' at MODELS 2026 in Málaga, Spain."
+description: "Modelware will deliver the tutorial 'OML Code: Turning SME Knowledge into Reusable Ontological Modeling Methodologies' at MODELS 2026 in Málaga, Spain."
 permalink: /news/models2026-tutorial
 ---
 
@@ -17,7 +17,7 @@ permalink: /news/models2026-tutorial
       <div class="col-lg-10 text-center">
         <img src="{{ '/assets/images/models2026-tutorial.png' | relative_url }}" alt="OML Code tutorial at MODELS 2026" class="img-fluid rounded shadow">
         <p class="mt-4 text-left">
-          Modelware founder and CEO, Dr. Maged Elaasar, will deliver the tutorial
+          Modelware will deliver the tutorial
           <em>OML Code: Turning SME Knowledge into Reusable Ontological Modeling Methodologies</em> at
           <a href="https://conf.researchr.org/track/models-2026/models-2026-tutorials#event-overview" target="_blank" rel="noopener">MODELS 2026</a>,
           the 29th International Conference on Model Driven Engineering Languages and Systems, held October 4 to 9,
