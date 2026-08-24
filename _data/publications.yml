@@ -23,6 +23,7 @@ publications:
   where: "Bari, Italy"
   date: 2026-10-25
   year: 2026
+  url: "/assets/papers/iswc-2026-oml-semantic-web-mbse.pdf"
   topics: ["Ontologies", "Semantic Web", "MBSE"]
   summary: "Presents OML to the Semantic Web community: the two obstacles that have held back Semantic Web adoption in systems engineering, namely the lack of rigorous semantics for SE models and of an established methodology for using ontologies in SE, and the language, methodology, and tooling that answer them, with adoption at NASA, JAXA, Leonardo, and in academia."
 
