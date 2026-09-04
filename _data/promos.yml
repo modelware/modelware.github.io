@@ -25,6 +25,9 @@
 ##################################################################
 
 promos:
+- badge: "Course"
+  page: /news/sie502-arizona
+
 - badge: "Workshop"
   page: /news/onto-nexus2026
 

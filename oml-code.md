@@ -2,7 +2,7 @@
 layout: default
 title: OML Code
 permalink: /oml-code
-description: "An intelligence-centric engineering platform built on Logic · AI · DevOps. Engineering models you can reason on and compute over."
+description: "A Neurosymbolic Systems Engineering platform built on Logic · AI · DevOps. Engineering models you can reason on and compute over."
 ---
 
 <style>
@@ -210,7 +210,7 @@ description: "An intelligence-centric engineering platform built on Logic · AI 
                         <img src="/assets/images/oml-code-icon.svg" alt="OML Code" class="oml-hero-title-logo">
                         <h2 class="text-capitalize mb-0 text-lg text-white">{{ page.title }}</h2>
                     </div>
-                    <p class="oml-hero-tagline">An <span class="gradient-text">intelligence-centric</span> engineering platform</p>
+                    <p class="oml-hero-tagline">A <span class="gradient-text">Neurosymbolic Systems Engineering</span> platform</p>
                     <div class="oml-hero-pills">
                         <span class="oml-hero-pill"><i class="ti-shield"></i> Logic</span>
                         <span class="oml-hero-pill purple"><i class="ti-bolt"></i> AI</span>
@@ -258,7 +258,7 @@ description: "An intelligence-centric engineering platform built on Logic · AI 
         <div class="mb-5" id="capabilities">
             <div class="text-center mb-5">
                 <span class="eyebrow">The Platform</span>
-                <h3>Capabilities of an Intelligence-Centric Platform</h3>
+                <h3>Capabilities of a Neurosymbolic Platform</h3>
                 <p class="text-muted mb-0">Everything systems engineers need to create, trust, exploit, and operationalize engineering knowledge.<br>Watch them in action below, then open any capability for the full product demo.</p>
             </div>
 
@@ -300,7 +300,7 @@ description: "An intelligence-centric engineering platform built on Logic · AI 
                 <span class="eyebrow">Why It Matters</span>
                 <h3 class="mb-3">From Information Capture to Engineering Intelligence</h3>
                 <p class="mb-3">Complexity has outgrown documents: engineering artifacts disagree, the impact of change is invisible, knowledge is trapped in individuals, and rework is the norm. Interface errors caught late cost 10&ndash;100&times; more to fix.</p>
-                <p class="mb-0">OML Code closes the gap. AI needs structured, queryable knowledge to be trustworthy, and a formal model is exactly what it requires. Build your intelligence-centric SE methodology on top of OML Code.</p>
+                <p class="mb-0">OML Code closes the gap. AI needs structured, queryable knowledge to be trustworthy, and a formal model is exactly what it requires. Build your neurosymbolic SE methodology on top of OML Code.</p>
             </div>
             <div class="col-lg-6">
                 <div class="bg-light rounded border p-4">
