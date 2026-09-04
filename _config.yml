@@ -2,7 +2,6 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.modelware.io" # the base hostname & protocol for your site
 title: "Modelware | Intelligence-Centric Engineering"
 email: "info@modelware.io"
-address: "Irvine, CA 92620, USA"
 author: melaasar
 description: >- # this means to ignore newlines
   Modelware - OML Code, an intelligence-centric engineering platform built on Logic, AI, and DevOps. Engineering models you can reason on and compute over.

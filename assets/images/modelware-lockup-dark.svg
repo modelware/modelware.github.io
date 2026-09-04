@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="260" viewBox="0 0 780 260" role="img" aria-label="Modelware">
+  <title>Modelware</title>
+  <defs>
+    <linearGradient id="lkd-tile" x1="0" y1="0" x2="220" y2="220" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#16233c"/>
+      <stop offset="0.7" stop-color="#0a1322"/>
+    </linearGradient>
+    <radialGradient id="lkd-glow-tl" cx="0.18" cy="0.12" r="0.9">
+      <stop offset="0" stop-color="#0fb9a8" stop-opacity="0.28"/>
+      <stop offset="0.55" stop-color="#0fb9a8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lkd-glow-br" cx="0.88" cy="0.9" r="0.95">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.30"/>
+      <stop offset="0.55" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="lkd-edge" x1="48" y1="110" x2="172" y2="110" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0fb9a8"/>
+      <stop offset="0.5" stop-color="#6ee7db"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <filter id="lkd-mglow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- ===== M icon ===== -->
+  <g transform="translate(20, 20)">
+    <rect x="1.5" y="1.5" width="217" height="217" rx="48" fill="url(#lkd-tile)"/>
+    <rect x="1.5" y="1.5" width="217" height="217" rx="48" fill="url(#lkd-glow-tl)"/>
+    <rect x="1.5" y="1.5" width="217" height="217" rx="48" fill="url(#lkd-glow-br)"/>
+    <rect x="2.5" y="2.5" width="215" height="215" rx="47" stroke="#6ee7db" stroke-opacity="0.22" stroke-width="2"/>
+
+    <!-- "M" as a node graph -->
+    <g filter="url(#lkd-mglow)" transform="translate(110,110) scale(0.6875) translate(-160,-160)">
+      <path d="M84 232 L84 100 L160 184 L236 100 L236 232"
+            stroke="url(#lkd-edge)" stroke-width="13"
+            stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <circle cx="84"  cy="232" r="12" fill="#0fb9a8"/>
+      <circle cx="84"  cy="100" r="12" fill="#6ee7db"/>
+      <circle cx="236" cy="100" r="12" fill="#8b5cf6"/>
+      <circle cx="236" cy="232" r="12" fill="#8b5cf6"/>
+      <circle cx="160" cy="184" r="15" fill="#ffffff"/>
+      <circle cx="160" cy="184" r="15" stroke="url(#lkd-edge)" stroke-width="5" fill="none"/>
+    </g>
+  </g>
+
+  <!-- ===== wordmark: small caps ===== -->
+  <g font-family="'Space Grotesk', 'Inter', 'Helvetica Neue', Arial, sans-serif" fill="#f2f6fb">
+    <text x="272" y="158" font-size="86" font-weight="600"><tspan letter-spacing="6">M</tspan><tspan font-size="62" letter-spacing="7">ODELWARE</tspan></text>
+  </g>
+</svg>

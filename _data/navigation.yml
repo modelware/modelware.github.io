@@ -27,6 +27,8 @@ main:
     submenu:
       - name: About Us
         url: /about.html
+      - name: Contact Us
+        url: /contact.html
       - name: News
         url: /news/
 
