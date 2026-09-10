@@ -6,9 +6,21 @@
 {% include page_header.html %}
 <main class="legal-page">
   <div class="wrap">
+    {%- comment -%}
+      Version bar for legal documents. Driven by _data/legal.yml so the version
+      is maintained in one place. The Legal Center hub sets `hide_doc_meta` to
+      omit it, since it is an index rather than an agreement.
+    {%- endcomment -%}
+    {% unless page.hide_doc_meta %}
+    <div class="doc-meta">
+      <span>Version {{ site.data.legal.version }}</span>
+    </div>
+    {% endunless %}
     {{ content }}
   </div>
 </main>
 {% include footer.html %}
+<!-- Shared scrollspy for the table of contents in each legal document. -->
+<script src="{{ '/legal/legal.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 </body>
 </html>

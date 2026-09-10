@@ -3,16 +3,10 @@ layout: legal
 title: "Consumer Schedule"
 description: "Consumer (B2C) terms that supplement the Modelware General Terms of Service."
 header_dark: true
-noindex: true
-sitemap: false
 extra_css:
   - /legal/legal.css
 permalink: /legal/terms/consumer/
 ---
-<div class="doc-meta">
-  <span>Version 1.0</span><span class="sep">|</span>
-  <span>Not yet in effect</span>
-</div>
 <div class="cols">
   <nav class="toc" aria-label="On this page">
     <h2>On this page</h2>
@@ -60,15 +54,15 @@ permalink: /legal/terms/consumer/
     <section id="auto-renewal">
       <h2><span class="num">4</span>Auto-Renewal and Cancellation</h2>
       <p class=""><strong class="lead">Automatic renewal.</strong> Not all plans renew automatically; whether a plan renews is stated at checkout. Where a plan renews, unless stated otherwise at checkout, it renews automatically at the end of each billing period at the then-current price, and your payment method is charged for each renewal, until you cancel. The billing frequency and renewal price are disclosed to you before purchase. Where a merchant of record is the seller for your transaction, renewal charges are processed by that merchant.</p>
-      <p class=""><strong class="lead">How to cancel.</strong> You can cancel at any time from your account settings or by emailing support@modelware.io. Cancellation stops future renewals and takes effect at the end of the current billing period; you keep access until then. Where Paddle is the merchant of record, you may also manage or cancel your subscription through Paddle's buyer portal, in addition to the methods above. Where required by law, we will send a renewal or cancellation reminder and provide an online cancellation method.</p>
+      <p class=""><strong class="lead">How to cancel.</strong> You can cancel at any time from your account settings or by emailing <a href="mailto:support@modelware.io">support@modelware.io</a>. Cancellation stops future renewals and takes effect at the end of the current billing period; you keep access until then. Where Paddle is the merchant of record, you may also manage or cancel your subscription through Paddle's buyer portal, in addition to the methods above. Where required by law, we will send a renewal or cancellation reminder and provide an online cancellation method.</p>
     </section>
     <section id="refunds">
       <h2><span class="num">5</span>Refunds</h2>
-      <p class="">If you are not satisfied, you may request a refund of the fee within fourteen (14) days of your initial purchase by contacting support@modelware.io. This refund right applies to your initial purchase and not to subsequent renewal charges, and is in addition to any refund, withdrawal, or cancellation rights you have under applicable law or under the buyer terms of the merchant of record for your transaction. An approved refund is returned to your original payment method and is processed by the merchant of record for the transaction. Product-specific refund terms are set out in the <a href="/legal/refunds/">Refund Policy</a> and may differ from the refund right described above. In particular, Modelware Academy courses are refundable only on the terms stated in that policy, under which the refund right for a Digital Course ends once you first access the course materials.</p>
+      <p class="">If you are not satisfied, you may request a refund of the fee within fourteen (14) days of your initial purchase by contacting <a href="mailto:support@modelware.io">support@modelware.io</a>. This refund right applies to your initial purchase and not to subsequent renewal charges, and is in addition to any refund, withdrawal, or cancellation rights you have under applicable law or under the buyer terms of the merchant of record for your transaction. An approved refund is returned to your original payment method and is processed by the merchant of record for the transaction. Product-specific refund terms are set out in the <a href="/legal/refunds/">Refund Policy</a> and may differ from the refund right described above. In particular, Modelware Academy courses are refundable only on the terms stated in that policy, under which the refund right for a Digital Course ends once you first access the course materials.</p>
     </section>
     <section id="withdrawal">
       <h2><span class="num">6</span>Right of Withdrawal (EU/UK)</h2>
-      <p class="">If you are a Consumer in the European Union or the United Kingdom, you have the right to withdraw from your purchase within fourteen (14) days without giving a reason. If you ask us to begin providing the Service during the withdrawal period, you agree that we may start, and you acknowledge that you lose the right to withdraw once the Service has been fully performed. If you withdraw before full performance, you may be charged for the proportion of the Service already provided. To withdraw, contact support@modelware.io before the period ends. Where a merchant of record is the seller for your transaction, you may exercise this right through Modelware and any refund due is processed by that merchant to your original payment method; this does not affect any right you have to deal with that merchant directly.</p>
+      <p class="">If you are a Consumer in the European Union or the United Kingdom, you have the right to withdraw from your purchase within fourteen (14) days without giving a reason. If you ask us to begin providing the Service during the withdrawal period, you agree that we may start, and you acknowledge that you lose the right to withdraw once the Service has been fully performed. If you withdraw before full performance, you may be charged for the proportion of the Service already provided. To withdraw, contact <a href="mailto:support@modelware.io">support@modelware.io</a> before the period ends. Where a merchant of record is the seller for your transaction, you may exercise this right through Modelware and any refund due is processed by that merchant to your original payment method; this does not affect any right you have to deal with that merchant directly.</p>
     </section>
     <section id="consumer-rights">
       <h2><span class="num">7</span>Your Statutory Rights</h2>
@@ -80,26 +74,7 @@ permalink: /legal/terms/consumer/
     </section>
     <section id="contact-complaints">
       <h2><span class="num">9</span>Contact and Complaints</h2>
-      <p class="">You can reach us with any question or general complaint at info@modelware.io, and with product-related complaints at support@modelware.io. Where Paddle is the seller for your transaction, transaction or billing complaints may also be submitted through Paddle's buyer-support channels at <a href="https://paddle.net" target="_blank" rel="noopener">paddle.net</a>. If you are a Consumer in the European Union, you may also have access to an alternative dispute resolution body in your country; Modelware is not currently committed to any such scheme.</p>
+      <p class="">You can reach us with any question or general complaint at <a href="mailto:info@modelware.io">info@modelware.io</a>, and with product-related complaints at <a href="mailto:support@modelware.io">support@modelware.io</a>. Where Paddle is the seller for your transaction, transaction or billing complaints may also be submitted through Paddle's buyer-support channels at <a href="https://paddle.net" target="_blank" rel="noopener">paddle.net</a>. If you are a Consumer in the European Union, you may also have access to an alternative dispute resolution body in your country; Modelware is not currently committed to any such scheme.</p>
     </section>
   </article>
 </div>
-<script>
-(function(){
-  var links = Array.prototype.slice.call(document.querySelectorAll('.toc a[href^="#"]'));
-  if(!links.length || !('IntersectionObserver' in window)) return;
-  var map = {};
-  links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
-  var seen = new Set();
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting) seen.add(e.target.id); else seen.delete(e.target.id);
-    });
-    var order = Object.keys(map);
-    var current = order.find(function(id){ return seen.has(id); });
-    links.forEach(function(a){ a.classList.remove('active'); });
-    if(current && map[current]) map[current].classList.add('active');
-  }, { rootMargin: '-80px 0px -70% 0px', threshold: 0 });
-  document.querySelectorAll('.doc section[id]').forEach(function(s){ io.observe(s); });
-})();
-</script>

@@ -8,8 +8,7 @@ description: >- # this means to ignore newlines
 logo: "/assets/images/logo.svg"
 logo_icon: "/assets/images/logo-b.png"
 # contact form action
-contact_form_action: "https://formspree.io/f/xaqbdewz" # works with https://fomrspree.io
-mailchimp_list: "https://themeix.us16.list-manage.com/subscribe/post?u=307862c135e4548eecf86f389&amp;id=342411fb35"
+contact_form_action: "https://formspree.io/f/xaqbdewz" # works with https://formspree.io
 footer_content: "Modelware builds OML Code, the Neurosymbolic Systems Engineering platform that captures engineering knowledge as formal models, verifies them with automated reasoning, and grounds AI in them."
 copyright: "Modelware &copy; 2026 All Rights Reserved"
 # page header default image

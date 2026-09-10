@@ -1,0 +1,8 @@
+# Single source of truth for the version shown on every document in the Legal
+# Center. The legal layout renders this into each document's meta bar, so
+# bumping it here updates all of them at once.
+#
+# This is a corpus-wide version, not a per-document one: all Legal Center
+# documents are published and revised together as a set. Bump it whenever any
+# of them changes substantively.
+version: "1.0"

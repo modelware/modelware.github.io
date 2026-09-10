@@ -20,14 +20,10 @@ html{scroll-behavior:smooth}
 /* layout */
 .legal-page .wrap{max-width:var(--maxc); margin:0 auto; padding:52px 24px 8px}
 
-/* doc meta bar (version / effective date / draft badge) */
+/* doc meta bar (version / effective date) */
 .legal-page .doc-meta{display:flex; flex-wrap:wrap; align-items:center; gap:10px 16px;
   padding-bottom:22px; margin-bottom:6px; border-bottom:1px solid var(--line);
   color:var(--muted); font-size:14.5px}
-.legal-page .doc-meta .sep{color:var(--line)}
-.legal-page .draft{display:inline-block; font-size:12px; font-weight:700; letter-spacing:.08em;
-  color:var(--crimson); background:var(--accent-soft); border:1px solid #BFE9E2;
-  padding:6px 11px; border-radius:999px}
 
 .legal-page .cols{display:grid; grid-template-columns:250px 1fr; gap:56px; padding:34px 0 20px}
 @media (max-width:880px){.legal-page .cols{grid-template-columns:1fr; gap:8px; padding-top:24px}}
@@ -85,9 +81,6 @@ html{scroll-behavior:smooth}
 .legal-page .hub .card h3{font-family:var(--heading); margin:0; font-size:20px; color:var(--charcoal); font-weight:700; display:flex; align-items:center; gap:12px}
 .legal-page .hub .card h3 .arrow{color:var(--crimson); font-weight:700}
 .legal-page .hub .card p{margin:9px 0 0; color:var(--muted); font-size:15px; max-width:64ch}
-.legal-page .hub .card .tag{font-size:12px; letter-spacing:.08em; color:var(--muted); text-transform:uppercase; margin-top:14px; font-weight:600}
-.legal-page .hub .card.pending{opacity:.72}
-.legal-page .hub .card.pending h3 .arrow{color:var(--muted)}
 
 /* schedule chooser shown inside the Terms of Service document */
 .legal-page .schedules{margin:22px 0 6px; padding:18px 20px; border:1px solid var(--line); border-radius:12px; background:var(--rail)}

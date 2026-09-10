@@ -3,16 +3,10 @@ layout: legal
 title: "Terms of Service"
 description: "The General Terms that govern use of Modelware's products and services, read together with the Business or Consumer Schedule."
 header_dark: true
-noindex: true
-sitemap: false
 extra_css:
   - /legal/legal.css
 permalink: /legal/terms/
 ---
-<div class="doc-meta">
-  <span>Version 1.0</span><span class="sep">|</span>
-  <span>Not yet in effect</span>
-</div>
 <div class="cols">
   <nav class="toc" aria-label="On this page">
     <h2>On this page</h2>
@@ -45,7 +39,7 @@ permalink: /legal/terms/
       <li><a href="#definitions"><span class="n">1</span><span>Definitions</span></a></li>
       <li><a href="#the-service"><span class="n">2</span><span>The Service</span></a></li>
       <li><a href="#ai-and-engineering-use"><span class="n">3</span><span>AI-Enabled Features and Engineering Use</span></a></li>
-        <li><a href="#accounts-and-access"><span class="n">4</span><span>Accounts and Access</span></a></li>
+      <li><a href="#accounts-and-access"><span class="n">4</span><span>Accounts and Access</span></a></li>
       <li><a href="#license-and-restrictions"><span class="n">5</span><span>License and Restrictions</span></a></li>
       <li><a href="#acceptable-use"><span class="n">6</span><span>Acceptable Use</span></a></li>
       <li><a href="#your-data"><span class="n">7</span><span>Your Data and Privacy</span></a></li>
@@ -141,7 +135,7 @@ permalink: /legal/terms/
     </section>
     <section id="suspension">
       <h2><span class="num">13</span>Suspension</h2>
-      <p class="">Modelware may suspend access to the Service if your use poses a security risk, may adversely affect the Service or other users, violates the Acceptable Use section, infringes or misappropriates Modelware's intellectual property, constitutes a breach that by its nature cannot be cured, or if fees are overdue. Modelware will provide advance notice before suspending access, except where immediate suspension is necessary to prevent material harm, to address a security risk or unlawful activity, or to comply with law, in which case Modelware will notify you as soon as reasonably practicable. Modelware will use commercially reasonable efforts to restore access after Modelware determines that the basis for suspension has been satisfactorily resolved</p>
+      <p class="">Modelware may suspend access to the Service if your use poses a security risk, may adversely affect the Service or other users, violates the Acceptable Use section, infringes or misappropriates Modelware's intellectual property, constitutes a breach that by its nature cannot be cured, or if fees are overdue. Modelware will provide advance notice before suspending access, except where immediate suspension is necessary to prevent material harm, to address a security risk or unlawful activity, or to comply with law, in which case Modelware will notify you as soon as reasonably practicable. Modelware will use commercially reasonable efforts to restore access after Modelware determines that the basis for suspension has been satisfactorily resolved.</p>
     </section>
     <section id="term-and-termination">
       <h2><span class="num">14</span>Term and Termination</h2>
@@ -171,30 +165,11 @@ permalink: /legal/terms/
       <p class=""><strong class="lead">Entire Agreement and Precedence.</strong> These General Terms, your applicable schedule, and any Order are the entire agreement between the parties on this subject and supersede prior understandings. In case of conflict, an executed Order controls first, then the applicable schedule, then these General Terms. Where you also accept the End User License Agreement for downloadable software, that agreement governs the licensed software.</p>
       <p class=""><strong class="lead">Severability and Waiver.</strong> If any provision is unenforceable, the remaining provisions stay in effect, and no waiver is effective unless in writing.</p>
       <p class=""><strong class="lead">Force Majeure.</strong> Neither party is liable for delay or failure caused by events beyond its reasonable control.</p>
-      <p class=""><strong class="lead">Notices.</strong> Notices must be in writing and sent to the contact addresses in the Order or your account, or to info@modelware.io for Modelware.</p>
+      <p class=""><strong class="lead">Notices.</strong> Notices must be in writing and sent to the contact addresses in the Order or your account, or to <a href="mailto:info@modelware.io">info@modelware.io</a> for Modelware.</p>
     </section>
     <section id="contact">
       <h2><span class="num">20</span>Contact</h2>
-      <p class="">Questions about these terms may be directed to Modelware LLC at info@modelware.io.</p>
+      <p class="">Questions about these terms may be directed to Modelware LLC at <a href="mailto:info@modelware.io">info@modelware.io</a>.</p>
     </section>
   </article>
 </div>
-<script>
-(function(){
-  var links = Array.prototype.slice.call(document.querySelectorAll('.toc a[href^="#"]'));
-  if(!links.length || !('IntersectionObserver' in window)) return;
-  var map = {};
-  links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
-  var seen = new Set();
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting) seen.add(e.target.id); else seen.delete(e.target.id);
-    });
-    var order = Object.keys(map);
-    var current = order.find(function(id){ return seen.has(id); });
-    links.forEach(function(a){ a.classList.remove('active'); });
-    if(current && map[current]) map[current].classList.add('active');
-  }, { rootMargin: '-80px 0px -70% 0px', threshold: 0 });
-  document.querySelectorAll('.doc section[id]').forEach(function(s){ io.observe(s); });
-})();
-</script>

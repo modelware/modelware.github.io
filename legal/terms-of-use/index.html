@@ -3,16 +3,10 @@ layout: legal
 title: "Website Terms of Use"
 description: "The terms that govern use of the Modelware website at modelware.io."
 header_dark: true
-noindex: true
-sitemap: false
 extra_css:
   - /legal/legal.css
 permalink: /legal/terms-of-use/
 ---
-<div class="doc-meta">
-  <span>Version 1.0</span><span class="sep">|</span>
-  <span>Not yet in effect</span>
-</div>
 <div class="cols">
   <nav class="toc" aria-label="On this page">
     <h2>On this page</h2>
@@ -54,10 +48,10 @@ permalink: /legal/terms-of-use/
   </nav>
   <article class="doc">
     <p class="intro">These Website Terms of Use (the "Terms") govern your access to and use of the website at modelware.io and its subdomains (the "Website"), operated by Modelware LLC, a California limited liability company ("Modelware", "we", "us", or "our"). By accessing or using the Website, you agree to these Terms.</p>
-    <p class="intro">These Terms govern the informational Website only. Access to and use of Modelware's products and services are governed by the separate Terms of Service and End User License Agreement. If you do not agree to these Terms, do not use the Website.</p>
+    <p class="intro">These Terms govern the informational Website only. Access to and use of Modelware's products and services are governed by the separate <a href="/legal/terms/">Terms of Service</a> and <a href="/legal/eula/">End User License Agreement</a>. If you do not agree to these Terms, do not use the Website.</p>
     <section id="acceptance">
       <h2><span class="num">1</span>Acceptance of These Terms</h2>
-      <p class="">By accessing, browsing, or otherwise using the Website, you acknowledge that you have read and agree to be bound by these Terms and by our Privacy Policy. If you use the Website on behalf of an organization, you represent that you are authorized to bind that organization.</p>
+      <p class="">By accessing, browsing, or otherwise using the Website, you acknowledge that you have read and agree to be bound by these Terms and by our <a href="/legal/privacy/">Privacy Policy</a>. If you use the Website on behalf of an organization, you represent that you are authorized to bind that organization.</p>
     </section>
     <section id="eligibility">
       <h2><span class="num">2</span>Eligibility</h2>
@@ -95,7 +89,7 @@ permalink: /legal/terms-of-use/
     <section id="liability">
       <h2><span class="num">9</span>Limitation of Liability</h2>
       <p class="caps">TO THE MAXIMUM EXTENT PERMITTED BY LAW, MODELWARE WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR FOR ANY LOSS OF PROFITS, DATA, OR GOODWILL, ARISING OUT OF OR RELATED TO YOUR USE OF, OR INABILITY TO USE, THE WEBSITE. OUR TOTAL AGGREGATE LIABILITY ARISING OUT OF OR RELATED TO THE WEBSITE WILL NOT EXCEED ONE HUNDRED U.S. DOLLARS (USD 100).</p>
-      <p class="">This limitation applies only to your use of the informational Website. Access to and use of Modelware's products and services are governed by the separate Terms of Service and End User License Agreement, which contain their own liability terms.</p>
+      <p class="">This limitation applies only to your use of the informational Website. Access to and use of Modelware's products and services are governed by the separate <a href="/legal/terms/">Terms of Service</a> and <a href="/legal/eula/">End User License Agreement</a>, which contain their own liability terms.</p>
     </section>
     <section id="indemnification">
       <h2><span class="num">10</span>Indemnification</h2>
@@ -103,7 +97,7 @@ permalink: /legal/terms-of-use/
     </section>
     <section id="privacy">
       <h2><span class="num">11</span>Privacy</h2>
-      <p class="">Your use of the Website is also governed by our Privacy Policy, which describes how we collect, use, and protect information, including our use of cookies and similar technologies.</p>
+      <p class="">Your use of the Website is also governed by our <a href="/legal/privacy/">Privacy Policy</a>, which describes how we collect, use, and protect information, including our use of cookies and similar technologies.</p>
     </section>
     <section id="changes">
       <h2><span class="num">12</span>Changes to the Website and These Terms</h2>
@@ -115,26 +109,7 @@ permalink: /legal/terms-of-use/
     </section>
     <section id="contact">
       <h2><span class="num">14</span>Contact</h2>
-      <p class="">Questions about these Terms may be directed to Modelware LLC at info@modelware.io.</p>
+      <p class="">Questions about these Terms may be directed to Modelware LLC at <a href="mailto:info@modelware.io">info@modelware.io</a>.</p>
     </section>
   </article>
 </div>
-<script>
-(function(){
-  var links = Array.prototype.slice.call(document.querySelectorAll('.toc a[href^="#"]'));
-  if(!links.length || !('IntersectionObserver' in window)) return;
-  var map = {};
-  links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
-  var seen = new Set();
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting) seen.add(e.target.id); else seen.delete(e.target.id);
-    });
-    var order = Object.keys(map);
-    var current = order.find(function(id){ return seen.has(id); });
-    links.forEach(function(a){ a.classList.remove('active'); });
-    if(current && map[current]) map[current].classList.add('active');
-  }, { rootMargin: '-80px 0px -70% 0px', threshold: 0 });
-  document.querySelectorAll('.doc section[id]').forEach(function(s){ io.observe(s); });
-})();
-</script>
