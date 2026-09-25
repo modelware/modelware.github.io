@@ -1,0 +1,287 @@
+{%- comment -%}
+Photo and video recap of an event, told in stages. Driven by `page.recap`:
+
+  recap:
+    eyebrow, title, intro
+    lineup:                          (optional name cards, e.g. a panel)
+      - role, name, org, highlight
+    stages:
+      - title, text                  (leave both off on every stage for unnumbered
+                                      rows that tile together as one mosaic)
+        media:
+          - src: image path          (opens in the lightbox)
+            video: mp4 path          (plays muted inline instead; `src` is then its poster)
+            ratio: width / height    (native aspect, so a row never crops)
+            position: object-position, only when `ratio` deliberately crops
+            caption, alt
+    finale: one media item shown full width after the stages (a group photo, say)
+
+Each row is justified: an item's flex-grow equals its aspect ratio, so every
+item in the row lands at the same height whatever mix of portrait, landscape,
+and video it holds. Below 768px a row becomes a swipeable strip instead.
+{%- endcomment -%}
+{%- assign recap = page.recap -%}
+<style>
+    .recap-head {
+        max-width: 720px;
+        margin: 0 auto 64px;
+        text-align: center;
+    }
+    .recap-head h2 { color: #fff; margin: 10px 0 14px; }
+    .recap-head p { color: rgba(255, 255, 255, 0.7); margin: 0; }
+    .recap-stage { margin-bottom: 72px; }
+    .recap-stage:last-child { margin-bottom: 0; }
+    .recap-stage-bare { margin-bottom: 14px; }
+    .recap-finale { margin-top: 72px; }
+    .recap-lineup {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        grid-gap: 14px;
+        margin-bottom: 40px;
+    }
+    .recap-person {
+        position: relative;
+        padding: 18px 18px 16px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.03);
+        overflow: hidden;
+    }
+    .recap-person::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 18px;
+        right: 18px;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.12);
+    }
+    .recap-person-role {
+        display: block;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.5);
+    }
+    .recap-person-name {
+        display: block;
+        margin-top: 8px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 1.3;
+        color: #fff;
+    }
+    .recap-person-org {
+        display: block;
+        margin-top: 2px;
+        font-size: 13px;
+        color: #0fb9a8;
+    }
+    .recap-person.is-highlight {
+        border-color: rgba(15, 185, 168, 0.55);
+        background: rgba(15, 185, 168, 0.06);
+        box-shadow: 0 0 40px rgba(15, 185, 168, 0.18);
+    }
+    .recap-person.is-highlight::before {
+        background: linear-gradient(90deg, #0fb9a8, #8b5cf6);
+    }
+    .recap-stage-head {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 22px;
+    }
+    .recap-num {
+        flex: 0 0 auto;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 44px;
+        font-weight: 700;
+        line-height: 0.9;
+        margin-right: 20px;
+        padding-right: 20px;
+        border-right: 1px solid rgba(15, 185, 168, 0.35);
+    }
+    .recap-stage-title { color: #fff; font-size: 22px; margin: 0 0 4px; }
+    .recap-stage-text {
+        max-width: 760px;
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.66);
+    }
+    .recap-row { display: flex; }
+    .recap-item {
+        position: relative;
+        display: block;
+        flex: var(--r) 1 0%;
+        min-width: 0;
+        aspect-ratio: var(--r);
+        margin-right: 14px;
+        overflow: hidden;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: #0d1a2e;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .recap-item:last-child { margin-right: 0; }
+    .recap-item img,
+    .recap-item video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+    a.recap-item:hover {
+        border-color: rgba(15, 185, 168, 0.55);
+        box-shadow: 0 0 40px rgba(15, 185, 168, 0.22), 0 18px 40px rgba(0, 0, 0, 0.35);
+    }
+    a.recap-item:hover img { transform: scale(1.04); }
+    .recap-caption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 40px 16px 14px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 13.5px;
+        font-weight: 600;
+        line-height: 1.35;
+        letter-spacing: 0.02em;
+        color: #fff;
+        background: linear-gradient(to top, rgba(10, 19, 34, 0.9), rgba(10, 19, 34, 0));
+        pointer-events: none;
+    }
+    .recap-caption::before {
+        content: "";
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #0fb9a8;
+        margin-right: 9px;
+        vertical-align: middle;
+    }
+    @media (max-width: 767.98px) {
+        .recap-stage { margin-bottom: 52px; }
+        .recap-stage-bare { margin-bottom: 10px; }
+        .recap-lineup { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); grid-gap: 10px; margin-bottom: 28px; }
+        .recap-num { font-size: 34px; margin-right: 14px; padding-right: 14px; }
+        .recap-row {
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            margin: 0 -15px;
+            padding: 0 15px;
+        }
+        .recap-row::-webkit-scrollbar { display: none; }
+        .recap-item {
+            flex: 0 0 auto;
+            height: 56vw;
+            width: calc(56vw * var(--r));
+            aspect-ratio: auto;
+            margin-right: 10px;
+            scroll-snap-align: start;
+        }
+        .recap-finale { margin-top: 52px; }
+        .recap-row > .recap-item:only-child {
+            width: 100%;
+            height: auto;
+            aspect-ratio: var(--r);
+        }
+    }
+</style>
+
+<section class="section bg-blue recap">
+    <div class="container portfolio-gallery">
+        <div class="recap-head">
+            {% if recap.eyebrow %}<span class="eyebrow">{{ recap.eyebrow }}</span>{% endif %}
+            <h2>{{ recap.title }}</h2>
+            {% if recap.intro %}<p>{{ recap.intro }}</p>{% endif %}
+        </div>
+
+        {% if recap.lineup %}
+        <div class="recap-lineup">
+            {% for p in recap.lineup %}
+            <div class="recap-person{% if p.highlight %} is-highlight{% endif %}">
+                <span class="recap-person-role">{{ p.role }}</span>
+                <span class="recap-person-name">{{ p.name }}</span>
+                {% if p.org %}<span class="recap-person-org">{{ p.org }}</span>{% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% for stage in recap.stages %}
+        <div class="recap-stage{% unless stage.title %} recap-stage-bare{% endunless %}">
+            {% if stage.title %}
+            <div class="recap-stage-head">
+                <span class="recap-num gradient-text">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+                <div>
+                    <h3 class="recap-stage-title">{{ stage.title }}</h3>
+                    {% if stage.text %}<p class="recap-stage-text">{{ stage.text }}</p>{% endif %}
+                </div>
+            </div>
+            {% endif %}
+            <div class="recap-row">
+                {% for m in stage.media %}
+                {% if m.video %}
+                <div class="recap-item recap-video" style="--r: {{ m.ratio }};">
+                    <video muted loop playsinline preload="none" poster="{{ m.src | relative_url }}" aria-label="{{ m.alt }}"{% if m.position %} style="object-position: {{ m.position }};"{% endif %}>
+                        <source src="{{ m.video | relative_url }}" type="video/mp4">
+                    </video>
+                    {% if m.caption %}<span class="recap-caption">{{ m.caption }}</span>{% endif %}
+                </div>
+                {% else %}
+                <a class="recap-item popup-gallery" href="{{ m.src | relative_url }}" title="{{ m.caption | default: m.alt }}" style="--r: {{ m.ratio }};">
+                    <img src="{{ m.src | relative_url }}" alt="{{ m.alt }}" loading="lazy"{% if m.position %} style="object-position: {{ m.position }};"{% endif %}>
+                    {% if m.caption %}<span class="recap-caption">{{ m.caption }}</span>{% endif %}
+                </a>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+
+        {% if recap.finale %}
+        {% assign m = recap.finale %}
+        <div class="recap-finale recap-row">
+            <a class="recap-item popup-gallery" href="{{ m.src | relative_url }}" title="{{ m.caption | default: m.alt }}" style="--r: {{ m.ratio }};">
+                <img src="{{ m.src | relative_url }}" alt="{{ m.alt }}" loading="lazy"{% if m.position %} style="object-position: {{ m.position }};"{% endif %}>
+                {% if m.caption %}<span class="recap-caption">{{ m.caption }}</span>{% endif %}
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<script>
+    (function () {
+        // Clips play only while on screen, so neither downloads until it is
+        // scrolled to. Visitors who ask for reduced motion get controls instead.
+        var vids = document.querySelectorAll('.recap-video video');
+        if (!vids.length) return;
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduce || !('IntersectionObserver' in window)) {
+            for (var i = 0; i < vids.length; i++) vids[i].controls = true;
+            return;
+        }
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+                if (e.isIntersecting) {
+                    var p = e.target.play();
+                    if (p && p.catch) p.catch(function () {});
+                } else {
+                    e.target.pause();
+                }
+            });
+        }, { threshold: 0.5 });
+        for (var j = 0; j < vids.length; j++) io.observe(vids[j]);
+    })();
+</script>
