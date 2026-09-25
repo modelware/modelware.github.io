@@ -59,10 +59,28 @@ footer:
     url: /news/
   - name: Contact Us
     url: /contact.html
+  # Named one by one rather than gathered behind "Legal". Paddle reviewed the site before
+  # enabling payouts and reported that it could not locate a refund policy, a privacy notice or
+  # terms: all three were one click away behind a single word, and a reviewer, along with
+  # whatever crawls the page before one, looks for the documents by name. Legal stays beside
+  # them because it also indexes the EULA, the DPA and the subprocessors, which nothing else
+  # links to.
+  - name: Terms
+    url: /legal/terms/
+  - name: Privacy
+    url: /legal/privacy/
+  - name: Refunds
+    url: /legal/refunds/
   - name: Legal
     url: /legal/
 
 ############## Bottom menu ###############
 bottom:
+  - name: Terms
+    link: /legal/terms/
+  - name: Privacy
+    link: /legal/privacy/
+  - name: Refunds
+    link: /legal/refunds/
   - name: Legal
     link: /legal/
