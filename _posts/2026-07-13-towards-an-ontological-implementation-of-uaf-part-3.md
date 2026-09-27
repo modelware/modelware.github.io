@@ -2,6 +2,7 @@
 layout: post
 title: "Towards an Ontological Implementation of UAF, Part 3: Views Without Queries"
 series: "Towards an Ontological Implementation of UAF"
+series_hub: /uaf-ontology
 series_part: 3
 date: 2026-07-13 06:00:00 +0300
 author: "Maged Elaasar"
@@ -47,4 +48,4 @@ And once views are queries, the things UAF can only gesture at become expressibl
 
 When you evaluate any modeling standard's support for analysis, ask a sharp question: **does it specify its views as vocabularies, or as derivations, the patterns, constraints, and queries that actually produce them from a model?** A list of element types tells you what a view is *about*; only a derivation tells you how to *produce* it. Many standards, UAF included, stop at the vocabulary and leave the real work to a human and a diagram editor. Rendering the standard on OML Code is what turns those descriptions into something a reasoner and a query engine can actually execute, which is to say, it is what finally delivers the analysis the standard promised.
 
-*Curious how this analysis was done? [Explore OML Code](/oml-code), or [get in touch](/contact.html).*
+*Curious how this analysis was done? [Explore OML Code](/oml-code), or [get in touch](/contact).*

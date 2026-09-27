@@ -2,6 +2,7 @@
 layout: post
 title: "Towards an Ontological Implementation of UAF, Part 2: How Far Platform Independence Reaches"
 series: "Towards an Ontological Implementation of UAF"
+series_hub: /uaf-ontology
 series_part: 2
 date: 2026-07-08 06:00:00 +0300
 author: "Maged Elaasar"
@@ -47,4 +48,4 @@ A useful habit for any specification that calls itself platform-independent: sep
 
 This choice is about to matter in practice. UAF 2.0 is underway, targeting SysML v2 as its platform, which puts a sharp question to the standard: will the DMM stay genuinely platform-independent, with SysML v2 as one realization of it, or will it bind to SysML v2 directly? The finding of this part is a vote for the former. A platform-independent core is what lets a framework adopt a new platform without rewriting its concepts, and what keeps today's UAF models meaningful as the platform beneath them changes.
 
-*Curious how this analysis was done? [Explore OML Code](/oml-code), or [get in touch](/contact.html).*
+*Curious how this analysis was done? [Explore OML Code](/oml-code), or [get in touch](/contact).*

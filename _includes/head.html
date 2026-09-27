@@ -1,14 +1,16 @@
 <head>
   <meta charset="utf-8">
-  <title>{% if page.title %}{{ page.title }}{% unless page.title contains 'Modelware' %} | Modelware{% endunless %}{% else %}{{ site.title }}{% endif %}</title>
+  {% comment %}`seo_title` overrides the search/social title without changing the on-page heading.{% endcomment %}
+  {% assign doc_title = page.seo_title | default: page.title %}
+  <title>{% if doc_title %}{{ doc_title }}{% unless doc_title contains 'Modelware' %} | Modelware{% endunless %}{% else %}{{ site.title }}{% endif %}</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
-  {% if page.noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
+  {% if page.noindex %}<meta name="robots" content="noindex, nofollow">{% elsif page.type == "tag" or page.type == "category" %}{% if page.posts.size < 2 %}<meta name="robots" content="noindex, follow">{% endif %}{% endif %}
 
   {% include analytics-head.html %}
-  {% assign social_title = page.title | default: site.title %}
+  {% assign social_title = doc_title | default: site.title %}
   {% assign social_description = page.description | default: page.summary | default: site.description | strip_html | strip_newlines | truncate: 200 %}
   {% assign social_image = page.image | default: page.post_image | default: '/assets/images/oml-code-social.png' %}
   <meta name="description" content="{{ social_description }}">

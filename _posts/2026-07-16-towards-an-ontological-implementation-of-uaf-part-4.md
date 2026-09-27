@@ -2,6 +2,7 @@
 layout: post
 title: "Towards an Ontological Implementation of UAF, Part 4: Keeping a Large Specification Consistent"
 series: "Towards an Ontological Implementation of UAF"
+series_hub: /uaf-ontology
 series_part: 4
 date: 2026-07-16 06:00:00 +0300
 author: "Maged Elaasar"
@@ -44,4 +45,4 @@ That is why rendering a standard formally is worth doing even when consistency i
 
 When you gauge how maintainable a specification is, look at how many places state each fact, and how they are kept in step. Redundancy across prose, diagrams, and a profile is less a flaw than a standing maintenance burden, and the durable way to carry it is to generate the restatements from one source and let a formalism reject unresolved references. UAF already aims for that pipeline. An ontological rendering is a practical way to get closer to it, and to give the working group a running consistency check along the way.
 
-*Curious how this analysis was done? [Explore OML Code](/oml-code), or [get in touch](/contact.html).*
+*Curious how this analysis was done? [Explore OML Code](/oml-code), or [get in touch](/contact).*

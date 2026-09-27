@@ -12,7 +12,7 @@ main:
   - name: Research
     url: /research
   - name: Partners
-    url: /partners.html
+    url: /partners
   - name: Learn
     url: "#"
     submenu:
@@ -26,16 +26,16 @@ main:
     url: "#"
     submenu:
       - name: About Us
-        url: /about.html
+        url: /about
       - name: Contact Us
-        url: /contact.html
+        url: /contact
       - name: News
         url: /news/
 
 # Primary call-to-action button (rendered separately, right-aligned in the nav)
 cta:
   name: Book a Demo
-  url: /contact.html
+  url: /contact
 
 ########## footer menu ###############
 footer:
@@ -48,17 +48,17 @@ footer:
   - name: Research
     url: /research
   - name: Partners
-    url: /partners.html
+    url: /partners
   - name: Academy
     url: https://academy.modelware.io
   - name: The Axiom
     url: /axiom/
   - name: About Us
-    url: /about.html
+    url: /about
   - name: News
     url: /news/
   - name: Contact Us
-    url: /contact.html
+    url: /contact
   # Named one by one rather than gathered behind "Legal". Paddle reviewed the site before
   # enabling payouts and reported that it could not locate a refund policy, a privacy notice or
   # terms: all three were one click away behind a single word, and a reviewer, along with

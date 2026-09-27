@@ -2,6 +2,7 @@
 layout: post
 title: "Towards an Ontological Implementation of UAF, Part 1: UAF Was Built for This"
 series: "Towards an Ontological Implementation of UAF"
+series_hub: /uaf-ontology
 series_part: 1
 date: 2026-07-05 06:00:00 +0300
 author: "Maged Elaasar"
@@ -47,4 +48,4 @@ That is why this series is titled *towards* an ontological implementation rather
 
 There is a portable lesson here, and it is the real point of this first part. When you want to understand what a modeling standard is *actually* made of, its commitments, its coherence, its fitness for a purpose, try rendering it as an ontology. The discipline answers quickly and concretely: it shows you which concepts are solid, which relationships could be pinned down more precisely, and where a standard's own words and artifacts have drifted apart. This neurosymbolic reading is not only a way to *build* on a standard; it is one of the sharpest ways to *read* one. That UAF turns out to welcome the exercise, that its own foundation is an ontology, is the bonus. The technique would pay off even on a standard that resisted it.
 
-*Curious how this analysis was done? [Explore OML Code](/oml-code), or [get in touch](/contact.html).*
+*Curious how this analysis was done? [Explore OML Code](/oml-code), or [get in touch](/contact).*

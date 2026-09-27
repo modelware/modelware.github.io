@@ -2,6 +2,7 @@
 layout: post
 title: "Towards an Ontological Implementation of UAF, Part 5: Keeping the Profile and the Metamodel Aligned"
 series: "Towards an Ontological Implementation of UAF"
+series_hub: /uaf-ontology
 series_part: 5
 date: 2026-07-20 06:00:00 +0300
 author: "Maged Elaasar"
@@ -42,4 +43,4 @@ None of these is visible by reading. `ConceptItem` versus `ConceptRole` is one w
 
 Any standard that is both a conceptual specification and a technology profile carries this maintenance risk, because the profile is what tools implement, so if it drifts from the concepts, the concepts gradually lose ground. The remedy is not to assume the two agree, but to make agreement checkable: formalize both, map one onto the other, and let the mismatches show. Done in that spirit, the result is not a list of complaints but a short, precise reconciliation list, useful to anyone maintaining or implementing the standard.
 
-*Curious how this analysis was done? [Explore OML Code](/oml-code), or [get in touch](/contact.html).*
+*Curious how this analysis was done? [Explore OML Code](/oml-code), or [get in touch](/contact).*

@@ -1,0 +1,22 @@
+{%- comment -%}
+Minimal page for a retired URL. Set `redirect_to` in the front matter.
+GitHub Pages cannot send a 301, so this uses the closest equivalent Google
+honors: an instant meta refresh plus a canonical pointing at the target.
+The page is noindexed and kept out of the sitemap so only the target ranks.
+{%- endcomment -%}
+{%- assign target = page.redirect_to -%}
+{%- if target contains '://' -%}{%- assign target_abs = target -%}{%- else -%}{%- assign target_abs = target | absolute_url -%}{%- endif -%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting&hellip;</title>
+  <link rel="canonical" href="{{ target_abs }}">
+  <meta name="robots" content="noindex, follow">
+  <meta http-equiv="refresh" content="0; url={{ target_abs }}">
+  <script>location.replace({{ target_abs | jsonify }} + location.hash);</script>
+</head>
+<body>
+  <p>This page has moved to <a href="{{ target_abs }}">{{ target_abs }}</a>.</p>
+</body>
+</html>

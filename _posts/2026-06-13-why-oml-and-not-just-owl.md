@@ -54,4 +54,4 @@ Because OML restricts itself to a deterministic, well-defined subset, you can bu
 
 OML deliberately trades some of OWL's surface expressivity for uniformity, verifiability, and tool support, while remaining fully interoperable with OWL underneath. For systems engineering, that is exactly the trade you want: a real modeling layer for capturing engineering knowledge, sitting on a standard you never actually leave.
 
-Curious what that looks like in practice? [Explore OML Code](/oml-code), or [see it in action](/contact.html).
+Curious what that looks like in practice? [Explore OML Code](/oml-code), or [see it in action](/contact).

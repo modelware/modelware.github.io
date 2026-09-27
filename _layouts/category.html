@@ -16,10 +16,10 @@ description: "A journal of serious ideas in intelligent engineering. Perspective
               <div class="blog-item mb-5">
                 {% if post.post_image %}
                 <div class="blog-img position-relative">
-                  <a href="{{post.url | relative_url}}.html"><img src="{{post.post_image | relative_url}}" alt="{{post.title}}" class="img-fluid w-100"/></a>
+                  <a href="{{post.url | relative_url}}"><img src="{{post.post_image | relative_url}}" alt="{{post.title}}" class="img-fluid w-100"/></a>
                 </div>
                 {% endif %}
-                <h4 class="mt-4 mb-2"><a href="{{post.url | relative_url}}.html">{{post.title}}</a></h4>
+                <h4 class="mt-4 mb-2"><a href="{{post.url | relative_url}}">{{post.title}}</a></h4>
                 <div class="post-meta text-uppercase mb-3">
                   {% if post.author %}
                    <a href="#" class="text-color">by {{post.author}} </a>
@@ -42,7 +42,7 @@ description: "A journal of serious ideas in intelligent engineering. Perspective
         <h2 class="text-white mb-0">Modelware is your reliable modeling technology partner</h2>
       </div>
       <div class="col-lg-3">
-        <a href="contact.html" class="btn btn-primary">contact us</a>  
+        <a href="contact" class="btn btn-primary">contact us</a>  
       </div>
     </div>
   </div>

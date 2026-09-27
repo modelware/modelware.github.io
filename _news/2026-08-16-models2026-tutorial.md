@@ -37,7 +37,7 @@ permalink: /news/models2026-tutorial
           teams and projects rather than re-explained.
         </p>
         <p class="text-left">
-          Attending MODELS 2026? <a href="/contact.html">Get in touch</a> to connect with our team.
+          Attending MODELS 2026? <a href="/contact">Get in touch</a> to connect with our team.
         </p>
       </div>
     </div>

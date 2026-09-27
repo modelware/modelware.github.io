@@ -74,13 +74,13 @@ pagination:
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="blog-card">
                     {% if post.post_image %}
-                    <a href="{{ post.url | relative_url }}.html"><img class="blog-card-img" src="{{ post.post_image | relative_url }}" alt="{{ post.title }}" loading="lazy"></a>
+                    <a href="{{ post.url | relative_url }}"><img class="blog-card-img" src="{{ post.post_image | relative_url }}" alt="{{ post.title }}" loading="lazy"></a>
                     {% endif %}
                     <div class="blog-card-body">
                         <span class="blog-card-meta">{{ post.date | date_to_long_string }}{% if post.author %} &middot; {{ post.author }}{% endif %}</span>
-                        <h5><a href="{{ post.url | relative_url }}.html">{{ post.title }}</a></h5>
+                        <h5><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h5>
                         <p>{{ post.excerpt | strip_html | truncatewords: 22 }}</p>
-                        <a href="{{ post.url | relative_url }}.html" class="blog-card-more">Read More <i class="ti-arrow-right ml-1"></i></a>
+                        <a href="{{ post.url | relative_url }}" class="blog-card-more">Read More <i class="ti-arrow-right ml-1"></i></a>
                     </div>
                 </div>
             </div>

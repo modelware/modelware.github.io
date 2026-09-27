@@ -94,4 +94,4 @@ The metaclass pattern proper is something we are evaluating, and we do it the wa
 
 Upper ontologies are supposed to make large models more coherent. They only deliver on that promise when everyone building on them agrees on which of these two things they are doing.
 
-Want to see how OML makes these modeling commitments explicit and machine-checkable? [Explore OML Code](/oml-code), or [see it in action](/contact.html).
+Want to see how OML makes these modeling commitments explicit and machine-checkable? [Explore OML Code](/oml-code), or [see it in action](/contact).

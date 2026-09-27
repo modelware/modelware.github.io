@@ -2,6 +2,7 @@
 layout: post
 title: "Towards an Ontological Implementation of UAF, Part 6: What It Adds Up To"
 series: "Towards an Ontological Implementation of UAF"
+series_hub: /uaf-ontology
 series_part: 6
 date: 2026-07-23 06:00:00 +0300
 author: "Maged Elaasar"
@@ -49,4 +50,4 @@ This series set out to report what we learned about UAF, and it has. The natural
 
 Two things to close. The specific items this series points to, we are sharing with the OMG working group through the usual channels; an essay is no substitute for a proper writeup, and the aim throughout has been to give something back to a standard we have found genuinely useful. The timing is fortunate: a UAF 2.0 revision is already underway, targeting SysML v2, and several of these observations are the kind a major revision is well placed to fold in. And every finding here came from rendering and analyzing UAF on [OML Code](/oml-code): the same lens that read a standard this closely can be turned on your own models and specifications.
 
-*Curious how this analysis was done? [Explore OML Code](/oml-code), or [get in touch](/contact.html).*
+*Curious how this analysis was done? [Explore OML Code](/oml-code), or [get in touch](/contact).*

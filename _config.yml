@@ -140,7 +140,9 @@ tag_page_dir: tag
 tag_permalink_style: pretty
 
 jekyll-archives:
-  enabled: all
+  # Date archives (/2026/06/17/ etc.) are thin duplicates of the Axiom
+  # index, so only topical archives are generated.
+  enabled: [categories, tags]
   layout: category
   permalinks:
     category: "/category/:name/"

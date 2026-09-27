@@ -54,4 +54,4 @@ The complementary question, whether to teach the model the language rather than 
 
 **Beyond Syntax: Method-Compliant AI Assistance for Low-Resource Modeling Languages**, written with Sokhna Amar and Sambit Bhattacharya, has been accepted at [MDE Intelligence 2026](https://mde-intelligence.github.io/), the 8th Workshop on Artificial Intelligence and Model-driven Engineering, co-located with [MODELS 2026](https://conf.researchr.org/home/models-2026) in Málaga this October. Fittingly, this year's workshop theme is assessing the performance of MDE intelligence approaches, which is precisely the question the work takes up: once you accept that parsing is not the bar, what is, and how do you measure it?
 
-Details are on the [news page](/news/mdei2026). If you are working on the same problem, or living with the second kind of wrong, [we would like to hear about it](/contact.html).
+Details are on the [news page](/news/mdei2026). If you are working on the same problem, or living with the second kind of wrong, [we would like to hear about it](/contact).

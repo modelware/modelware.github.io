@@ -48,4 +48,4 @@ That is also why this belongs in the In Use track rather than a research track. 
 
 **Bridging the Semantic Web and Model-Based Systems Engineering with the Ontological Modeling Language**, written with Bentley Oakes, Eduard Kamburjan, Mohammad Hamdaqa, and Abdelwahab Hamou-Lhadj, has been accepted to the In Use track at [ISWC 2026](https://iswc2026.semanticweb.org/) in Bari, Italy, 25 to 29 October 2026. It walks through the OML principles on a systems engineering example, lays out the methodology and tooling around the language, and reports on where it is being used today.
 
-If you are at ISWC, come find us. If you would rather see it running first, [talk to us](/contact.html).
+If you are at ISWC, come find us. If you would rather see it running first, [talk to us](/contact).
