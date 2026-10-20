@@ -1,0 +1,80 @@
+# Prefill templates for the /contact form, selected with ?topic=<key>.
+# A link can also pass ?subject=... and ?message=... directly; those override
+# the topic's own values. The subject becomes the subject of the Formspree email.
+#
+#   <a href="/contact?topic=demo">Request a Demo</a>
+#   <a href="/contact?topic=demo&subject={{ 'Demo request: ' | append: page.title | url_encode }}">...</a>
+
+demo:
+  subject: "Demo request"
+  message: |-
+    I would like a demo of OML Code.
+
+    Organization:
+    Role:
+    Engineering domain:
+    What we hope to see:
+
+training-proposal:
+  subject: "Training proposal request"
+  message: |-
+    I would like a proposal for the Neurosymbolic Systems Engineering training program.
+
+    Organization:
+    Number of participants:
+    Preferred format (asynchronous, live online, or onsite):
+    Target timeframe:
+
+training-async:
+  subject: "Asynchronous training enrollment"
+  message: |-
+    I would like to enroll in the asynchronous Neurosymbolic Systems Engineering program.
+
+    Number of participants:
+    Questions:
+
+training-live-online:
+  subject: "Live online training inquiry"
+  message: |-
+    I am interested in a private live online cohort of the Neurosymbolic Systems Engineering program.
+
+    Organization:
+    Number of participants:
+    Time zones:
+    Target start date:
+
+training-onsite:
+  subject: "Onsite intensive training inquiry"
+  message: |-
+    I am interested in a private onsite intensive of the Neurosymbolic Systems Engineering program.
+
+    Organization:
+    Number of participants:
+    Location:
+    Target week:
+
+course:
+  subject: "Course registration"
+  message: |-
+    I would like to register for this course.
+
+    Organization:
+    Number of participants:
+    Questions:
+
+academy-notify:
+  subject: "Notify me about Modelware Academy"
+  message: |-
+    Please let me know when Modelware Academy opens.
+
+    Topics of interest:
+
+coe-partner:
+  subject: "Center of Excellence partner application"
+  message: |-
+    We would like to become an OML Code Center of Excellence partner.
+
+    Organization:
+    Website:
+    Region:
+    Areas of expertise:

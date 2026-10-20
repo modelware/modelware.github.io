@@ -55,7 +55,7 @@
     if(href.indexOf('/contact')!==-1){ track('cta_contact_click',{link_text:(link.textContent||'').trim().slice(0,60)}); }
   });
   var form=document.querySelector('form.contact__form');
-  if(form){ form.addEventListener('submit', function(){ track('generate_lead',{form:'contact'}); }); }
+  if(form){ form.addEventListener('submit', function(){ track('generate_lead',{form:'contact',topic:(form.elements.topic&&form.elements.topic.value)||'general'}); }); }
 })();
 </script>
 {% endif %}

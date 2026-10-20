@@ -361,7 +361,7 @@ seo_title: "OML Code: Ontological Modeling Language (OML) Platform for MBSE"
                     <h3 class="text-white mb-3">Let's Find the Right Fit for Your Organization</h3>
                     <p class="mb-4 text-white-50">Every engineering organization is different in size, security posture, and methodology. Tell us about yours and we will walk you through the platform and shape an arrangement that fits.</p>
                     <a href="/contact" class="btn btn-primary mr-2 mb-2">Talk to Us</a>
-                    <a href="/contact" class="btn btn-outline-light mb-2">Request a Demo</a>
+                    <a href="/contact?topic=demo" class="btn btn-outline-light mb-2">Request a Demo</a>
                 </div>
             </div>
         </div>

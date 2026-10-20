@@ -35,7 +35,7 @@ main:
 # Primary call-to-action button (rendered separately, right-aligned in the nav)
 cta:
   name: Book a Demo
-  url: /contact
+  url: /contact?topic=demo
 
 ########## footer menu ###############
 footer:

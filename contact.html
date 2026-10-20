@@ -68,6 +68,9 @@ permalink: /contact
 								</div>
 							</div>
 							<div class="col-12">
+								<input class="form-control mt-3" type="text" name="subject" id="subject" placeholder="Subject">
+								<input type="hidden" name="_subject" id="_subject" value="Website inquiry">
+								<input type="hidden" name="topic" id="topic" value="">
 								<textarea class="form-control mt-3 mb-4" name="message" id="message" cols="30" rows="6"
 									placeholder="Message"></textarea>
 								<button type="submit" class="btn btn-primary" value="Submit">Submit</button>
@@ -79,3 +82,25 @@ permalink: /contact
 		</div>
 	</div>
 </section>
+
+<script>
+	// Prefill from the link that brought the visitor here: ?topic=<key> picks a template
+	// from _data/contact_topics.yml, and ?subject= / ?message= override it.
+	(function () {
+		var topics = {{ site.data.contact_topics | jsonify }};
+		var params = new URLSearchParams(window.location.search);
+		var key = params.get("topic");
+		var topic = (key && topics[key]) || {};
+		var subject = params.get("subject") || topic.subject || "";
+		var message = params.get("message") || topic.message || "";
+		var form = document.querySelector("form.contact__form");
+		if (!form) return;
+		if (subject) form.elements.subject.value = subject;
+		if (message) form.elements.message.value = message;
+		if (topics[key]) form.elements.topic.value = key;
+		form.addEventListener("submit", function () {
+			var value = form.elements.subject.value.trim();
+			form.elements._subject.value = value ? value + " (modelware.io)" : "Website inquiry";
+		});
+	})();
+</script>
