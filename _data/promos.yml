@@ -31,7 +31,6 @@ promos:
   content: "How to leverage generative AI with ontologies and the standard semantic web stack. February 3, 2027 at UCLA, the day after INCOSE IW. Free, seats are limited."
   image: "/assets/images/events/onto-nexus-forum-2027-banner.jpg"
   button: "Register for free"
-  link: /research/events/onto-nexus-forum-2027#register
   until: 2027-02-03
 
 # Off the carousel until the training page goes live:
