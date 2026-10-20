@@ -1,0 +1,76 @@
+# Events listed on /research/events/. `date` (the first day) orders the list and decides
+# upcoming versus past; `when` is what the page shows. `url` is the event's own page:
+# a page under /research/events/ for events we host, the news item for the rest, or the
+# openCAESAR page for the forums held before this site listed events.
+
+- title: "onto:Nexus Forum 2027"
+  subtitle: "Neurosymbolic Systems Engineering"
+  kind: "Forum"
+  date: 2027-02-03
+  when: "February 3, 2027"
+  location: "UCLA, Los Angeles, California"
+  summary: "The 3rd Forum on Ontological Modeling and Analysis: how to leverage generative AI with ontologies and the standard semantic web stack to build an effective systems engineering methodology. Free, registration required."
+  image: "/assets/images/events/onto-nexus-forum-2027-flyer.jpg"
+  url: "/research/events/onto-nexus-forum-2027"
+  host: true
+
+- title: "onto:Nexus Workshop 2026"
+  subtitle: "International Workshop on Ontological Modeling and Analysis"
+  kind: "Workshop"
+  date: 2026-10-06
+  when: "October 6, 2026"
+  location: "MODELS 2026, Málaga, Spain"
+  summary: "The second edition of the onto:Nexus workshop, co-organized by Modelware, on ontological modeling and analysis for model-based software and systems engineering."
+  image: "/assets/images/onto-nexus2026.png"
+  url: "/news/onto-nexus2026"
+  host: true
+
+- title: "OML Code Tutorial"
+  subtitle: "Turning SME Knowledge into Reusable Ontological Modeling Methodologies"
+  kind: "Tutorial"
+  date: 2026-10-04
+  when: "October 2026"
+  location: "MODELS 2026, Málaga, Spain"
+  summary: "A hands-on tutorial at MODELS 2026 on capturing subject matter expertise as reusable ontological modeling methodologies in OML Code."
+  image: "/assets/images/models2026-tutorial.png"
+  url: "/news/models2026-tutorial"
+
+- title: "MDE Intelligence 2026"
+  subtitle: "Beyond Syntax: Method-Compliant AI Assistance for Low-Resource Modeling Languages"
+  kind: "Paper"
+  date: 2026-10-04
+  when: "October 2026"
+  location: "MODELS 2026, Málaga, Spain"
+  summary: "A paper on AI assistance that follows the modeling method, not just the syntax, for languages with little training data."
+  image: "/assets/images/mdei2026.png"
+  url: "/news/mdei2026"
+
+- title: "JAXA MBSE Symposium"
+  subtitle: "Engineering Models You Can Reason On and Compute Over"
+  kind: "Talk"
+  date: 2026-06-11
+  when: "June 11, 2026"
+  location: "Japan"
+  summary: "A talk introducing OML Code and the move from knowledge-centric to intelligence-centric engineering."
+  image: "/assets/images/jaxa2026.png"
+  url: "/news/jaxa2026"
+
+- title: "onto:Nexus Forum 2025"
+  subtitle: "International Forum on Ontological Modeling and Analysis"
+  kind: "Forum"
+  date: 2025-05-05
+  when: "May 5 to 6, 2025"
+  location: "NASA Jet Propulsion Laboratory, Pasadena, California"
+  summary: "The second onto:Nexus Forum, on using rigor, agility, and automation to improve systems engineering practice."
+  image: "/assets/images/onto-nexus.png"
+  url: "https://www.opencaesar.io/events/onto-Nexus-Forum-2025"
+
+- title: "onto:Nexus Forum 2024"
+  subtitle: "1st International Forum on Ontological Modeling and Analysis"
+  kind: "Forum"
+  date: 2024-01-31
+  when: "January 31, 2024"
+  location: "NASA Jet Propulsion Laboratory, Pasadena, California"
+  summary: "The first onto:Nexus Forum, on infusing rigor and agility in MBSE."
+  image: "/assets/images/onto-nexus.png"
+  url: "https://www.opencaesar.io/events/onto-Nexus-Forum-2024"

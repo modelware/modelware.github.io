@@ -1,0 +1,408 @@
+---
+layout: default
+title: "onto:Nexus Forum 2027"
+permalink: /research/events/onto-nexus-forum-2027
+description: "onto:Nexus Forum 2027, the 3rd Forum on Ontological Modeling and Analysis: Neurosymbolic Systems Engineering. February 3, 2027 at UCLA, Los Angeles, the day after INCOSE IW 2027. Free, registration required."
+seo_title: "onto:Nexus Forum 2027: Neurosymbolic Systems Engineering at UCLA"
+image: "/assets/images/events/onto-nexus-forum-2027-flyer.jpg"
+# The event as the flyer states it. The page below and the printable flyer
+# (/research/events/onto-nexus-forum-2027-flyer) both read this block, and the deploy renders
+# that flyer into the PDF and the JPG, so a change here reaches all three.
+event:
+  series: "onto:Nexus"
+  edition: "Forum 2027"
+  subtitle: "The 3rd Forum on Ontological Modeling and Analysis"
+  tagline: "Generative AI, grounded in formal semantics"
+  title: ["Neurosymbolic", "Systems Engineering"]
+  lead: "How to leverage generative AI with ontologies and the standard semantic web stack to build an effective systems engineering methodology."
+  facts:
+    - label: "Date"
+      value: "February 3, 2027"
+      detail: "Wednesday 9am - 5pm"
+    - label: "Venue"
+      value: "UCLA"
+      detail: "Los Angeles, California"
+    - label: "Admission"
+      value: "Free"
+      detail: "Registration required"
+  note: "The day after INCOSE IW 2027 in Torrance. Stay in Los Angeles one more day."
+  art: "/assets/images/events/onto-nexus-forum-2027-art.svg"
+  flyer_pdf: "/assets/events/onto-nexus-forum-2027-flyer.pdf"
+# The page mirrors the printed flyer (navy art, serif title, teal/purple/red rule, light details
+# band) so that someone arriving from it recognizes the event.
+# While program_final is false the program is marked tentative. Each session takes time, title,
+# and optionally text, speaker, and break: true.
+program_final: false
+program:
+  - time: "8:30"
+    title: "Registration and Coffee"
+    break: true
+  - time: "9:00"
+    title: "Welcome and Opening Remarks"
+  - time: "9:15"
+    title: "Keynote: The Case for Neurosymbolic Systems Engineering"
+    speaker: "Maged Elaasar"
+  - time: "10:15"
+    title: "Coffee Break"
+    break: true
+  - time: "10:30"
+    title: "Session 1"
+  - time: "11:30"
+    title: "Session 2"
+  - time: "12:30"
+    title: "Lunch and Networking"
+    break: true
+  - time: "13:30"
+    title: "Session 3"
+  - time: "14:30"
+    title: "Session 4"
+  - time: "15:15"
+    title: "Coffee Break"
+    break: true
+  - time: "15:30"
+    title: "Panel Discussion"
+  - time: "16:30"
+    title: "Open Discussion and Closing"
+  - time: "17:00"
+    title: "Close"
+    break: true
+faq:
+  - q: "How much does it cost to attend?"
+    a: "Nothing. Admission is free, and registration is required so we can plan seating."
+  - q: "Do I need to be registered for INCOSE IW 2027?"
+    a: "No. The forum is a separate event, open to anyone with an interest in the topic. It is held the day after INCOSE IW 2027 so attendees can stay in Los Angeles one more day."
+  - q: "Where exactly at UCLA is it held?"
+    a: "The building, room, and parking details will be sent to registered attendees and posted on this page."
+  - q: "Can I present my work at the forum?"
+    a: "We welcome proposals for talks. When you <a href=\"#register\">register</a>, add a title and a few sentences on what you would present."
+---
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,400&display=swap');
+
+    .onx { --navy: #0f1d38; --ink: #13213d; --muted: #5d6779; --teal: #3cc0b4; --purple: #7d6fd6; --red: #b3203a; --paper: #f4f5f8; --line: #c9ced8; }
+    .onx-serif { font-family: 'Source Serif 4', Georgia, serif; }
+
+    /* ---------- Hero: the top half of the flyer ---------- */
+    .onx-hero {
+        position: relative;
+        overflow: hidden;
+        padding: 150px 0 64px;
+        background: radial-gradient(120% 90% at 70% 0%, #17305a 0%, #0f1d38 55%, #0b1529 100%);
+        color: #fff;
+    }
+    .onx-hero .container { position: relative; }
+    .onx-art {
+        position: absolute;
+        top: 120px;
+        right: 0;
+        width: min(1100px, 92%);
+        pointer-events: none;
+    }
+    .onx-series { font-family: 'Source Serif 4', Georgia, serif; font-size: 30px; line-height: 1.2; }
+    .onx-series .colon { color: var(--teal); }
+    .onx-series em { color: #aebbd2; margin-left: 4px; }
+    .onx-edition { font-family: 'Source Serif 4', Georgia, serif; font-size: 15px; color: rgba(255, 255, 255, 0.8); }
+    .onx-tagline { margin: 300px 0 8px; font-size: 16px; color: #aebbd2; }
+    .onx-hero h1 {
+        font-family: 'Source Serif 4', Georgia, serif;
+        font-weight: 700;
+        font-size: 84px;
+        line-height: 1.02;
+        color: #fff;
+        margin: 0;
+        letter-spacing: -0.01em;
+    }
+    .onx-rule { display: flex; height: 5px; }
+    .onx-rule span { flex: 1; }
+    .onx-rule span:nth-child(1) { background: var(--teal); }
+    .onx-rule span:nth-child(2) { background: var(--purple); }
+    .onx-rule span:nth-child(3) { background: var(--red); }
+
+    /* ---------- Details: the bottom half of the flyer ---------- */
+    .onx-paper { background: var(--paper); color: var(--ink); padding: 64px 0 72px; }
+    .onx-lead { font-family: 'Source Serif 4', Georgia, serif; font-size: 34px; line-height: 1.35; color: var(--ink); max-width: 960px; margin: 0; }
+    /* QR code sits beside Admission, where the flyer puts it */
+    .onx-fact:nth-last-child(2) { flex: 0 0 auto; padding-right: 28px; }
+    .onx-qr { flex: 0 0 auto; align-self: center; }
+    .onx-qr .event-qr { display: block; width: 92px; height: 92px; }
+    /* The rule ends at the QR code, as on the flyer, rather than spanning the container */
+    .onx-facts { display: flex; flex-wrap: wrap; gap: 24px 0; width: fit-content; max-width: 100%; border-top: 1px solid var(--ink); margin-top: 40px; padding-top: 22px; }
+    .onx-fact { flex: 0 0 300px; padding-right: 20px; }
+    .onx-fact .label { font-size: 14px; color: var(--muted); margin-bottom: 4px; }
+    .onx-fact strong { display: block; font-size: 24px; font-weight: 700; color: var(--ink); line-height: 1.25; }
+    .onx-fact span { font-size: 16px; color: var(--ink); }
+    .onx-note { margin-top: 34px; padding-left: 16px; border-left: 4px solid var(--teal); font-size: 18px; color: var(--ink); }
+    .onx-actions { margin-top: 36px; }
+    .onx-actions .btn { padding: 14px 28px; }
+    .onx-actions .link { margin-left: 14px; font-weight: 600; color: var(--ink); white-space: nowrap; }
+    .onx-actions .link i { color: var(--teal); margin-right: 4px; }
+
+    /* ---------- Body sections ---------- */
+    .onx-section { padding: 84px 0; background: #fff; color: var(--ink); }
+    .onx-section + .onx-section { padding-top: 0; }
+    .onx-label { font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+    .onx-section h2 { font-family: 'Source Serif 4', Georgia, serif; font-weight: 700; font-size: 40px; color: var(--ink); margin-bottom: 22px; }
+    .onx-prose p { font-size: 18px; line-height: 1.75; color: #3a4558; margin-bottom: 18px; }
+
+    .onx-tentative { font-size: 15px; color: var(--muted); margin: -6px 0 22px; }
+    .onx-program { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+    .onx-slot { display: flex; gap: 28px; padding: 18px 0; border-bottom: 1px solid #e3e6ec; }
+    .onx-slot .time { flex: 0 0 64px; font-size: 16px; font-weight: 600; color: var(--muted); padding-top: 3px; }
+    .onx-slot h5 { font-family: 'Source Serif 4', Georgia, serif; font-size: 21px; font-weight: 700; color: var(--ink); margin: 0; }
+    .onx-slot p { margin: 4px 0 0; font-size: 16px; color: #3a4558; }
+    .onx-slot .speaker { margin-top: 4px; font-size: 14px; color: var(--muted); font-style: italic; }
+    .onx-slot.break h5 { font-weight: 400; font-style: italic; color: var(--muted); font-size: 18px; }
+
+    .onx-faq { border-top: 1px solid var(--ink); }
+    .onx-faq details { border-bottom: 1px solid #e3e6ec; }
+    .onx-faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 16px; padding: 18px 0; font-family: 'Source Serif 4', Georgia, serif; font-size: 20px; font-weight: 700; color: var(--ink); }
+    .onx-faq summary::-webkit-details-marker { display: none; }
+    .onx-faq summary i { color: var(--teal); font-size: 14px; padding-top: 6px; transition: transform .2s ease; }
+    .onx-faq details[open] summary i { transform: rotate(180deg); }
+    .onx-faq p { margin: 0 0 18px; font-size: 17px; line-height: 1.7; color: #3a4558; }
+    .onx-faq a, .onx-prose a { color: #0b8f82; }
+
+    .onx-close { background: var(--navy); color: #fff; padding: 64px 0; text-align: center; }
+    .onx-close h2 { font-family: 'Source Serif 4', Georgia, serif; font-weight: 700; font-size: 40px; color: #fff; margin-bottom: 10px; }
+    .onx-close p { color: #aebbd2; font-size: 18px; margin-bottom: 28px; }
+    .onx-close .btn { padding: 14px 30px; }
+    .onx-form { max-width: 680px; margin: 0 auto; text-align: left; }
+    .onx-form label, .onx-form legend { display: block; font-size: 14px; font-weight: 600; color: #dbe3f0; margin-bottom: 6px; }
+    .onx-form .form-control { height: 48px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.18); background: rgba(255, 255, 255, 0.06); color: #fff; }
+    .onx-form textarea.form-control { height: auto; padding-top: 12px; }
+    .onx-form .form-control::placeholder { color: #7f8ca5; }
+    .onx-form label .optional { font-weight: 400; color: #8e9bb3; }
+    .onx-form .form-control:focus { border-color: var(--teal); background: rgba(255, 255, 255, 0.1); box-shadow: none; }
+    .onx-choice { margin: 8px 0 26px; }
+    .onx-choice legend { font-size: 16px; font-weight: 500; line-height: 1.5; color: #fff; margin-bottom: 12px; }
+    .onx-choice label { display: inline-flex; align-items: center; gap: 8px; margin: 0 24px 0 0; font-size: 16px; font-weight: 500; color: #dbe3f0; cursor: pointer; }
+    .onx-choice input { accent-color: var(--teal); width: 18px; height: 18px; }
+    .onx-form .btn { width: 100%; }
+    .onx-close .onx-form-fine { font-size: 13.5px; color: #8e9bb3; margin: 14px 0 0; text-align: center; }
+    .onx-form-fine a, .onx-choice legend a { color: #6ee7db; }
+    .onx-form-status { margin-top: 14px; text-align: center; font-size: 17px; color: #6ee7db; }
+    .onx-form.done .form-row, .onx-form.done .form-group, .onx-form.done .btn, .onx-form.done .onx-form-fine { display: none; }
+
+    @media (max-width: 991px) {
+        .onx-hero h1 { font-size: 62px; }
+        .onx-tagline { margin-top: 240px; }
+        .onx-lead { font-size: 28px; }
+    }
+    @media (max-width: 767px) {
+        .onx-hero { padding-top: 120px; }
+        .onx-art { top: 150px; width: 150%; right: -25%; opacity: 0.8; }
+        .onx-series { font-size: 24px; }
+        .onx-tagline { margin-top: 220px; font-size: 14px; }
+        .onx-hero h1 { font-size: 42px; }
+        .onx-lead { font-size: 23px; }
+        .onx-facts { width: auto; }
+        .onx-fact { flex-basis: 100%; }
+        .onx-qr { display: none; }
+        .onx-actions .link { display: inline-block; margin: 14px 0 0; }
+        .onx-section { padding: 64px 0; }
+        .onx-section h2, .onx-close h2 { font-size: 31px; }
+        .onx-slot { gap: 16px; }
+        .onx-slot .time { flex-basis: 48px; }
+    }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "onto:Nexus Forum 2027: Neurosymbolic Systems Engineering",
+  "description": "The 3rd Forum on Ontological Modeling and Analysis. How to leverage generative AI with ontologies and the standard semantic web stack to build an effective systems engineering methodology.",
+  "startDate": "2027-02-03T09:00:00-08:00",
+  "endDate": "2027-02-03T17:00:00-08:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "isAccessibleForFree": true,
+  "image": "{{ page.image | absolute_url }}",
+  "url": "{{ page.url | absolute_url }}",
+  "location": {
+    "@type": "Place",
+    "name": "UCLA",
+    "address": { "@type": "PostalAddress", "addressLocality": "Los Angeles", "addressRegion": "CA", "addressCountry": "US" }
+  },
+  "organizer": { "@type": "Organization", "name": "Modelware", "url": "{{ site.url }}" },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "url": "{{ page.url | append: '#register' | absolute_url }}"
+  }
+}
+</script>
+
+<div class="onx">
+
+{% assign ev = page.event %}
+{% capture qr_url %}{{ page.url | absolute_url }}?utm_source=qr{% endcapture %}
+{% assign series_parts = ev.series | split: ':' %}
+
+<!-- Hero -->
+<section class="onx-hero">
+    <img class="onx-art" src="{{ ev.art | relative_url }}" alt="" aria-hidden="true">
+    <div class="container">
+        <div class="onx-series">{{ series_parts | join: '<span class="colon">:</span>' }} <em>{{ ev.edition }}</em></div>
+        <div class="onx-edition">{{ ev.subtitle }}</div>
+        <div class="onx-tagline">{{ ev.tagline }}</div>
+        <h1>{{ ev.title | join: '<br>' }}</h1>
+    </div>
+</section>
+<div class="onx-rule" aria-hidden="true"><span></span><span></span><span></span></div>
+
+<!-- Details -->
+<section class="onx-paper">
+    <div class="container">
+        <p class="onx-lead">{{ ev.lead }}</p>
+        <div class="onx-facts">
+            {% for f in ev.facts %}
+            <div class="onx-fact">
+                <div class="label">{{ f.label }}</div>
+                <strong>{{ f.value }}</strong>
+                <span>{{ f.detail }}</span>
+            </div>
+            {% endfor %}
+            <div class="onx-qr">{% include event_qr.html url=qr_url %}</div>
+        </div>
+        <div class="onx-note">{{ ev.note }}</div>
+        <div class="onx-actions">
+            <a href="#register" class="btn btn-primary mb-2">Register for Free</a>
+            <a class="link" href="{{ '/assets/events/onto-nexus-forum-2027.ics' | relative_url }}" download><i class="ti-calendar"></i>Add to calendar</a>
+            <a class="link" href="{{ ev.flyer_pdf | relative_url }}" target="_blank" rel="noopener"><i class="ti-download"></i>Flyer (PDF)</a>
+        </div>
+    </div>
+</section>
+
+<!-- About -->
+<section class="onx-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="onx-label">About</div>
+                <h2>This Forum</h2>
+            </div>
+            <div class="col-lg-8 onx-prose">
+                <p>Generative AI can draft requirements, propose architectures, and answer questions about a system in seconds. What it cannot do on its own is guarantee that its output follows the engineering method. That guarantee comes from formal semantics: ontologies that define a domain, and the standard semantic web stack to validate, reason over, and query what is built with them.</p>
+                <p>None of this is new or experimental. The semantic web stack has matured over 25 years as a family of W3C standards, with proven tooling and production use in industry and government. Grounding generative AI in it means building on a foundation that has already stood the test of time.</p>
+                <p class="mb-0">This one-day forum brings practitioners and researchers together on putting the two to work side by side. It is the third onto:Nexus Forum, following the <a href="https://www.opencaesar.io/events/onto-Nexus-Forum-2024" target="_blank" rel="noopener">2024</a> and <a href="https://www.opencaesar.io/events/onto-Nexus-Forum-2025" target="_blank" rel="noopener">2025</a> forums at NASA's Jet Propulsion Laboratory in Pasadena.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Program -->
+<section class="onx-section" id="program">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="onx-label">Program</div>
+                <h2>The Day</h2>
+            </div>
+            <div class="col-lg-8">
+                {% unless page.program_final %}<p class="onx-tentative">Tentative program, Pacific Time. Speakers will be announced here.</p>{% endunless %}
+                <ol class="onx-program">
+                    {% for s in page.program %}
+                    <li class="onx-slot{% if s.break %} break{% endif %}">
+                        <div class="time">{{ s.time }}</div>
+                        <div>
+                            <h5>{{ s.title }}</h5>
+                            {% if s.text %}<p>{{ s.text }}</p>{% endif %}
+                            {% if s.speaker %}<div class="speaker">{{ s.speaker }}</div>{% endif %}
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="onx-section" id="faq">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="onx-label">Questions</div>
+                <h2>Good to Know</h2>
+            </div>
+            <div class="col-lg-8">
+                <div class="onx-faq">
+                    {% for item in page.faq %}
+                    <details>
+                        <summary>{{ item.q }}<i class="ti-angle-down"></i></summary>
+                        <p>{{ item.a }}</p>
+                    </details>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Register -->
+<div class="onx-rule" aria-hidden="true"><span></span><span></span><span></span></div>
+<section class="onx-close" id="register">
+    <div class="container">
+        <h2>Save Your Seat</h2>
+        <p>February 3, 2027 at UCLA. Free, registration required. Seats are limited.</p>
+        <form class="onx-form" method="post" action="{{ site.contact_form_action }}">
+            <input type="hidden" name="_subject" value="Registration: onto:Nexus Forum 2027">
+            <input type="hidden" name="topic" value="onto-nexus-forum-2027">
+            <div class="form-row">
+                <div class="col-md-6 form-group">
+                    <label for="reg-name">Name</label>
+                    <input class="form-control" type="text" name="name" id="reg-name" autocomplete="name" required>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="reg-affiliation">Affiliation</label>
+                    <input class="form-control" type="text" name="affiliation" id="reg-affiliation" autocomplete="organization" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="reg-email">Email</label>
+                <input class="form-control" type="email" name="email" id="reg-email" autocomplete="email" required>
+            </div>
+            <div class="form-group">
+                <label for="reg-talk">Talk you would like to propose <span class="optional">(optional)</span></label>
+                <textarea class="form-control" name="talk_proposal" id="reg-talk" rows="4" placeholder="A title and a few sentences on what you would present"></textarea>
+            </div>
+            <fieldset class="form-group onx-choice">
+                <legend>Would you be interested in a hands-on tutorial on defining a neurosymbolic systems engineering methodology using <a href="/oml-code" target="_blank" rel="noopener">OML Code</a> the next day, February 4, 2027, for $500?</legend>
+                <label><input type="radio" name="tutorial_interest" value="Yes" required> Yes</label>
+                <label><input type="radio" name="tutorial_interest" value="No"> No</label>
+            </fieldset>
+            <button type="submit" class="btn btn-primary">Request Registration</button>
+            <p class="onx-form-fine">Your seat is confirmed once you receive a confirmation email from us. We use these details only to manage your registration and send you event updates. See our <a href="/legal/privacy/">Privacy Notice</a>.</p>
+            <div class="onx-form-status" role="status" aria-live="polite"></div>
+        </form>
+    </div>
+</section>
+
+<script>
+    // Submit in place so the attendee stays on the page; if the request fails for any reason,
+    // fall back to an ordinary post to Formspree, which shows its own confirmation.
+    (function () {
+        var form = document.querySelector(".onx-form");
+        if (!form || !window.fetch) return;
+        var status = form.querySelector(".onx-form-status");
+        var button = form.querySelector("button[type=submit]");
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            button.disabled = true;
+            status.textContent = "Sending...";
+            fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })
+                .then(function (response) {
+                    if (!response.ok) throw new Error(response.status);
+                    form.classList.add("done");
+                    status.textContent = "Thank you, we have received your registration. Since seats are limited, your seat is held only once we email you a confirmation, along with the venue details.";
+                })
+                .catch(function () { form.submit(); });
+        });
+    })();
+</script>
+
+</div>

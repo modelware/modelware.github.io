@@ -10,7 +10,14 @@ main:
   - name: Demos
     url: /demos
   - name: Research
-    url: /research
+    url: "#"
+    submenu:
+      - name: Overview
+        url: /research
+      - name: Publications
+        url: /research/publications/
+      - name: Events
+        url: /research/events/
   - name: Partners
     url: /partners
   - name: Learn
@@ -34,7 +41,7 @@ main:
 
 # Primary call-to-action button (rendered separately, right-aligned in the nav)
 cta:
-  name: Book a Demo
+  name: Request a Demo
   url: /contact?topic=demo
 
 ########## footer menu ###############

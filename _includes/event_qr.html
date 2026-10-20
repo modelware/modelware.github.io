@@ -1,0 +1,21 @@
+{%- comment -%}
+  A QR code for include.url, drawn in the browser so it always matches the URL it is given.
+  Modules take the text color of the surrounding element; the background stays transparent.
+{%- endcomment -%}
+<span class="event-qr" data-url="{{ include.url }}" role="img" aria-label="QR code linking to {{ include.url }}"></span>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>
+    document.querySelectorAll(".event-qr:not([data-drawn])").forEach(function (el) {
+        var qr = qrcode(0, "M");
+        qr.addData(el.dataset.url);
+        qr.make();
+        el.innerHTML = qr.createSvgTag({ cellSize: 4, margin: 0, scalable: true });
+        el.dataset.drawn = "true";
+    });
+</script>
+<style>
+    .event-qr { display: inline-block; color: #13213d; line-height: 0; }
+    .event-qr svg { width: 100%; height: 100%; }
+    .event-qr svg rect { fill: transparent; }
+    .event-qr svg path { fill: currentColor; }
+</style>

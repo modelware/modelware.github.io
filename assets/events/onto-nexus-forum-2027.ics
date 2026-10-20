@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Modelware//onto:Nexus Forum 2027//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:onto-nexus-forum-2027@modelware.io
+DTSTAMP:20261020T000000Z
+DTSTART:20270203T170000Z
+DTEND:20270204T010000Z
+SUMMARY:onto:Nexus Forum 2027: Neurosymbolic Systems Engineering
+LOCATION:UCLA\, Los Angeles\, California
+DESCRIPTION:The 3rd Forum on Ontological Modeling and Analysis. How to leverage generative AI with ontologies and the standard semantic web stack to build an effective systems engineering methodology. Free\, registration required. https://www.modelware.io/research/events/onto-nexus-forum-2027
+URL:https://www.modelware.io/research/events/onto-nexus-forum-2027
+END:VEVENT
+END:VCALENDAR

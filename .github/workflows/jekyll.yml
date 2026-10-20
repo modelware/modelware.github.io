@@ -47,6 +47,11 @@ jobs:
         env:
           JEKYLL_ENV: production
 
+      # Re-render event flyers (PDF and JPG) from their pages, so a change to an event's
+      # front matter reaches the flyer without anyone exporting it by hand.
+      - name: Render event flyers
+        run: scripts/render-flyer.sh _site
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 

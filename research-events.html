@@ -1,0 +1,172 @@
+---
+layout: default
+title: "Events"
+permalink: /research/events/
+description: "Forums, workshops, tutorials, and talks by Modelware Labs on ontological modeling, OML, and Neurosymbolic Systems Engineering, including the onto:Nexus series."
+seo_title: "Events: onto:Nexus Forum, Workshops, and Talks | Modelware Labs"
+---
+
+<style>
+    .evt-hero-lead {
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 18px;
+        line-height: 30px;
+        margin-top: 18px;
+        max-width: 780px;
+    }
+    .evt-section-head { max-width: 720px; margin: 0 auto 40px; }
+
+    /* Featured upcoming event */
+    .evt-feature {
+        display: flex;
+        border-radius: 20px;
+        overflow: hidden;
+        background: linear-gradient(160deg, #0a1322 0%, #16233c 100%);
+        box-shadow: 0 24px 50px rgba(16, 26, 46, 0.22);
+        margin-bottom: 30px;
+    }
+    .evt-feature-img { flex: 0 0 34%; max-width: 34%; }
+    .evt-feature-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+    .evt-feature-body { flex: 1 1 auto; padding: 40px 44px; color: #fff; }
+    .evt-feature-body h3 { color: #fff; font-family: 'Space Grotesk', sans-serif; font-size: 32px; margin: 10px 0 6px; }
+    .evt-feature-body .evt-sub { color: #6ee7db; font-family: 'Space Grotesk', sans-serif; font-size: 19px; margin-bottom: 18px; }
+    .evt-feature-body p { color: rgba(255, 255, 255, 0.72); font-size: 16px; line-height: 1.7; }
+    .evt-meta { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 20px 0 26px; font-size: 15px; color: rgba(255, 255, 255, 0.85); }
+    .evt-meta i { color: #0fb9a8; margin-right: 6px; }
+    .evt-kind {
+        display: inline-block;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11.5px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding: 5px 12px;
+        border-radius: 999px;
+        color: #0b8f82;
+        background: rgba(15, 185, 168, 0.12);
+    }
+    .evt-feature .evt-kind { color: #6ee7db; background: rgba(15, 185, 168, 0.16); }
+
+    /* Past events */
+    .evt-card {
+        display: flex;
+        gap: 22px;
+        align-items: flex-start;
+        padding: 22px;
+        border-radius: 16px;
+        background: #fff;
+        border: 1px solid #e8ecf2;
+        height: 100%;
+        transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .evt-card:hover { transform: translateY(-3px); box-shadow: 0 16px 34px rgba(16, 26, 46, 0.10); border-color: #0fb9a8; }
+    .evt-card img { flex: 0 0 120px; width: 120px; height: 120px; object-fit: cover; border-radius: 12px; }
+    .evt-card h5 { margin: 10px 0 4px; font-size: 18px; }
+    .evt-card h5 a { color: #101a2e; }
+    .evt-card .evt-sub { color: #475264; font-size: 14.5px; line-height: 1.5; margin-bottom: 8px; }
+    .evt-card .evt-when { color: #6b7686; font-size: 13.5px; }
+    .evt-card .evt-when i { color: #0fb9a8; margin-right: 4px; }
+
+    @media (max-width: 991px) {
+        .evt-feature { flex-direction: column; }
+        .evt-feature-img { max-width: 100%; max-height: 360px; }
+        .evt-feature-body { padding: 30px 26px; }
+    }
+    @media (max-width: 575px) {
+        .evt-card { flex-direction: column; }
+        .evt-card img { width: 100%; height: 180px; }
+        .evt-feature-body h3 { font-size: 26px; }
+    }
+</style>
+
+{% assign today = site.time | date: '%Y-%m-%d' %}
+{% assign events = site.data.events | sort: 'date' | reverse %}
+
+<!-- HERO -->
+<section class="page-title bg-blue" style="padding: 200px 0 100px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10">
+                <span class="eyebrow" style="color:#6ee7db;">Modelware Labs &middot; Events</span>
+                <h1 class="text-lg text-white mb-0 mt-2">Where the Community Meets</h1>
+                <p class="evt-hero-lead">Forums, workshops, and talks where we share our research. Join us at the next one.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- UPCOMING -->
+<section class="section" style="padding-top: 80px; padding-bottom: 40px;">
+    <div class="container">
+        <div class="text-center evt-section-head">
+            <span class="eyebrow">Save the Date</span>
+            <h3>Upcoming Events</h3>
+        </div>
+        {% assign upcoming = 0 %}
+        {% assign chronological = site.data.events | sort: 'date' %}
+        {% for ev in chronological %}
+        {% assign ev_date = ev.date | date: '%Y-%m-%d' %}
+        {% if ev_date >= today %}
+        {% assign upcoming = upcoming | plus: 1 %}
+        <div class="evt-feature">
+            <a class="evt-feature-img" href="{{ ev.url | relative_url }}"><img src="{{ ev.image | relative_url }}" alt="{{ ev.title }}"></a>
+            <div class="evt-feature-body">
+                <span class="evt-kind">{{ ev.kind }}</span>
+                <h3>{{ ev.title }}</h3>
+                <div class="evt-sub">{{ ev.subtitle }}</div>
+                <p class="mb-0">{{ ev.summary }}</p>
+                <div class="evt-meta">
+                    <span><i class="ti-calendar"></i>{{ ev.when }}</span>
+                    <span><i class="ti-location-pin"></i>{{ ev.location }}</span>
+                </div>
+                <a href="{{ ev.url | relative_url }}" class="btn btn-primary">Event Details <i class="ti-arrow-right ml-1"></i></a>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% if upcoming == 0 %}
+        <p class="text-center text-muted">No events are scheduled right now. Check back soon, or <a href="/contact">get in touch</a>.</p>
+        {% endif %}
+    </div>
+</section>
+
+<!-- PAST -->
+<section class="section bg-light" style="padding-top: 70px; padding-bottom: 70px;">
+    <div class="container">
+        <div class="text-center evt-section-head">
+            <span class="eyebrow">Recent</span>
+            <h3>Past Events</h3>
+            <p class="text-muted mb-0">Earlier editions of onto:Nexus and our talks, tutorials, and papers at the venues where the field gathers.</p>
+        </div>
+        <div class="row">
+            {% for ev in events %}
+            {% assign ev_date = ev.date | date: '%Y-%m-%d' %}
+            {% if ev_date < today %}
+            <div class="col-lg-6 mb-4">
+                <div class="evt-card">
+                    <a href="{{ ev.url | relative_url }}"><img src="{{ ev.image | relative_url }}" alt="{{ ev.title }}"></a>
+                    <div>
+                        <span class="evt-kind">{{ ev.kind }}</span>
+                        <h5><a href="{{ ev.url | relative_url }}">{{ ev.title }}</a></h5>
+                        <div class="evt-sub">{{ ev.subtitle }}</div>
+                        <div class="evt-when"><i class="ti-calendar"></i>{{ ev.when }} &middot; {{ ev.location }}</div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="section-sm" style="padding-top: 70px;">
+    <div class="container">
+        <div class="bg-blue rounded p-5 text-center text-white">
+            <h3 class="text-white mb-3">Bring onto:Nexus to Your Community</h3>
+            <p class="mb-4 text-white-50">Want us to speak at your event, co-host a workshop, or run a tutorial for your team or conference? We would love to hear from you.</p>
+            <a href="/contact" class="btn btn-primary mr-2 mb-2">Talk to Us</a>
+            <a href="/research" class="btn btn-outline-light mb-2">Explore Our Research</a>
+        </div>
+    </div>
+</section>

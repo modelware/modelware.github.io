@@ -151,3 +151,7 @@ feed:
   collections:
     posts:
       path: "/index.xml"
+
+# Build tooling, not site content
+exclude:
+  - scripts
