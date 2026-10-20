@@ -36,7 +36,6 @@ SERVER=$!
 trap 'kill $SERVER 2>/dev/null || true' EXIT
 for _ in $(seq 1 50); do curl -s -o /dev/null "http://127.0.0.1:$PORT/" && break; sleep 0.1; done
 
-TMP="$(mktemp -d)"
 for entry in "${FLYERS[@]}"; do
   read -r page pdf jpg <<<"$entry"
   url="http://127.0.0.1:$PORT/$page.html"
@@ -48,17 +47,8 @@ for entry in "${FLYERS[@]}"; do
   # The budget gives the web fonts and the QR script time to finish before capture.
   "$CHROME" --headless=new --disable-gpu --hide-scrollbars --no-sandbox --force-device-scale-factor=1 \
     --virtual-time-budget=8000 --no-pdf-header-footer --print-to-pdf="$OUT/$pdf" "$url" 2>/dev/null
+  # Chrome picks the screenshot format from the extension, so the JPG needs no converter.
   "$CHROME" --headless=new --disable-gpu --hide-scrollbars --no-sandbox --force-device-scale-factor=1 \
-    --window-size=1080,1350 --virtual-time-budget=8000 --screenshot="$TMP/flyer.png" "$url" 2>/dev/null
-  if command -v sips >/dev/null 2>&1; then
-    sips -s format jpeg -s formatOptions 85 "$TMP/flyer.png" --out "$OUT/$jpg" >/dev/null
-  elif command -v magick >/dev/null 2>&1; then
-    magick "$TMP/flyer.png" -quality 85 "$OUT/$jpg"
-  elif command -v convert >/dev/null 2>&1; then
-    convert "$TMP/flyer.png" -quality 85 "$OUT/$jpg"
-  else
-    # Without a converter the committed JPG stays in place; only the PDF is refreshed.
-    echo "render-flyer: no sips or ImageMagick, keeping the existing $jpg" >&2
-  fi
+    --window-size=1080,1350 --virtual-time-budget=8000 --screenshot="$OUT/$jpg" "$url" 2>/dev/null
   echo "render-flyer: $page -> $pdf, $jpg"
 done
