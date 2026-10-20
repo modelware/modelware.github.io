@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Renders each event flyer page into the PDF and JPG the site links to, so the flyer always
-# matches the event page's `event:` front matter.
+# Renders each event flyer and banner page into the PDF and JPG the site links to, so they
+# always match the event page's `event:` front matter.
 #
 #   scripts/render-flyer.sh [site_dir]
 #
@@ -11,8 +11,9 @@ set -euo pipefail
 
 cd "$(dirname "$0")/.."
 FLYERS=(
-  # flyer page                               PDF                                         JPG
-  "research/events/onto-nexus-forum-2027-flyer assets/events/onto-nexus-forum-2027-flyer.pdf assets/images/events/onto-nexus-forum-2027-flyer.jpg"
+  # page                                        PDF (- for none)                             JPG
+  "research/events/onto-nexus-forum-2027-flyer  assets/events/onto-nexus-forum-2027-flyer.pdf assets/images/events/onto-nexus-forum-2027-flyer.jpg"
+  "research/events/onto-nexus-forum-2027-banner -                                             assets/images/events/onto-nexus-forum-2027-banner.jpg"
 )
 
 if [[ $# -ge 1 ]]; then
@@ -43,12 +44,18 @@ for entry in "${FLYERS[@]}"; do
   # 404 page over the real flyer.
   status="$(curl -s -o /dev/null -w '%{http_code}' "$url")"
   [[ "$status" == "200" ]] || { echo "render-flyer: $url returned $status" >&2; exit 1; }
-  mkdir -p "$OUT/$(dirname "$pdf")" "$OUT/$(dirname "$jpg")"
+  # The page's own viewport meta gives the capture size (1080 x 1350, or 1600 x 900).
+  size="$(curl -s "$url" | sed -n 's/.*name="viewport" content="width=\([0-9]*\)".*/\1/p' | head -1)"
+  case "$size" in 1600) window=1600,900 ;; *) window=1080,1350 ;; esac
+  mkdir -p "$OUT/$(dirname "$jpg")"
   # The budget gives the web fonts and the QR script time to finish before capture.
-  "$CHROME" --headless=new --disable-gpu --hide-scrollbars --no-sandbox --force-device-scale-factor=1 \
-    --virtual-time-budget=8000 --no-pdf-header-footer --print-to-pdf="$OUT/$pdf" "$url" 2>/dev/null
+  if [[ "$pdf" != "-" ]]; then
+    mkdir -p "$OUT/$(dirname "$pdf")"
+    "$CHROME" --headless=new --disable-gpu --hide-scrollbars --no-sandbox --force-device-scale-factor=1 \
+      --virtual-time-budget=8000 --no-pdf-header-footer --print-to-pdf="$OUT/$pdf" "$url" 2>/dev/null
+  fi
   # Chrome picks the screenshot format from the extension, so the JPG needs no converter.
   "$CHROME" --headless=new --disable-gpu --hide-scrollbars --no-sandbox --force-device-scale-factor=1 \
-    --window-size=1080,1350 --virtual-time-budget=8000 --screenshot="$OUT/$jpg" "$url" 2>/dev/null
-  echo "render-flyer: $page -> $pdf, $jpg"
+    --window-size="$window" --virtual-time-budget=8000 --screenshot="$OUT/$jpg" "$url" 2>/dev/null
+  echo "render-flyer: $page -> $pdf, $jpg ($window)"
 done
