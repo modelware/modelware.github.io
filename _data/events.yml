@@ -1,7 +1,8 @@
 # Events listed on /research/events/. `date` (the first day) orders the list and decides
 # upcoming versus past; `when` is what the page shows. `url` is the event's own page:
 # a page under /research/events/ for events we host, the news item for the rest, or the
-# openCAESAR page for the forums held before this site listed events.
+# openCAESAR page for the forums held before this site listed events. `draft: true` keeps
+# an event off every listing until it is announced.
 
 - title: "onto:Nexus Forum 2027"
   subtitle: "Neurosymbolic Systems Engineering"
@@ -13,6 +14,7 @@
   image: "/assets/images/events/onto-nexus-forum-2027-flyer.jpg"
   url: "/research/events/onto-nexus-forum-2027"
   host: true
+  draft: true
 
 - title: "onto:Nexus Workshop 2026"
   subtitle: "International Workshop on Ontological Modeling and Analysis"

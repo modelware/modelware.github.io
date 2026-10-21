@@ -290,7 +290,7 @@ seo_title: "Modelware Labs: Research in Ontological Modeling and MBSE"
 {% assign chronological = site.data.events | sort: 'date' %}
 {% for ev in chronological %}
 {% assign ev_date = ev.date | date: '%Y-%m-%d' %}
-{% if ev_date >= today %}
+{% if ev_date >= today and ev.draft != true %}
 <section class="section" style="padding-top: 10px; padding-bottom: 50px;">
     <div class="container">
         <div class="row justify-content-center">

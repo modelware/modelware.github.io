@@ -155,3 +155,7 @@ feed:
 # Build tooling, not site content
 exclude:
   - scripts
+  # onto:Nexus Forum 2027 is not announced yet; its flyer, banner, art, and calendar file
+  # stay unpublished with its pages. Remove these two lines when it goes public.
+  - assets/events
+  - assets/images/events

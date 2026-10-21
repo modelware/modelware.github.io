@@ -106,7 +106,7 @@ seo_title: "Events: onto:Nexus Forum, Workshops, and Talks | Modelware Labs"
         {% assign chronological = site.data.events | sort: 'date' %}
         {% for ev in chronological %}
         {% assign ev_date = ev.date | date: '%Y-%m-%d' %}
-        {% if ev_date >= today %}
+        {% if ev_date >= today and ev.draft != true %}
         {% assign upcoming = upcoming | plus: 1 %}
         <div class="evt-feature">
             <a class="evt-feature-img" href="{{ ev.url | relative_url }}"><img src="{{ ev.image | relative_url }}" alt="{{ ev.title }}"></a>
@@ -141,7 +141,7 @@ seo_title: "Events: onto:Nexus Forum, Workshops, and Talks | Modelware Labs"
         <div class="row">
             {% for ev in events %}
             {% assign ev_date = ev.date | date: '%Y-%m-%d' %}
-            {% if ev_date < today %}
+            {% if ev_date < today and ev.draft != true %}
             <div class="col-lg-6 mb-4">
                 <div class="evt-card">
                     <a href="{{ ev.url | relative_url }}"><img src="{{ ev.image | relative_url }}" alt="{{ ev.title }}"></a>

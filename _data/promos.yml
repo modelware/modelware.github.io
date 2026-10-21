@@ -25,17 +25,34 @@
 ##################################################################
 
 promos:
-- badge: "Forum"
-  page: /research/events/onto-nexus-forum-2027
-  title: "onto:Nexus Forum 2027: Neurosymbolic Systems Engineering"
-  content: "How to leverage generative AI with ontologies and the standard semantic web stack. February 3, 2027 at UCLA, the day after INCOSE IW. Free, seats are limited."
-  image: "/assets/images/events/onto-nexus-forum-2027-banner.jpg"
-  button: "Register for free"
-  until: 2027-02-03
+- badge: "Course"
+  page: /news/sie502-arizona
 
-# Off the carousel until the training page goes live:
-# - badge: "Training"
-#   page: /oml-code/training
-#   content: "A corporate training program in Neurosymbolic Systems Engineering, from ontological modeling to AI-assisted engineering. Hands-on exercises and a full project, asynchronous or delivered to your team."
-#   image: "/assets/images/training/nse-training-promo.jpg"
-#   button: "Explore the program"
+- badge: "Workshop"
+  page: /news/onto-nexus2026
+
+- badge: "Tutorial"
+  page: /news/models2026-tutorial
+
+- badge: "Masterclass"
+  page: /news/gpmf2026
+
+- badge: "Panel"
+  page: /news/gpmf2026-panel
+
+
+- badge: "Course"
+  title: "Systems Engineering Professional"
+  content: "An interactive course on SE foundations and INCOSE SEP exam preparation. Work through the SE Handbook by modelling a real case study, with auto-graded quizzes, exercises, and mock exams."
+  image: "/assets/images/academy-sep-en.jpg"
+  link: "https://academy.modelware.io/catalog/sep-en"
+  button: "View the course"
+
+# onto:Nexus Forum 2027, back on once the forum is announced:
+# - badge: "Forum"
+#   page: /research/events/onto-nexus-forum-2027
+#   title: "onto:Nexus Forum 2027: Neurosymbolic Systems Engineering"
+#   content: "How to leverage generative AI with ontologies and the standard semantic web stack. February 3, 2027 at UCLA, the day after INCOSE IW. Free, seats are limited."
+#   image: "/assets/images/events/onto-nexus-forum-2027-banner.jpg"
+#   button: "Register for free"
+#   until: 2027-02-03

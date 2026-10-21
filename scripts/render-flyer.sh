@@ -40,10 +40,10 @@ for _ in $(seq 1 50); do curl -s -o /dev/null "http://127.0.0.1:$PORT/" && break
 for entry in "${FLYERS[@]}"; do
   read -r page pdf jpg <<<"$entry"
   url="http://127.0.0.1:$PORT/$page.html"
-  # Refuse to render anything but the flyer itself: a missing page would otherwise print the
-  # 404 page over the real flyer.
+  # Render only a page that is there: a missing one (unpublished, say) is skipped, never
+  # printed as the 404 page over the real flyer.
   status="$(curl -s -o /dev/null -w '%{http_code}' "$url")"
-  [[ "$status" == "200" ]] || { echo "render-flyer: $url returned $status" >&2; exit 1; }
+  if [[ "$status" != "200" ]]; then echo "render-flyer: skipping $page ($status)" >&2; continue; fi
   # The page's own viewport meta gives the capture size (1080 x 1350, or 1600 x 900).
   size="$(curl -s "$url" | sed -n 's/.*name="viewport" content="width=\([0-9]*\)".*/\1/p' | head -1)"
   case "$size" in 1600) window=1600,900 ;; *) window=1080,1350 ;; esac
