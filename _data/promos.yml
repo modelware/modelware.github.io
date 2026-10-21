@@ -26,26 +26,17 @@
 
 promos:
 - badge: "Course"
-  page: /news/sie502-arizona
-
-- badge: "Workshop"
-  page: /news/onto-nexus2026
-
-- badge: "Tutorial"
-  page: /news/models2026-tutorial
-
-- badge: "Masterclass"
-  page: /news/gpmf2026
-
-- badge: "Panel"
-  page: /news/gpmf2026-panel
-
+  title: "Neurosymbolic Systems Engineering"
+  content: "From ontological modeling to AI-assisted engineering, built on open standards with hands-on practice. An 8-week course from Modelware Academy: start anytime, with weekly office hours and a full project."
+  image: "/assets/images/academy-nsse.jpg"
+  link: "https://academy.modelware.io/courses/nsse"
+  button: "View the course"
 
 - badge: "Course"
   title: "Systems Engineering Professional"
   content: "An interactive course on SE foundations and INCOSE SEP exam preparation. Work through the SE Handbook by modelling a real case study, with auto-graded quizzes, exercises, and mock exams."
   image: "/assets/images/academy-sep-en.jpg"
-  link: "https://academy.modelware.io/catalog/sep-en"
+  link: "https://academy.modelware.io/courses/sep-en"
   button: "View the course"
 
 # onto:Nexus Forum 2027, back on once the forum is announced:
