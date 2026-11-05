@@ -15,6 +15,16 @@ demo:
     Engineering domain:
     What we hope to see:
 
+sysight:
+  subject: "Sysight access request"
+  message: |-
+    I would like access to Sysight, the SysML v2 model server.
+
+    Organization:
+    Role:
+    Use (noncommercial or commercial):
+    How we work with SysML v2 today:
+
 training-proposal:
   subject: "Training proposal request"
   message: |-

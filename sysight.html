@@ -1,0 +1,605 @@
+---
+layout: default
+title: Sysight
+permalink: /sysight
+description: "Sysight is a SysML v2 model server by Modelware: the whole model checked as you type, values computed, requirements verified, and SPARQL over it all, in VS Code, the command line, CI and AI agents."
+seo_title: "Sysight: SysML v2 Model Server for Diagnostics, Verification and SPARQL"
+image: /assets/images/sysight-promo.jpg
+---
+
+<style>
+    .sy-hero-title-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 8px;
+    }
+    .sy-hero-logo {
+        width: 72px;
+        height: 72px;
+        flex: 0 0 auto;
+    }
+    .sy-hero-tagline {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 24px;
+        line-height: 1.4;
+        font-weight: 600;
+        color: #fff;
+        margin: 18px 0 16px;
+        max-width: 640px;
+    }
+    .sy-hero-sub {
+        color: rgba(255, 255, 255, 0.68) !important;
+        font-size: 17px;
+        line-height: 1.7;
+        max-width: 600px;
+        margin-bottom: 28px;
+    }
+    .sy-hero-pills {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 22px;
+    }
+    .sy-pill {
+        display: inline-flex;
+        align-items: center;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12.5px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #6ee7db;
+        padding: 7px 16px;
+        border-radius: 999px;
+        border: 1px solid rgba(15, 185, 168, 0.5);
+        background: rgba(15, 185, 168, 0.08);
+        white-space: nowrap;
+    }
+    .sy-pill.purple {
+        color: #c4b5fd;
+        border-color: rgba(139, 92, 246, 0.55);
+        background: rgba(139, 92, 246, 0.1);
+    }
+    .sy-new {
+        display: inline-block;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #0a1322;
+        background: linear-gradient(90deg, #2dd4bf, #8b5cf6);
+        padding: 4px 10px;
+        border-radius: 999px;
+        vertical-align: middle;
+    }
+
+    /* Terminal panel */
+    .sy-term {
+        background: #0b1220;
+        border: 1px solid rgba(110, 231, 219, 0.18);
+        border-radius: 12px;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(139, 92, 246, 0.08);
+        overflow: hidden;
+        text-align: left;
+    }
+    .sy-term-bar {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        padding: 11px 14px;
+        background: rgba(255, 255, 255, 0.03);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .sy-term-bar span {
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.14);
+    }
+    .sy-term-bar em {
+        margin-left: 10px;
+        font-style: normal;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12.5px;
+        color: rgba(255, 255, 255, 0.45);
+    }
+    .sy-term pre {
+        margin: 0;
+        padding: 18px 20px 20px;
+        background: transparent;
+        border: 0;
+        color: #cfd8e6;
+        font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+        font-size: 13.5px;
+        line-height: 1.75;
+        white-space: pre;
+        overflow-x: auto;
+    }
+    .sy-term .p { color: #6ee7db; }
+    .sy-term .c { color: #6b7a93; }
+    .sy-term .ok { color: #34d399; }
+    .sy-term .k { color: #c4b5fd; }
+    .sy-term .n { color: #fbbf77; }
+    .sy-term .s { color: #93c5fd; }
+
+    /* Surfaces */
+    .sy-surface-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        margin-bottom: 16px;
+        background: rgba(15, 185, 168, 0.1);
+        color: #0fb9a8;
+    }
+    .sy-surface-icon.purple {
+        background: rgba(139, 92, 246, 0.1);
+        color: #8b5cf6;
+    }
+    .sy-card-desc {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+    .sy-code-inline {
+        display: inline-block;
+        margin-top: 14px;
+        font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+        font-size: 12.5px;
+        color: #101a2e;
+        background: #f1f5f9;
+        border: 1px solid #e2e8f0;
+        border-radius: 6px;
+        padding: 3px 9px;
+    }
+
+    /* Capabilities */
+    .sy-cap-head {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 10px;
+    }
+    .sy-cap-icon {
+        font-size: 24px;
+        line-height: 1;
+        margin-right: 12px;
+        margin-top: 2px;
+    }
+    .sy-cap-head h5 {
+        line-height: 1.3;
+        margin-bottom: 0;
+        flex: 1 1 auto;
+    }
+    .sy-cap-num {
+        flex: 0 0 auto;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        color: #0fb9a8;
+        margin-left: 8px;
+        opacity: 0.85;
+    }
+
+    /* Divider, as on the OML Code page */
+    .sy-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        max-width: 620px;
+        margin: 10px auto 58px;
+    }
+    .sy-divider::before,
+    .sy-divider::after {
+        content: "";
+        flex: 1 1 auto;
+        height: 2px;
+        border-radius: 2px;
+    }
+    .sy-divider::before { background: linear-gradient(90deg, rgba(15, 185, 168, 0), rgba(15, 185, 168, 0.5)); }
+    .sy-divider::after { background: linear-gradient(90deg, rgba(139, 92, 246, 0.5), rgba(139, 92, 246, 0)); }
+    .sy-divider span { width: 7px; height: 7px; border-radius: 50%; background: #0fb9a8; opacity: 0.75; }
+    .sy-divider span:nth-child(2) { width: 11px; height: 11px; background: #fff; border: 2.5px solid #6ee7db; opacity: 1; }
+    .sy-divider span:nth-child(3) { background: #8b5cf6; }
+
+    /* How it works pipeline */
+    .sy-flow {
+        display: flex;
+        align-items: stretch;
+        gap: 0;
+        flex-wrap: wrap;
+    }
+    .sy-flow-step {
+        flex: 1 1 0;
+        min-width: 200px;
+        position: relative;
+        padding: 26px 24px;
+        border-radius: 12px;
+        background: #fff;
+        border: 1px solid #e8edf3;
+        box-shadow: 0 6px 18px rgba(16, 26, 46, 0.05);
+    }
+    .sy-flow-arrow {
+        flex: 0 0 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #0fb9a8;
+        font-size: 18px;
+    }
+    .sy-flow-step .eyebrow { display: block; margin-bottom: 8px; }
+    .sy-flow-step h5 { margin-bottom: 8px; }
+    .sy-flow-step p { font-size: 14.5px; line-height: 1.6; margin-bottom: 0; }
+    @media (max-width: 991px) {
+        .sy-flow { flex-direction: column; }
+        .sy-flow-arrow { flex-basis: 36px; transform: rotate(90deg); }
+    }
+
+    .sy-check-list li {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 12px;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+    .sy-check-list li i {
+        margin-right: 10px;
+        margin-top: 5px;
+    }
+
+    .sy-license-card {
+        border-radius: 14px;
+        padding: 32px;
+        height: 100%;
+        border: 1px solid #e8edf3;
+        background: #fff;
+    }
+    .sy-license-card.featured {
+        background: #0a1322;
+        border-color: rgba(110, 231, 219, 0.25);
+        color: rgba(255, 255, 255, 0.75);
+    }
+    .sy-license-card.featured h4 { color: #fff; }
+    .sy-license-card h4 { margin-bottom: 6px; }
+    .sy-license-card .sy-license-for {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #0fb9a8;
+        margin-bottom: 18px;
+        display: block;
+    }
+    .sy-license-card ul { padding-left: 0; list-style: none; margin-bottom: 24px; }
+    .sy-license-card ul li { margin-bottom: 9px; font-size: 15px; }
+    .sy-license-card ul li i { color: #0fb9a8; margin-right: 8px; }
+
+    @media (max-width: 767px) {
+        .sy-hero-tagline { font-size: 20px; }
+        .sy-hero-logo { width: 56px; height: 56px; }
+        .sy-term pre { font-size: 12px; padding: 16px; }
+    }
+</style>
+
+<section class="page-title bg-blue" style="padding: 190px 0 100px;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <span class="sy-new mb-3">New from Modelware</span>
+                <div class="sy-hero-title-row mt-3">
+                    <img src="{{ '/assets/images/sysight-icon.svg' | relative_url }}" alt="" class="sy-hero-logo">
+                    <h2 class="mb-0 text-lg text-white">{{ page.title }}</h2>
+                </div>
+                <p class="sy-hero-tagline">Insight into your <span class="gradient-text">SysML v2</span> models, live</p>
+                <div class="sy-hero-pills">
+                    <span class="sy-pill">SysML v2</span>
+                    <span class="sy-pill">KerML</span>
+                    <span class="sy-pill purple">SPARQL</span>
+                    <span class="sy-pill purple">MCP</span>
+                </div>
+                <p class="sy-hero-sub">A model server for each workspace that keeps the whole model loaded and current. It checks every file as you type, computes values with their units, decides whether requirements are satisfied, and answers SPARQL queries, for your editor, your terminal, your CI pipeline and your AI agents alike.</p>
+                <a href="/contact?topic=sysight" class="btn btn-primary mr-2 mb-2">Get Sysight</a>
+                <a href="#how-it-works" class="btn btn-outline-light mb-2">See How It Works</a>
+            </div>
+            <div class="col-lg-6">
+                <div class="sy-term" role="img" aria-label="A terminal session running sysight check, evaluate and verify on a vehicle model">
+                    <div class="sy-term-bar"><span></span><span></span><span></span><em>~/vehicle-model</em></div>
+<pre><span class="p">$</span> sysight check
+<span class="c">sysight: starting the server ... ready in 0.1 s</span>
+1 files: <span class="ok">0 errors</span>, 0 warnings, 0 notes
+
+<span class="p">$</span> sysight evaluate VehicleModel::car.mass --unit kg
+<span class="n">1130 kg</span>
+
+<span class="p">$</span> sysight verify VehicleModel::carMass
+VehicleModel::carMass: <span class="ok">satisfied</span>
+
+<span class="p">$</span> sysight query <span class="s">'SELECT ?part WHERE { ?part a sysml:Part }'</span>
+<span class="c">answered over the model and its libraries</span></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="padding-top: 70px; padding-bottom: 70px;">
+    <div class="container">
+
+        <div class="row mb-5" id="surfaces">
+            <div class="col-12 text-center mb-5">
+                <span class="eyebrow">One Model, Every Client</span>
+                <h3>The Same Live Model, Wherever You Work</h3>
+                <p class="text-muted mb-0">One server per workspace answers them all, so the editor, the command line and the agent never disagree about the model.<br>Even unsaved edits are seen by everyone attached.</p>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card border-0 shadow-sm h-100 platform-card">
+                    <div class="card-body">
+                        <div class="sy-surface-icon"><i class="ti-layout-tab-window"></i></div>
+                        <h5 class="mb-2">VS Code</h5>
+                        <p class="mb-0 sy-card-desc">The <strong>Sysight: SysML v2 Insight</strong> extension: diagnostics in the Problems view, navigation into the libraries, values and verdicts on hover and inline, and a query panel with sessions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card border-0 shadow-sm h-100 platform-card">
+                    <div class="card-body">
+                        <div class="sy-surface-icon"><i class="ti-angle-double-right"></i></div>
+                        <h5 class="mb-2">Command Line</h5>
+                        <p class="mb-0 sy-card-desc">The <code>sysight</code> command checks, evaluates, verifies, queries, exports and updates. It starts the server on first use, then answers in milliseconds.</p>
+                        <span class="sy-code-inline">sysight check</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card border-0 shadow-sm h-100 platform-card">
+                    <div class="card-body">
+                        <div class="sy-surface-icon purple"><i class="ti-bolt"></i></div>
+                        <h5 class="mb-2">AI Agents</h5>
+                        <p class="mb-0 sy-card-desc">A Model Context Protocol server, so Claude Code and other agents read, query, evaluate, verify and change the same live model, and see the diagnostics each change adds or removes.</p>
+                        <span class="sy-code-inline">sysight mcp</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card border-0 shadow-sm h-100 platform-card">
+                    <div class="card-body">
+                        <div class="sy-surface-icon"><i class="ti-infinite"></i></div>
+                        <h5 class="mb-2">CI and Other Editors</h5>
+                        <p class="mb-0 sy-card-desc">Headless in pipelines, with exit codes for errors and violated requirements. Any LSP editor, Neovim among them, connects through <code>sysight attach</code>.</p>
+                        <span class="sy-code-inline">sysight attach</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sy-divider" aria-hidden="true"><span></span><span></span><span></span></div>
+
+        <div class="mb-5" id="capabilities">
+            <div class="text-center mb-5">
+                <span class="eyebrow">Capabilities</span>
+                <h3>From Textual Notation to Engineering Answers</h3>
+                <p class="text-muted mb-0">Everything Sysight does is one endpoint of the model server, with the same name and parameters from every client.</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card border-0 shadow-sm h-100 platform-card">
+                        <div class="card-body">
+                            <div class="sy-cap-head">
+                                <div class="text-teal"><i class="ti-pulse sy-cap-icon"></i></div>
+                                <h5>Whole-Workspace Diagnostics</h5>
+                                <span class="sy-cap-num">01</span>
+                            </div>
+                            <p class="mb-0 sy-card-desc">Syntax, names that do not resolve, the specification's validation rules, and asserted constraints and requirements that fail. Every file a change affects is re-checked, including files you have not opened.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card border-0 shadow-sm h-100 platform-card">
+                        <div class="card-body">
+                            <div class="sy-cap-head">
+                                <div class="text-teal"><i class="ti-ruler-alt-2 sy-cap-icon"></i></div>
+                                <h5>Computed Values, With Units</h5>
+                                <span class="sy-cap-num">02</span>
+                            </div>
+                            <p class="mb-0 sy-card-desc">Evaluate any attribute or expression in the context of an element. Results come in the unit you ask for, checked against its dimension, and appear inline in the editor beside the expressions that produce them.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card border-0 shadow-sm h-100 platform-card">
+                        <div class="card-body">
+                            <div class="sy-cap-head">
+                                <div class="text-teal"><i class="ti-check-box sy-cap-icon"></i></div>
+                                <h5>Requirement Verification</h5>
+                                <span class="sy-cap-num">03</span>
+                            </div>
+                            <p class="mb-0 sy-card-desc">Constraints, requirements and <code>satisfy</code> statements decided as satisfied, violated or undetermined, with the reason why. A requirement's verdict is visible where it is written, on hover.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card border-0 shadow-sm h-100 platform-card">
+                        <div class="card-body">
+                            <div class="sy-cap-head">
+                                <div class="text-purple"><i class="ti-search sy-cap-icon"></i></div>
+                                <h5>SPARQL Over the Model</h5>
+                                <span class="sy-cap-num">04</span>
+                            </div>
+                            <p class="mb-0 sy-card-desc">SPARQL 1.1 with entailment: asking for parts finds every kind of part. Evaluation functions bring values and verdicts into query results, and the query panel helps you write queries and charts the answers.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card border-0 shadow-sm h-100 platform-card">
+                        <div class="card-body">
+                            <div class="sy-cap-head">
+                                <div class="text-purple"><i class="ti-pencil-alt sy-cap-icon"></i></div>
+                                <h5>Safe Model Updates</h5>
+                                <span class="sy-cap-num">05</span>
+                            </div>
+                            <p class="mb-0 sy-card-desc">Change the model through an update API applied as edits to the files' text, all or nothing. Each change reports its diff and the diagnostics it added and removed, with a dry run to preview it first.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card border-0 shadow-sm h-100 platform-card">
+                        <div class="card-body">
+                            <div class="sy-cap-head">
+                                <div class="text-teal"><i class="ti-exchange-vertical sy-cap-icon"></i></div>
+                                <h5>Notation and RDF, Both Ways</h5>
+                                <span class="sy-cap-num">06</span>
+                            </div>
+                            <p class="mb-0 sy-card-desc">Export the model as textual notation or as RDF (TriG, N-Quads, Turtle), one named graph per file, and import RDF or <code>.kpar</code> archives back as notation. The round trip parses to the same graphs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sy-divider" aria-hidden="true"><span></span><span></span><span></span></div>
+
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-5 mb-4 mb-lg-0">
+                <span class="eyebrow">In Your Editor</span>
+                <h3 class="mb-3">Write the Model. Read the Answers Beside It.</h3>
+                <p class="mb-4">Sysight turns VS Code into a SysML v2 workbench that understands the model, not only its syntax.</p>
+                <ul class="list-unstyled sy-check-list mb-0">
+                    <li><i class="ti-check text-teal"></i><span><strong>Navigation</strong> with outline, go to definition and find references, across files and into the standard libraries.</span></li>
+                    <li><i class="ti-check text-teal"></i><span><strong>Insight on hover:</strong> what an element is, what it specializes and redefines, its computed value and its verdict.</span></li>
+                    <li><i class="ti-check text-teal"></i><span><strong>The Sysight panel</strong> for queries, with completion from the ontology, saved queries committed with the model, and answers as tables, charts or headlines.</span></li>
+                    <li><i class="ti-check text-teal"></i><span><strong>Sessions</strong> of queries and answers to rename, search and reopen later.</span></li>
+                </ul>
+            </div>
+            <div class="col-lg-7">
+                <div class="sy-term" role="img" aria-label="A SysML v2 model of a vehicle with a mass requirement">
+                    <div class="sy-term-bar"><span></span><span></span><span></span><em>Vehicle.sysml</em></div>
+<pre><span class="k">package</span> VehicleModel {
+    <span class="k">private import</span> SI::*;
+
+    <span class="k">part def</span> Vehicle {
+        <span class="c">// evaluates to 1130 kg</span>
+        <span class="k">attribute</span> mass :> ISQ::mass = engine.mass + chassis.mass;
+        <span class="k">part</span> engine  { <span class="k">attribute</span> mass :> ISQ::mass = <span class="n">180 [kg]</span>; }
+        <span class="k">part</span> chassis { <span class="k">attribute</span> mass :> ISQ::mass = <span class="n">950 [kg]</span>; }
+    }
+
+    <span class="k">requirement def</span> MassLimit {
+        <span class="k">subject</span> vehicle : Vehicle;
+        <span class="k">require constraint</span> { vehicle.mass &lt;= <span class="n">1500 [kg]</span> }
+    }
+
+    <span class="k">part</span> car : Vehicle;
+    <span class="k">requirement</span> carMass : MassLimit;                  <span class="c">// </span><span class="ok">satisfied</span>
+    <span class="k">satisfy</span> carMass <span class="k">by</span> car;
+}</pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="sy-divider" aria-hidden="true"><span></span><span></span><span></span></div>
+
+        <div class="mb-5" id="how-it-works">
+            <div class="text-center mb-5">
+                <span class="eyebrow">How It Works</span>
+                <h3>A SysML v2 Model, Held as a Knowledge Graph</h3>
+                <p class="text-muted mb-0">Sysight is written in Rust and brings the semantic web foundations behind OML Code to SysML v2.</p>
+            </div>
+            <div class="sy-flow">
+                <div class="sy-flow-step">
+                    <span class="eyebrow">01 &middot; Parse</span>
+                    <h5>Textual Notation</h5>
+                    <p>Your <code>.sysml</code> and <code>.kerml</code> files are read with the parser of Open-MBEE's sysml-toolkit. The standard KerML and SysML libraries are built in.</p>
+                </div>
+                <div class="sy-flow-arrow" aria-hidden="true"><i class="ti-arrow-right"></i></div>
+                <div class="sy-flow-step">
+                    <span class="eyebrow">02 &middot; Store</span>
+                    <h5>RDF Knowledge Graph</h5>
+                    <p>Each file becomes a named graph in an embedded Oxigraph store, typed by OWL ontologies shaped by the notation, so classes are named after keywords. Names re-resolve incrementally as files change.</p>
+                </div>
+                <div class="sy-flow-arrow" aria-hidden="true"><i class="ti-arrow-right"></i></div>
+                <div class="sy-flow-step">
+                    <span class="eyebrow">03 &middot; Answer</span>
+                    <h5>Model Server</h5>
+                    <p>One server per workspace serves HTTP, LSP and MCP from the same graph: diagnostics, values, verdicts and queries, plus updates written back as notation.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="sy-divider" aria-hidden="true"><span></span><span></span><span></span></div>
+
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <span class="eyebrow">Why It Matters</span>
+                <h3 class="mb-3">Models That Answer Questions, Not Just Store Them</h3>
+                <p class="mb-3">SysML v2 gives systems engineering a precise textual language and a formal semantics. Sysight puts that precision to work: the model is checked, computed and verified continuously, so problems surface while you write, not at the next review.</p>
+                <p class="mb-0">Because the model lives in a standard knowledge graph, the same facts that drive your editor drive your reports, your pipeline and your AI assistants. An agent that can query, evaluate and verify the model is an agent whose answers you can check.</p>
+            </div>
+            <div class="col-lg-6">
+                <div class="bg-light rounded border p-4">
+                    <h5 class="mb-3">What Teams Gain</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><i class="ti-check text-teal mr-2"></i> <strong>Fast feedback:</strong> errors and violated requirements as you type, across the workspace</li>
+                        <li class="mb-2"><i class="ti-check text-teal mr-2"></i> <strong>One source of truth</strong> for editors, scripts, pipelines and agents</li>
+                        <li class="mb-2"><i class="ti-check text-teal mr-2"></i> <strong>Open standards:</strong> SysML v2, KerML, RDF, OWL, SPARQL, LSP and MCP</li>
+                        <li class="mb-2"><i class="ti-check text-teal mr-2"></i> <strong>Grounded AI:</strong> agents that change the model and see the consequences</li>
+                        <li class="mb-0"><i class="ti-check text-teal mr-2"></i> <strong>Runs anywhere:</strong> macOS, Linux and Windows, desktop or headless</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="sy-divider" aria-hidden="true"><span></span><span></span><span></span></div>
+
+        <div class="mb-5" id="licensing">
+            <div class="text-center mb-5">
+                <span class="eyebrow">Get Sysight</span>
+                <h3>Free for Research and Learning. Licensed for Industry.</h3>
+                <p class="text-muted mb-0">Prebuilt for macOS (Apple silicon and Intel), Linux (x86-64 and ARM) and Windows (x86-64).</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-6 mb-4">
+                    <div class="sy-license-card">
+                        <h4>Noncommercial</h4>
+                        <span class="sy-license-for">Students, researchers, educators</span>
+                        <ul>
+                            <li><i class="ti-check"></i> Every capability, the command line, VS Code and MCP</li>
+                            <li><i class="ti-check"></i> Standard KerML and SysML libraries built in</li>
+                            <li><i class="ti-check"></i> PolyForm Noncommercial License 1.0.0</li>
+                        </ul>
+                        <a href="/contact?topic=sysight" class="btn btn-outline-primary">Request Access</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6 mb-4">
+                    <div class="sy-license-card featured">
+                        <h4>Commercial</h4>
+                        <span class="sy-license-for">Engineering organizations</span>
+                        <ul>
+                            <li><i class="ti-check"></i> A commercial license sized to your teams</li>
+                            <li><i class="ti-check"></i> CI integration and deployment support</li>
+                            <li><i class="ti-check"></i> Direct access to the Modelware team</li>
+                        </ul>
+                        <a href="/contact?topic=sysight&amp;subject={{ 'Sysight commercial license' | url_encode }}" class="btn btn-primary">Talk to Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="bg-blue rounded p-5 text-center text-white">
+                    <h3 class="text-white mb-3">Bring Insight to Your SysML v2 Models</h3>
+                    <p class="mb-4 text-white-50">Tell us about your models and how your teams work with them, and we will help you get Sysight running in your editor, your pipeline and your agents.</p>
+                    <a href="/contact?topic=sysight" class="btn btn-primary mr-2 mb-2">Get Sysight</a>
+                    <a href="/oml-code" class="btn btn-outline-light mb-2">Explore OML Code</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

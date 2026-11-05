@@ -25,6 +25,13 @@
 ##################################################################
 
 promos:
+- badge: "New"
+  page: /sysight
+  title: "Sysight: SysML v2 Insight"
+  content: "A model server for SysML v2: the whole model checked as you type, values computed and requirements verified where they are written, and SPARQL over it all, for VS Code, the command line, CI and AI agents."
+  image: "/assets/images/sysight-promo.jpg"
+  button: "Meet Sysight"
+
 - badge: "Course"
   title: "Neurosymbolic Systems Engineering"
   content: "From ontological modeling to AI-assisted engineering, built on open standards with hands-on practice. An 8-week course from Modelware Academy: start anytime, with weekly office hours and a full project."

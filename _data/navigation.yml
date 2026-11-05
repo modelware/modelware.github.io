@@ -1,10 +1,12 @@
 #Please use the main menu items under the "name"
 main:
-  - name: OML Code
+  - name: Products
     url: "#"
     submenu:
-      - name: Overview
+      - name: OML Code
         url: /oml-code
+      - name: Sysight
+        url: /sysight
       - name: Marketplace
         url: /marketplace
   - name: Demos
@@ -48,6 +50,8 @@ cta:
 footer:
   - name: OML Code
     url: /oml-code
+  - name: Sysight
+    url: /sysight
   - name: Marketplace
     url: /marketplace
   - name: Demos
