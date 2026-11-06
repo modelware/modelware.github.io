@@ -2,85 +2,129 @@
 layout: default
 title: Sysight
 permalink: /sysight
-description: "Sysight is a SysML v2 model server by Modelware: the whole model checked as you type, values computed, requirements verified, and SPARQL over it all, in VS Code, the command line, CI and AI agents."
-seo_title: "Sysight: SysML v2 Model Server for Diagnostics, Verification and SPARQL"
+description: "Sysight by Modelware lets you query SysML v2 models with SPARQL, and check, compute and verify them as you type, in VS Code, the command line, CI and AI agents. Free to use."
+seo_title: "Sysight: Query SysML v2 Models with SPARQL"
 image: /assets/images/sysight-promo.jpg
 ---
 
 <style>
+    /* The theme capitalizes every word of a heading, which would print "SysML V2". */
+    .sy-hero h1, .sy-band h2, .sy-band h3, .sy-band h5, .sy-cta h2 { text-transform: none; }
+
+    /* ---------- Hero ---------- */
+    .sy-hero {
+        position: relative;
+        overflow: hidden;
+        padding: 190px 0 0;
+    }
+    .sy-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+            linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+        background-size: 56px 56px;
+        -webkit-mask-image: radial-gradient(ellipse 70% 70% at 70% 40%, #000 30%, transparent 75%);
+        mask-image: radial-gradient(ellipse 70% 70% at 70% 40%, #000 30%, transparent 75%);
+        pointer-events: none;
+    }
+    .sy-hero .container { position: relative; }
+    .sy-new {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #c9fbf4;
+        padding: 6px 14px 6px 8px;
+        border-radius: 999px;
+        border: 1px solid rgba(110, 231, 219, 0.35);
+        background: rgba(15, 185, 168, 0.08);
+    }
+    .sy-new b {
+        color: #0a1322;
+        background: linear-gradient(90deg, #2dd4bf, #8b5cf6);
+        padding: 3px 9px;
+        border-radius: 999px;
+        font-weight: 700;
+    }
     .sy-hero-title-row {
         display: flex;
         align-items: center;
-        gap: 16px;
-        margin-bottom: 8px;
+        gap: 18px;
+        margin: 26px 0 6px;
     }
     .sy-hero-logo {
-        width: 72px;
-        height: 72px;
+        width: 76px;
+        height: 76px;
         flex: 0 0 auto;
+        filter: drop-shadow(0 0 22px rgba(45, 212, 191, 0.45));
+    }
+    .sy-hero h1 {
+        font-size: 64px;
+        line-height: 1;
+        margin: 0;
+        color: #fff;
+        letter-spacing: -0.01em;
     }
     .sy-hero-tagline {
         font-family: 'Space Grotesk', sans-serif;
-        font-size: 24px;
-        line-height: 1.4;
+        font-size: 30px;
+        line-height: 1.3;
         font-weight: 600;
         color: #fff;
-        margin: 18px 0 16px;
-        max-width: 640px;
+        margin: 22px 0 16px;
     }
     .sy-hero-sub {
-        color: rgba(255, 255, 255, 0.68) !important;
-        font-size: 17px;
-        line-height: 1.7;
-        max-width: 600px;
-        margin-bottom: 28px;
+        color: rgba(255, 255, 255, 0.7) !important;
+        font-size: 18px;
+        line-height: 1.65;
+        max-width: 520px;
+        margin-bottom: 30px;
     }
     .sy-hero-pills {
         display: flex;
-        gap: 10px;
+        gap: 8px;
         flex-wrap: wrap;
-        margin-bottom: 22px;
+        margin-top: 34px;
     }
     .sy-pill {
-        display: inline-flex;
-        align-items: center;
         font-family: 'Space Grotesk', sans-serif;
-        font-size: 12.5px;
+        font-size: 12px;
         font-weight: 600;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: #6ee7db;
-        padding: 7px 16px;
-        border-radius: 999px;
-        border: 1px solid rgba(15, 185, 168, 0.5);
-        background: rgba(15, 185, 168, 0.08);
-        white-space: nowrap;
-    }
-    .sy-pill.purple {
-        color: #c4b5fd;
-        border-color: rgba(139, 92, 246, 0.55);
-        background: rgba(139, 92, 246, 0.1);
-    }
-    .sy-new {
-        display: inline-block;
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 11px;
-        font-weight: 700;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        color: #0a1322;
-        background: linear-gradient(90deg, #2dd4bf, #8b5cf6);
-        padding: 4px 10px;
+        color: rgba(255, 255, 255, 0.55);
+        padding: 6px 13px;
         border-radius: 999px;
-        vertical-align: middle;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        white-space: nowrap;
     }
 
-    /* Terminal panel */
+    /* Terminal, with a glow and floating result chips */
+    .sy-term-wrap {
+        position: relative;
+        padding: 34px 0 56px;
+    }
+    .sy-term-wrap::before {
+        content: "";
+        position: absolute;
+        inset: 10% 5% 5% 10%;
+        background: radial-gradient(circle at 30% 40%, rgba(45, 212, 191, 0.35), transparent 60%),
+                    radial-gradient(circle at 75% 70%, rgba(139, 92, 246, 0.4), transparent 60%);
+        filter: blur(50px);
+        pointer-events: none;
+    }
     .sy-term {
-        background: #0b1220;
-        border: 1px solid rgba(110, 231, 219, 0.18);
-        border-radius: 12px;
-        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(139, 92, 246, 0.08);
+        position: relative;
+        background: rgba(11, 18, 32, 0.92);
+        border: 1px solid rgba(110, 231, 219, 0.2);
+        border-radius: 14px;
+        box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
         overflow: hidden;
         text-align: left;
     }
@@ -88,16 +132,14 @@ image: /assets/images/sysight-promo.jpg
         display: flex;
         align-items: center;
         gap: 7px;
-        padding: 11px 14px;
+        padding: 12px 16px;
         background: rgba(255, 255, 255, 0.03);
         border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
-    .sy-term-bar span {
-        width: 11px;
-        height: 11px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.14);
-    }
+    .sy-term-bar span { width: 11px; height: 11px; border-radius: 50%; }
+    .sy-term-bar span:nth-child(1) { background: #ff5f57; opacity: 0.8; }
+    .sy-term-bar span:nth-child(2) { background: #febc2e; opacity: 0.8; }
+    .sy-term-bar span:nth-child(3) { background: #28c840; opacity: 0.8; }
     .sy-term-bar em {
         margin-left: 10px;
         font-style: normal;
@@ -107,13 +149,13 @@ image: /assets/images/sysight-promo.jpg
     }
     .sy-term pre {
         margin: 0;
-        padding: 18px 20px 20px;
+        padding: 22px 24px 24px;
         background: transparent;
         border: 0;
         color: #cfd8e6;
         font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
-        font-size: 13.5px;
-        line-height: 1.75;
+        font-size: 14px;
+        line-height: 1.8;
         white-space: pre;
         overflow-x: auto;
     }
@@ -122,483 +164,864 @@ image: /assets/images/sysight-promo.jpg
     .sy-term .ok { color: #34d399; }
     .sy-term .k { color: #c4b5fd; }
     .sy-term .n { color: #fbbf77; }
-    .sy-term .s { color: #93c5fd; }
-
-    /* Surfaces */
-    .sy-surface-icon {
-        width: 48px;
-        height: 48px;
+    .sy-chip {
+        position: absolute;
+        z-index: 2;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 16px 10px 10px;
         border-radius: 12px;
+        background: rgba(16, 26, 46, 0.92);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 16px 34px rgba(0, 0, 0, 0.45);
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+        font-family: 'Space Grotesk', sans-serif;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.2;
+        animation: sy-float 6s ease-in-out infinite;
+    }
+    .sy-chip small {
+        display: block;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.5);
+    }
+    .sy-chip i {
+        width: 32px;
+        height: 32px;
+        border-radius: 9px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        color: #0a1322;
+        background: #34d399;
+    }
+    .sy-chip.value i { background: #fbbf77; }
+    .sy-chip.verdict { top: 0; right: -14px; }
+        @keyframes sy-float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .sy-chip { animation: none; }
+    }
+
+    /* Stats strip */
+    .sy-stats {
+        margin-top: 80px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .sy-stat {
+        padding: 30px 12px;
+        text-align: center;
+    }
+    .sy-stat + .sy-stat { border-left: 1px solid rgba(255, 255, 255, 0.08); }
+    .sy-stat strong {
+        display: block;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 1.1;
+        background: linear-gradient(90deg, #2dd4bf, #a78bfa);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+    .sy-stat span {
+        display: block;
+        margin-top: 6px;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.55);
+    }
+
+    /* Query results, drawn as a table under the query */
+    .sy-result {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 16px 24px 20px;
+        overflow-x: auto;
+    }
+    .sy-result-label {
+        display: flex;
+        justify-content: space-between;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11.5px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.45);
+        margin-bottom: 10px;
+    }
+    .sy-result table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+        font-size: 13.5px;
+        color: #cfd8e6;
+    }
+    .sy-result th {
+        text-align: left;
+        font-weight: 500;
+        color: #6ee7db;
+        padding: 6px 12px 8px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .sy-result td { padding: 8px 12px 8px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); white-space: nowrap; }
+    .sy-result tr:last-child td { border-bottom: 0; }
+    .sy-badge {
+        display: inline-block;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 2px 10px;
+        border-radius: 999px;
+    }
+    .sy-badge.ok { color: #34d399; background: rgba(52, 211, 153, 0.12); border: 1px solid rgba(52, 211, 153, 0.35); }
+    .sy-badge.bad { color: #fb7185; background: rgba(251, 113, 133, 0.12); border: 1px solid rgba(251, 113, 133, 0.35); }
+    .sy-term .bad { color: #fb7185; }
+
+    /* SPARQL band */
+    .sy-sparql h2 { color: #fff; font-size: 44px; line-height: 1.15; margin-bottom: 18px; }
+    .sy-sparql .sy-lead { color: rgba(255, 255, 255, 0.72); font-size: 18px; line-height: 1.65; margin-bottom: 34px; }
+
+    /* Apollo 11 showcase */
+    .sy-browser {
+        border-radius: 14px;
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid rgba(16, 26, 46, 0.1);
+        box-shadow: 0 30px 60px rgba(16, 26, 46, 0.18);
+        display: block;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .sy-browser:hover { transform: translateY(-6px); box-shadow: 0 36px 70px rgba(15, 185, 168, 0.22); }
+    .sy-browser-bar {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        padding: 11px 14px;
+        background: #eef2f7;
+        border-bottom: 1px solid #e2e8f0;
+    }
+    .sy-browser-bar span { width: 10px; height: 10px; border-radius: 50%; background: #cbd5e1; }
+    .sy-browser-bar em {
+        margin-left: 10px;
+        flex: 1 1 auto;
+        font-style: normal;
+        font-size: 12px;
+        color: #64748b;
+        background: #fff;
+        border-radius: 6px;
+        padding: 3px 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .sy-browser img { display: block; width: 100%; height: auto; }
+    .sy-showcase h2 { font-size: 40px; line-height: 1.2; margin-bottom: 16px; }
+    .sy-showcase-stats { display: flex; flex-wrap: wrap; gap: 28px 40px; margin: 28px 0 34px; }
+    .sy-showcase-stats strong {
+        display: block;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 1;
+        color: #101a2e;
+    }
+    .sy-showcase-stats span { font-size: 14px; color: #64748b; }
+
+    /* Abstract VS Code window with the Sysight panel */
+    .sy-app {
+        position: relative;
+        border-radius: 14px;
+        overflow: hidden;
+        background: #0b1220;
+        border: 1px solid rgba(110, 231, 219, 0.2);
+        box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+    }
+    .sy-app-body { display: flex; min-height: 430px; }
+    .sy-app-code {
+        flex: 0 0 34%;
+        padding: 18px 0 18px 14px;
+        border-right: 1px solid rgba(255, 255, 255, 0.06);
+        background: rgba(255, 255, 255, 0.015);
+    }
+    .sy-app-code div { display: flex; align-items: center; gap: 6px; height: 21px; }
+    .sy-app-code div::before {
+        content: "";
+        flex: 0 0 10px;
+        height: 4px;
+        border-radius: 2px;
+        background: rgba(255, 255, 255, 0.08);
+        margin-right: 6px;
+    }
+    .sy-app-code i { display: block; height: 7px; border-radius: 4px; background: #3d4d68; }
+    .sy-app-code i.k { background: #7c5cd6; }
+    .sy-app-code i.v { background: #b7893f; }
+    .sy-app-code i.ok { width: 12px; height: 12px; border-radius: 50%; background: rgba(52, 211, 153, 0.25); border: 1px solid #34d399; }
+    .sy-app-code i.bad { width: 12px; height: 12px; border-radius: 50%; background: rgba(251, 113, 133, 0.25); border: 1px solid #fb7185; }
+    .sy-app-code .hl { background: rgba(45, 212, 191, 0.08); }
+    .sy-app-panel { flex: 1 1 auto; display: flex; flex-direction: column; min-width: 0; }
+    .sy-app-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 11px 14px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        color: #e2e8f0;
+    }
+    .sy-app-head span i { font-size: 10px; margin-left: 4px; color: rgba(255, 255, 255, 0.5); }
+    .sy-app-head em { font-style: normal; color: rgba(255, 255, 255, 0.45); font-size: 12px; display: flex; gap: 12px; }
+    .sy-app-thread { flex: 1 1 auto; padding: 14px 14px 6px; }
+    .sy-app-q {
+        margin-left: auto;
+        width: fit-content;
+        max-width: 92%;
+        font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+        font-size: 11.5px;
+        line-height: 1.55;
+        color: #cbd5e1;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+        padding: 7px 11px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .sy-app-q b { color: #c4b5fd; font-weight: 500; }
+    .sy-app-meta { font-size: 11.5px; color: rgba(255, 255, 255, 0.45); margin: 8px 0 6px; }
+    .sy-app table { width: 100%; border-collapse: collapse; font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace; font-size: 12px; color: #cfd8e6; }
+    .sy-app th { text-align: left; font-weight: 500; color: #6ee7db; padding: 4px 8px 5px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+    .sy-app td { padding: 6px 8px 6px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); white-space: nowrap; }
+    .sy-app td u { text-decoration: none; color: #93c5fd; }
+    .sy-app .sy-badge { font-size: 11px; padding: 1px 8px; }
+    .sy-app-bars { margin: 4px 0 14px; }
+    .sy-app-bars div { display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace; font-size: 11.5px; color: #cfd8e6; margin-bottom: 6px; }
+    .sy-app-bars span { flex: 0 0 58px; color: #93c5fd; }
+    .sy-app-bars i { display: block; height: 12px; border-radius: 4px; background: linear-gradient(90deg, #2dd4bf, #8b5cf6); }
+    .sy-app-bars em { font-style: normal; color: rgba(255, 255, 255, 0.6); }
+    .sy-app-input {
+        margin: 0 12px 10px;
+        border-radius: 10px;
+        border: 1px solid rgba(110, 231, 219, 0.3);
+        background: rgba(255, 255, 255, 0.03);
+        padding: 9px 11px 8px;
+    }
+    .sy-app-input code {
+        display: block;
+        font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+        font-size: 11.5px;
+        line-height: 1.6;
+        color: #cbd5e1;
+        background: none;
+        padding: 0;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .sy-app-input code b { font-weight: 500; color: #0a1322; background: rgba(110, 231, 219, 0.75); border-radius: 3px; padding: 0 3px; }
+    .sy-app-input code s { text-decoration: none; color: #c4b5fd; }
+    .sy-app-tools { display: flex; align-items: center; justify-content: space-between; margin-top: 7px; font-size: 11.5px; color: rgba(255, 255, 255, 0.55); }
+    .sy-app-tools span i { font-size: 9px; margin-left: 4px; }
+    .sy-app-tools em { font-style: normal; display: flex; align-items: center; gap: 12px; }
+    .sy-app-tools em b {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: #2dd4bf;
+        color: #0a1322;
+        font-size: 11px;
+    }
+    .sy-app-foot {
+        display: flex;
+        justify-content: space-between;
+        padding: 7px 14px;
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.5);
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        background: rgba(45, 212, 191, 0.05);
+    }
+    .sy-app-foot strong { color: #e2e8f0; font-weight: 600; }
+    .sy-chip.agent i { background: #a78bfa; }
+    .sy-chip.agent { bottom: 2px; left: -22px; animation-delay: -3s; }
+    @media (max-width: 575px) {
+        .sy-app-code { display: none; }
+    }
+
+    /* Panel feature cards on the dark band */
+    .sy-dark-card {
+        height: 100%;
+        padding: 28px 26px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    }
+    .sy-dark-card:hover { transform: translateY(-4px); border-color: rgba(110, 231, 219, 0.35); background: rgba(255, 255, 255, 0.05); }
+    .sy-dark-card h5 { color: #fff; font-size: 18px; margin-bottom: 8px; }
+    .sy-dark-card p { color: rgba(255, 255, 255, 0.62); font-size: 15px; line-height: 1.6; margin-bottom: 0; }
+    .sy-also { margin-top: 44px; text-align: center; }
+    .sy-also .sy-also-label {
+        display: block;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.45);
+        margin-bottom: 14px;
+    }
+    .sy-also .sy-pill { color: rgba(255, 255, 255, 0.75); display: inline-block; margin: 0 4px 8px; }
+
+    /* ---------- Bands ---------- */
+    .sy-band { padding: 100px 0; }
+    .sy-band-light { background: #f5f7fb; }
+    .sy-head { max-width: 900px; margin: 0 auto 56px; text-align: center; }
+    .sy-head h2 { font-size: 40px; line-height: 1.2; margin-bottom: 14px; }
+    .sy-head p { font-size: 17px; margin-bottom: 0; }
+
+    /* Gradient icon tiles */
+    .sy-tile {
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
         font-size: 22px;
-        margin-bottom: 16px;
-        background: rgba(15, 185, 168, 0.1);
-        color: #0fb9a8;
+        color: #fff;
+        background: linear-gradient(135deg, #14b8a6, #0d9488);
+        box-shadow: 0 10px 22px rgba(15, 185, 168, 0.3);
+        margin-bottom: 20px;
     }
-    .sy-surface-icon.purple {
-        background: rgba(139, 92, 246, 0.1);
-        color: #8b5cf6;
+    .sy-tile.purple {
+        background: linear-gradient(135deg, #a78bfa, #7c3aed);
+        box-shadow: 0 10px 22px rgba(139, 92, 246, 0.3);
     }
-    .sy-card-desc {
-        font-size: 15px;
-        line-height: 1.6;
+    .sy-tile.mix {
+        background: linear-gradient(135deg, #2dd4bf, #8b5cf6);
+        box-shadow: 0 10px 22px rgba(99, 102, 241, 0.28);
     }
-    .sy-code-inline {
-        display: inline-block;
-        margin-top: 14px;
-        font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
-        font-size: 12.5px;
-        color: #101a2e;
-        background: #f1f5f9;
-        border: 1px solid #e2e8f0;
-        border-radius: 6px;
-        padding: 3px 9px;
+    .sy-card {
+        height: 100%;
+        background: #fff !important;
+        border-radius: 16px;
+        padding: 30px 28px;
     }
-
-    /* Capabilities */
-    .sy-cap-head {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 10px;
-    }
-    .sy-cap-icon {
-        font-size: 24px;
-        line-height: 1;
-        margin-right: 12px;
-        margin-top: 2px;
-    }
-    .sy-cap-head h5 {
-        line-height: 1.3;
-        margin-bottom: 0;
-        flex: 1 1 auto;
-    }
-    .sy-cap-num {
-        flex: 0 0 auto;
+    .sy-card h5 { margin-bottom: 8px; font-size: 19px; }
+    .sy-card p { font-size: 15px; line-height: 1.6; margin-bottom: 0; color: #5a6677; }
+    .sy-card-num {
+        position: absolute;
+        top: 26px;
+        right: 26px;
         font-family: 'Space Grotesk', sans-serif;
         font-size: 13px;
         font-weight: 700;
         letter-spacing: 0.08em;
-        color: #0fb9a8;
-        margin-left: 8px;
-        opacity: 0.85;
+        color: #c3cbd6;
+    }
+    .sy-code-inline {
+        display: inline-block;
+        margin-top: 16px;
+        font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+        font-size: 12.5px;
+        color: #0f766e;
+        background: rgba(15, 185, 168, 0.08);
+        border: 1px solid rgba(15, 185, 168, 0.2);
+        border-radius: 6px;
+        padding: 3px 9px;
     }
 
-    /* Divider, as on the OML Code page */
-    .sy-divider {
+    /* Editor band (dark) */
+    .sy-editor h2 { color: #fff; font-size: 40px; line-height: 1.2; margin-bottom: 28px; }
+    .sy-feature {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-        max-width: 620px;
-        margin: 10px auto 58px;
-    }
-    .sy-divider::before,
-    .sy-divider::after {
-        content: "";
-        flex: 1 1 auto;
-        height: 2px;
-        border-radius: 2px;
-    }
-    .sy-divider::before { background: linear-gradient(90deg, rgba(15, 185, 168, 0), rgba(15, 185, 168, 0.5)); }
-    .sy-divider::after { background: linear-gradient(90deg, rgba(139, 92, 246, 0.5), rgba(139, 92, 246, 0)); }
-    .sy-divider span { width: 7px; height: 7px; border-radius: 50%; background: #0fb9a8; opacity: 0.75; }
-    .sy-divider span:nth-child(2) { width: 11px; height: 11px; background: #fff; border: 2.5px solid #6ee7db; opacity: 1; }
-    .sy-divider span:nth-child(3) { background: #8b5cf6; }
-
-    /* How it works pipeline */
-    .sy-flow {
-        display: flex;
-        align-items: stretch;
-        gap: 0;
-        flex-wrap: wrap;
-    }
-    .sy-flow-step {
-        flex: 1 1 0;
-        min-width: 200px;
-        position: relative;
-        padding: 26px 24px;
-        border-radius: 12px;
-        background: #fff;
-        border: 1px solid #e8edf3;
-        box-shadow: 0 6px 18px rgba(16, 26, 46, 0.05);
-    }
-    .sy-flow-arrow {
-        flex: 0 0 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #0fb9a8;
-        font-size: 18px;
-    }
-    .sy-flow-step .eyebrow { display: block; margin-bottom: 8px; }
-    .sy-flow-step h5 { margin-bottom: 8px; }
-    .sy-flow-step p { font-size: 14.5px; line-height: 1.6; margin-bottom: 0; }
-    @media (max-width: 991px) {
-        .sy-flow { flex-direction: column; }
-        .sy-flow-arrow { flex-basis: 36px; transform: rotate(90deg); }
-    }
-
-    .sy-check-list li {
-        display: flex;
+        gap: 16px;
         align-items: flex-start;
-        margin-bottom: 12px;
-        font-size: 15px;
-        line-height: 1.6;
+        margin-bottom: 22px;
     }
-    .sy-check-list li i {
-        margin-right: 10px;
-        margin-top: 5px;
+    .sy-feature i {
+        flex: 0 0 auto;
+        width: 40px;
+        height: 40px;
+        border-radius: 11px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 17px;
+        color: #6ee7db;
+        background: rgba(15, 185, 168, 0.12);
+        border: 1px solid rgba(110, 231, 219, 0.25);
     }
+    .sy-feature strong { display: block; color: #fff; font-size: 16px; margin-bottom: 2px; }
+    .sy-feature span { color: rgba(255, 255, 255, 0.6); font-size: 15px; }
 
-    .sy-license-card {
+    /* Why band */
+    .sy-benefit {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        align-items: flex-start;
+        padding: 28px 26px;
         border-radius: 14px;
-        padding: 32px;
-        height: 100%;
-        border: 1px solid #e8edf3;
         background: #fff;
+        border: 1px solid rgba(16, 26, 46, 0.07);
+        box-shadow: 0 10px 26px rgba(16, 26, 46, 0.06);
+        height: 100%;
     }
-    .sy-license-card.featured {
-        background: #0a1322;
-        border-color: rgba(110, 231, 219, 0.25);
-        color: rgba(255, 255, 255, 0.75);
-    }
-    .sy-license-card.featured h4 { color: #fff; }
-    .sy-license-card h4 { margin-bottom: 6px; }
-    .sy-license-card .sy-license-for {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 13px;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: #0fb9a8;
-        margin-bottom: 18px;
-        display: block;
-    }
-    .sy-license-card ul { padding-left: 0; list-style: none; margin-bottom: 24px; }
-    .sy-license-card ul li { margin-bottom: 9px; font-size: 15px; }
-    .sy-license-card ul li i { color: #0fb9a8; margin-right: 8px; }
+    .sy-benefit .sy-tile { margin-bottom: 0; flex: 0 0 auto; width: 46px; height: 46px; font-size: 19px; }
+    .sy-benefit h5 { margin-bottom: 6px; font-size: 18px; }
+    .sy-benefit p { margin-bottom: 0; font-size: 14.5px; color: #5a6677; line-height: 1.55; }
 
+    /* Licensing card with gradient border */
+    .sy-license {
+        position: relative;
+        border-radius: 20px;
+        padding: 44px;
+        color: rgba(255, 255, 255, 0.75);
+        border: 1px solid transparent;
+        background:
+            radial-gradient(ellipse 60% 80% at 100% 0%, rgba(139, 92, 246, 0.22), transparent 60%) padding-box,
+            radial-gradient(ellipse 60% 80% at 0% 100%, rgba(15, 185, 168, 0.2), transparent 60%) padding-box,
+            linear-gradient(#0a1322, #0a1322) padding-box,
+            linear-gradient(135deg, #2dd4bf, #8b5cf6) border-box;
+        box-shadow: 0 30px 60px rgba(16, 26, 46, 0.25);
+    }
+    .sy-price {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 1;
+        color: #fff;
+    }
+    .sy-price small {
+        font-size: 16px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.55);
+        margin-left: 6px;
+    }
+    .sy-license h3 { color: #fff; font-size: 30px; margin: 16px 0 10px; }
+    .sy-license p { color: rgba(255, 255, 255, 0.65); font-size: 15px; }
+    .sy-license-label {
+        display: block;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12.5px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #6ee7db;
+        margin-bottom: 14px;
+    }
+    .sy-license ul { padding-left: 0; list-style: none; margin-bottom: 0; }
+    .sy-license ul li { white-space: nowrap; margin-bottom: 10px; font-size: 15px; color: rgba(255, 255, 255, 0.82); }
+    .sy-license ul li i { color: #2dd4bf; margin-right: 10px; }
+
+    /* Closing CTA */
+    .sy-cta {
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        padding: 70px 30px;
+        text-align: center;
+    }
+    .sy-cta img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.35;
+    }
+    .sy-cta > div { position: relative; }
+    .sy-cta h2 { color: #fff; font-size: 38px; margin-bottom: 12px; }
+    .sy-cta p { color: rgba(255, 255, 255, 0.7); font-size: 17px; margin-bottom: 28px; }
+
+    @media (max-width: 991px) {
+        .sy-chip.verdict { right: 0; }
+        .sy-chip.agent { left: 0; }
+        .sy-stat:nth-child(3) { border-left: 0; }
+    }
     @media (max-width: 767px) {
-        .sy-hero-tagline { font-size: 20px; }
+        .sy-hero { padding-top: 150px; }
+        .sy-hero h1 { font-size: 46px; }
         .sy-hero-logo { width: 56px; height: 56px; }
+        .sy-hero-tagline { font-size: 23px; }
+        .sy-head h2, .sy-editor h2, .sy-sparql h2, .sy-showcase h2 { font-size: 30px; }
         .sy-term pre { font-size: 12px; padding: 16px; }
+        .sy-chip { display: none; }
+        .sy-license { padding: 30px 24px; }
+        .sy-band { padding: 70px 0; }
+        .sy-stat:nth-child(odd) { border-left: 0; }
     }
 </style>
 
-<section class="page-title bg-blue" style="padding: 190px 0 100px;">
+<section class="sy-hero bg-blue">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-6 mb-5 mb-lg-0">
-                <span class="sy-new mb-3">New from Modelware</span>
-                <div class="sy-hero-title-row mt-3">
+            <div class="col-lg-5 mb-4 mb-lg-0">
+                <span class="sy-new"><b>New</b> Free from Modelware</span>
+                <div class="sy-hero-title-row">
                     <img src="{{ '/assets/images/sysight-icon.svg' | relative_url }}" alt="" class="sy-hero-logo">
-                    <h2 class="mb-0 text-lg text-white">{{ page.title }}</h2>
+                    <h1>{{ page.title }}</h1>
                 </div>
-                <p class="sy-hero-tagline">Insight into your <span class="gradient-text">SysML v2</span> models, live</p>
+                <p class="sy-hero-tagline">Query your <span class="gradient-text">SysML v2</span> models like a knowledge graph</p>
+                <p class="sy-hero-sub">Ask any engineering question in SPARQL, with computed values and requirement verdicts in the answers. Check and verify the model as you type, from your editor, terminal, CI and AI agents.</p>
+                <a href="https://github.com/modelware/sysight/releases/latest" target="_blank" rel="noopener" class="btn btn-primary mr-2 mb-2">Get Sysight</a>
+                <a href="https://github.com/modelware/sysight" target="_blank" rel="noopener" class="btn btn-outline-light mb-2">View on GitHub</a>
                 <div class="sy-hero-pills">
                     <span class="sy-pill">SysML v2</span>
                     <span class="sy-pill">KerML</span>
-                    <span class="sy-pill purple">SPARQL</span>
-                    <span class="sy-pill purple">MCP</span>
+                    <span class="sy-pill">SPARQL</span>
+                    <span class="sy-pill">MCP</span>
+                    <span class="sy-pill">LSP</span>
                 </div>
-                <p class="sy-hero-sub">A model server for each workspace that keeps the whole model loaded and current. It checks every file as you type, computes values with their units, decides whether requirements are satisfied, and answers SPARQL queries, for your editor, your terminal, your CI pipeline and your AI agents alike.</p>
-                <a href="/contact?topic=sysight" class="btn btn-primary mr-2 mb-2">Get Sysight</a>
-                <a href="#how-it-works" class="btn btn-outline-light mb-2">See How It Works</a>
             </div>
-            <div class="col-lg-6">
-                <div class="sy-term" role="img" aria-label="A terminal session running sysight check, evaluate and verify on a vehicle model">
-                    <div class="sy-term-bar"><span></span><span></span><span></span><em>~/vehicle-model</em></div>
-<pre><span class="p">$</span> sysight check
-<span class="c">sysight: starting the server ... ready in 0.1 s</span>
-1 files: <span class="ok">0 errors</span>, 0 warnings, 0 notes
+            <div class="col-lg-7">
+                <div class="sy-term-wrap">
+                    <div class="sy-chip verdict" aria-hidden="true"><i class="ti-check"></i><span><small>Requirement</small>Satisfied</span></div>
+                    <div class="sy-chip agent" aria-hidden="true"><i class="ti-bolt"></i><span><small>From your agent</small>queries/trace.rq</span></div>
+                    <div class="sy-app" role="img" aria-label="An illustration of VS Code with a SysML v2 model on the left and the Sysight panel on the right: a session with a SPARQL query answered as a table of requirement verdicts, a second query answered as a bar chart of part masses, and the query box with a saved query selected">
+                        <div class="sy-term-bar"><span></span><span></span><span></span><em>vehicle-model</em></div>
+                        <div class="sy-app-body">
+                            <div class="sy-app-code" aria-hidden="true">
+                                <div><i class="k" style="width:46px"></i><i style="width:80px"></i></div>
+                                <div><i class="k" style="width:36px"></i><i style="width:60px"></i></div>
+                                <div></div>
+                                <div><i class="k" style="width:52px"></i><i style="width:90px"></i></div>
+                                <div><i class="k" style="width:30px"></i><i class="v" style="width:40px"></i><i class="ok"></i></div>
+                                <div><i class="k" style="width:30px"></i><i class="v" style="width:40px"></i></div>
+                                <div></div>
+                                <div><i class="k" style="width:62px"></i><i style="width:70px"></i></div>
+                                <div><i class="k" style="width:40px"></i><i style="width:50px"></i></div>
+                                <div><i class="k" style="width:58px"></i><i class="v" style="width:44px"></i></div>
+                                <div></div>
+                                <div><i class="k" style="width:60px"></i><i style="width:76px"></i></div>
+                                <div><i class="k" style="width:58px"></i><i class="v" style="width:44px"></i></div>
+                                <div></div>
+                                <div><i class="k" style="width:30px"></i><i style="width:56px"></i></div>
+                                <div><i class="k" style="width:52px"></i><i style="width:70px"></i><i class="ok"></i></div>
+                                <div class="hl"><i class="k" style="width:52px"></i><i style="width:84px"></i><i class="bad"></i></div>
+                                <div><i class="k" style="width:40px"></i><i style="width:66px"></i></div>
+                                <div><i class="k" style="width:40px"></i><i style="width:72px"></i></div>
+                            </div>
+                            <div class="sy-app-panel">
+                                <div class="sy-app-head"><span>Requirement verdicts<i class="ti-angle-down"></i></span><em><i class="ti-time"></i><i class="ti-plus"></i></em></div>
+                                <div class="sy-app-thread">
+                                    <div class="sy-app-q"><b>SELECT</b> ?requirement ?satisfiedBy ?mass ?verdict</div>
+                                    <div class="sy-app-meta">2 rows</div>
+                                    <table>
+                                        <thead><tr><th>requirement</th><th>satisfiedBy</th><th>mass</th><th>verdict</th></tr></thead>
+                                        <tbody>
+                                            <tr><td><u>carLight</u></td><td><u>car</u></td><td>1130 kg</td><td><span class="sy-badge bad">violated</span></td></tr>
+                                            <tr><td><u>carMass</u></td><td><u>car</u></td><td>1130 kg</td><td><span class="sy-badge ok">satisfied</span></td></tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="sy-app-q mt-3"><b>SELECT</b> ?part ?mass <b>WHERE</b> { ?p <b>a</b> sysml:Part ... }</div>
+                                    <div class="sy-app-meta">2 rows</div>
+                                    <div class="sy-app-bars">
+                                        <div><span>chassis</span><i style="width:62%"></i><em>950 kg</em></div>
+                                        <div><span>engine</span><i style="width:12%"></i><em>180 kg</em></div>
+                                    </div>
+                                </div>
+                                <div class="sy-app-input">
+                                    <code><s>SELECT</s> <b>?part</b> ?mass <s>WHERE</s> {</code>
+                                    <code>&nbsp;&nbsp;<b>?part</b> <s>a</s> sysml:Part ;</code>
+                                    <div class="sy-app-tools"><span>trace.rq<i class="ti-angle-down"></i></span><em><i class="ti-save"></i><b><i class="ti-arrow-up"></i></b></em></div>
+                                </div>
+                                <div class="sy-app-foot"><span><strong>Sysight</strong> &middot; SysML v2 Insight</span><span>by Modelware</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<span class="p">$</span> sysight evaluate VehicleModel::car.mass --unit kg
-<span class="n">1130 kg</span>
+        <div class="row sy-stats">
+            <div class="col-6 col-lg-3 sy-stat"><strong>0.02 s</strong><span>A SPARQL query on Apollo 11</span></div>
+            <div class="col-6 col-lg-3 sy-stat"><strong>0.07 s</strong><span>A full check after an edit</span></div>
+            <div class="col-6 col-lg-3 sy-stat"><strong>3</strong><span>Platforms: macOS, Linux, Windows</span></div>
+            <div class="col-6 col-lg-3 sy-stat"><strong>$0</strong><span>To use, at work too</span></div>
+        </div>
+    </div>
+</section>
 
-<span class="p">$</span> sysight verify VehicleModel::carMass
-VehicleModel::carMass: <span class="ok">satisfied</span>
-
-<span class="p">$</span> sysight query <span class="s">'SELECT ?part WHERE { ?part a sysml:Part }'</span>
-<span class="c">answered over the model and its libraries</span></pre>
+<section class="sy-band bg-blue sy-sparql" id="sparql">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 mb-5 mb-lg-0">
+                <span class="eyebrow">The SPARQL Advantage</span>
+                <h2>Ask Your SysML v2 Model Anything</h2>
+                <p class="sy-lead">Sysight holds your model as a knowledge graph, so any engineering question becomes one query, answered in milliseconds.</p>
+                <div class="sy-feature"><i class="ti-ruler-alt-2"></i><div><strong>Values and verdicts in the answers</strong><span>Computed masses, budgets and requirement verdicts, right in the results</span></div></div>
+                <div class="sy-feature"><i class="ti-layers-alt"></i><div><strong>Queries that understand SysML</strong><span>Ask for parts and get every kind of part, through every specialization</span></div></div>
+                <div class="sy-feature"><i class="ti-bar-chart"></i><div><strong>Tables and charts in VS Code</strong><span>Saved queries, versioned with the model</span></div></div>
+                <div class="sy-feature mb-0"><i class="ti-bolt"></i><div><strong>One query, everywhere</strong><span>The same query runs in the editor, terminal, CI and agents</span></div></div>
+            </div>
+            <div class="col-lg-7">
+                <div class="sy-term-wrap">
+                    <div class="sy-term" role="img" aria-label="A SPARQL query that lists each satisfy relation with the requirement, the satisfying part, its computed mass and the verdict, and its two result rows">
+                        <div class="sy-term-bar"><span></span><span></span><span></span><em>queries/trace.rq</em></div>
+<pre><span class="k">SELECT</span> ?requirement ?satisfiedBy ?mass ?verdict
+<span class="k">WHERE</span> {
+  ?s <span class="k">a</span> sysml:Satisfy ;
+     sysml:satisfiedRequirement ?r ;
+     sysml:satisfyingFeature ?f .
+  <span class="k">BIND</span>(<span class="p">eval:name</span>(?r)         <span class="k">AS</span> ?requirement)
+  <span class="k">BIND</span>(<span class="p">eval:name</span>(?f)         <span class="k">AS</span> ?satisfiedBy)
+  <span class="k">BIND</span>(<span class="p">eval:text</span>(<span class="n">"mass"</span>, ?f) <span class="k">AS</span> ?mass)
+  <span class="k">BIND</span>(<span class="p">eval:verdict</span>(?r)      <span class="k">AS</span> ?verdict)
+}</pre>
+                        <div class="sy-result">
+                            <div class="sy-result-label"><span>Answer</span><span>2 rows</span></div>
+                            <table>
+                                <thead><tr><th>requirement</th><th>satisfiedBy</th><th>mass</th><th>verdict</th></tr></thead>
+                                <tbody>
+                                    <tr><td>carLight</td><td>car</td><td>1130 kg</td><td><span class="sy-badge bad">violated</span></td></tr>
+                                    <tr><td>carMass</td><td>car</td><td>1130 kg</td><td><span class="sy-badge ok">satisfied</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="section" style="padding-top: 70px; padding-bottom: 70px;">
+<section class="sy-band sy-band-light sy-showcase" id="apollo-11">
     <div class="container">
-
-        <div class="row mb-5" id="surfaces">
-            <div class="col-12 text-center mb-5">
-                <span class="eyebrow">One Model, Every Client</span>
-                <h3>The Same Live Model, Wherever You Work</h3>
-                <p class="text-muted mb-0">One server per workspace answers them all, so the editor, the command line and the agent never disagree about the model.<br>Even unsaved edits are seen by everyone attached.</p>
+        <div class="row align-items-center">
+            <div class="col-lg-7 mb-5 mb-lg-0 order-lg-2">
+                <a href="https://www.modelware.io/apollo-11-sysml-v2/index.html" target="_blank" rel="noopener" class="sy-browser" aria-label="Open the Apollo 11 dashboard">
+                    <div class="sy-browser-bar"><span></span><span></span><span></span><em>modelware.io/apollo-11-sysml-v2</em></div>
+                    <img src="{{ '/assets/images/sysight-apollo11.jpg' | relative_url }}" alt="The requirements and traceability page of the Apollo 11 report, with requirement counts, a requirements tree table and a trace diagram from stakeholder needs to functions" loading="lazy">
+                </a>
             </div>
-
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card border-0 shadow-sm h-100 platform-card">
-                    <div class="card-body">
-                        <div class="sy-surface-icon"><i class="ti-layout-tab-window"></i></div>
-                        <h5 class="mb-2">VS Code</h5>
-                        <p class="mb-0 sy-card-desc">The <strong>Sysight: SysML v2 Insight</strong> extension: diagnostics in the Problems view, navigation into the libraries, values and verdicts on hover and inline, and a query panel with sessions.</p>
-                    </div>
+            <div class="col-lg-5 order-lg-1">
+                <span class="eyebrow">See It on a Real Model</span>
+                <h2>Apollo 11, Queried End to End</h2>
+                <p class="text-muted mb-0">Airbus's open SysML v2 model of Apollo 11, from mission needs down to the Saturn V engines, turned into a ten-page engineering dashboard: requirements, budgets, timeline and model quality, each computed from the model with Sysight and published from CI.</p>
+                <div class="sy-showcase-stats">
+                    <div><strong>6,968</strong><span>model elements</span></div>
+                    <div><strong>294</strong><span>requirements traced</span></div>
+                    <div><strong>10</strong><span>dashboard pages</span></div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card border-0 shadow-sm h-100 platform-card">
-                    <div class="card-body">
-                        <div class="sy-surface-icon"><i class="ti-angle-double-right"></i></div>
-                        <h5 class="mb-2">Command Line</h5>
-                        <p class="mb-0 sy-card-desc">The <code>sysight</code> command checks, evaluates, verifies, queries, exports and updates. It starts the server on first use, then answers in milliseconds.</p>
-                        <span class="sy-code-inline">sysight check</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card border-0 shadow-sm h-100 platform-card">
-                    <div class="card-body">
-                        <div class="sy-surface-icon purple"><i class="ti-bolt"></i></div>
-                        <h5 class="mb-2">AI Agents</h5>
-                        <p class="mb-0 sy-card-desc">A Model Context Protocol server, so Claude Code and other agents read, query, evaluate, verify and change the same live model, and see the diagnostics each change adds or removes.</p>
-                        <span class="sy-code-inline">sysight mcp</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card border-0 shadow-sm h-100 platform-card">
-                    <div class="card-body">
-                        <div class="sy-surface-icon"><i class="ti-infinite"></i></div>
-                        <h5 class="mb-2">CI and Other Editors</h5>
-                        <p class="mb-0 sy-card-desc">Headless in pipelines, with exit codes for errors and violated requirements. Any LSP editor, Neovim among them, connects through <code>sysight attach</code>.</p>
-                        <span class="sy-code-inline">sysight attach</span>
-                    </div>
-                </div>
+                <a href="https://www.modelware.io/apollo-11-sysml-v2/index.html" target="_blank" rel="noopener" class="btn btn-primary">Explore the Apollo 11 Dashboard</a>
             </div>
         </div>
+    </div>
+</section>
 
-        <div class="sy-divider" aria-hidden="true"><span></span><span></span><span></span></div>
-
-        <div class="mb-5" id="capabilities">
-            <div class="text-center mb-5">
-                <span class="eyebrow">Capabilities</span>
-                <h3>From Textual Notation to Engineering Answers</h3>
-                <p class="text-muted mb-0">Everything Sysight does is one endpoint of the model server, with the same name and parameters from every client.</p>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card border-0 shadow-sm h-100 platform-card">
-                        <div class="card-body">
-                            <div class="sy-cap-head">
-                                <div class="text-teal"><i class="ti-pulse sy-cap-icon"></i></div>
-                                <h5>Whole-Workspace Diagnostics</h5>
-                                <span class="sy-cap-num">01</span>
-                            </div>
-                            <p class="mb-0 sy-card-desc">Syntax, names that do not resolve, the specification's validation rules, and asserted constraints and requirements that fail. Every file a change affects is re-checked, including files you have not opened.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card border-0 shadow-sm h-100 platform-card">
-                        <div class="card-body">
-                            <div class="sy-cap-head">
-                                <div class="text-teal"><i class="ti-ruler-alt-2 sy-cap-icon"></i></div>
-                                <h5>Computed Values, With Units</h5>
-                                <span class="sy-cap-num">02</span>
-                            </div>
-                            <p class="mb-0 sy-card-desc">Evaluate any attribute or expression in the context of an element. Results come in the unit you ask for, checked against its dimension, and appear inline in the editor beside the expressions that produce them.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card border-0 shadow-sm h-100 platform-card">
-                        <div class="card-body">
-                            <div class="sy-cap-head">
-                                <div class="text-teal"><i class="ti-check-box sy-cap-icon"></i></div>
-                                <h5>Requirement Verification</h5>
-                                <span class="sy-cap-num">03</span>
-                            </div>
-                            <p class="mb-0 sy-card-desc">Constraints, requirements and <code>satisfy</code> statements decided as satisfied, violated or undetermined, with the reason why. A requirement's verdict is visible where it is written, on hover.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card border-0 shadow-sm h-100 platform-card">
-                        <div class="card-body">
-                            <div class="sy-cap-head">
-                                <div class="text-purple"><i class="ti-search sy-cap-icon"></i></div>
-                                <h5>SPARQL Over the Model</h5>
-                                <span class="sy-cap-num">04</span>
-                            </div>
-                            <p class="mb-0 sy-card-desc">SPARQL 1.1 with entailment: asking for parts finds every kind of part. Evaluation functions bring values and verdicts into query results, and the query panel helps you write queries and charts the answers.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card border-0 shadow-sm h-100 platform-card">
-                        <div class="card-body">
-                            <div class="sy-cap-head">
-                                <div class="text-purple"><i class="ti-pencil-alt sy-cap-icon"></i></div>
-                                <h5>Safe Model Updates</h5>
-                                <span class="sy-cap-num">05</span>
-                            </div>
-                            <p class="mb-0 sy-card-desc">Change the model through an update API applied as edits to the files' text, all or nothing. Each change reports its diff and the diagnostics it added and removed, with a dry run to preview it first.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card border-0 shadow-sm h-100 platform-card">
-                        <div class="card-body">
-                            <div class="sy-cap-head">
-                                <div class="text-teal"><i class="ti-exchange-vertical sy-cap-icon"></i></div>
-                                <h5>Notation and RDF, Both Ways</h5>
-                                <span class="sy-cap-num">06</span>
-                            </div>
-                            <p class="mb-0 sy-card-desc">Export the model as textual notation or as RDF (TriG, N-Quads, Turtle), one named graph per file, and import RDF or <code>.kpar</code> archives back as notation. The round trip parses to the same graphs.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<section class="sy-band" id="surfaces">
+    <div class="container">
+        <div class="sy-head">
+            <span class="eyebrow">One Model, Every Client</span>
+            <h2>The Same Live Model, Wherever You Work</h2>
+            <p class="text-muted">Your editor, terminal, pipeline and agents all see the same model, unsaved edits included.</p>
         </div>
-
-        <div class="sy-divider" aria-hidden="true"><span></span><span></span><span></span></div>
-
-        <div class="row align-items-center mb-5">
-            <div class="col-lg-5 mb-4 mb-lg-0">
-                <span class="eyebrow">In Your Editor</span>
-                <h3 class="mb-3">Write the Model. Read the Answers Beside It.</h3>
-                <p class="mb-4">Sysight turns VS Code into a SysML v2 workbench that understands the model, not only its syntax.</p>
-                <ul class="list-unstyled sy-check-list mb-0">
-                    <li><i class="ti-check text-teal"></i><span><strong>Navigation</strong> with outline, go to definition and find references, across files and into the standard libraries.</span></li>
-                    <li><i class="ti-check text-teal"></i><span><strong>Insight on hover:</strong> what an element is, what it specializes and redefines, its computed value and its verdict.</span></li>
-                    <li><i class="ti-check text-teal"></i><span><strong>The Sysight panel</strong> for queries, with completion from the ontology, saved queries committed with the model, and answers as tables, charts or headlines.</span></li>
-                    <li><i class="ti-check text-teal"></i><span><strong>Sessions</strong> of queries and answers to rename, search and reopen later.</span></li>
-                </ul>
-            </div>
-            <div class="col-lg-7">
-                <div class="sy-term" role="img" aria-label="A SysML v2 model of a vehicle with a mass requirement">
-                    <div class="sy-term-bar"><span></span><span></span><span></span><em>Vehicle.sysml</em></div>
-<pre><span class="k">package</span> VehicleModel {
-    <span class="k">private import</span> SI::*;
-
-    <span class="k">part def</span> Vehicle {
-        <span class="c">// evaluates to 1130 kg</span>
-        <span class="k">attribute</span> mass :> ISQ::mass = engine.mass + chassis.mass;
-        <span class="k">part</span> engine  { <span class="k">attribute</span> mass :> ISQ::mass = <span class="n">180 [kg]</span>; }
-        <span class="k">part</span> chassis { <span class="k">attribute</span> mass :> ISQ::mass = <span class="n">950 [kg]</span>; }
-    }
-
-    <span class="k">requirement def</span> MassLimit {
-        <span class="k">subject</span> vehicle : Vehicle;
-        <span class="k">require constraint</span> { vehicle.mass &lt;= <span class="n">1500 [kg]</span> }
-    }
-
-    <span class="k">part</span> car : Vehicle;
-    <span class="k">requirement</span> carMass : MassLimit;                  <span class="c">// </span><span class="ok">satisfied</span>
-    <span class="k">satisfy</span> carMass <span class="k">by</span> car;
-}</pre>
-                </div>
-            </div>
-        </div>
-
-        <div class="sy-divider" aria-hidden="true"><span></span><span></span><span></span></div>
-
-        <div class="mb-5" id="how-it-works">
-            <div class="text-center mb-5">
-                <span class="eyebrow">How It Works</span>
-                <h3>A SysML v2 Model, Held as a Knowledge Graph</h3>
-                <p class="text-muted mb-0">Sysight is written in Rust and brings the semantic web foundations behind OML Code to SysML v2.</p>
-            </div>
-            <div class="sy-flow">
-                <div class="sy-flow-step">
-                    <span class="eyebrow">01 &middot; Parse</span>
-                    <h5>Textual Notation</h5>
-                    <p>Your <code>.sysml</code> and <code>.kerml</code> files are read with the parser of Open-MBEE's sysml-toolkit. The standard KerML and SysML libraries are built in.</p>
-                </div>
-                <div class="sy-flow-arrow" aria-hidden="true"><i class="ti-arrow-right"></i></div>
-                <div class="sy-flow-step">
-                    <span class="eyebrow">02 &middot; Store</span>
-                    <h5>RDF Knowledge Graph</h5>
-                    <p>Each file becomes a named graph in an embedded Oxigraph store, typed by OWL ontologies shaped by the notation, so classes are named after keywords. Names re-resolve incrementally as files change.</p>
-                </div>
-                <div class="sy-flow-arrow" aria-hidden="true"><i class="ti-arrow-right"></i></div>
-                <div class="sy-flow-step">
-                    <span class="eyebrow">03 &middot; Answer</span>
-                    <h5>Model Server</h5>
-                    <p>One server per workspace serves HTTP, LSP and MCP from the same graph: diagnostics, values, verdicts and queries, plus updates written back as notation.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="sy-divider" aria-hidden="true"><span></span><span></span><span></span></div>
-
-        <div class="row align-items-center mb-5">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-                <span class="eyebrow">Why It Matters</span>
-                <h3 class="mb-3">Models That Answer Questions, Not Just Store Them</h3>
-                <p class="mb-3">SysML v2 gives systems engineering a precise textual language and a formal semantics. Sysight puts that precision to work: the model is checked, computed and verified continuously, so problems surface while you write, not at the next review.</p>
-                <p class="mb-0">Because the model lives in a standard knowledge graph, the same facts that drive your editor drive your reports, your pipeline and your AI assistants. An agent that can query, evaluate and verify the model is an agent whose answers you can check.</p>
-            </div>
-            <div class="col-lg-6">
-                <div class="bg-light rounded border p-4">
-                    <h5 class="mb-3">What Teams Gain</h5>
-                    <ul class="list-unstyled mb-0">
-                        <li class="mb-2"><i class="ti-check text-teal mr-2"></i> <strong>Fast feedback:</strong> errors and violated requirements as you type, across the workspace</li>
-                        <li class="mb-2"><i class="ti-check text-teal mr-2"></i> <strong>One source of truth</strong> for editors, scripts, pipelines and agents</li>
-                        <li class="mb-2"><i class="ti-check text-teal mr-2"></i> <strong>Open standards:</strong> SysML v2, KerML, RDF, OWL, SPARQL, LSP and MCP</li>
-                        <li class="mb-2"><i class="ti-check text-teal mr-2"></i> <strong>Grounded AI:</strong> agents that change the model and see the consequences</li>
-                        <li class="mb-0"><i class="ti-check text-teal mr-2"></i> <strong>Runs anywhere:</strong> macOS, Linux and Windows, desktop or headless</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="sy-divider" aria-hidden="true"><span></span><span></span><span></span></div>
-
-        <div class="mb-5" id="licensing">
-            <div class="text-center mb-5">
-                <span class="eyebrow">Get Sysight</span>
-                <h3>Free for Research and Learning. Licensed for Industry.</h3>
-                <p class="text-muted mb-0">Prebuilt for macOS (Apple silicon and Intel), Linux (x86-64 and ARM) and Windows (x86-64).</p>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-5 col-md-6 mb-4">
-                    <div class="sy-license-card">
-                        <h4>Noncommercial</h4>
-                        <span class="sy-license-for">Students, researchers, educators</span>
-                        <ul>
-                            <li><i class="ti-check"></i> Every capability, the command line, VS Code and MCP</li>
-                            <li><i class="ti-check"></i> Standard KerML and SysML libraries built in</li>
-                            <li><i class="ti-check"></i> PolyForm Noncommercial License 1.0.0</li>
-                        </ul>
-                        <a href="/contact?topic=sysight" class="btn btn-outline-primary">Request Access</a>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-6 mb-4">
-                    <div class="sy-license-card featured">
-                        <h4>Commercial</h4>
-                        <span class="sy-license-for">Engineering organizations</span>
-                        <ul>
-                            <li><i class="ti-check"></i> A commercial license sized to your teams</li>
-                            <li><i class="ti-check"></i> CI integration and deployment support</li>
-                            <li><i class="ti-check"></i> Direct access to the Modelware team</li>
-                        </ul>
-                        <a href="/contact?topic=sysight&amp;subject={{ 'Sysight commercial license' | url_encode }}" class="btn btn-primary">Talk to Us</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="row">
-            <div class="col-12">
-                <div class="bg-blue rounded p-5 text-center text-white">
-                    <h3 class="text-white mb-3">Bring Insight to Your SysML v2 Models</h3>
-                    <p class="mb-4 text-white-50">Tell us about your models and how your teams work with them, and we will help you get Sysight running in your editor, your pipeline and your agents.</p>
-                    <a href="/contact?topic=sysight" class="btn btn-primary mr-2 mb-2">Get Sysight</a>
-                    <a href="/oml-code" class="btn btn-outline-light mb-2">Explore OML Code</a>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card border-0 platform-card sy-card">
+                    <div class="sy-tile"><i class="ti-layout-tab-window"></i></div>
+                    <h5>VS Code</h5>
+                    <p>Errors, values and requirement verdicts right where you write the model.</p>
                 </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card border-0 platform-card sy-card">
+                    <div class="sy-tile"><i class="ti-angle-double-right"></i></div>
+                    <h5>Command Line</h5>
+                    <p>Answers in milliseconds, from a server that starts on first use.</p>
+                    <div><span class="sy-code-inline">sysight check</span></div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card border-0 platform-card sy-card">
+                    <div class="sy-tile purple"><i class="ti-bolt"></i></div>
+                    <h5>AI Agents</h5>
+                    <p>Agents query and change the live model, and see what each change breaks.</p>
+                    <div><span class="sy-code-inline">sysight mcp</span></div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card border-0 platform-card sy-card">
+                    <div class="sy-tile"><i class="ti-infinite"></i></div>
+                    <h5>CI Pipelines</h5>
+                    <p>Fail the build on model errors or violated requirements.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="sy-band sy-band-light" id="capabilities">
+    <div class="container">
+        <div class="sy-head">
+            <span class="eyebrow">Capabilities</span>
+            <h2>From Model Text to Engineering Answers</h2>
+        </div>
+        <div class="row">
+            {%- assign caps = "ti-pulse|teal|Catch Errors Early|Every file checked against the SysML v2 rules as you type, including files you have not opened.;ti-ruler-alt-2|teal|Compute Values|Evaluate any attribute or expression, in the unit you choose, with dimensions checked.;ti-check-box|teal|Verify Requirements|Know which requirements are satisfied, violated or undetermined, and why.;ti-search|purple|Query Anything|Ask the model any question in SPARQL, and get tables and charts back.;ti-pencil-alt|purple|Change Safely|Apply edits all or nothing, and see the diagnostics they add or remove.;ti-exchange-vertical|mix|Connect Your Data|Move the model to and from RDF to link it with the rest of your digital thread." | split: ";" -%}
+            {%- for c in caps -%}
+            {%- assign f = c | split: "|" %}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card border-0 platform-card sy-card">
+                    <span class="sy-card-num">0{{ forloop.index }}</span>
+                    <div class="sy-tile {% if f[1] != 'teal' %}{{ f[1] }}{% endif %}"><i class="{{ f[0] }}"></i></div>
+                    <h5>{{ f[2] }}</h5>
+                    <p>{{ f[3] }}</p>
+                </div>
+            </div>
+            {%- endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="sy-band bg-blue sy-editor" id="editor">
+    <div class="container">
+        <div class="sy-head">
+            <span class="eyebrow">In VS Code</span>
+            <h2>A Query Panel Built for Engineers</h2>
+            <p>The Sysight panel docks beside your model, like your AI assistant: queries at the bottom, answers above.</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="sy-dark-card">
+                    <div class="sy-tile "><i class="ti-pencil"></i></div>
+                    <h5>Queries Written for You</h5>
+                    <p>Completion suggests whole query patterns, then the properties that fit each element.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="sy-dark-card">
+                    <div class="sy-tile purple"><i class="ti-bar-chart"></i></div>
+                    <h5>The Right View for Each Answer</h5>
+                    <p>Tables with verdict badges, bar charts, headlines and cards. Click an element to open it.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="sy-dark-card">
+                    <div class="sy-tile "><i class="ti-save"></i></div>
+                    <h5>Saved With the Model</h5>
+                    <p>Save queries by name in the model's queries folder, and commit them with it.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="sy-dark-card">
+                    <div class="sy-tile mix"><i class="ti-layers-alt"></i></div>
+                    <h5>Sessions</h5>
+                    <p>Keep each line of inquiry as a session to rename, search and reopen, or open side by side.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="sy-dark-card">
+                    <div class="sy-tile purple"><i class="ti-bolt"></i></div>
+                    <h5>From Your Agent to the Panel</h5>
+                    <p>A query your AI agent saves appears in the panel, one click to run.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="sy-dark-card">
+                    <div class="sy-tile "><i class="ti-pulse"></i></div>
+                    <h5>Live Model Insight</h5>
+                    <p>Errors, computed values and requirement verdicts in the editor as you type.</p>
+                </div>
+            </div>
+        </div>
+        <div class="sy-also">
+            <span class="sy-also-label">Also in the editor</span>
+            <span class="sy-pill">Go to definition</span><span class="sy-pill">Find references</span><span class="sy-pill">Completion</span><span class="sy-pill">Rename</span><span class="sy-pill">Formatting</span><span class="sy-pill">Semantic highlighting</span><span class="sy-pill">Inlay hints</span>
+        </div>
+    </div>
+</section>
+
+<section class="sy-band sy-band-light" id="why">
+    <div class="container">
+        <div class="sy-head">
+            <span class="eyebrow">Why Sysight</span>
+            <h2>Models That Answer Questions</h2>
+            <p class="text-muted">Find problems while you write, not at the next review. Your reports, pipelines and AI assistants work from the same verified facts.</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="sy-benefit"><div class="sy-tile"><i class="ti-timer"></i></div><div><h5>Faster Feedback</h5><p>Errors and requirement verdicts in seconds, not reviews.</p></div></div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="sy-benefit"><div class="sy-tile"><i class="ti-layers-alt"></i></div><div><h5>One Source of Truth</h5><p>People, pipelines and agents share one live model.</p></div></div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="sy-benefit"><div class="sy-tile purple"><i class="ti-shield"></i></div><div><h5>Grounded AI</h5><p>Agents that can check their own work against the model.</p></div></div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="sy-benefit"><div class="sy-tile mix"><i class="ti-unlock"></i></div><div><h5>No Lock-In</h5><p>Built on SysML v2, RDF, SPARQL, LSP and MCP.</p></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="sy-band" id="licensing">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="sy-license">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5 mb-4 mb-lg-0">
+                            <span class="sy-license-label">Get Sysight</span>
+                            <div class="sy-price">$0<small>to use</small></div>
+                            <h3>Free for Everyone</h3>
+                            <p class="mb-4">Free for individuals, consultants and companies in their engineering work. Reselling it or building it into a product or service requires a license.</p>
+                            <a href="https://github.com/modelware/sysight/releases/latest" target="_blank" rel="noopener" class="btn btn-primary mr-2 mb-2">Download</a>
+                            <a href="/contact?topic=sysight" class="btn btn-outline-light mb-2">Talk to Us</a>
+                        </div>
+                        <div class="col-lg-6 offset-lg-1">
+                            <div class="row">
+                                <div class="col-sm-6 mb-4 mb-sm-0">
+                                    <span class="sy-license-label">Included</span>
+                                    <ul>
+                                        <li><i class="ti-check"></i>Command line</li>
+                                        <li><i class="ti-check"></i>VS Code extension</li>
+                                        <li><i class="ti-check"></i>MCP server for agents</li>
+                                        <li><i class="ti-check"></i>Standard libraries</li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6">
+                                    <span class="sy-license-label">Runs on</span>
+                                    <ul>
+                                        <li><i class="ti-check"></i>macOS (ARM, Intel)</li>
+                                        <li><i class="ti-check"></i>Linux (x86-64, ARM)</li>
+                                        <li><i class="ti-check"></i>Windows (x86-64)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pb-5 mb-5">
+    <div class="container">
+        <div class="sy-cta bg-blue">
+            <img src="{{ '/assets/images/sysight-promo.jpg' | relative_url }}" alt="">
+            <div>
+                <h2>Bring Insight to Your SysML v2 Models</h2>
+                <p>Get Sysight running in your editor, your pipeline and your AI agents.</p>
+                <a href="https://github.com/modelware/sysight/releases/latest" target="_blank" rel="noopener" class="btn btn-primary mr-2 mb-2">Get Sysight</a>
+                <a href="/oml-code" class="btn btn-outline-light mb-2">Explore OML Code</a>
             </div>
         </div>
     </div>
