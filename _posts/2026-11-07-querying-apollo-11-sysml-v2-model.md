@@ -100,3 +100,5 @@ This is the same idea that runs through our work on ontology-based engineering i
 [Sysight](/sysight) is free to use, at work too, on macOS, Linux and Windows. Install it, open a folder of `.sysml` files in VS Code or run `sysight check` in a terminal, and start asking your model questions. The [Apollo 11 dashboard](https://www.modelware.io/apollo-11-sysml-v2/) shows where those questions can lead.
 
 If you are interested in the notebooks and queries behind the dashboard, or in applying this to your own SysML v2 models, [ask Modelware](/contact?topic=sysight).
+
+Have a thought or a question about this? Join the conversation in the [comments on LinkedIn](https://www.linkedin.com/posts/magedelaasar_sysmlv2-sysight-sparql-share-7524649395452039169-J8Si/).
