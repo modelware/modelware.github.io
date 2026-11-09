@@ -24,6 +24,15 @@ sysight:
     Role:
     How we work with SysML v2 today:
 
+sysight-support:
+  subject: "Sysight enterprise support inquiry"
+  message: |-
+    I am interested in an enterprise support package for Sysight.
+
+    Organization:
+    Number of users:
+    What we need (response times, priority fixes, adoption help):
+
 training-proposal:
   subject: "Training proposal request"
   message: |-
