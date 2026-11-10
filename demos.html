@@ -1,11 +1,11 @@
 ---
 layout: default
 title: Demos
-description: "Watch OML Code in action: formal OML models authored in VS Code, checked by a reasoner, queried, and used to ground AI. Demos from Modelware."
+description: "Watch Modelware products in action: OML Code for formal ontological MBSE, and Sysight for querying and checking SysML v2 models."
 header_image: "/assets/images/bg/banner-8.jpg"
 header_dark: true
 permalink: /demos
-seo_title: "OML Code Demos: Ontology-Based MBSE in Action"
+seo_title: "Modelware Demos: OML Code and Sysight in Action"
 ---
 
 {% include page_header.html %}
@@ -63,7 +63,22 @@ seo_title: "OML Code Demos: Ontology-Based MBSE in Action"
   }
   .video-card:hover .video-card-thumb::after { background: #0fb9a8; }
   .video-card-body { padding: 20px 22px 18px; display: flex; flex-direction: column; flex: 1 1 auto; }
-  .video-card-body h5 { margin-bottom: 8px; }
+  .video-card-body h5 { margin-bottom: 8px; text-transform: none; }
+  .video-card-tag {
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 10px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: #0a8f82;
+    background: rgba(15, 185, 168, 0.10);
+  }
+  .demo-playlists { font-size: 15px; color: #5d6b7e; }
+  .demo-playlists a { font-weight: 600; color: #0fb9a8; }
+  .demo-playlists a:hover { color: #0a8f82; }
   .video-card-body h5 a { color: inherit; }
   .video-card-body p { font-size: 14px; line-height: 1.65; color: #5d6b7e; margin-bottom: 0; }
 </style>
@@ -72,25 +87,34 @@ seo_title: "OML Code Demos: Ontology-Based MBSE in Action"
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-10 text-center">
-        <h2 class="mb-3">OML Code Demos</h2>
-        <p class="mx-auto" style="max-width: 620px;">See OML Code in action through guided product demos. More demo scenarios are being added.</p>
+        <h2 class="mb-3">Modelware Demos</h2>
+        <p class="mx-auto" style="max-width: 620px;">See Modelware products in action through guided demos. More demo scenarios are being added.</p>
         <a href="https://www.youtube.com/@Modelware-demos" class="btn btn-primary mt-2 mr-2" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
         <a href="/contact?topic=demo" class="btn btn-outline-primary mt-2">Request a Demo Session</a>
+        {% if site.data.demos.playlists %}
+        <p class="demo-playlists mt-4 mb-0">Playlists:
+          {% for pl in site.data.demos.playlists %}<a href="https://www.youtube.com/playlist?list={{ pl.id }}" target="_blank" rel="noopener noreferrer">{{ pl.name }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}
+        </p>
+        {% endif %}
       </div>
     </div>
 
     <div class="row justify-content-center mt-5">
+      {% for v in site.data.demos.videos %}
+      {% capture watch %}https://www.youtube.com/watch?v={{ v.id }}{% if v.playlist %}&list={{ v.playlist }}{% endif %}{% endcapture %}
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="video-card">
-          <a class="video-card-thumb" href="https://www.youtube.com/watch?v=5PojCZcfteA" target="_blank" rel="noopener noreferrer" aria-label="Watch: OML Code: Intelligence-Centric Engineering Platform">
-            <img src="https://img.youtube.com/vi/5PojCZcfteA/maxresdefault.jpg" alt="OML Code: Intelligence-Centric Engineering Platform" loading="lazy">
+          <a class="video-card-thumb" href="{{ watch }}" target="_blank" rel="noopener noreferrer" aria-label="Watch: {{ v.title }}">
+            <img src="https://img.youtube.com/vi/{{ v.id }}/maxresdefault.jpg" alt="{{ v.title }}" loading="lazy">
           </a>
           <div class="video-card-body">
-            <h5><a href="https://www.youtube.com/watch?v=5PojCZcfteA" target="_blank" rel="noopener noreferrer">OML Code: Intelligence-Centric Engineering Platform</a></h5>
-            <p>An introduction to OML Code, the intelligence-centric engineering platform that unifies Logic, AI, and DevOps.</p>
+            {% if v.product %}<span class="video-card-tag">{{ v.product }}</span>{% endif %}
+            <h5><a href="{{ watch }}" target="_blank" rel="noopener noreferrer">{{ v.title }}</a></h5>
+            <p>{{ v.summary }}</p>
           </div>
         </div>
       </div>
+      {% endfor %}
     </div>
   </div>
 </section>

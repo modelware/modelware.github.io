@@ -1,0 +1,23 @@
+# Demo videos on the Modelware Demos YouTube channel (https://www.youtube.com/@Modelware-demos).
+# The /demos page shows `videos` in this order (newest first) as one grid.
+#   product: optional label shown on the card (e.g. "OML Code", "Sysight")
+#   playlist: optional playlist id, so YouTube plays the rest of that playlist next
+videos:
+  - id: u3NSt6qnU7Y
+    title: "Finding and fixing a traceability slip in a SysML v2 model"
+    summary: "Sysight catches a broken traceability link in a SysML v2 model and walks through fixing it."
+    product: Sysight
+    playlist: PLQJ8YL_T4GC4
+
+  - id: 5PojCZcfteA
+    title: "OML Code: Intelligence-Centric Engineering Platform"
+    summary: "An introduction to OML Code, the intelligence-centric engineering platform that unifies Logic, AI, and DevOps."
+    product: OML Code
+    playlist: PLR56QU1bPMPA
+
+# Product playlists, linked from the top of the page.
+playlists:
+  - name: OML Code
+    id: PLR56QU1bPMPA
+  - name: Sysight
+    id: PLQJ8YL_T4GC4
