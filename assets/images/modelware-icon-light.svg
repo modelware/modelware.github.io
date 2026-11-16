@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" role="img" aria-label="Modelware">
+  <title>Modelware</title>
+  <defs>
+    <linearGradient id="mwl-edge" x1="84" y1="0" x2="236" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0d9488"/>
+      <stop offset="0.5" stop-color="#14b8a6"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(160,160) scale(1.3) translate(-160,-166)">
+    <path d="M84 232 L84 100 L160 184 L236 100 L236 232" stroke="url(#mwl-edge)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle cx="84" cy="232" r="13" fill="#0d9488"/>
+    <circle cx="84" cy="100" r="13" fill="#14b8a6"/>
+    <circle cx="236" cy="100" r="13" fill="#7c3aed"/>
+    <circle cx="236" cy="232" r="13" fill="#7c3aed"/>
+    <circle cx="160" cy="184" r="15" fill="#ffffff" stroke="url(#mwl-edge)" stroke-width="6"/>
+  </g>
+</svg>
