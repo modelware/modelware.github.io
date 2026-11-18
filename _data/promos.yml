@@ -25,6 +25,14 @@
 ##################################################################
 
 promos:
+- badge: "Forum"
+  page: /research/events/onto-nexus-forum-2027
+  title: "onto:Nexus Forum 2027: Neurosymbolic Systems Engineering"
+  content: "What symbolic analyses we can define with ontologies and formal methods, and how to make generative AI drive them. February 3, 2027 at UCLA and online, the day after INCOSE IW. Free, registration required."
+  image: "/assets/images/events/onto-nexus-forum-2027-banner.jpg"
+  button: "Register for free"
+  until: 2027-02-03
+
 - badge: "New"
   page: /sysight
   title: "Sysight: SysML v2 Insight"
@@ -45,12 +53,3 @@ promos:
   image: "/assets/images/academy-sep-en.jpg"
   link: "https://academy.modelware.io/courses/sep-en"
   button: "View the course"
-
-# onto:Nexus Forum 2027, back on once the forum is announced:
-# - badge: "Forum"
-#   page: /research/events/onto-nexus-forum-2027
-#   title: "onto:Nexus Forum 2027: Neurosymbolic Systems Engineering"
-#   content: "How to leverage generative AI with ontologies and the standard semantic web stack. February 3, 2027 at UCLA, the day after INCOSE IW. Free, seats are limited."
-#   image: "/assets/images/events/onto-nexus-forum-2027-banner.jpg"
-#   button: "Register for free"
-#   until: 2027-02-03

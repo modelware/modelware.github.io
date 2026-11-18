@@ -1,10 +1,8 @@
 ---
-# Not announced yet: set to true (and drop the excludes in _config.yml) to publish.
-published: false
 layout: default
 title: "onto:Nexus Forum 2027"
 permalink: /research/events/onto-nexus-forum-2027
-description: "onto:Nexus Forum 2027, the 3rd Forum on Ontological Modeling and Analysis: Neurosymbolic Systems Engineering. February 3, 2027 at UCLA, Los Angeles, the day after INCOSE IW 2027. Free, registration required."
+description: "onto:Nexus Forum 2027, the 3rd Forum on Ontological Modeling and Analysis: Neurosymbolic Systems Engineering, on what symbolic analyses we can define over engineering models and how to make generative AI drive them. February 3, 2027, hybrid: at UCLA (Engineering VI, Room 289), Los Angeles, and online, the day after INCOSE IW 2027. Free, registration required."
 seo_title: "onto:Nexus Forum 2027: Neurosymbolic Systems Engineering at UCLA"
 image: "/assets/images/events/onto-nexus-forum-2027-flyer.jpg"
 # The event as the flyer states it. The page below and the printable flyer
@@ -16,14 +14,14 @@ event:
   subtitle: "The 3rd Forum on Ontological Modeling and Analysis"
   tagline: "Generative AI, grounded in formal semantics"
   title: ["Neurosymbolic", "Systems Engineering"]
-  lead: "How to leverage generative AI with ontologies and the standard semantic web stack to build an effective systems engineering methodology."
+  lead: "What symbolic analyses we can define with ontologies and formal methods, and how to make generative AI drive them to produce engineering answers you can trust."
   facts:
     - label: "Date"
       value: "February 3, 2027"
-      detail: "Wednesday 9am - 5pm"
+      detail: "Wednesday 8:30am - 5pm"
     - label: "Venue"
-      value: "UCLA"
-      detail: "Los Angeles, California"
+      value: "UCLA + Online"
+      detail: "Engineering VI, Room 289"
     - label: "Admission"
       value: "Free"
       detail: "Registration required"
@@ -38,47 +36,48 @@ program_final: false
 # Set to true to ask registrants about the paid tutorial on February 4 (Yes or No, required).
 tutorial_question: false
 program:
-  - time: "8:30"
+  - time: "8:00"
     title: "Registration and Coffee"
     break: true
-  - time: "9:00"
+  - time: "8:30"
     title: "Welcome and Opening Remarks"
-  - time: "9:15"
-    title: "Keynote: The Case for Neurosymbolic Systems Engineering"
-    speaker: "Maged Elaasar"
-  - time: "10:15"
+  - time: "8:45"
+    title: "Keynote"
+  - time: "9:45"
     title: "Coffee Break"
     break: true
-  - time: "10:30"
+  - time: "10:00"
     title: "Session 1"
-  - time: "11:30"
+  - time: "11:00"
     title: "Session 2"
-  - time: "12:30"
+  - time: "12:00"
     title: "Lunch and Networking"
     break: true
-  - time: "13:30"
+  - time: "13:00"
     title: "Session 3"
-  - time: "14:30"
+  - time: "14:00"
     title: "Session 4"
-  - time: "15:15"
+  - time: "15:00"
     title: "Coffee Break"
     break: true
-  - time: "15:30"
-    title: "Panel Discussion"
-  - time: "16:30"
-    title: "Open Discussion and Closing"
+  - time: "15:15"
+    title: "Lightning Talks + Discussions"
+  - time: "16:45"
+    title: "Closing Remarks"
   - time: "17:00"
     title: "Close"
     break: true
 faq:
   - q: "How much does it cost to attend?"
-    a: "Nothing. Admission is free, and registration is required so we can plan seating."
+    a: "Admission is free, in person or online. Registration is required so we can plan seating, and your attendance is confirmed only once you receive a confirmation email from us."
   - q: "Do I need to be registered for INCOSE IW 2027?"
     a: "No. The forum is a separate event, open to anyone with an interest in the topic. It is held the day after INCOSE IW 2027 so attendees can stay in Los Angeles one more day."
+  - q: "Can I attend online?"
+    a: "Yes. The forum is hybrid: join us in person at UCLA or online. Choose how you will attend when you register, and we will send online attendees the link to join."
   - q: "Where exactly at UCLA is it held?"
-    a: "The building, room, and parking details will be sent to registered attendees and posted on this page."
+    a: "In Room 289 of Engineering VI, on the UCLA campus in Los Angeles. Parking details will be sent to registered attendees and posted on this page."
   - q: "Can I present my work at the forum?"
-    a: "We welcome proposals for talks. When you <a href=\"#register\">register</a>, add a title and a few sentences on what you would present."
+    a: "We welcome proposals for full session talks and for lightning talks. When you <a href=\"#register\">register</a>, add a title and a few sentences on what you would present, and say which kind of talk you have in mind. Proposals are reviewed, and your talk is confirmed only once you receive a confirmation email from us."
 ---
 
 <style>
@@ -217,19 +216,22 @@ faq:
   "@context": "https://schema.org",
   "@type": "Event",
   "name": "onto:Nexus Forum 2027: Neurosymbolic Systems Engineering",
-  "description": "The 3rd Forum on Ontological Modeling and Analysis. How to leverage generative AI with ontologies and the standard semantic web stack to build an effective systems engineering methodology.",
-  "startDate": "2027-02-03T09:00:00-08:00",
+  "description": "The 3rd Forum on Ontological Modeling and Analysis. What symbolic analyses we can define with ontologies and formal methods, and how to make generative AI drive them to produce engineering answers you can trust.",
+  "startDate": "2027-02-03T08:30:00-08:00",
   "endDate": "2027-02-03T17:00:00-08:00",
   "eventStatus": "https://schema.org/EventScheduled",
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
   "isAccessibleForFree": true,
   "image": "{{ page.image | absolute_url }}",
   "url": "{{ page.url | absolute_url }}",
-  "location": {
-    "@type": "Place",
-    "name": "UCLA",
-    "address": { "@type": "PostalAddress", "addressLocality": "Los Angeles", "addressRegion": "CA", "addressCountry": "US" }
-  },
+  "location": [
+    {
+      "@type": "Place",
+      "name": "UCLA, Engineering VI, Room 289",
+      "address": { "@type": "PostalAddress", "addressLocality": "Los Angeles", "addressRegion": "CA", "addressCountry": "US" }
+    },
+    { "@type": "VirtualLocation", "url": "{{ page.url | absolute_url }}" }
+  ],
   "organizer": { "@type": "Organization", "name": "Modelware", "url": "{{ site.url }}" },
   "offers": {
     "@type": "Offer",
@@ -291,9 +293,10 @@ faq:
                 <h2>This Forum</h2>
             </div>
             <div class="col-lg-8 onx-prose">
-                <p>Generative AI can draft requirements, propose architectures, and answer questions about a system in seconds. What it cannot do on its own is guarantee that its output follows the engineering method. That guarantee comes from formal semantics: ontologies that define a domain, and the standard semantic web stack to validate, reason over, and query what is built with them.</p>
-                <p>None of this is new or experimental. The semantic web stack has matured over 25 years as a family of W3C standards, with proven tooling and production use in industry and government. Grounding generative AI in it means building on a foundation that has already stood the test of time.</p>
-                <p class="mb-0">This one-day forum brings practitioners and researchers together on putting the two to work side by side. It is the third onto:Nexus Forum, following the <a href="https://www.opencaesar.io/events/onto-Nexus-Forum-2024" target="_blank" rel="noopener">2024</a> and <a href="https://www.opencaesar.io/events/onto-Nexus-Forum-2025" target="_blank" rel="noopener">2025</a> forums at NASA's Jet Propulsion Laboratory in Pasadena.</p>
+                <p>Generative AI can answer questions about a system in seconds. What it cannot do on its own is guarantee that the answer is right. Symbolic analyses can: queries, rules, constraints, and reasoning over ontological models compute an answer exactly, the same way every time, and show how it was reached. The opportunity is to put the two together, with generative AI choosing the analysis a question calls for, running it, and explaining the result, while the analysis itself stays symbolic and exact.</p>
+                <p>This forum takes up two questions. First, what symbolic analyses can we define over engineering models with ontologies and formal methods, and which engineering questions do they answer, from consistency and completeness checks to requirement verification, trade studies, design space exploration, and impact analysis? Second, how do we make generative AI drive them: find the right analysis for a question, understand what it computes and when it applies, supply its inputs, and read its results, while the engineer stays in control of the method?</p>
+                <p>The building blocks are mature. The semantic web stack has grown over 25 years into a family of W3C standards, OWL for reasoning, SHACL for validation, and SPARQL for queries, with proven tooling and production use in industry and government. Alongside it stand decades of formal methods with proven tools of their own: model checkers, SMT and constraint solvers, theorem provers, and simulation and optimization engines. These need to be integrated, so that an analysis over an ontological model can draw on whichever method fits the question. Driving them with generative AI means building on foundations that have already stood the test of time.</p>
+                <p class="mb-0">This one-day forum brings practitioners and researchers together to share the analyses they have defined, how they have made generative AI drive them, and lessons from putting them to work. It is the third onto:Nexus Forum, following the <a href="https://www.opencaesar.io/events/onto-Nexus-Forum-2024" target="_blank" rel="noopener">2024</a> and <a href="https://www.opencaesar.io/events/onto-Nexus-Forum-2025" target="_blank" rel="noopener">2025</a> forums at NASA's Jet Propulsion Laboratory in Pasadena.</p>
             </div>
         </div>
     </div>
@@ -353,7 +356,7 @@ faq:
 <section class="onx-close" id="register">
     <div class="container">
         <h2>Save Your Seat</h2>
-        <p>February 3, 2027 at UCLA. Free, registration required. Seats are limited.</p>
+        <p>February 3, 2027 at UCLA and online. Free, registration required. Seats in the room are limited, so attendees and speakers are confirmed by email.</p>
         <form class="onx-form" method="post" action="{{ site.contact_form_action }}">
             <input type="hidden" name="_subject" value="Registration: onto:Nexus Forum 2027">
             <input type="hidden" name="topic" value="onto-nexus-forum-2027">
@@ -371,19 +374,24 @@ faq:
                 <label for="reg-email">Email</label>
                 <input class="form-control" type="email" name="email" id="reg-email" autocomplete="email" required>
             </div>
+            <fieldset class="form-group onx-choice">
+                <legend>How will you attend?</legend>
+                <label><input type="radio" name="attendance" value="In person" required> In person at UCLA</label>
+                <label><input type="radio" name="attendance" value="Online"> Online</label>
+            </fieldset>
             <div class="form-group">
                 <label for="reg-talk">Talk you would like to propose <span class="optional">(optional)</span></label>
                 <textarea class="form-control" name="talk_proposal" id="reg-talk" rows="4" placeholder="A title and a few sentences on what you would present"></textarea>
             </div>
             {% if page.tutorial_question %}
             <fieldset class="form-group onx-choice">
-                <legend>Would you be interested in a hands-on tutorial on defining a neurosymbolic systems engineering methodology using <a href="/oml-code" target="_blank" rel="noopener">OML Code</a> the next day (February 4, 2027)? <span class="onx-price">Full day, $500.</span></legend>
+                <legend>Would you be interested in a hands-on tutorial on defining symbolic analyses driven by generative AI using <a href="/oml-code" target="_blank" rel="noopener">OML Code</a> the next day (February 4, 2027)? <span class="onx-price">Full day, $500.</span></legend>
                 <label><input type="radio" name="tutorial_interest" value="Yes" required> Yes</label>
                 <label><input type="radio" name="tutorial_interest" value="No"> No</label>
             </fieldset>
             {% endif %}
             <button type="submit" class="btn btn-primary">Request Registration</button>
-            <p class="onx-form-fine">Your seat is confirmed once you receive a confirmation email from us. We use these details only to manage your registration and send you event updates. See our <a href="/legal/privacy/">Privacy Notice</a>.</p>
+            <p class="onx-form-fine">Your registration is confirmed once you receive a confirmation email from us. We use these details only to manage your registration and send you event updates. See our <a href="/legal/privacy/">Privacy Notice</a>.</p>
             <div class="onx-form-status" role="status" aria-live="polite"></div>
         </form>
     </div>
@@ -405,7 +413,7 @@ faq:
                 .then(function (response) {
                     if (!response.ok) throw new Error(response.status);
                     form.classList.add("done");
-                    status.textContent = "Thank you, we have received your registration. Since seats are limited, your seat is held only once we email you a confirmation, along with the venue details.";
+                    status.textContent = "Thank you, we have received your registration. It is confirmed once we email you, with parking details if you are joining in person or the link to join if you are joining online.";
                 })
                 .catch(function () { form.submit(); });
         });
