@@ -19,7 +19,7 @@ main:
       - name: Publications
         url: /research/publications/
       - name: Events
-        url: /research/events/
+        url: /events/
   - name: Partners
     url: /partners
   - name: Learn

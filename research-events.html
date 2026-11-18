@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Events"
-permalink: /research/events/
+permalink: /events/
 description: "Forums, workshops, tutorials, and talks by Modelware Labs on ontological modeling, OML, and Neurosymbolic Systems Engineering, including the onto:Nexus series."
 seo_title: "Events: onto:Nexus Forum, Workshops, and Talks | Modelware Labs"
 ---
@@ -16,23 +16,53 @@ seo_title: "Events: onto:Nexus Forum, Workshops, and Talks | Modelware Labs"
     }
     .evt-section-head { max-width: 720px; margin: 0 auto 40px; }
 
-    /* Featured upcoming event */
+    /* Featured upcoming event: an art band with the date, then the details on white */
     .evt-feature {
-        display: flex;
-        border-radius: 20px;
+        border-radius: 18px;
         overflow: hidden;
-        background: linear-gradient(160deg, #0a1322 0%, #16233c 100%);
-        box-shadow: 0 24px 50px rgba(16, 26, 46, 0.22);
+        background: #fff;
+        border: 1px solid #e3e8ef;
+        box-shadow: 0 18px 44px rgba(16, 26, 46, 0.10);
         margin-bottom: 30px;
     }
-    .evt-feature-img { flex: 0 0 34%; max-width: 34%; }
-    .evt-feature-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
-    .evt-feature-body { flex: 1 1 auto; padding: 40px 44px; color: #fff; }
-    .evt-feature-body h3 { color: #fff; font-family: 'Space Grotesk', sans-serif; font-size: 32px; margin: 10px 0 6px; }
-    .evt-feature-body .evt-sub { color: #6ee7db; font-family: 'Space Grotesk', sans-serif; font-size: 19px; margin-bottom: 18px; }
-    .evt-feature-body p { color: rgba(255, 255, 255, 0.72); font-size: 16px; line-height: 1.7; }
-    .evt-meta { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 20px 0 26px; font-size: 15px; color: rgba(255, 255, 255, 0.85); }
-    .evt-meta i { color: #0fb9a8; margin-right: 6px; }
+    .evt-feature-art {
+        position: relative;
+        display: block;
+        height: 250px;
+        background: radial-gradient(120% 140% at 75% 0%, #17305a 0%, #0f1d38 55%, #0b1529 100%);
+        overflow: hidden;
+    }
+    .evt-feature-art img { position: absolute; right: 0; top: 0; height: 100%; width: 72%; object-fit: contain; object-position: right center; }
+    .evt-feature-art img.evt-photo { width: 100%; object-fit: cover; object-position: center; opacity: .55; }
+    .evt-feature-art::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: linear-gradient(90deg, #3cc0b4 0 33.3%, #7d6fd6 33.3% 66.6%, #b3203a 66.6%); }
+    .evt-date {
+        position: absolute; left: 44px; top: 50%; transform: translateY(-50%);
+        width: 132px; padding: 16px 0 14px; text-align: center;
+        background: #fff; border-radius: 14px; box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+        font-family: 'Space Grotesk', sans-serif; color: #101a2e; line-height: 1;
+    }
+    .evt-date .m { display: block; font-size: 15px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #0b8f82; }
+    .evt-date .d { display: block; font-size: 58px; font-weight: 700; margin: 8px 0 6px; }
+    .evt-date .y { display: block; font-size: 14px; color: #6b7686; }
+    .evt-feature-body { display: flex; gap: 48px; padding: 38px 44px 40px; }
+    .evt-feature-main { flex: 1 1 58%; }
+    .evt-feature-side { flex: 1 1 42%; border-left: 1px solid #e8ecf2; padding-left: 40px; }
+    .evt-feature-main h3 { color: #101a2e; font-family: 'Space Grotesk', sans-serif; font-size: 30px; margin: 14px 0 4px; }
+    .evt-feature-main h3 a { color: inherit; }
+    .evt-feature-main .evt-sub { color: #0b8f82; font-family: 'Space Grotesk', sans-serif; font-size: 18px; margin-bottom: 16px; }
+    .evt-feature-main p { color: #475264; font-size: 16px; line-height: 1.7; }
+    .evt-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .evt-tag-plain { display: inline-block; font-family: 'Space Grotesk', sans-serif; font-size: 11.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 5px 12px; border-radius: 999px; color: #5a4fc0; background: rgba(125, 111, 214, 0.12); }
+    .evt-facts { margin: 0 0 26px; }
+    .evt-fact { display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid #eef1f5; }
+    .evt-fact:first-child { padding-top: 0; }
+    .evt-fact i { flex: 0 0 18px; color: #0fb9a8; font-size: 17px; margin-top: 3px; }
+    .evt-fact .lbl { display: block; font-size: 11.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #8a94a3; margin-bottom: 2px; }
+    .evt-fact strong { display: block; color: #101a2e; font-size: 15.5px; font-weight: 600; }
+    .evt-fact span.det { display: block; color: #5d6779; font-size: 14.5px; }
+    .evt-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .evt-actions .btn-outline { padding: 12px 22px; border: 1px solid #cdd5e0; border-radius: 6px; color: #101a2e; font-weight: 600; font-size: 15px; }
+    .evt-actions .btn-outline:hover { border-color: #0fb9a8; color: #0b8f82; }
     .evt-kind {
         display: inline-block;
         font-family: 'Space Grotesk', sans-serif;
@@ -45,7 +75,6 @@ seo_title: "Events: onto:Nexus Forum, Workshops, and Talks | Modelware Labs"
         color: #0b8f82;
         background: rgba(15, 185, 168, 0.12);
     }
-    .evt-feature .evt-kind { color: #6ee7db; background: rgba(15, 185, 168, 0.16); }
 
     /* Past events */
     .evt-card {
@@ -68,14 +97,17 @@ seo_title: "Events: onto:Nexus Forum, Workshops, and Talks | Modelware Labs"
     .evt-card .evt-when i { color: #0fb9a8; margin-right: 4px; }
 
     @media (max-width: 991px) {
-        .evt-feature { flex-direction: column; }
-        .evt-feature-img { max-width: 100%; max-height: 360px; }
-        .evt-feature-body { padding: 30px 26px; }
+        .evt-feature-body { flex-direction: column; gap: 28px; padding: 30px 26px 32px; }
+        .evt-feature-side { border-left: 0; padding-left: 0; border-top: 1px solid #e8ecf2; padding-top: 26px; }
     }
     @media (max-width: 575px) {
         .evt-card { flex-direction: column; }
         .evt-card img { width: 100%; height: 180px; }
-        .evt-feature-body h3 { font-size: 26px; }
+        .evt-feature-main h3 { font-size: 25px; }
+        .evt-feature-art { height: 200px; }
+        .evt-feature-art img { width: 100%; opacity: .45; object-position: center; }
+        .evt-date { left: 20px; width: 112px; }
+        .evt-date .d { font-size: 48px; }
     }
 </style>
 
@@ -108,20 +140,38 @@ seo_title: "Events: onto:Nexus Forum, Workshops, and Talks | Modelware Labs"
         {% assign ev_date = ev.date | date: '%Y-%m-%d' %}
         {% if ev_date >= today and ev.draft != true %}
         {% assign upcoming = upcoming | plus: 1 %}
-        <div class="evt-feature">
-            <a class="evt-feature-img" href="{{ ev.url | relative_url }}"><img src="{{ ev.image | relative_url }}" alt="{{ ev.title }}"></a>
-            <div class="evt-feature-body">
-                <span class="evt-kind">{{ ev.kind }}</span>
-                <h3>{{ ev.title }}</h3>
-                <div class="evt-sub">{{ ev.subtitle }}</div>
-                <p class="mb-0">{{ ev.summary }}</p>
-                <div class="evt-meta">
-                    <span><i class="ti-calendar"></i>{{ ev.when }}</span>
-                    <span><i class="ti-location-pin"></i>{{ ev.location }}</span>
+        <article class="evt-feature">
+            <a class="evt-feature-art" href="{{ ev.url | relative_url }}" aria-label="{{ ev.title }}">
+                {% if ev.art %}<img src="{{ ev.art | relative_url }}" alt="" aria-hidden="true">{% else %}<img class="evt-photo" src="{{ ev.image | relative_url }}" alt="" aria-hidden="true">{% endif %}
+                <div class="evt-date">
+                    <span class="m">{{ ev.date | date: '%b' }}</span>
+                    <span class="d">{{ ev.date | date: '%-d' }}</span>
+                    <span class="y">{{ ev.date | date: '%A' | slice: 0, 3 }} &middot; {{ ev.date | date: '%Y' }}</span>
                 </div>
-                <a href="{{ ev.url | relative_url }}" class="btn btn-primary">Event Details <i class="ti-arrow-right ml-1"></i></a>
+            </a>
+            <div class="evt-feature-body">
+                <div class="evt-feature-main">
+                    <div class="evt-tags">
+                        <span class="evt-kind">{{ ev.kind }}</span>
+                        {% if ev.location contains 'online' %}<span class="evt-tag-plain">Hybrid</span>{% endif %}
+                    </div>
+                    <h3><a href="{{ ev.url | relative_url }}">{{ ev.title }}</a></h3>
+                    <div class="evt-sub">{{ ev.subtitle }}</div>
+                    <p class="mb-0">{{ ev.summary }}</p>
+                </div>
+                <div class="evt-feature-side">
+                    <div class="evt-facts">
+                        <div class="evt-fact"><i class="ti-calendar"></i><div><span class="lbl">When</span><strong>{{ ev.when }}</strong>{% if ev.time %}<span class="det">{{ ev.time }}</span>{% endif %}</div></div>
+                        <div class="evt-fact"><i class="ti-location-pin"></i><div><span class="lbl">Where</span><strong>{{ ev.venue | default: ev.location }}</strong>{% if ev.venue_detail %}<span class="det">{{ ev.venue_detail }}</span>{% endif %}</div></div>
+                        {% if ev.admission %}<div class="evt-fact"><i class="ti-ticket"></i><div><span class="lbl">Admission</span><strong>{{ ev.admission }}</strong>{% if ev.admission_detail %}<span class="det">{{ ev.admission_detail }}</span>{% endif %}</div></div>{% endif %}
+                    </div>
+                    <div class="evt-actions">
+                        {% if ev.register %}<a href="{{ ev.register | relative_url }}" class="btn btn-primary">Register</a>{% endif %}
+                        <a href="{{ ev.url | relative_url }}" class="{% if ev.register %}btn-outline{% else %}btn btn-primary{% endif %}">Event Details <i class="ti-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
             </div>
-        </div>
+        </article>
         {% endif %}
         {% endfor %}
         {% if upcoming == 0 %}

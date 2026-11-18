@@ -12,8 +12,8 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 FLYERS=(
   # page                                        PDF (- for none)                             JPG
-  "research/events/onto-nexus-forum-2027-flyer  assets/events/onto-nexus-forum-2027-flyer.pdf assets/images/events/onto-nexus-forum-2027-flyer.jpg"
-  "research/events/onto-nexus-forum-2027-banner -                                             assets/images/events/onto-nexus-forum-2027-banner.jpg"
+  "events/onto-nexus-forum-2027-flyer  assets/events/onto-nexus-forum-2027-flyer.pdf assets/images/events/onto-nexus-forum-2027-flyer.jpg"
+  "events/onto-nexus-forum-2027-banner -                                             assets/images/events/onto-nexus-forum-2027-banner.jpg"
 )
 
 if [[ $# -ge 1 ]]; then

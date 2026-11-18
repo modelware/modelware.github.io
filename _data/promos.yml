@@ -26,7 +26,7 @@
 
 promos:
 - badge: "Forum"
-  page: /research/events/onto-nexus-forum-2027
+  page: /events/onto-nexus-forum-2027
   title: "onto:Nexus Forum 2027: Neurosymbolic Systems Engineering"
   content: "What symbolic analyses we can define with ontologies and formal methods, and how to make generative AI drive them. February 3, 2027 at UCLA and online, the day after INCOSE IW. Free, registration required."
   image: "/assets/images/events/onto-nexus-forum-2027-banner.jpg"
