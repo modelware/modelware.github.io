@@ -9,6 +9,8 @@ main:
         url: /sysight
       - name: Marketplace
         url: /marketplace
+      - name: Customer Stories
+        url: /customers/
   - name: Demos
     url: /demos
   - name: Research
@@ -54,6 +56,8 @@ footer:
     url: /sysight
   - name: Marketplace
     url: /marketplace
+  - name: Customer Stories
+    url: /customers/
   - name: Demos
     url: /demos
   - name: Research

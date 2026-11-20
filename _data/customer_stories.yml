@@ -1,0 +1,17 @@
+# Customer stories on /customers/, newest first. Each is a brief card linking to the full story,
+# which is an article in The Axiom (categories: [customer story]). Claims about a customer come
+# only from the customer's own literature, which the article cites; no papers, no other articles.
+#
+#   org        the customer, as they name themselves
+#   unit       the team within it
+#   products   the Modelware products the story features
+#   region     shown as a chip
+#   headline   one line on what they achieved
+#   url        the Axiom article
+
+- org: "JAXA"
+  unit: "Mission Design Unit"
+  products: ["OML Code"]
+  region: "Japan"
+  headline: "Engineering know-how captured as reusable knowledge graphs that a reasoner can analyze and verify across the lifecycle."
+  url: "/jaxa-customer-story"

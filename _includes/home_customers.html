@@ -1,51 +1,20 @@
-<section class="section home-platform bg-light">
+{% comment %} Homepage pointer to /customers/: one card, the stories themselves live on that page. {% endcomment %}
+<style>
+    .home-stories { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px; padding: 34px 40px; border: 1px solid rgba(16, 26, 46, 0.08); border-top: 3px solid #0fb9a8; border-radius: 16px; background: linear-gradient(160deg, #ffffff 0%, #f2f7fb 100%); box-shadow: 0 16px 36px rgba(16, 26, 46, 0.08); }
+    .home-stories .text { flex: 1 1 480px; }
+    .home-stories h3 { margin: 6px 0 8px; color: #16233c; }
+    .home-stories p { margin: 0; color: #5d6b7e; }
+    @media (max-width: 767px) { .home-stories { padding: 26px 22px; } }
+</style>
+<section class="section home-platform">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-                <div class="mb-5">
-                    <h2 class="mb-3">Customer Success</h2>
-                    <p>See how leading organizations are transforming with Modelware.</p>
-                </div>
+        <div class="home-stories">
+            <div class="text">
+                <span class="eyebrow">Customer Stories</span>
+                <h3>Proven in Practice</h3>
+                <p>See how engineering organizations use Modelware products to bring rigor, automation, and agility to how they engineer.</p>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-6 mb-4">
-                <div class="card border-0 shadow h-100">
-                    <div class="card-body p-4">
-                        <div class="mb-3 text-warning">
-                            <i class="ti-star"></i><i class="ti-star"></i><i class="ti-star"></i><i class="ti-star"></i><i class="ti-star"></i>
-                        </div>
-                        <p class="font-italic mb-4">"Modelware has revolutionized our systems engineering process. We've seen a 30% reduction in design errors and significantly faster time-to-market."</p>
-                        <div class="d-flex align-items-center">
-                            <div>
-                                <h6 class="mb-0">Chief Systems Engineer</h6>
-                                <small class="text-muted">Major Defense Contractor</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 mb-4">
-                <div class="card border-0 shadow h-100 bg-primary text-white">
-                    <div class="card-body p-4">
-                        <h4 class="text-white mb-3">Featured Case Study</h4>
-                        <h5 class="text-white-50 mb-3">Next-Gen Satellite Constellation</h5>
-                        <p class="mb-4">How a leading space agency used Modelware to manage the complexity of a 500-satellite constellation.</p>
-                        <div class="row mb-4">
-                            <div class="col-6">
-                                <h3 class="text-white">40%</h3>
-                                <small>Efficiency Gain</small>
-                            </div>
-                            <div class="col-6">
-                                <h3 class="text-white">6 Mo</h3>
-                                <small>Faster Delivery</small>
-                            </div>
-                        </div>
-                        <a href="/customers.html" class="btn btn-light btn-sm">Read Case Study</a>
-                    </div>
-                </div>
-            </div>
+            <a href="{{ '/customers/' | relative_url }}" class="btn btn-primary">Read Customer Stories</a>
         </div>
     </div>
 </section>

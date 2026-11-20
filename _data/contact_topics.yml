@@ -96,3 +96,14 @@ coe-partner:
     Website:
     Region:
     Areas of expertise:
+
+customer-story:
+  subject: "Customer story"
+  message: |-
+    We use a Modelware product and would like to share our story.
+
+    Organization:
+    Team:
+    Product (OML Code, Sysight, other):
+    What we use it for:
+    What changed:
