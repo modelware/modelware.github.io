@@ -83,7 +83,7 @@ faq:
   - q: "How much does it cost to attend?"
     a: "Admission is free, in person or online. Registration is required so we can plan seating, and your attendance is confirmed only once you receive a confirmation email from us."
   - q: "Can I present my work at the forum?"
-    a: "We welcome proposals for full session talks and for lightning talks. When you <a href=\"#register\">register</a>, add a title and a few sentences on what you would present, and say which kind of talk you have in mind. Proposals are reviewed, and your talk is confirmed only once you receive a confirmation email from us."
+    a: "We welcome proposals for session talks (25 minutes) and lightning talks (8 minutes). <a href=\"#propose\">Propose a talk</a> with a title and a few sentences on what you would present. Proposals are reviewed, and your talk is confirmed only once you receive a confirmation email from us. Please also <a href=\"#register\">register</a> to save your seat."
   - q: "Do I need to be registered for INCOSE IW 2027?"
     a: "No. The forum is a separate event, open to anyone with an interest in the topic. It is held the day after INCOSE IW 2027 so attendees can stay in Los Angeles one more day."
   - q: "Can I attend online?"
@@ -192,6 +192,8 @@ faq:
     .onx-close h2 { font-family: 'Source Serif 4', Georgia, serif; font-weight: 700; font-size: 40px; color: #fff; margin-bottom: 10px; }
     .onx-close p { color: #aebbd2; font-size: 18px; margin-bottom: 28px; }
     .onx-close .btn { padding: 14px 30px; }
+    .onx-propose { padding-top: 0; }
+    .onx-propose .container { border-top: 1px solid rgba(255, 255, 255, 0.12); padding-top: 64px; }
     .onx-form { max-width: 680px; margin: 0 auto; text-align: left; }
     .onx-form label, .onx-form legend { display: block; font-size: 14px; font-weight: 600; color: #dbe3f0; margin-bottom: 6px; }
     .onx-form .form-control { height: 48px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.18); background: rgba(255, 255, 255, 0.06); color: #fff; }
@@ -312,6 +314,7 @@ faq:
         <div class="onx-note">{{ ev.note }}</div>
         <div class="onx-actions">
             <a href="#register" class="btn btn-primary mb-2">Register for Free</a>
+            <a class="link" href="#propose"><i class="ti-microphone"></i>Propose a talk</a>
             <a class="link" href="{{ '/assets/events/onto-nexus-forum-2027.ics' | relative_url }}" download><i class="ti-calendar"></i>Add to calendar</a>
             <a class="link" href="{{ ev.flyer_pdf | relative_url }}" target="_blank" rel="noopener"><i class="ti-download"></i>Flyer (PDF)</a>
         </div>
@@ -414,10 +417,6 @@ faq:
                 <label><input type="radio" name="attendance" value="In person" required> In person at UCLA</label>
                 <label><input type="radio" name="attendance" value="Online"> Online</label>
             </fieldset>
-            <div class="form-group">
-                <label for="reg-talk">Talk you would like to propose <span class="optional">(optional)</span></label>
-                <textarea class="form-control" name="talk_proposal" id="reg-talk" rows="4" placeholder="A title and a few sentences on what you would present"></textarea>
-            </div>
             {% if page.tutorial_question %}
             <fieldset class="form-group onx-choice">
                 <legend>Would you be interested in a hands-on tutorial on defining symbolic analyses driven by generative AI using <a href="/oml-code" target="_blank" rel="noopener">OML Code</a> the next day (February 4, 2027)? <span class="onx-price">Full day, $500.</span></legend>
@@ -432,25 +431,73 @@ faq:
     </div>
 </section>
 
+<!-- Propose a talk: a separate submission, so registrations and proposals arrive apart -->
+<section class="onx-close onx-propose" id="propose">
+    <div class="container">
+        <h2>Propose a Talk</h2>
+        <p>Share the analyses you have defined, how you made generative AI drive them, or lessons from putting them to work.</p>
+        <form class="onx-form" method="post" action="{{ site.contact_form_action }}">
+            <input type="hidden" name="_subject" value="Talk proposal: onto:Nexus Forum 2027">
+            <input type="hidden" name="topic" value="onto-nexus-forum-2027-talk">
+            <div class="form-row">
+                <div class="col-md-6 form-group">
+                    <label for="talk-name">Name</label>
+                    <input class="form-control" type="text" name="name" id="talk-name" autocomplete="name" required>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="talk-affiliation">Affiliation</label>
+                    <input class="form-control" type="text" name="affiliation" id="talk-affiliation" autocomplete="organization" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="talk-email">Email</label>
+                <input class="form-control" type="email" name="email" id="talk-email" autocomplete="email" required>
+            </div>
+            <fieldset class="form-group onx-choice">
+                <legend>What kind of talk?</legend>
+                <label><input type="radio" name="talk_kind" value="Session talk" required> Session talk (25 min)</label>
+                <label><input type="radio" name="talk_kind" value="Lightning talk"> Lightning talk (8 min)</label>
+            </fieldset>
+            <div class="form-group">
+                <label for="talk-title">Title</label>
+                <input class="form-control" type="text" name="talk_title" id="talk-title" required>
+            </div>
+            <div class="form-group">
+                <label for="talk-abstract">Abstract</label>
+                <textarea class="form-control" name="talk_abstract" id="talk-abstract" rows="5" placeholder="A few sentences on what you would present" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Proposal</button>
+            <p class="onx-form-fine">Proposals are reviewed, and your talk is confirmed once you receive a confirmation email from us. Speakers also <a href="#register">register</a> to save their seat. See our <a href="/legal/privacy/">Privacy Notice</a>.</p>
+            <div class="onx-form-status" role="status" aria-live="polite"></div>
+        </form>
+    </div>
+</section>
+
 <script>
     // Submit in place so the attendee stays on the page; if the request fails for any reason,
     // fall back to an ordinary post to Formspree, which shows its own confirmation.
     (function () {
-        var form = document.querySelector(".onx-form");
-        if (!form || !window.fetch) return;
-        var status = form.querySelector(".onx-form-status");
-        var button = form.querySelector("button[type=submit]");
-        form.addEventListener("submit", function (event) {
-            event.preventDefault();
-            button.disabled = true;
-            status.textContent = "Sending...";
-            fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })
-                .then(function (response) {
-                    if (!response.ok) throw new Error(response.status);
-                    form.classList.add("done");
-                    status.textContent = "Thank you, we have received your registration. It is confirmed once we email you, with parking details if you are joining in person or the link to join if you are joining online.";
-                })
-                .catch(function () { form.submit(); });
+        if (!window.fetch) return;
+        var thanks = {
+            register: "Thank you, we have received your registration. It is confirmed once we email you, with parking details if you are joining in person or the link to join if you are joining online.",
+            propose: "Thank you, we have received your proposal. We will review it and email you once your talk is confirmed."
+        };
+        document.querySelectorAll(".onx-form").forEach(function (form) {
+            var message = thanks[form.closest("section").id];
+            var status = form.querySelector(".onx-form-status");
+            var button = form.querySelector("button[type=submit]");
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+                button.disabled = true;
+                status.textContent = "Sending...";
+                fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })
+                    .then(function (response) {
+                        if (!response.ok) throw new Error(response.status);
+                        form.classList.add("done");
+                        status.textContent = message;
+                    })
+                    .catch(function () { form.submit(); });
+            });
         });
     })();
 </script>
