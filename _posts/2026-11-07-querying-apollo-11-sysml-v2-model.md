@@ -4,19 +4,19 @@ title: "Apollo 11 in SysML v2: What a Model Says When You Can Query It"
 date: 2026-11-07 06:00:00 -0800
 author: "Maged Elaasar"
 categories: [insights]
-tags: [SysML v2, MBSE, SPARQL, Sysight, systems engineering, requirements, model quality]
-post_image: "/assets/images/blog/apollo-11-sysml-v2-sysight.png"
-image: "/assets/images/blog/apollo-11-sysml-v2-sysight.png"
-description: "We took Airbus's open SysML v2 model of Apollo 11 and queried it with SPARQL using Sysight. The result is a ten-page engineering dashboard, from mission overview to requirements traceability to model quality, computed from the model on every commit."
+tags: [SysML v2, MBSE, SPARQL, Sysmantic, systems engineering, requirements, model quality]
+post_image: "/assets/images/blog/apollo-11-sysml-v2-sysmantic.png"
+image: "/assets/images/blog/apollo-11-sysml-v2-sysmantic.png"
+description: "We took Airbus's open SysML v2 model of Apollo 11 and queried it with SPARQL using Sysmantic. The result is a ten-page engineering dashboard, from mission overview to requirements traceability to model quality, computed from the model on every commit."
 ---
 
 A SysML model is a large amount of engineering knowledge stored in a form that is hard to look at. Diagrams show a slice at a time, and a slice chosen by whoever drew it. The questions systems engineers actually ask cut across those slices: which requirements have nothing satisfying them, how much Δv each maneuver needs and which stage provides it, what a stakeholder need turns into three levels down, how much of the model is documented at all.
 
-To see how far you can get by simply *asking* a model those questions, we took the open SysML v2 model of Apollo 11 published by Airbus and explored it with [Sysight](/sysight), our free SysML v2 tool. The answers became a ten-page engineering dashboard, and every number, table and chart on it is computed from the model.
+To see how far you can get by simply *asking* a model those questions, we took the open SysML v2 model of Apollo 11 published by Airbus and explored it with [Sysmantic](/sysmantic), our free SysML v2 tool. The answers became a ten-page engineering dashboard, and every number, table and chart on it is computed from the model.
 
 <aside class="axiom-aside" markdown="1">
 <span class="axiom-aside-label">See it</span>
-The model: [airbus/apollo-11-sysml-v2](https://github.com/airbus/apollo-11-sysml-v2). The dashboard: [modelware.io/apollo-11-sysml-v2](https://www.modelware.io/apollo-11-sysml-v2/). The tool: [Sysight](/sysight), free to use.
+The model: [airbus/apollo-11-sysml-v2](https://github.com/airbus/apollo-11-sysml-v2). The dashboard: [modelware.io/apollo-11-sysml-v2](https://www.modelware.io/apollo-11-sysml-v2/). The tool: [Sysmantic](/sysmantic), free to use.
 </aside>
 
 ## The model
@@ -27,7 +27,7 @@ It is also a good test case precisely because it is realistic. It is big enough 
 
 ## From questions to queries
 
-Sysight holds a SysML v2 model as a knowledge graph and answers [SPARQL](https://www.w3.org/TR/sparql11-query/) queries over it. SPARQL is a declarative query language: you describe the pattern you are looking for, and the engine finds every place in the model that matches. You do not write traversal code, and you do not export the model to a spreadsheet first.
+Sysmantic holds a SysML v2 model as a knowledge graph and answers [SPARQL](https://www.w3.org/TR/sparql11-query/) queries over it. SPARQL is a declarative query language: you describe the pattern you are looking for, and the engine finds every place in the model that matches. You do not write traversal code, and you do not export the model to a spreadsheet first.
 
 Here is the query behind the requirements register, lightly trimmed. It asks for every requirement definition, its identifier and name, and its documentation and rationale where the model has them:
 
@@ -54,7 +54,7 @@ SELECT DISTINCT ?parent ?child WHERE {
 }
 ```
 
-Two things make queries like these short. First, the queries understand SysML: the endpoint applies the language's own subclass, sub-property and inverse axioms when it answers, so asking for features also finds parts and attributes, and `kerml:specializes+` follows typing, subsetting and redefinition alike. You write the question the simple way, and the semantics of SysML v2 fill in the rest. Second, Sysight extends SPARQL with functions that *evaluate* the model. `eval:value` computes an attribute or expression in the unit you ask for, with dimensions checked, and `eval:verdict` evaluates a requirement's constraints against the element that satisfies it. Computed masses, Δv figures and requirement verdicts come back as columns in the answer, next to the structural facts.
+Two things make queries like these short. First, the queries understand SysML: the endpoint applies the language's own subclass, sub-property and inverse axioms when it answers, so asking for features also finds parts and attributes, and `kerml:specializes+` follows typing, subsetting and redefinition alike. You write the question the simple way, and the semantics of SysML v2 fill in the rest. Second, Sysmantic extends SPARQL with functions that *evaluate* the model. `eval:value` computes an attribute or expression in the unit you ask for, with dimensions checked, and `eval:verdict` evaluates a requirement's constraints against the element that satisfies it. Computed masses, Δv figures and requirement verdicts come back as columns in the answer, next to the structural facts.
 
 ## What came out
 
@@ -69,7 +69,7 @@ The questions grouped naturally into the views a review board would expect, and 
 - **Programmatic resources**: a mission cost estimate.
 - **Review notes** and a **model navigator**: a completeness scorecard per layer, an issue register, and the structure of the model's packages and files.
 
-None of these pages is drawn by hand. They are Jupyter notebooks that query the model's Sysight server, and a GitHub Actions workflow re-runs them and republishes the site whenever the model changes. Change the model, and the dashboard follows.
+None of these pages is drawn by hand. They are Jupyter notebooks that query the model's Sysmantic server, and a GitHub Actions workflow re-runs them and republishes the site whenever the model changes. Change the model, and the dashboard follows.
 
 ## What the model can tell you about itself
 
@@ -77,7 +77,7 @@ The most interesting page to build was the one about the model itself. Once the 
 
 The completeness scorecard checks each layer against questions such as: are the definitions documented, are the operations refined by functions, are the functions allocated, are the requirements satisfied. Much of it is reassuring. Every stakeholder need is refined by a capability, every requirement has an identifier and documentation, every functional and mission requirement has something satisfying it, and 89% of the model's definitions are documented.
 
-Some of it is instructive. The model contains 272 `satisfy` relationships, and each one says that some operation, function or component satisfies some requirement. Sysight can evaluate a requirement's `require` constraints with the satisfying element bound as its subject. When we asked it to, it could decide none of the 272. Most of the requirements are stated only in prose, with no constraint to evaluate, and where a constraint exists, the actual value it compares is never bound to anything in the design. The thresholds are in the model; the design values they should be checked against are not.
+Some of it is instructive. The model contains 272 `satisfy` relationships, and each one says that some operation, function or component satisfies some requirement. Sysmantic can evaluate a requirement's `require` constraints with the satisfying element bound as its subject. When we asked it to, it could decide none of the 272. Most of the requirements are stated only in prose, with no constraint to evaluate, and where a constraint exists, the actual value it compares is never bound to anything in the design. The thresholds are in the model; the design values they should be checked against are not.
 
 That is not a criticism of a scaffold built to illustrate a framework. It is a precise statement of what the model's satisfy relationships currently are: allocations of responsibility, not evidence of verification. It is also a precise statement of what it would take to turn them into evidence. Bind each actual value to the satisfying element's attribute, and the same query turns 272 allocations into 272 checks that rerun on every commit. Finding that by reading diagrams would take days, and the answer would be out of date by the next merge. Asking for it takes one query.
 
@@ -93,12 +93,12 @@ Three lessons from the exercise apply well beyond Apollo 11.
 
 **Quality becomes something you can measure continuously.** Coverage, traceability gaps and unverifiable requirements are not things to discover at a milestone review. They are queries, so they can fail a build.
 
-This is the same idea that runs through our work on ontology-based engineering in [OML Code](/oml-code), where [querying the model](/oml-code/capabilities/structured-querying) is how engineering products are produced. Sysight brings it to SysML v2 models as they are written today.
+This is the same idea that runs through our work on ontology-based engineering in [OML Code](/oml-code), where [querying the model](/oml-code/capabilities/structured-querying) is how engineering products are produced. Sysmantic brings it to SysML v2 models as they are written today.
 
 ## Try it on your model
 
-[Sysight](/sysight) is free to use, at work too, on macOS, Linux and Windows. Install it, open a folder of `.sysml` files in VS Code or run `sysight check` in a terminal, and start asking your model questions. The [Apollo 11 dashboard](https://www.modelware.io/apollo-11-sysml-v2/) shows where those questions can lead.
+[Sysmantic](/sysmantic) is free to use, at work too, on macOS, Linux and Windows. Install it, open a folder of `.sysml` files in VS Code or run `sysmantic check` in a terminal, and start asking your model questions. The [Apollo 11 dashboard](https://www.modelware.io/apollo-11-sysml-v2/) shows where those questions can lead.
 
-If you are interested in the notebooks and queries behind the dashboard, or in applying this to your own SysML v2 models, [ask Modelware](/contact?topic=sysight).
+If you are interested in the notebooks and queries behind the dashboard, or in applying this to your own SysML v2 models, [ask Modelware](/contact?topic=sysmantic).
 
 Have a thought or a question about this? Join the conversation in the [comments on LinkedIn](https://www.linkedin.com/posts/magedelaasar_sysmlv2-sysight-sparql-share-7524649395452039169-J8Si/).

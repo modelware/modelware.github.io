@@ -5,8 +5,8 @@ main:
     submenu:
       - name: OML Code
         url: /oml-code
-      - name: Sysight
-        url: /sysight
+      - name: Sysmantic
+        url: /sysmantic
       - name: Marketplace
         url: /marketplace
       - name: Customer Stories
@@ -52,8 +52,8 @@ cta:
 footer:
   - name: OML Code
     url: /oml-code
-  - name: Sysight
-    url: /sysight
+  - name: Sysmantic
+    url: /sysmantic
   - name: Marketplace
     url: /marketplace
   - name: Customer Stories

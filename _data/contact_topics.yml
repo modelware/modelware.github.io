@@ -15,19 +15,19 @@ demo:
     Engineering domain:
     What we hope to see:
 
-sysight:
-  subject: "Sysight access request"
+sysmantic:
+  subject: "Sysmantic access request"
   message: |-
-    I would like access to Sysight, the SysML v2 model server.
+    I would like access to Sysmantic, the SysML v2 model server.
 
     Organization:
     Role:
     How we work with SysML v2 today:
 
-sysight-support:
-  subject: "Sysight enterprise support inquiry"
+sysmantic-support:
+  subject: "Sysmantic enterprise support inquiry"
   message: |-
-    I am interested in an enterprise support package for Sysight.
+    I am interested in an enterprise support package for Sysmantic.
 
     Organization:
     Number of users:
@@ -104,6 +104,6 @@ customer-story:
 
     Organization:
     Team:
-    Product (OML Code, Sysight, other):
+    Product (OML Code, Sysmantic, other):
     What we use it for:
     What changed:

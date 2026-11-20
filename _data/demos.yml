@@ -1,12 +1,12 @@
 # Demo videos on the Modelware Demos YouTube channel (https://www.youtube.com/@Modelware-demos).
 # The /demos page shows `videos` in this order (newest first) as one grid.
-#   product: optional label shown on the card (e.g. "OML Code", "Sysight")
+#   product: optional label shown on the card (e.g. "OML Code", "Sysmantic")
 #   playlist: optional playlist id, so YouTube plays the rest of that playlist next
 videos:
   - id: u3NSt6qnU7Y
     title: "Finding and fixing a traceability slip in a SysML v2 model"
-    summary: "Sysight catches a broken traceability link in a SysML v2 model and walks through fixing it."
-    product: Sysight
+    summary: "Sysmantic catches a broken traceability link in a SysML v2 model and walks through fixing it."
+    product: Sysmantic
     playlist: PLQJ8YL_T4GC4
 
   - id: 5PojCZcfteA
@@ -19,5 +19,5 @@ videos:
 playlists:
   - name: OML Code
     id: PLR56QU1bPMPA
-  - name: Sysight
+  - name: Sysmantic
     id: PLQJ8YL_T4GC4
