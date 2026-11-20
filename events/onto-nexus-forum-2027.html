@@ -82,14 +82,14 @@ program:
 faq:
   - q: "How much does it cost to attend?"
     a: "Admission is free, in person or online. Registration is required so we can plan seating, and your attendance is confirmed only once you receive a confirmation email from us."
+  - q: "Can I present my work at the forum?"
+    a: "We welcome proposals for full session talks and for lightning talks. When you <a href=\"#register\">register</a>, add a title and a few sentences on what you would present, and say which kind of talk you have in mind. Proposals are reviewed, and your talk is confirmed only once you receive a confirmation email from us."
   - q: "Do I need to be registered for INCOSE IW 2027?"
     a: "No. The forum is a separate event, open to anyone with an interest in the topic. It is held the day after INCOSE IW 2027 so attendees can stay in Los Angeles one more day."
   - q: "Can I attend online?"
     a: "Yes. The forum is hybrid: join us in person at UCLA or online. Choose how you will attend when you register, and we will send online attendees the link to join."
   - q: "Where exactly at UCLA is it held?"
     a: "In Room 289 of Engineering VI, on the UCLA campus in Los Angeles. Parking details will be sent to registered attendees and posted on this page."
-  - q: "Can I present my work at the forum?"
-    a: "We welcome proposals for full session talks and for lightning talks. When you <a href=\"#register\">register</a>, add a title and a few sentences on what you would present, and say which kind of talk you have in mind. Proposals are reviewed, and your talk is confirmed only once you receive a confirmation email from us."
 ---
 
 <style>
@@ -101,35 +101,43 @@ faq:
     .onx [id] { scroll-margin-top: 110px; }
 
     /* ---------- Hero: the top half of the flyer ---------- */
+    /* Wide screens: the title on the left, the art on the right, both centered on one axis.
+       Narrower screens stack them, the art above the title as on the flyer. */
     .onx-hero {
         position: relative;
         overflow: hidden;
-        padding: 150px 0 64px;
+        padding: 150px 0 84px;
         background: radial-gradient(120% 90% at 70% 0%, #17305a 0%, #0f1d38 55%, #0b1529 100%);
         color: #fff;
     }
     .onx-hero .container { position: relative; }
+    .onx-hero-text { position: relative; max-width: 50%; }
     .onx-art {
         position: absolute;
-        top: 120px;
-        right: 0;
-        width: min(900px, 64%);
+        top: 50%;
+        left: calc(50% + 8px);
+        width: calc(50vw - 24px);
+        max-width: 940px;
+        transform: translateY(-50%);
         pointer-events: none;
     }
     .onx-series { font-family: 'Source Serif 4', Georgia, serif; font-size: 30px; line-height: 1.2; }
     .onx-series .colon { color: var(--teal); }
     .onx-series em { color: #aebbd2; margin-left: 4px; }
     .onx-edition { font-family: 'Source Serif 4', Georgia, serif; font-size: 15px; color: rgba(255, 255, 255, 0.8); }
-    .onx-tagline { margin: 300px 0 8px; font-size: 16px; color: #aebbd2; }
     .onx-hero h1 {
         font-family: 'Source Serif 4', Georgia, serif;
         font-weight: 700;
-        font-size: 84px;
+        font-size: 64px;
         line-height: 1.02;
         color: #fff;
-        margin: 0;
+        margin: 40px 0 0;
         letter-spacing: -0.01em;
     }
+    .onx-hero-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; margin-top: 36px; }
+    .onx-hero-meta .when { font-size: 17px; color: #dbe3f0; }
+    .onx-hero-meta .when b { color: var(--teal); font-weight: 400; margin: 0 6px; }
+    .onx-hero-meta .btn { padding: 12px 26px; }
     .onx-rule { display: flex; height: 5px; }
     .onx-rule span { flex: 1; }
     .onx-rule span:nth-child(1) { background: var(--teal); }
@@ -202,16 +210,23 @@ faq:
     .onx-form-status { margin-top: 14px; text-align: center; font-size: 17px; color: #6ee7db; }
     .onx-form.done .form-row, .onx-form.done .form-group, .onx-form.done .btn, .onx-form.done .onx-form-fine { display: none; }
 
+    @media (max-width: 1199px) {
+        .onx-hero h1 { font-size: 52px; }
+    }
     @media (max-width: 991px) {
+        .onx-hero-text { max-width: none; }
+        /* The art (1200x520, so 0.433 as tall as wide) sits under the series line and the title clears it */
+        .onx-art { top: 76px; left: auto; right: calc(50% - 50vw); width: min(860px, 92vw); transform: none; }
         .onx-hero h1 { font-size: 62px; }
-        .onx-tagline { margin-top: 240px; }
+        .onx-hero h1 { margin-top: calc(min(860px, 92vw) * 0.433 + 40px); }
         .onx-lead { font-size: 28px; }
     }
     @media (max-width: 767px) {
         .onx-hero { padding-top: 120px; }
-        .onx-art { top: 150px; width: 150%; right: -25%; opacity: 0.8; }
+        .onx-art { top: 70px; width: 150%; right: -25%; opacity: 0.8; }
         .onx-series { font-size: 24px; }
-        .onx-tagline { margin-top: 220px; font-size: 14px; }
+        .onx-hero h1 { margin-top: calc(65% + 24px); }
+        .onx-hero-meta .when { font-size: 15px; }
         .onx-hero h1 { font-size: 42px; }
         .onx-lead { font-size: 23px; }
         .onx-facts { width: auto; }
@@ -265,12 +280,17 @@ faq:
 
 <!-- Hero -->
 <section class="onx-hero">
-    <img class="onx-art" src="{{ ev.art | relative_url }}" alt="" aria-hidden="true">
     <div class="container">
-        <div class="onx-series">{{ series_parts | join: '<span class="colon">:</span>' }} <em>{{ ev.edition }}</em></div>
-        <div class="onx-edition">{{ ev.subtitle }}</div>
-        <div class="onx-tagline">{{ ev.tagline }}</div>
-        <h1>{{ ev.title | join: '<br>' }}</h1>
+        <img class="onx-art" src="{{ ev.art | relative_url }}" alt="" aria-hidden="true">
+        <div class="onx-hero-text">
+            <div class="onx-series">{{ series_parts | join: '<span class="colon">:</span>' }} <em>{{ ev.edition }}</em></div>
+            <div class="onx-edition">{{ ev.subtitle }}</div>
+            <h1>{{ ev.title | join: '<br>' }}</h1>
+            <div class="onx-hero-meta">
+                <span class="when">{% for f in ev.facts %}{% unless forloop.first %}<b>/</b>{% endunless %}{{ f.value }}{% endfor %}</span>
+                <a href="#register" class="btn btn-primary">Register for Free</a>
+            </div>
+        </div>
     </div>
 </section>
 <div class="onx-rule" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -350,7 +370,7 @@ faq:
         <div class="row">
             <div class="col-lg-4">
                 <div class="onx-label">Questions</div>
-                <h2>Good to Know</h2>
+                <h2>FAQs</h2>
             </div>
             <div class="col-lg-8">
                 <div class="onx-faq">
