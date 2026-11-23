@@ -36,7 +36,7 @@ promos:
 - badge: "New"
   page: /sysmantic
   title: "Sysmantic: SysML v2 Semantic IDE"
-  content: "Query your SysML v2 models with SPARQL, with computed values and requirement verdicts in the answers. Checked as you type, in VS Code, the command line, CI and AI agents. Free for everyone."
+  content: "Author, analyze, simulate, and visualize your SysML v2 models: requirement verdicts, SPARQL queries and the standard views, in VS Code, notebooks, the command line, CI and AI agents. Free to use."
   image: "/assets/images/sysmantic-promo.jpg"
   button: "Meet Sysmantic"
 

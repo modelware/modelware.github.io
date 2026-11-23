@@ -1,0 +1,141 @@
+# What the /sysmantic page says about the product. Edit this file, not the page, as Sysmantic evolves.
+#
+# release: the page asks GitHub for the latest release as it loads, shows its version under the
+#   features, and badges as "New" the features whose `since` equals it. So give a new feature
+#   `since: "<the release that adds it>"`; older badges go away on their own. The version here is
+#   only the fallback, used if GitHub cannot be reached.
+# groups: one tab each in the features section. Keep a tab's features to about six;
+#   a snippet is optional (shown beside the list, as typed by a user).
+
+release:
+  version: "0.3.0"
+  date: 2026-11-23
+  notes: https://github.com/modelware/sysmantic/releases/latest
+
+groups:
+  - id: editor
+    name: Editor
+    icon: ti-pencil-alt
+    title: The whole model, checked as you type
+    summary: "Every file checked against the SysML v2 and KerML rules, with values and requirement verdicts shown where they are written. The standard libraries are built in."
+    features:
+      - text: "Syntax, names, the specification's rules, and failing constraints, across every file"
+      - text: "Attribute values, roll-ups and units computed, with dimensions checked"
+      - text: "Each requirement satisfied, violated or undetermined, and why"
+      - text: "A Model Explorer of every element, nested as declared and filtered by name or kind"
+        since: "0.3.0"
+      - text: "The model as a graph of elements and relationships, to explore and save"
+      - text: "Go to definition, find references, completion, rename, formatting and inlay hints"
+    snippet_label: vehicle.sysml
+    snippet: |
+      part car : Vehicle {
+          part chassis { attribute mass = 950 [kg]; }
+          part engine  { attribute mass = 180 [kg]; }
+      }
+      // car.mass = 1130 kg
+      // requirement carMass: satisfied
+
+  - id: queries
+    name: Queries
+    icon: ti-search
+    title: Ask the model anything, in SPARQL
+    summary: "The model is a knowledge graph, so any engineering question is one query, answered in milliseconds, with computed values and verdicts in the answers."
+    features:
+      - text: "A query panel in VS Code, with answers as tables, charts and values"
+      - text: "Completion of the model's classes and properties"
+      - text: "Functions that compute values and requirement verdicts inside a query"
+      - text: "Queries that understand SysML: ask for parts, get every kind of part"
+      - text: "Saved queries, versioned with the model, and sessions to reopen"
+    snippet_label: queries/trace.rq
+    snippet: |
+      SELECT ?requirement ?satisfiedBy ?verdict
+      WHERE {
+        ?s a sysml:Satisfy ;
+           sysml:satisfiedRequirement ?r ;
+           sysml:satisfyingFeature ?f .
+        BIND(eval:name(?r)    AS ?requirement)
+        BIND(eval:name(?f)    AS ?satisfiedBy)
+        BIND(eval:verdict(?r) AS ?verdict)
+      }
+
+  - id: views
+    name: Standard Views
+    icon: ti-layout-grid2
+    title: SysML's standard views, drawn from the model
+    summary: "Diagrams and tables that follow the model as you edit it, laid out automatically, and styled with your own CSS."
+    features:
+      - text: "General, Interconnection, Action Flow and State Transition views"
+        since: "0.3.0"
+      - text: "Sequence views of events, messages and timelines"
+        since: "0.3.0"
+      - text: "Grid views: tables per kind of element, and relationship matrices"
+        since: "0.3.0"
+      - text: "Geometry views: parts in 3D, sized and placed by the model"
+        since: "0.3.0"
+      - text: "Views declared in the model open as they declare"
+        since: "0.3.0"
+      - text: "Export as SVG, PNG or CSV"
+    snippet_label: views.sysml
+    snippet: |
+      view propulsion : StandardViewDefinitions::InterconnectionView {
+          expose Rocket::stage1::*;
+      }
+      view safety {
+          expose Spacecraft::*[@Safety];
+      }
+
+  - id: notebooks
+    name: Notebooks
+    icon: ti-bar-chart
+    title: Analysis in Python and notebooks
+    summary: "Write SysML in notebook cells, query it, compute with it, and let the model decide its requirements, in Jupyter and VS Code notebooks or in scripts."
+    features:
+      - text: "SysML in cells, part of the folder's model while the notebook runs"
+        since: "0.3.0"
+      - text: "Query answers as tables, values and verdicts in Python"
+        since: "0.3.0"
+      - text: "The standard views drawn in the notebook"
+        since: "0.3.0"
+      - text: "Candidate designs written into the model and checked against its requirements"
+        since: "0.3.0"
+    snippet_label: analysis.ipynb
+    snippet: |
+      import sysmantic
+
+      %sysml Vehicle::mass
+      %viz Mission --view=state
+
+      sysmantic.verify("MassLimit")
+
+  - id: agents
+    name: AI Agents
+    icon: ti-bolt
+    title: Agents that work on the live model
+    summary: "An MCP server gives AI agents the same model you see, unsaved edits included, so they can check their own work."
+    features:
+      - text: "Tools to read, compute, query and change the model"
+      - text: "Every change answered by its diff and the problems it added or removed"
+      - text: "Agents open the standard views for you, and read what they show"
+        since: "0.3.0"
+      - text: "Queries an agent saves appear in your panel, one click to run"
+    snippet_label: terminal
+    snippet: |
+      claude mcp add sysmantic -- \
+        sysmantic mcp --workspace ./my-model
+
+  - id: automation
+    name: CLI and CI
+    icon: ti-angle-double-right
+    title: The same model in the terminal, CI and your programs
+    summary: "The editor, agents, the command line, CI and your own programs share one server per model, answering in milliseconds."
+    features:
+      - text: "Check, evaluate and query from the command line"
+      - text: "Fail a build on model errors or violated requirements"
+      - text: "An HTTP API for your own programs and dashboards"
+      - text: "No configuration: the folder is the model"
+      - text: "Convert to and from RDF to join your digital thread"
+    snippet_label: terminal
+    snippet: |
+      sysmantic check
+      sysmantic evaluate 'Vehicle::mass' --unit kg
+      sysmantic query 'SELECT ?p WHERE { ?p a sysml:Part }'
