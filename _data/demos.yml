@@ -3,6 +3,12 @@
 #   product: optional label shown on the card (e.g. "OML Code", "Sysmantic")
 #   playlist: optional playlist id, so YouTube plays the rest of that playlist next
 videos:
+  - id: QZRdP-I5x-0
+    title: "Analyzing a CubeSat's power system with SysML v2"
+    summary: "Sysmantic simulates a CubeSat's battery from its SysML v2 model in a Jupyter notebook and writes the results back, so the model decides its own requirements."
+    product: Sysmantic
+    playlist: PLQJ8YL_T4GC4
+
   - id: u3NSt6qnU7Y
     title: "Finding and fixing a traceability slip in a SysML v2 model"
     summary: "Sysmantic catches a broken traceability link in a SysML v2 model and walks through fixing it."
