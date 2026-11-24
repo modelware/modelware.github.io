@@ -1,6 +1,7 @@
 ---
 layout: capability
 title: Formal Knowledge Representation
+seo_description: "Express engineering knowledge in OML, the Ontological Modeling Language, as formal models that tools and AI can verify, query, and build on."
 order: 1
 icon: ti-write
 pillars: [logic]

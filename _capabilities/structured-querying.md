@@ -1,6 +1,7 @@
 ---
 layout: capability
 title: Structured Querying
+seo_description: "Ask your model real engineering questions and get complete answers, covering both what was asserted and everything the reasoner entailed."
 order: 4
 icon: ti-search
 pillars: [logic]

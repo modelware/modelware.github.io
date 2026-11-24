@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Upper Ontologies: Inherit or Instantiate?"
+seo_description: "Upper ontology classes can be inherited as superclasses or used as metaclasses. They look alike but mean different things, and a wrong choice breaks reasoning."
 date: 2026-06-16 10:00:00 -0700
 author: "Maged Elaasar"
 categories: [insights]

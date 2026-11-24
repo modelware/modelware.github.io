@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Syntax Is the Easy Half"
+seo_description: "AI assistants produce models that parse. Our MDE Intelligence 2026 paper measures method compliance, and where deterministic scaffolding helps most."
 date: 2026-08-16 09:30:00 +0300
 author: "Maged Elaasar"
 categories: [insights]

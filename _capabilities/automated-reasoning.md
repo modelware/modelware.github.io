@@ -1,6 +1,7 @@
 ---
 layout: capability
 title: Automated Reasoning
+seo_description: "OML Code infers what your model implies and pinpoints contradictions, explaining exactly which statements are responsible. Trust your model first."
 order: 3
 icon: ti-check-box
 pillars: [logic]

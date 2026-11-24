@@ -14,7 +14,8 @@
   {% if page.type == "tag" or page.type == "category" %}
     {% capture archive_description %}{{ page.posts.size }} {% if page.posts.size == 1 %}article{% else %}articles{% endif %} on {{ page.title }} from The Axiom, Modelware's journal on ontological modeling, MBSE, and neurosymbolic systems engineering.{% endcapture %}
   {% endif %}
-  {% assign social_description = page.description | default: page.summary | default: archive_description | default: site.description | strip_html | strip_newlines | truncate: 200 %}
+  {% comment %}`seo_description` (about 150 chars) feeds search and link previews without changing the on-page subtitle.{% endcomment %}
+  {% assign social_description = page.seo_description | default: page.description | default: page.summary | default: archive_description | default: site.description | strip_html | strip_newlines | truncate: 200 %}
   {% assign social_image = page.image | default: page.post_image | default: '/assets/images/oml-code-social.jpg' %}
   <meta name="description" content="{{ social_description }}">
 
@@ -90,7 +91,7 @@
   </script>
   {% if page.date %}
   {% assign is_news = page.url contains '/news/' %}
-  {% assign article_desc = page.description | default: page.summary | default: page.excerpt | strip_html | strip_newlines | truncate: 200 %}
+  {% assign article_desc = page.seo_description | default: page.description | default: page.summary | default: page.excerpt | strip_html | strip_newlines | truncate: 200 %}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",

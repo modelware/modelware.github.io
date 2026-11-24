@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Ontology-Based MBSE: What It Is and Why It Matters"
+seo_description: "Ontology-based MBSE expresses method and system model as formal ontologies that software can check, query, and reason over, unlike tool-centric MBSE."
 date: 2026-09-27 12:00:00 -0700
 author: "Maged Elaasar"
 categories: [insights]

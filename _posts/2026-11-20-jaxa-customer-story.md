@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "How JAXA Turns Engineering Know-How into Reusable Knowledge Graphs with OML Code"
+seo_title: "How JAXA Reuses Engineering Knowledge with OML Code"
+seo_description: "JAXA's Mission Design Unit uses OML Code to turn engineering know-how into reusable knowledge graphs, verified with a reasoner across the lifecycle."
 date: 2026-11-20 07:00:00 -0800
 author: "Maged Elaasar"
 categories: [customer story]

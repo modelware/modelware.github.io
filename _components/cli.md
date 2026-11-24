@@ -1,6 +1,7 @@
 ---
 layout: capability
 title: CLI
+seo_description: "The OML Code command line lints, validates, reasons over, queries, and renders your models from any terminal or CI/CD pipeline."
 order: 2
 icon: /assets/images/cli.png
 tags: ["Terminal", "CI/CD"]

@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "From Hand-Crafted Timelines to Provable Goals: Verifying ConOps with Knowledge Graphs and Formal Methods"
+seo_title: "Verifying ConOps with Knowledge Graphs and FRET"
+seo_description: "A JAXA method from INCOSE IS 2026 pairs an OML knowledge graph with NASA's FRET to make ConOps goals explicit, formal, and continuously verifiable."
 date: 2026-06-17 08:00:00 -0700
 author: "Yuta Nakajima"
 categories: [insights]

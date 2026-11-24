@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "What the Reasoner Knows That You Did Not Write Down"
+seo_description: "A model says more than it states. A description logic reasoner computes the entailments, turning a system model from documentation into analysis."
 date: 2026-06-21 07:00:00 -0700
 author: "Maged Elaasar"
 categories: [insights]

@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Towards an Ontological Implementation of UAF, Part 5: Keeping the Profile and the Metamodel Aligned"
+seo_title: "UAF Ontology, Part 5: Aligning UAFML and the DMM"
+seo_description: "UAFML, the SysML profile, realizes the UAF DMM. Part 5 uses a formal rendering to find where the two have drifted, as a checklist for maintainers."
 series: "Towards an Ontological Implementation of UAF"
 series_hub: /uaf-ontology
 series_part: 5

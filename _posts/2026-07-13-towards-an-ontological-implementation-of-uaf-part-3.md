@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Towards an Ontological Implementation of UAF, Part 3: Views Without Queries"
+seo_title: "UAF Ontology, Part 3: Views Without Queries"
+seo_description: "A UAF view is specified as a list of element types and a diagram, never as a query, so UAF describes analysis it cannot compute. Part 3 of the series."
 series: "Towards an Ontological Implementation of UAF"
 series_hub: /uaf-ontology
 series_part: 3

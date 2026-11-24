@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "From Weeks to Hours: Automating Power Balance Analysis in Early Mission Design"
+seo_title: "Automating Power Balance Analysis in Mission Design"
+seo_description: "How openCAESAR automated orbit, scenario, and power analyses for a JAXA VLEO satellite study, cutting early mission design cycles from weeks to hours."
 date: 2026-06-16 08:30:00 -0700
 author: "Yuta Nakajima"
 categories: [insights]

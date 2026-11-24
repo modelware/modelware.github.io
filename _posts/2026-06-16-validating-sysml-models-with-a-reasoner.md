@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "The Power of a Reasoner: Validating SysML Models Automatically"
+seo_title: "Validating SysML Models Automatically with a Reasoner"
+seo_description: "A SysML tool catches malformed models, not wrong ones. How a DL reasoner, via openCAESAR and OML, validates a SysML model's semantics on a JAXA study."
 date: 2026-06-16 08:00:00 -0700
 author: "Yuta Nakajima"
 categories: [insights]

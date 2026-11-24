@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Towards an Ontological Implementation of UAF, Part 4: Keeping a Large Specification Consistent"
+seo_title: "UAF Ontology, Part 4: Keeping UAF Consistent"
+seo_description: "A standard told in prose, diagrams, and a profile drifts. Part 4 shows how a formal rendering of UAF catches its inconsistencies automatically."
 series: "Towards an Ontological Implementation of UAF"
 series_hub: /uaf-ontology
 series_part: 4

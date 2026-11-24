@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The Case for Neurosymbolic Systems Engineering"
+seo_description: "Formal modeling was held back by cost. Generative AI changes that when the ontology acts as a contract a reasoner can verify: neurosymbolic SE."
 date: 2026-09-04 12:00:00 +0300
 author: "Maged Elaasar"
 categories: [insights]

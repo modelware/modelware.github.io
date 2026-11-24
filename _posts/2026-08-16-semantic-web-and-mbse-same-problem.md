@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "The Semantic Web and MBSE Are Solving the Same Problem"
+seo_title: "Semantic Web and MBSE Are Solving the Same Problem"
+seo_description: "The Semantic Web and MBSE both describe domains precisely enough for software to reason over them. Our ISWC 2026 paper removes two obstacles between them."
 date: 2026-08-16 08:00:00 +0300
 author: "Maged Elaasar"
 categories: [insights]

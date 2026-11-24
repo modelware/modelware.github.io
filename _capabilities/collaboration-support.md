@@ -1,6 +1,7 @@
 ---
 layout: capability
 title: Collaboration Support
+seo_description: "Model together like software teams do: versioned or live, with model-aware diffs that keep reviews about engineering content, not file noise."
 order: 8
 icon: ti-user
 pillars: [devops]

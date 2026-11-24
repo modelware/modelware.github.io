@@ -1,6 +1,7 @@
 ---
 layout: capability
 title: Code Generation
+seo_description: "Generate documents, code, and reports straight from the model with declarative generators, so engineering artifacts are always current."
 order: 7
 icon: ti-export
 pillars: [devops]

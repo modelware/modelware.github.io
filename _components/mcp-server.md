@@ -1,6 +1,7 @@
 ---
 layout: capability
 title: MCP Server
+seo_description: "The OML Code MCP server exposes modeling, reasoning, and querying as tools, so any MCP-capable AI assistant can work with your engineering knowledge."
 order: 3
 icon: /assets/images/mcp.svg
 tags: ["AI Assistants", "Agents"]

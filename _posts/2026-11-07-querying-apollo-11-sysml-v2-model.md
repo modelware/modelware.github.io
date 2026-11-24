@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Apollo 11 in SysML v2: What a Model Says When You Can Query It"
+seo_title: "Apollo 11 in SysML v2: Querying the Model with SPARQL"
+seo_description: "We queried Airbus's open SysML v2 Apollo 11 model with SPARQL in Sysmantic, producing a ten-page engineering dashboard computed on every commit."
 date: 2026-11-07 06:00:00 -0800
 author: "Maged Elaasar"
 categories: [insights]

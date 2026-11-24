@@ -1,6 +1,7 @@
 ---
 layout: capability
 title: Flexible Capture
+seo_description: "Capture knowledge in a textual editor, through forms, by importing files, or by asking AI. Every path lands in the same formal OML model."
 order: 2
 icon: ti-pencil-alt
 pillars: [logic, ai]

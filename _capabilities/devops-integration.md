@@ -1,6 +1,7 @@
 ---
 layout: capability
 title: DevOps Integration
+seo_description: "Treat engineering knowledge like code: Git versioning, CI that validates and reasons on every commit, and CD that publishes baselined packages."
 order: 9
 icon: ti-world
 pillars: [devops]

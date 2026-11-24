@@ -1,6 +1,7 @@
 ---
 layout: capability
 title: AI Integration
+seo_description: "An AI agent that knows OML and your methodology: it queries, updates, validates, and explains your models, grounded in formal semantics."
 order: 6
 icon: ti-comments
 pillars: [ai]

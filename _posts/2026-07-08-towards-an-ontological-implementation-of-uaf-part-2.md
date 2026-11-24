@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Towards an Ontological Implementation of UAF, Part 2: How Far Platform Independence Reaches"
+seo_title: "UAF Ontology, Part 2: Platform Independence"
+seo_description: "Rendering the UAF DMM as an ontology shows where its platform independence holds, in the relational core, and where it builds on UML and BPMN."
 series: "Towards an Ontological Implementation of UAF"
 series_hub: /uaf-ontology
 series_part: 2

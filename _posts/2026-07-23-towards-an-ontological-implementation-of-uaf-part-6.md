@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Towards an Ontological Implementation of UAF, Part 6: What It Adds Up To"
+seo_title: "UAF Ontology, Part 6: What It Adds Up To"
+seo_description: "The close of the series: an ontological implementation of UAF looks less like a reinvention than a completion of what the standard already intends."
 series: "Towards an Ontological Implementation of UAF"
 series_hub: /uaf-ontology
 series_part: 6

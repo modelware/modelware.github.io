@@ -1,6 +1,7 @@
 ---
 layout: capability
 title: Declarative Methodology
+seo_description: "Encode your systems engineering method as a model (vocabularies, patterns, viewpoints, analyses) so your team models in a guided, consistent way."
 order: 5
 icon: ti-map-alt
 pillars: [logic]

@@ -1,9 +1,9 @@
 ---
 layout: default
 title: OML Code
+seo_title: "OML Code: Ontological Modeling Language for MBSE"
 permalink: /oml-code
 description: "OML Code is the platform for OML, the Ontological Modeling Language: author MBSE models in VS Code, verify them with a reasoner, query them, and ground AI in them."
-seo_title: "OML Code: Ontological Modeling Language (OML) Platform for MBSE"
 ---
 
 <style>

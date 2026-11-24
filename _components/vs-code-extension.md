@@ -1,6 +1,7 @@
 ---
 layout: capability
 title: VS Code Extension
+seo_description: "Author OML models in VS Code with language intelligence, synchronized diagrams, methodology guidance, and an AI copilot, on desktop or in the browser."
 order: 1
 icon: /assets/images/vs-code-ext.png
 tags: ["Desktop", "Browser"]

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Why OML and Not Just OWL?"
+seo_description: "OML is not an alternative to OWL: it is the layer for ontological modeling, and it maps to standard OWL 2 DL to deliver semantic interoperability."
 date: 2026-06-13 10:00:00 -0700
 author: "Maged Elaasar"
 categories: [insights]

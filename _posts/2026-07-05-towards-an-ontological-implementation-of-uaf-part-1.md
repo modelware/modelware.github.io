@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Towards an Ontological Implementation of UAF, Part 1: UAF Was Built for This"
+seo_title: "UAF Ontology, Part 1: UAF Was Built for This"
+seo_description: "UAF was designed to be implemented as an ontology, in its own words. Part 1 of a series reading the OMG Unified Architecture Framework as an OML ontology."
 series: "Towards an Ontological Implementation of UAF"
 series_hub: /uaf-ontology
 series_part: 1
