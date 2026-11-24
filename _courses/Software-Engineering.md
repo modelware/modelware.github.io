@@ -1,6 +1,7 @@
 ---
 layout: course
 title: "Software Engineering"
+description: "A course on large-scale software development by Dr. Maged Elaasar: agile process, architecture and design patterns, testing, refactoring, and DevOps."
 categories: ["Software Engineering"]
 feature: "/assets/images/courses/software-engineering.png"
 ---

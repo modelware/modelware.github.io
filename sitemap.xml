@@ -1,0 +1,54 @@
+---
+layout: null
+sitemap: false
+---
+{%- comment -%}
+Replaces jekyll-sitemap's generated file (the plugin skips generation when a
+sitemap.xml exists in the source). Only pages Google may index are listed:
+anything with `sitemap: false`, `noindex`, a redirect layout, the 404 page,
+and tag/category archives with fewer than 2 posts (noindexed in head.html)
+are left out, and each URL is listed once.
+{%- endcomment -%}
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- assign seen = "|" -%}
+{%- assign collections = site.collections | where_exp: 'c', 'c.output != false' -%}
+{%- for collection in collections -%}
+  {%- for doc in collection.docs -%}
+    {%- if doc.sitemap == false or doc.noindex or doc.layout == "redirect" -%}{%- continue -%}{%- endif -%}
+    {%- assign loc = doc.url | replace: '/index.html', '/' | absolute_url -%}
+    {%- capture key -%}|{{ loc }}|{%- endcapture -%}
+    {%- if seen contains key -%}{%- continue -%}{%- endif -%}
+    {%- assign seen = seen | append: loc | append: "|" %}
+  <url>
+    <loc>{{ loc | xml_escape }}</loc>
+    {%- if doc.last_modified_at or doc.date %}
+    <lastmod>{{ doc.last_modified_at | default: doc.date | date_to_xmlschema }}</lastmod>
+    {%- endif %}
+  </url>
+  {%- endfor -%}
+{%- endfor -%}
+{%- for page in site.html_pages -%}
+  {%- if page.sitemap == false or page.noindex or page.layout == "redirect" -%}{%- continue -%}{%- endif -%}
+  {%- if page.url contains '/404' -%}{%- continue -%}{%- endif -%}
+  {%- if page.type == "tag" or page.type == "category" -%}{%- if page.posts.size < 2 -%}{%- continue -%}{%- endif -%}{%- endif -%}
+  {%- assign loc = page.url | replace: '/index.html', '/' | absolute_url -%}
+  {%- capture key -%}|{{ loc }}|{%- endcapture -%}
+  {%- if seen contains key -%}{%- continue -%}{%- endif -%}
+  {%- assign seen = seen | append: loc | append: "|" %}
+  <url>
+    <loc>{{ loc | xml_escape }}</loc>
+    {%- if page.last_modified_at %}
+    <lastmod>{{ page.last_modified_at | date_to_xmlschema }}</lastmod>
+    {%- endif %}
+  </url>
+{%- endfor -%}
+{%- assign pdfs = site.static_files | where_exp: 'f', 'f.extname == ".pdf"' -%}
+{%- for file in pdfs -%}
+  {%- if file.sitemap == false -%}{%- continue -%}{%- endif %}
+  <url>
+    <loc>{{ file.path | absolute_url | xml_escape }}</loc>
+    <lastmod>{{ file.modified_time | date_to_xmlschema }}</lastmod>
+  </url>
+{%- endfor %}
+</urlset>

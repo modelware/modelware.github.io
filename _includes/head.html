@@ -5,22 +5,23 @@
   <title>{% if doc_title %}{{ doc_title }}{% unless doc_title contains 'Modelware' %} | Modelware{% endunless %}{% else %}{{ site.title }}{% endif %}</title>
 
   <!-- mobile responsive meta -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   {% if page.noindex %}<meta name="robots" content="noindex, nofollow">{% elsif page.type == "tag" or page.type == "category" %}{% if page.posts.size < 2 %}<meta name="robots" content="noindex, follow">{% endif %}{% endif %}
 
   {% include analytics-head.html %}
   {% assign social_title = doc_title | default: site.title %}
-  {% assign social_description = page.description | default: page.summary | default: site.description | strip_html | strip_newlines | truncate: 200 %}
+  {% if page.type == "tag" or page.type == "category" %}
+    {% capture archive_description %}{{ page.posts.size }} {% if page.posts.size == 1 %}article{% else %}articles{% endif %} on {{ page.title }} from The Axiom, Modelware's journal on ontological modeling, MBSE, and neurosymbolic systems engineering.{% endcapture %}
+  {% endif %}
+  {% assign social_description = page.description | default: page.summary | default: archive_description | default: site.description | strip_html | strip_newlines | truncate: 200 %}
   {% assign social_image = page.image | default: page.post_image | default: '/assets/images/oml-code-social.png' %}
   <meta name="description" content="{{ social_description }}">
 
   <!-- theme meta -->
   <meta name="theme-name" content="dizer-jekyll" />
 
-  {% if site.author %}
-  <meta name="author" content="{{ . }}">
-  {% endif %}
+  <meta name="author" content="{{ page.author | default: 'Modelware' }}">
 
   <!-- Open Graph / LinkedIn / Facebook -->
   <meta property="og:type" content="{% if page.video %}video.other{% else %}website{% endif %}">
@@ -96,7 +97,7 @@
     "@type": "Article",
     "headline": {{ page.title | jsonify }},
     "datePublished": "{{ page.date | date_to_xmlschema }}",
-    "dateModified": "{{ page.date | date_to_xmlschema }}",
+    "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
     "author": { "@type": "{% if page.author contains 'Modelware' %}Organization{% else %}Person{% endif %}", "name": {{ page.author | default: 'Modelware' | jsonify }} },
     "publisher": { "@type": "Organization", "name": "Modelware", "logo": { "@type": "ImageObject", "url": "{{ site.logo | absolute_url }}" } },
     {% if page.post_image %}"image": "{{ page.post_image | absolute_url }}",{% endif %}

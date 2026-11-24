@@ -209,7 +209,7 @@ seo_title: "OML Code: Ontological Modeling Language (OML) Platform for MBSE"
                 <div>
                     <div class="oml-hero-title-row">
                         <img src="/assets/images/oml-code-icon.svg" alt="OML Code" class="oml-hero-title-logo">
-                        <h2 class="text-capitalize mb-0 text-lg text-white">{{ page.title }}</h2>
+                        <h1 class="h2 text-capitalize mb-0 text-lg text-white">{{ page.title }}</h1>
                     </div>
                     <p class="oml-hero-tagline">A <span class="gradient-text">Neurosymbolic Systems Engineering</span> platform</p>
                     <div class="oml-hero-pills">

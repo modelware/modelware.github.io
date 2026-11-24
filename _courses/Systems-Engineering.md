@@ -1,6 +1,7 @@
 ---
 layout: course
 title: "Systems Engineering"
+description: "A course on modern systems engineering by Dr. Maged Elaasar: requirements, architecture modeling, V&V, formal methods, ontological modeling, and AI assistants."
 categories: ["Systems Engineering"]
 feature: "/assets/images/courses/systems-engineering.png"
 ---
