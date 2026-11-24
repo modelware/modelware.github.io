@@ -6,7 +6,7 @@ author: "Maged Elaasar"
 categories: [insights]
 tags: [DL reasoner, entailments, OML, OWL, MBSE, systems engineering, model analysis]
 post_image: "/assets/images/blog/dl-reasoner-entailments.svg"
-image: "/assets/images/blog/dl-reasoner-entailments-social.png"
+image: "/assets/images/blog/dl-reasoner-entailments-social.jpg"
 description: "A model says more than it states. A description-logic reasoner computes the difference, the entailments, and that quiet capability is what turns a system model from documentation into something you can actually analyze."
 ---
 

@@ -3,7 +3,7 @@ layout: default
 title: "Tutorial at MODELS 2026"
 date: 2026-08-16
 author: "Modelware"
-post_image: "/assets/images/models2026-tutorial.png"
+post_image: "/assets/images/models2026-tutorial.jpg"
 header_dark: true
 description: "Modelware will deliver the tutorial 'OML Code: Turning SME Knowledge into Reusable Ontological Modeling Methodologies' at MODELS 2026 in Málaga, Spain."
 permalink: /news/models2026-tutorial
@@ -15,7 +15,7 @@ permalink: /news/models2026-tutorial
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-10 text-center">
-        <img src="{{ '/assets/images/models2026-tutorial.png' | relative_url }}" alt="OML Code tutorial at MODELS 2026" class="img-fluid rounded shadow">
+        <img src="{{ '/assets/images/models2026-tutorial.jpg' | relative_url }}" alt="OML Code tutorial at MODELS 2026" class="img-fluid rounded shadow">
         <p class="mt-4 text-left">
           Modelware will deliver the tutorial
           <em>OML Code: Turning SME Knowledge into Reusable Ontological Modeling Methodologies</em> at

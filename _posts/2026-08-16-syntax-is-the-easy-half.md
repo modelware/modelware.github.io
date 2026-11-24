@@ -6,7 +6,7 @@ author: "Maged Elaasar"
 categories: [insights]
 tags: [AI, LLM, MCP, SHACL, modeling languages, OML, MBSE, methodology, MDE Intelligence]
 post_image: "/assets/images/blog/syntax-is-the-easy-half.svg"
-image: "/assets/images/blog/syntax-is-the-easy-half-social.png"
+image: "/assets/images/blog/syntax-is-the-easy-half-social.jpg"
 description: "An assistant that has read little of your modeling language will still produce something that parses. Our MDE Intelligence 2026 paper measures the harder property, method compliance, and finds that deterministic scaffolding matters most exactly where generation is least reliable."
 ---
 

@@ -6,7 +6,7 @@ author: "Maged Elaasar"
 categories: [insights]
 tags: [MBSE, ontologies, OML, systems engineering, automated reasoning, SysML, knowledge graphs, AI]
 post_image: "/assets/images/blog/ontology-based-mbse.svg"
-image: "/assets/images/blog/ontology-based-mbse-social.png"
+image: "/assets/images/blog/ontology-based-mbse-social.jpg"
 description: "Ontology-based MBSE expresses both the modeling method and the system model as ontologies with formal semantics, so software can check, query, and reason over them. What that means, how it differs from tool-centric MBSE, and what it makes possible."
 ---
 

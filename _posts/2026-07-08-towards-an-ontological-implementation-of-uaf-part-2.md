@@ -9,7 +9,7 @@ author: "Maged Elaasar"
 categories: [insights]
 tags: [UAF, ontologies, OML, MBSE, systems engineering, enterprise architecture, DoDAF, SysML]
 post_image: "/assets/images/blog/ontological-uaf.svg"
-image: "/assets/images/blog/ontological-uaf-social.png"
+image: "/assets/images/blog/ontological-uaf-social.jpg"
 description: "Part 2 of a series reading UAF in light of its own objectives. UAF sets out to be platform-independent at the DMM level. Rendering it as an ontology shows exactly where that independence holds firm, in its relational core, and where, by deliberate design, it builds on the semantics of UML and BPMN."
 ---
 

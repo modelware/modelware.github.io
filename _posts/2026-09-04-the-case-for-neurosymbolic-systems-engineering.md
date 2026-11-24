@@ -6,7 +6,7 @@ author: "Maged Elaasar"
 categories: [insights]
 tags: [neurosymbolic systems engineering, neurosymbolic AI, ontologies, OML, MBSE, systems engineering, automated reasoning, AI]
 post_image: "/assets/images/blog/case-for-neurosymbolic-se.svg"
-image: "/assets/images/blog/case-for-neurosymbolic-se-social.png"
+image: "/assets/images/blog/case-for-neurosymbolic-se-social.jpg"
 description: "Formal modeling was never held back by doubt about whether it works, but by what it cost. Cheap viewpoints and generative AI both change that, though only when the ontology acts as a contract between what gets proposed and what a reasoner can verify. That arrangement deserves a name and a test."
 ---
 

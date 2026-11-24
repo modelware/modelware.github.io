@@ -9,7 +9,7 @@ author: "Maged Elaasar"
 categories: [insights]
 tags: [UAF, ontologies, OML, MBSE, systems engineering, enterprise architecture, DoDAF, SysML]
 post_image: "/assets/images/blog/ontological-uaf.svg"
-image: "/assets/images/blog/ontological-uaf-social.png"
+image: "/assets/images/blog/ontological-uaf-social.jpg"
 description: "Part 5 of a series reading UAF in light of its own objectives. UAFML is the SysML profile that realizes the platform-neutral DMM. Maintaining two large artifacts in parallel is hard, and a formal rendering shows a few small places where they have drifted, offered as a checklist rather than a critique."
 ---
 

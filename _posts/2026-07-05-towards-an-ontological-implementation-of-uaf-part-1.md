@@ -9,7 +9,7 @@ author: "Maged Elaasar"
 categories: [insights]
 tags: [UAF, ontologies, OML, MBSE, systems engineering, enterprise architecture, DoDAF, SysML]
 post_image: "/assets/images/blog/ontological-uaf.svg"
-image: "/assets/images/blog/ontological-uaf-social.png"
+image: "/assets/images/blog/ontological-uaf-social.jpg"
 description: "Part 1 of a series. Rendering a specification as an ontology, with AI reading it and automated reasoning checking it, is not just a way to implement it; it is a way to understand it. We put the OMG Unified Architecture Framework under that neurosymbolic lens, and the first finding, grounded in the spec's own words, is the most telling: UAF was designed to be implemented as an ontology. It says so, and it is built on one."
 ---
 

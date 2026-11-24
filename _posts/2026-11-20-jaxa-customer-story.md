@@ -6,7 +6,7 @@ author: "Maged Elaasar"
 categories: [customer story]
 tags: [customer story, JAXA, OML Code, OML, openCAESAR, knowledge graphs, digital engineering, space mission]
 post_image: "/assets/images/blog/automating-mission-analysis.svg"
-image: "/assets/images/blog/automating-mission-analysis-social.png"
+image: "/assets/images/blog/automating-mission-analysis-social.jpg"
 description: "JAXA's Mission Design Unit uses OML Code to capture the knowledge built up in its engineering processes as reusable semantic knowledge graphs, then analyzes, infers, and verifies with a reasoner across the system lifecycle."
 ---
 

@@ -9,7 +9,7 @@ author: "Maged Elaasar"
 categories: [insights]
 tags: [UAF, ontologies, OML, MBSE, systems engineering, enterprise architecture, DoDAF, SysML]
 post_image: "/assets/images/blog/ontological-uaf.svg"
-image: "/assets/images/blog/ontological-uaf-social.png"
+image: "/assets/images/blog/ontological-uaf-social.jpg"
 description: "The closing part of a series reading UAF in light of its own objectives. Step back and the picture is encouraging: a genuinely valuable, relational domain model whose durable core an ontology can sharpen, align, and complete. Read this way, an ontological implementation of UAF looks less like a reinvention than a completion of what the standard already intends."
 ---
 

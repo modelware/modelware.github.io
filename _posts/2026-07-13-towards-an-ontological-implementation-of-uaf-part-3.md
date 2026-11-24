@@ -9,7 +9,7 @@ author: "Maged Elaasar"
 categories: [insights]
 tags: [UAF, ontologies, OML, MBSE, systems engineering, enterprise architecture, DoDAF, SysML]
 post_image: "/assets/images/blog/ontological-uaf.svg"
-image: "/assets/images/blog/ontological-uaf-social.png"
+image: "/assets/images/blog/ontological-uaf-social.jpg"
 description: "Part 3 of a series holding UAF to its own objectives. UAF exists to support the analysis of complex systems, and its unit of analysis is the view. Yet a UAF view is specified as a static list of element types and a schema diagram, never as a query. UAF describes the analysis it cannot compute."
 ---
 

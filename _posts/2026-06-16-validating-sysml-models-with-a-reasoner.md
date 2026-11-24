@@ -6,7 +6,7 @@ author: "Yuta Nakajima"
 categories: [insights]
 tags: [openCAESAR, OML, SysML, model validation, DL reasoner, MBSE, JAXA]
 post_image: "/assets/images/blog/validating-sysml-with-reasoner.svg"
-image: "/assets/images/blog/validating-sysml-with-reasoner-social.png"
+image: "/assets/images/blog/validating-sysml-with-reasoner-social.jpg"
 description: "A SysML tool tells you when a model is malformed, but not when it is well-formed and wrong. Here is how a description-logic reasoner, applied through openCAESAR and OML, validates the semantic correctness of a SysML model against its meta-model, demonstrated on a JAXA satellite study."
 ---
 

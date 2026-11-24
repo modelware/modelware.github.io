@@ -6,7 +6,7 @@ author: "Yuta Nakajima"
 categories: [insights]
 tags: [openCAESAR, OML, FRET, formal methods, LTL, ConOps, MBSE, space mission, JAXA, INCOSE]
 post_image: "/assets/images/blog/declarative-conops-vnv.svg"
-image: "/assets/images/blog/declarative-conops-vnv-social.png"
+image: "/assets/images/blog/declarative-conops-vnv-social.jpg"
 description: "In early space mission design, the concept of operations is captured as hand-crafted timelines whose goals and constraints stay implicit. Presented at INCOSE IS 2026, this JAXA methodology pairs an OML knowledge graph with NASA's FRET to make ConOps goals explicit, formal, and continuously verifiable, demonstrated on an Earth-observation mission study."
 ---
 

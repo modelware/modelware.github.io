@@ -6,7 +6,7 @@ author: "Yuta Nakajima"
 categories: [insights]
 tags: [openCAESAR, OML, SPARQL, MBSE, space mission, workflow orchestration, CI-CD, JAXA]
 post_image: "/assets/images/blog/automating-mission-analysis.svg"
-image: "/assets/images/blog/automating-mission-analysis-social.png"
+image: "/assets/images/blog/automating-mission-analysis-social.jpg"
 description: "Early space mission studies run on 60-day cycles but lean on spreadsheets and slides, and MBSE struggles to keep pace. Here is how openCAESAR orchestrated orbit, scenario, and power analyses into an automated, semantically integrated workflow, cutting timelines from weeks to hours on a JAXA VLEO satellite study."
 ---
 

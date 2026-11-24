@@ -9,7 +9,7 @@ author: "Maged Elaasar"
 categories: [insights]
 tags: [UAF, ontologies, OML, MBSE, systems engineering, enterprise architecture, DoDAF, SysML]
 post_image: "/assets/images/blog/ontological-uaf.svg"
-image: "/assets/images/blog/ontological-uaf-social.png"
+image: "/assets/images/blog/ontological-uaf-social.jpg"
 description: "Part 4 of a series reading UAF in light of its own objectives. Any specification told across prose, diagrams, and a profile accumulates small inconsistencies; keeping them aligned is one of the hardest parts of maintaining a standard. A formal rendering catches them automatically, which makes it a natural ally for the people who maintain UAF."
 ---
 

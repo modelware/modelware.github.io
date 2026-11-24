@@ -6,7 +6,7 @@ author: "Maged Elaasar"
 categories: [insights]
 tags: [Semantic Web, ontologies, OML, MBSE, knowledge graphs, OWL, SPARQL, ISWC]
 post_image: "/assets/images/blog/semantic-web-and-mbse.svg"
-image: "/assets/images/blog/semantic-web-and-mbse-social.png"
+image: "/assets/images/blog/semantic-web-and-mbse-social.jpg"
 description: "Two communities have spent two decades building machinery for the same thing: describing a domain precisely enough that software can reason about it. Two obstacles have kept them apart, and our ISWC 2026 In Use paper is about what it took to remove them."
 ---
 

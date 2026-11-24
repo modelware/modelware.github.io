@@ -33,7 +33,7 @@
   when: "October 6, 2026"
   location: "MODELS 2026, Málaga, Spain"
   summary: "The second edition of the onto:Nexus workshop, co-organized by Modelware, on ontological modeling and analysis for model-based software and systems engineering."
-  image: "/assets/images/onto-nexus2026.png"
+  image: "/assets/images/onto-nexus2026.jpg"
   url: "/news/onto-nexus2026"
   host: true
 
@@ -44,7 +44,7 @@
   when: "October 2026"
   location: "MODELS 2026, Málaga, Spain"
   summary: "A hands-on tutorial at MODELS 2026 on capturing subject matter expertise as reusable ontological modeling methodologies in OML Code."
-  image: "/assets/images/models2026-tutorial.png"
+  image: "/assets/images/models2026-tutorial.jpg"
   url: "/news/models2026-tutorial"
 
 - title: "onto:Nexus Forum 2025"
